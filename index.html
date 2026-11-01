@@ -19,7 +19,7 @@
 <body>
 
   <!-- =========================================================================
-       1. TOP FLOATING PILL NAVBAR (Figma JCREA 1:1 + Navigation Dynamique)
+       1. TOP FLOATING PILL NAVBAR (Figma JCREA 1:1 + Logo NJ & Navigation Dynamique)
        ========================================================================= -->
   <header class="header-wrapper">
     <div class="nav-pill-container">
@@ -28,16 +28,15 @@
         <a href="#about" class="nav-item" data-i18n="nav.about">À propos</a>
         <a href="#services" class="nav-item" data-i18n="nav.services">Services</a>
         
-        <!-- Logo central JCREA Style avec nom réel NDE Jordan L. -->
+        <!-- Logo central JCREA Style avec monogramme NJ et nom bicolore NDE Jordan L. -->
         <a href="#hero" class="nav-logo" aria-label="Accueil NDE Jordan L.">
-          <div class="logo-mark">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="11" fill="#FD6F00"/>
-              <path d="M7 8h4.5v5a3 3 0 0 1-6 0V12" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M17 16h-4.5v-5a3 3 0 0 1 6 0V12" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
-            </svg>
+          <div class="logo-mark-nj">
+            <span class="logo-initials">NJ</span>
           </div>
-          <span class="logo-text">NDE JORDAN L.</span>
+          <span class="logo-text">
+            <span class="logo-nde">NDE</span>
+            <span class="logo-jordan">Jordan L</span><span class="logo-dot">.</span>
+          </span>
         </a>
 
         <a href="#experience" class="nav-item" data-i18n="nav.resume">Parcours</a>
@@ -66,28 +65,37 @@
     <section class="hero-section" id="hero">
       <div class="container hero-container">
         
-        <!-- Bulle "Bonjour !" avec étincelles Figma -->
+        <!-- Bulle "Bonjour !" avec ticks Memphis Figma -->
         <div class="hello-bubble-wrap">
-          <span class="doodle-sparkle-left">✦</span>
-          <div class="hello-bubble" data-i18n="hero.hello">Bonjour !</div>
-          <span class="doodle-sparkle-right">✦</span>
+          <div class="hello-bubble-anchor">
+            <div class="hello-bubble" data-i18n="hero.hello">Bonjour !</div>
+            <div class="memphis-bubble-ticks" aria-hidden="true">
+              <svg width="22" height="18" viewBox="0 0 22 18" fill="none">
+                <path d="M2 16C6 8 13 4 20 2" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M9 17C12 11 16 9 20 7" stroke="#FD6F00" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
         </div>
 
-        <!-- Titre principal sans troncature : NDE Jordan L. -->
+        <!-- Titre principal sans troncature : NDE (sombre), Jordan L (orange), point (sombre) -->
         <h1 class="hero-headline">
-          <span data-i18n="hero.intro">Moi c'est</span> <span class="text-orange">NDE Jordan L.</span>, <br>
+          <span data-i18n="hero.intro">Moi c'est</span>
+          <span class="name-nde">NDE</span>
+          <span class="name-jordan text-orange">Jordan L</span><span class="name-dot">.</span><br>
           <span data-i18n="hero.role">Développeur Full-Stack</span>
         </h1>
 
-        <!-- Doodles décoratifs latéraux -->
+        <!-- Doodles Memphis authentiques (Figma style, pure SVG) -->
         <div class="hero-doodle-left" aria-hidden="true">
-          <svg width="44" height="44" viewBox="0 0 50 50" fill="none">
-            <path d="M10 25C15 15 25 15 30 20C35 25 25 35 20 30" stroke="#FD6F00" stroke-width="3" stroke-linecap="round"/>
+          <svg width="46" height="28" viewBox="0 0 46 28" fill="none">
+            <path d="M3 16C10 7 19 7 26 14C33 21 40 21 44 12" stroke="#FD6F00" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M5 24C12 15 21 15 28 22C35 29 42 29 46 20" stroke="#FD6F00" stroke-width="2.6" stroke-linecap="round" opacity="0.6"/>
           </svg>
         </div>
         <div class="hero-doodle-right" aria-hidden="true">
-          <svg width="36" height="36" viewBox="0 0 50 50" fill="none">
-            <path d="M25 5L28 18L41 21L28 24L25 37L22 24L9 21L22 18Z" fill="#FD6F00" opacity="0.8"/>
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <path d="M16 0L18.8 11.2L30 14L18.8 16.8L16 28L13.2 16.8L2 14L13.2 11.2L16 0Z" fill="#FD6F00" opacity="0.85"/>
           </svg>
         </div>
 
@@ -135,7 +143,61 @@
     </section>
 
     <!-- =========================================================================
-         3. SECTION "MES SERVICES" (Image 2 Figma)
+         3. SECTION "POURQUOI ME CHOISIR ?" (Image 4 Figma : Dôme + Stats + Bouton)
+         Placée directement après Accueil pour assurer la continuité naturelle de navigation
+         ========================================================================= -->
+    <section class="why-section" id="about">
+      <div class="container">
+        <div class="why-card">
+          
+          <!-- Côté Gauche : Dôme orange + Photo Jordan en studio -->
+          <div class="why-visual">
+            <div class="why-dome"></div>
+            <img src="rsc/img/jordan_studio.jpg" alt="Pourquoi me choisir - NDE Jordan L." class="why-person-img" loading="lazy">
+          </div>
+
+          <!-- Côté Droit : Contenu texte & Métriques du CV -->
+          <div class="why-content">
+            <h2 class="why-title">
+              <span data-i18n="why.titlePre">Pourquoi</span> <span class="text-orange" data-i18n="why.titleOrange">me choisir ?</span>
+            </h2>
+            <p class="why-text" data-i18n="why.text">
+              Polyvalent et rigoureux, je mets mes compétences au service du développement applicatif, de la maintenance d'infrastructures et de la création graphique. Certifié par les Ateliers Google, je conçois des systèmes d'information pensés pour durer.
+            </p>
+
+            <div class="why-metrics-grid">
+              <div class="why-metric">
+                <span class="why-number count-up" data-target="100">100%</span>
+                <span class="why-label" data-i18n="why.m1Label">Code en production vérifiable</span>
+              </div>
+              <div class="why-metric">
+                <span class="why-number">Palme d'Or</span>
+                <span class="why-label" data-i18n="why.m2Label">3e Prix National Concours Tech</span>
+              </div>
+            </div>
+
+            <!-- Pôles de compétences réels du CV -->
+            <div class="why-tags-row">
+              <span class="skill-pill">Database &amp; SQL</span>
+              <span class="skill-pill">Infographie &amp; Flyers</span>
+              <span class="skill-pill">Réseau &amp; Sécu</span>
+              <span class="skill-pill">Maintenance IT</span>
+              <span class="skill-pill">Systèmes Embarqués</span>
+              <span class="skill-pill">Français · Anglais · Japonais</span>
+            </div>
+
+            <!-- Bouton contour Figma 1:1 -->
+            <div class="why-btn-wrap">
+              <a href="#contact" class="btn-hire-outline" data-i18n="why.contactBtn">Me contacter</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. SECTION "MES SERVICES" (Image 2 Figma)
          Grand bloc sombre avec sphères 3D, cartes de service et boutons flèches
          ========================================================================= -->
     <section class="services-section" id="services">
@@ -225,7 +287,7 @@
     </section>
 
     <!-- =========================================================================
-         4. SECTION "MON EXPÉRIENCE & FORMATION" (Image 3 Figma + CV réel)
+         5. SECTION "MON EXPÉRIENCE & FORMATION" (Image 3 Figma + CV réel)
          ========================================================================= -->
     <section class="experience-section" id="experience">
       <div class="container">
@@ -318,60 +380,7 @@
     </section>
 
     <!-- =========================================================================
-         5. SECTION "POURQUOI ME CHOISIR ?" (Image 4 Figma : Dôme + Stats + Bouton)
-         ========================================================================= -->
-    <section class="why-section" id="about">
-      <div class="container">
-        <div class="why-card">
-          
-          <!-- Côté Gauche : Dôme orange + Photo Jordan en studio -->
-          <div class="why-visual">
-            <div class="why-dome"></div>
-            <img src="rsc/img/jordan_studio.jpg" alt="Pourquoi me choisir - NDE Jordan L." class="why-person-img" loading="lazy">
-          </div>
-
-          <!-- Côté Droit : Contenu texte & Métriques du CV -->
-          <div class="why-content">
-            <h2 class="why-title">
-              <span data-i18n="why.titlePre">Pourquoi</span> <span class="text-orange" data-i18n="why.titleOrange">me choisir ?</span>
-            </h2>
-            <p class="why-text" data-i18n="why.text">
-              Polyvalent et rigoureux, je mets mes compétences au service du développement applicatif, de la maintenance d'infrastructures et de la création graphique. Certifié par les Ateliers Google, je conçois des systèmes d'information pensés pour durer.
-            </p>
-
-            <div class="why-metrics-grid">
-              <div class="why-metric">
-                <span class="why-number count-up" data-target="100">100%</span>
-                <span class="why-label" data-i18n="why.m1Label">Code en production vérifiable</span>
-              </div>
-              <div class="why-metric">
-                <span class="why-number">Palme d'Or</span>
-                <span class="why-label" data-i18n="why.m2Label">3e Prix National Concours Tech</span>
-              </div>
-            </div>
-
-            <!-- Pôles de compétences réels du CV -->
-            <div class="why-tags-row">
-              <span class="skill-pill">Database &amp; SQL</span>
-              <span class="skill-pill">Infographie &amp; Flyers</span>
-              <span class="skill-pill">Réseau &amp; Sécu</span>
-              <span class="skill-pill">Maintenance IT</span>
-              <span class="skill-pill">IA Générative</span>
-              <span class="skill-pill">Français · Anglais · Japonais</span>
-            </div>
-
-            <!-- Bouton contour Figma 1:1 -->
-            <div class="why-btn-wrap">
-              <a href="#contact" class="btn-hire-outline" data-i18n="why.contactBtn">Me contacter</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         6. SECTION "DÉCOUVREZ MON PORTFOLIO" (Image 5 Figma : VRAI Carrousel Glissant)
+         6. SECTION "DÉCOUVREZ MON PORTFOLIO" (Image 5 Figma : Carrousel + Filtres + Galerie Auto-Scroll)
          ========================================================================= -->
     <section class="portfolio-section" id="portfolio">
       <div class="container">
@@ -389,20 +398,40 @@
           </div>
         </div>
 
-        <!-- Filtres par catégories -->
-        <div class="portfolio-tags-pill-row">
-          <button class="tag-pill active" data-filter="all" data-i18n="portfolio.tabAll">Tous les projets</button>
-          <button class="tag-pill" data-filter="dev" data-i18n="portfolio.tabDev">Génie Logiciel &amp; ERP</button>
-          <button class="tag-pill" data-filter="infographie" data-i18n="portfolio.tabDesign">Infographie &amp; Design</button>
-          <button class="tag-pill" data-filter="systems" data-i18n="portfolio.tabSystems">Systèmes &amp; Réseaux</button>
+        <!-- Filtres par catégories + Barre de recherche instantanée avec autocomplétion -->
+        <div class="portfolio-controls-bar">
+          <div class="portfolio-tags-pill-row">
+            <button class="tag-pill active" data-filter="all" data-i18n="portfolio.tabAll">Tous les projets</button>
+            <button class="tag-pill" data-filter="dev" data-i18n="portfolio.tabDev">Génie Logiciel &amp; ERP</button>
+            <button class="tag-pill" data-filter="infographie" data-i18n="portfolio.tabDesign">Infographie &amp; Design</button>
+            <button class="tag-pill" data-filter="systems" data-i18n="portfolio.tabSystems">Systèmes &amp; Réseaux</button>
+          </div>
+
+          <!-- Champ de recherche fluide avec autocomplétion -->
+          <div class="portfolio-search-wrap">
+            <div class="search-input-box">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="projectSearchInput" placeholder="Rechercher (ERP, Candace, Petit Colis, SQL, Logo...)" autocomplete="off">
+              <button id="projectSearchClear" class="search-clear-btn" aria-label="Effacer">&times;</button>
+            </div>
+            <!-- Puces de suggestions rapides cliquables -->
+            <div class="search-chips-row">
+              <span class="search-chip" data-query="ERP">AgroFlow ERP</span>
+              <span class="search-chip" data-query="Sister Schola">Sister Schola</span>
+              <span class="search-chip" data-query="Petit Colis">Petit Colis</span>
+              <span class="search-chip" data-query="Candace">Candace Lait</span>
+              <span class="search-chip" data-query="Fosa'a">Fosa'a Academy</span>
+              <span class="search-chip" data-query="Arduino">Arduino &amp; IoT</span>
+            </div>
+          </div>
         </div>
 
-        <!-- CARROUSEL D'IMAGES À DÉFILEMENT HORIZONTAL FLUIDE -->
+        <!-- CARROUSEL D'IMAGES À DÉFILEMENT HORIZONTAL FLUIDE (2 CARTES PAR VUE FIGMA 1:1) -->
         <div class="portfolio-slider-container">
           <div class="portfolio-carousel-track" id="portfolioTrack">
             
             <!-- Carte 1 : AgroFlow SaaS ERP (Dev) -->
-            <div class="portfolio-card active" data-cat="dev" data-index="0">
+            <div class="portfolio-card active" data-cat="dev" data-keywords="agroflow erp saas agritech dev web" data-index="0">
               <div class="portfolio-card-img-wrap">
                 <img src="rsc/img/projets/dev/DC_Agroflow.png" alt="AgroFlow ERP" class="portfolio-main-img">
                 <div class="card-brand-overlay">AgroFlow ERP</div>
@@ -416,7 +445,7 @@
             </div>
 
             <!-- Carte 2 : Sister Schola ERP (Dev) -->
-            <div class="portfolio-card" data-cat="dev" data-index="1">
+            <div class="portfolio-card" data-cat="dev" data-keywords="sister schola erp lims clinique sante dev sql" data-index="1">
               <div class="portfolio-card-img-wrap">
                 <img src="rsc/img/projets/dev/SisterSholaErp.png" alt="Sister Schola ERP" class="portfolio-main-img">
                 <div class="card-brand-overlay">Sister Schola</div>
@@ -430,7 +459,7 @@
             </div>
 
             <!-- Carte 3 : Infographie & Affiches Jordan (Infographie) -->
-            <div class="portfolio-card" data-cat="infographie" data-index="2">
+            <div class="portfolio-card" data-cat="infographie" data-keywords="infographie flyers logos candace petit colis design affiche" data-index="2">
               <div class="portfolio-card-img-wrap">
                 <img src="rsc/img/projets/infographie_jordan.png" alt="Créations Infographie Jordan" class="portfolio-main-img">
                 <div class="card-brand-overlay">Infographie &amp; Art</div>
@@ -444,7 +473,7 @@
             </div>
 
             <!-- Carte 4 : LaboGraphie Web (Dev) -->
-            <div class="portfolio-card" data-cat="dev" data-index="3">
+            <div class="portfolio-card" data-cat="dev" data-keywords="labographie web cybertech plateforme portfolio tech" data-index="3">
               <div class="portfolio-card-img-wrap">
                 <img src="rsc/img/projets/dev/LaboGraphie-web.png" alt="LaboGraphie Web Platform" class="portfolio-main-img">
                 <div class="card-brand-overlay">LaboGraphie Web</div>
@@ -458,7 +487,7 @@
             </div>
 
             <!-- Carte 5 : Consultant IT & Sister Schola (Systèmes) -->
-            <div class="portfolio-card" data-cat="systems" data-index="4">
+            <div class="portfolio-card" data-cat="systems" data-keywords="consultant it reseau infrastructure audit securite" data-index="4">
               <div class="portfolio-card-img-wrap">
                 <img src="rsc/img/projets/consultant IT/consultation-sisterShola.png" alt="Consultant IT & Audit Système" class="portfolio-main-img">
                 <div class="card-brand-overlay">Consultant IT</div>
@@ -472,7 +501,7 @@
             </div>
 
             <!-- Carte 6 : Cartographie Projet & Architecture (Dev) -->
-            <div class="portfolio-card" data-cat="dev" data-index="5">
+            <div class="portfolio-card" data-cat="dev" data-keywords="architecture map cartographie si base de donnees schema" data-index="5">
               <div class="portfolio-card-img-wrap">
                 <img src="rsc/img/projets/dev/labographie-rpoject-map.png" alt="Architecture & Map Projet" class="portfolio-main-img">
                 <div class="card-brand-overlay">Architecture SI</div>
@@ -522,11 +551,121 @@
           </div>
         </div>
 
+        <!-- GALERIE INTERACTIVE EN DÉFILEMENT CONTINU (Auto-Scroll Marquee Showcase) -->
+        <div class="showcase-gallery-section">
+          <div class="showcase-header-row">
+            <h4 class="showcase-title">
+              <span>Galerie de créations &amp; réalisations réelles</span>
+              <span class="text-orange">✦</span>
+            </h4>
+            <span class="showcase-sub">Survolez pour mettre en pause · Cliquez pour agrandir en plein écran</span>
+          </div>
+
+          <div class="showcase-track-container" id="showcaseMarquee">
+            <div class="showcase-track">
+              <!-- Item 1: Petit Colis Flyer (FUNGA Gautier) -->
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer  recruitement petit colis.jpg" title="Recrutement Petit Colis — FUNGA Gautier">
+                <img src="rsc/img/projets/infographie/flyer  recruitement petit colis.jpg" alt="Flyer Recrutement Petit Colis" loading="lazy">
+                <div class="showcase-overlay"><span>Petit Colis · Flyer Recrutement</span></div>
+              </div>
+
+              <!-- Item 2: Mockup Candace Distribution -->
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.jpg" title="Candace Distribution — Mockup Lait de Beauté">
+                <img src="rsc/img/projets/infographie/MockupCandace distribution.jpg" alt="Mockup Candace Distribution" loading="lazy">
+                <div class="showcase-overlay"><span>Candace Distribution · Cosmétique</span></div>
+              </div>
+
+              <!-- Item 3: Golden Pressing -->
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer goldens pressing.png" title="Golden Pressing — Flyer & Identité">
+                <img src="rsc/img/projets/infographie/flyer goldens pressing.png" alt="Flyer Golden Pressing" loading="lazy">
+                <div class="showcase-overlay"><span>Golden Pressing · Identité</span></div>
+              </div>
+
+              <!-- Item 4: Fosa'a Academy -->
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/fosa'a academy mockup.jpg" title="Fosa'a Academy — Mockup & Branding">
+                <img src="rsc/img/projets/infographie/fosa'a academy mockup.jpg" alt="Fosa'a Academy Mockup" loading="lazy">
+                <div class="showcase-overlay"><span>Fosa'a Academy · Éducation</span></div>
+              </div>
+
+              <!-- Item 5: Baobab LIMS Architecture -->
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/baobab-rsd.jpeg" title="Baobab LIMS — Schéma d'Architecture Données">
+                <img src="rsc/img/projets/dev/baobab-rsd.jpeg" alt="Baobab LIMS Architecture" loading="lazy">
+                <div class="showcase-overlay"><span>Baobab LIMS · Schéma Données</span></div>
+              </div>
+
+              <!-- Item 6: GMC Café Scientifique -->
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer GMC café scientifiue3.jpg" title="GMC Café Scientifique — Affiche Colloque">
+                <img src="rsc/img/projets/infographie/flyer GMC café scientifiue3.jpg" alt="Flyer GMC Café Scientifique" loading="lazy">
+                <div class="showcase-overlay"><span>GMC · Café Scientifique</span></div>
+              </div>
+
+              <!-- Item 7: Maintenance Arduino & Systèmes Embarqués -->
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/maintenance/tp arduino.png" title="Maintenance & Systèmes Embarqués IoT Arduino">
+                <img src="rsc/img/projets/maintenance/tp arduino.png" alt="Système Arduino IoT" loading="lazy">
+                <div class="showcase-overlay"><span>Arduino IoT · Systèmes Embarqués</span></div>
+              </div>
+
+              <!-- Item 8: LaboGraphie Roll-Up 3D -->
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/projet roll-up mockup logo labographie.jpg" title="LaboGraphie — Roll-up & Signalétique 3D">
+                <img src="rsc/img/projets/infographie/projet roll-up mockup logo labographie.jpg" alt="Roll-up LaboGraphie" loading="lazy">
+                <div class="showcase-overlay"><span>LaboGraphie · Roll-up 3D</span></div>
+              </div>
+
+              <!-- Item 9: Infrastructure Réseaux Baies -->
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/Reseau & Sécu/pexels-brett-sayles-4716292.jpg" title="Infrastructures Réseaux & Switchboards">
+                <img src="rsc/img/projets/Reseau & Sécu/pexels-brett-sayles-4716292.jpg" alt="Baie de Brassage Réseau" loading="lazy">
+                <div class="showcase-overlay"><span>Réseau &amp; Baies de Brassage</span></div>
+              </div>
+            </div>
+
+            <!-- Duplication pour boucle infinie sans saccade -->
+            <div class="showcase-track" aria-hidden="true">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer  recruitement petit colis.jpg">
+                <img src="rsc/img/projets/infographie/flyer  recruitement petit colis.jpg" alt="Flyer Recrutement Petit Colis" loading="lazy">
+                <div class="showcase-overlay"><span>Petit Colis · Flyer Recrutement</span></div>
+              </div>
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.jpg">
+                <img src="rsc/img/projets/infographie/MockupCandace distribution.jpg" alt="Mockup Candace Distribution" loading="lazy">
+                <div class="showcase-overlay"><span>Candace Distribution · Cosmétique</span></div>
+              </div>
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer goldens pressing.png">
+                <img src="rsc/img/projets/infographie/flyer goldens pressing.png" alt="Flyer Golden Pressing" loading="lazy">
+                <div class="showcase-overlay"><span>Golden Pressing · Identité</span></div>
+              </div>
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/fosa'a academy mockup.jpg">
+                <img src="rsc/img/projets/infographie/fosa'a academy mockup.jpg" alt="Fosa'a Academy Mockup" loading="lazy">
+                <div class="showcase-overlay"><span>Fosa'a Academy · Éducation</span></div>
+              </div>
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/baobab-rsd.jpeg">
+                <img src="rsc/img/projets/dev/baobab-rsd.jpeg" alt="Baobab LIMS Architecture" loading="lazy">
+                <div class="showcase-overlay"><span>Baobab LIMS · Schéma Données</span></div>
+              </div>
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer GMC café scientifiue3.jpg">
+                <img src="rsc/img/projets/infographie/flyer GMC café scientifiue3.jpg" alt="Flyer GMC Café Scientifique" loading="lazy">
+                <div class="showcase-overlay"><span>GMC · Café Scientifique</span></div>
+              </div>
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/maintenance/tp arduino.png">
+                <img src="rsc/img/projets/maintenance/tp arduino.png" alt="Système Arduino IoT" loading="lazy">
+                <div class="showcase-overlay"><span>Arduino IoT · Systèmes Embarqués</span></div>
+              </div>
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/projet roll-up mockup logo labographie.jpg">
+                <img src="rsc/img/projets/infographie/projet roll-up mockup logo labographie.jpg" alt="Roll-up LaboGraphie" loading="lazy">
+                <div class="showcase-overlay"><span>LaboGraphie · Roll-up 3D</span></div>
+              </div>
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/Reseau & Sécu/pexels-brett-sayles-4716292.jpg">
+                <img src="rsc/img/projets/Reseau & Sécu/pexels-brett-sayles-4716292.jpg" alt="Baie de Brassage Réseau" loading="lazy">
+                <div class="showcase-overlay"><span>Réseau &amp; Baies de Brassage</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- =========================================================================
-         7. SECTION TÉMOIGNAGES (Image 6 Figma : Auto-Play & Glissement Fluide)
+         7. SECTION TÉMOIGNAGES — CEUX QUI M'ONT FAIT CONFIANCE (Figma 1:1)
+         Professeur Edii, Marlyse, Chanceline, M. ABDOU, FUNGA Gautier, Powo Arnold
          ========================================================================= -->
     <section class="testimonials-section" id="testimonials">
       <div class="container">
@@ -538,11 +677,11 @@
               <span class="doodle-curve">⌒</span>
             </div>
             <h2 class="testi-title">
-              <span data-i18n="testi.titlePre">Des témoignages qui</span> <br>
-              <span data-i18n="testi.titleSub">parlent de</span> <span class="text-orange" data-i18n="testi.titleOrange">mes résultats</span>
+              <span data-i18n="testi.titlePre">Ceux qui m'ont</span> <br>
+              <span class="text-orange" data-i18n="testi.titleOrange">fait confiance</span>
             </h2>
             <p class="testi-subtitle" data-i18n="testi.sub">
-              Appréciations de collaborateurs et partenaires ayant expérimenté ma rigueur dans la conception logicielle, le design et l'encadrement technique.
+              Retours et appréciations d'enseignants-chercheurs, d'inspecteurs, de collaborateurs tech et de dirigeants ayant validé ma rigueur d'ingénierie.
             </p>
           </div>
 
@@ -556,17 +695,18 @@
             <button class="testi-nav-btn" id="btnTestiNext" aria-label="Témoignage suivant">&rarr;</button>
           </div>
 
-          <!-- Piste de défilement des témoignages -->
-          <div class="testimonials-slider-track" id="testiTrack">
+          <!-- Piste de défilement des témoignages (6 témoignages réels) dans un viewport masqué -->
+          <div class="testimonials-slider-viewport" id="testiViewport">
+            <div class="testimonials-slider-track" id="testiTrack">
             
-            <!-- Carte 1 : Yvana Ketchap -->
+            <!-- Carte 1 : Professeur Edii -->
             <div class="testi-card active" data-testi="0">
               <div class="quote-bg-glyph">“</div>
               <div class="testi-user-row">
-                <img src="rsc/img/avatar_yvana.jpg" alt="Yvana Ketchap" class="testi-avatar">
+                <div class="testi-avatar-placeholder">PE</div>
                 <div class="testi-user-info">
-                  <h4 class="testi-name">Yvana Ketchap</h4>
-                  <span class="testi-role" data-i18n="testi.t1Role">Génie Logiciel · U.P. SIANTOU</span>
+                  <h4 class="testi-name">Professeur Edii</h4>
+                  <span class="testi-role" data-i18n="testi.t1Role">Professeur Réseaux &amp; Sécurité</span>
                 </div>
               </div>
               <div class="testi-stars-row">
@@ -574,18 +714,18 @@
                 <span class="rating-num">5.0</span>
               </div>
               <p class="testi-text" data-i18n="testi.t1Text">
-                « Jordan possède une rigueur technique exemplaire et une capacité rare à modéliser des systèmes d'information complexes. Son encadrement sur nos projets a élevé les standards de toute l'équipe. »
+                « Jordan démontre une compréhension remarquable des architectures réseaux, de la sécurité applicative et du travail d'équipe. Un technologue méthodique, rigoureux et autonome dans l'exécution de ses projets. »
               </p>
             </div>
 
-            <!-- Carte 2 : Brinda -->
+            <!-- Carte 2 : M. ABDOU -->
             <div class="testi-card" data-testi="1">
               <div class="quote-bg-glyph">“</div>
               <div class="testi-user-row">
-                <img src="rsc/img/avatar_brinda.jpg" alt="Brinda" class="testi-avatar">
+                <div class="testi-avatar-placeholder">MA</div>
                 <div class="testi-user-info">
-                  <h4 class="testi-name">Brinda</h4>
-                  <span class="testi-role" data-i18n="testi.t2Role">Collaboratrice Tech &amp; Frontend</span>
+                  <h4 class="testi-name">M. ABDOU</h4>
+                  <span class="testi-role" data-i18n="testi.t2Role">IPN de Mathématiques · MINESEC</span>
                 </div>
               </div>
               <div class="testi-stars-row">
@@ -593,18 +733,18 @@
                 <span class="rating-num">5.0</span>
               </div>
               <p class="testi-text" data-i18n="testi.t2Text">
-                « Collaborer avec Jordan sur des plateformes comme AgroFlow et Sister Schola prouve sa maîtrise : le souci du détail dans l'UI se combine toujours à une robustesse backend irréprochable. »
+                « Une rigueur logique et un esprit d'analyse exceptionnels hérités de son parcours en mathématiques. Jordan sait traduire des abstractions complexes en solutions logicielles opérationnelles. »
               </p>
             </div>
 
-            <!-- Carte 3 : Direction Technique LeGuide Informatique -->
+            <!-- Carte 3 : FUNGA Gautier (Petit Colis) -->
             <div class="testi-card" data-testi="2">
               <div class="quote-bg-glyph">“</div>
               <div class="testi-user-row">
-                <div class="testi-avatar-placeholder">LG</div>
+                <div class="testi-avatar-placeholder">FG</div>
                 <div class="testi-user-info">
-                  <h4 class="testi-name">Direction Technique</h4>
-                  <span class="testi-role" data-i18n="testi.t3Role">LeGuide Informatique &amp; SI</span>
+                  <h4 class="testi-name">FUNGA Gautier</h4>
+                  <span class="testi-role" data-i18n="testi.t3Role">Fondateur · Petit Colis</span>
                 </div>
               </div>
               <div class="testi-stars-row">
@@ -612,10 +752,68 @@
                 <span class="rating-num">5.0</span>
               </div>
               <p class="testi-text" data-i18n="testi.t3Text">
-                « Qu'il s'agisse de la maintenance de nos équipements réseau ou de la création de nos supports graphiques, Jordan fait preuve d'une autonomie et d'une réactivité exceptionnelles. »
+                « Pour la communication visuelle et nos campagnes de recrutement chez Petit Colis, le travail infographique et l'écoute de Jordan ont été déterminants. Travail rapide, soigné et très professionnel. »
               </p>
             </div>
 
+            <!-- Carte 4 : Marlyse (Polytech Yaoundé) -->
+            <div class="testi-card" data-testi="3">
+              <div class="quote-bg-glyph">“</div>
+              <div class="testi-user-row">
+                <div class="testi-avatar-placeholder">MY</div>
+                <div class="testi-user-info">
+                  <h4 class="testi-name">Marlyse</h4>
+                  <span class="testi-role" data-i18n="testi.t4Role">Élève Ingénieur · Polytech Yaoundé</span>
+                </div>
+              </div>
+              <div class="testi-stars-row">
+                <span class="stars-gold">★★★★★</span>
+                <span class="rating-num">5.0</span>
+              </div>
+              <p class="testi-text" data-i18n="testi.t4Text">
+                « Collaborer avec Jordan est un véritable plaisir : sa capacité d'analyse, son souci du détail et sa rigueur mathématique font toute la différence sur des modélisations logicielles pointues. »
+              </p>
+            </div>
+
+            <!-- Carte 5 : Chanceline (Egesol SARL) -->
+            <div class="testi-card" data-testi="4">
+              <div class="quote-bg-glyph">“</div>
+              <div class="testi-user-row">
+                <div class="testi-avatar-placeholder">CS</div>
+                <div class="testi-user-info">
+                  <h4 class="testi-name">Chanceline</h4>
+                  <span class="testi-role" data-i18n="testi.t5Role">Direction · Egesol SARL</span>
+                </div>
+              </div>
+              <div class="testi-stars-row">
+                <span class="stars-gold">★★★★★</span>
+                <span class="rating-num">5.0</span>
+              </div>
+              <p class="testi-text" data-i18n="testi.t5Text">
+                « Jordan allie créativité graphique percutante et précision technique. Les supports visuels et solutions conçus pour notre structure ont parfaitement répondu à nos exigences de professionnalisme. »
+              </p>
+            </div>
+
+            <!-- Carte 6 : Powo Arnold (Data Analyst) -->
+            <div class="testi-card" data-testi="5">
+              <div class="quote-bg-glyph">“</div>
+              <div class="testi-user-row">
+                <div class="testi-avatar-placeholder">PA</div>
+                <div class="testi-user-info">
+                  <h4 class="testi-name">Powo Arnold</h4>
+                  <span class="testi-role" data-i18n="testi.t6Role">Data Analyst · Systèmes de Données</span>
+                </div>
+              </div>
+              <div class="testi-stars-row">
+                <span class="stars-gold">★★★★★</span>
+                <span class="rating-num">5.0</span>
+              </div>
+              <p class="testi-text" data-i18n="testi.t6Text">
+                « La structuration des bases de données SQL et la modélisation de données réalisées par Jordan sur les plateformes ERP sont d'une clarté exemplaire. Travailler sur ses pipelines de données est un régal. »
+              </p>
+            </div>
+
+            </div>
           </div>
 
           <!-- Points de pagination -->
@@ -623,6 +821,9 @@
             <span class="dot-bar active" data-testi-idx="0"></span>
             <span class="dot-circle" data-testi-idx="1"></span>
             <span class="dot-circle" data-testi-idx="2"></span>
+            <span class="dot-circle" data-testi-idx="3"></span>
+            <span class="dot-circle" data-testi-idx="4"></span>
+            <span class="dot-circle" data-testi-idx="5"></span>
           </div>
 
         </div>
@@ -682,8 +883,10 @@
           <span>Génie Logiciel</span> <span class="star-sep">✦</span>
           <span>Bases de Données SQL</span> <span class="star-sep">✦</span>
           <span>Infographie &amp; Logos</span> <span class="star-sep">✦</span>
+          <span>Petit Colis</span> <span class="star-sep">✦</span>
+          <span>AgroFlow ERP</span> <span class="star-sep">✦</span>
           <span>Maintenance &amp; Réseaux</span> <span class="star-sep">✦</span>
-          <span>IA Générative</span> <span class="star-sep">✦</span>
+          <span>Systèmes Embarqués IoT</span> <span class="star-sep">✦</span>
           <span>Palme d'Or National</span> <span class="star-sep">✦</span>
           <span>Ateliers Google Certifié</span> <span class="star-sep">✦</span>
           <span>Bilingue FR / EN</span> <span class="star-sep">✦</span>
@@ -692,8 +895,10 @@
           <span>Génie Logiciel</span> <span class="star-sep">✦</span>
           <span>Bases de Données SQL</span> <span class="star-sep">✦</span>
           <span>Infographie &amp; Logos</span> <span class="star-sep">✦</span>
+          <span>Petit Colis</span> <span class="star-sep">✦</span>
+          <span>AgroFlow ERP</span> <span class="star-sep">✦</span>
           <span>Maintenance &amp; Réseaux</span> <span class="star-sep">✦</span>
-          <span>IA Générative</span> <span class="star-sep">✦</span>
+          <span>Systèmes Embarqués IoT</span> <span class="star-sep">✦</span>
           <span>Palme d'Or National</span> <span class="star-sep">✦</span>
           <span>Ateliers Google Certifié</span> <span class="star-sep">✦</span>
           <span>Bilingue FR / EN</span> <span class="star-sep">✦</span>
@@ -817,14 +1022,13 @@
             <!-- Col 1 : Logo + Bio réelle CV + Réseaux -->
             <div class="footer-col col-brand">
               <div class="footer-logo">
-                <div class="logo-mark">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="11" fill="#FD6F00"/>
-                    <path d="M7 8h4.5v5a3 3 0 0 1-6 0V12" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
-                    <path d="M17 16h-4.5v-5a3 3 0 0 1 6 0V12" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
-                  </svg>
+                <div class="logo-mark-nj">
+                  <span class="logo-initials">NJ</span>
                 </div>
-                <span class="logo-text">NDE JORDAN L.</span>
+                <span class="logo-text">
+                  <span class="logo-nde">NDE</span>
+                  <span class="logo-jordan">Jordan L</span><span class="logo-dot">.</span>
+                </span>
               </div>
               <p class="footer-brand-desc" data-i18n="footer.bio">
                 Technologue en Génie Logiciel &amp; Systèmes d'Information, certifié Ateliers Google. Spécialisé dans la conception logicielle, la maintenance d'infrastructures et l'infographie.
