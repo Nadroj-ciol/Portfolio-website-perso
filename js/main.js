@@ -1,20 +1,84 @@
 /**
- * MAIN.JS — Portfolio NDE Jordan Loïc
- * Design System Figma JCREA 5+ & Motion Design
- * Fonctionnalités :
- * 1. Moteur i18n Bilingue (Français / Anglais) avec persistance localStorage
- * 2. Carrousel Témoignages avec Défilement Automatique, pause au hover & contrôles
- * 3. Filtrage du Portfolio multi-catégories (Dev, Infographie, Maintenance, Tous)
- * 4. Visionneuse Lightbox pour les affiches, logos & photos d'infrastructures
- * 5. Compteurs animés (Count-Up) pour les statistiques
- * 6. Micro-interactions magnétiques & Tilt 3D digne de Framer Motion
- * 7. Scroll-spy & animations de reveal au défilement
+ * MAIN.JS — Portfolio NDE Jordan L.
+ * Reproduction Interactive du Template Figma JCREA
+ * - Dynamic Active Navbar (Click & ScrollSpy)
+ * - Vrai Carrousel Glissant Horizontal pour les Projets (avec boutons flèches et filtres)
+ * - Carrousel Témoignages avec Auto-play, pause au survol et contrôles manuels
+ * - Dictionnaire Bilingue (Français / Anglais) instantané
+ * - Lightbox plein écran pour les affiches et créations graphiques
+ * - Compteurs animés (Count-Up)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* =========================================================================
-     1. DICTIONNAIRE I18N BILINGUE (FRANÇAIS & ANGLAIS)
+     1. NAVIGATION DYNAMIQUE & SCROLL-SPY (ACTIF EN TEMPS RÉEL)
+     ========================================================================= */
+  const navItems = document.querySelectorAll('.nav-item');
+  const sections = document.querySelectorAll('section[id]');
+  const mobileToggle = document.getElementById('mobileToggle');
+  const navbar = document.getElementById('navbar');
+
+  // Clic direct sur un lien de navigation
+  navItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      navItems.forEach(n => n.classList.remove('active'));
+      item.classList.add('active');
+
+      if (navbar && navbar.classList.contains('open')) {
+        navbar.classList.remove('open');
+        if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // Menu Mobile Toggle
+  if (mobileToggle && navbar) {
+    mobileToggle.addEventListener('click', () => {
+      navbar.classList.toggle('open');
+      const expanded = navbar.classList.contains('open');
+      mobileToggle.setAttribute('aria-expanded', expanded);
+    });
+  }
+
+  // Gestion du ScrollSpy dynamique fiable
+  function updateActiveNavLink() {
+    const scrollPos = window.scrollY + 180;
+    
+    if (window.scrollY < 120) {
+      const heroLink = document.querySelector('.nav-item[href="#hero"]');
+      if (heroLink && !heroLink.classList.contains('active')) {
+        navItems.forEach(n => n.classList.remove('active'));
+        heroLink.classList.add('active');
+      }
+      return;
+    }
+
+    let currentSectionId = '';
+    sections.forEach(sec => {
+      const top = sec.offsetTop;
+      const height = sec.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        currentSectionId = sec.getAttribute('id');
+      }
+    });
+
+    if (currentSectionId) {
+      const activeLink = document.querySelector(`.nav-item[href="#${currentSectionId}"]`);
+      if (activeLink && !activeLink.classList.contains('active')) {
+        navItems.forEach(n => n.classList.remove('active'));
+        activeLink.classList.add('active');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', updateActiveNavLink, { passive: true });
+  window.addEventListener('resize', updateActiveNavLink, { passive: true });
+  updateActiveNavLink();
+
+
+  /* =========================================================================
+     2. MOTEUR I18N BILINGUE (FRANÇAIS / ANGLAIS)
      ========================================================================= */
   const translations = {
     fr: {
@@ -24,25 +88,23 @@ document.addEventListener('DOMContentLoaded', () => {
       "nav.resume": "Parcours",
       "nav.projects": "Projets",
       "nav.contact": "Contact",
-      "hero.status": "Disponible pour missions, dev & opportunités",
       "hero.hello": "Bonjour !",
       "hero.intro": "Moi c'est",
       "hero.role": "Développeur Full-Stack",
       "hero.quote": "« L'excellence technique et l'architecture logicielle de Jordan garantissent le succès de nos projets en production. Hautement recommandé ! »",
       "hero.portfolioBtn": "Portfolio",
       "hero.hireBtn": "Me recruter",
-      "hero.cvDownload": "Télécharger CV",
       "hero.expLabel": "D'expérience & Conception",
       
       "services.titlePre": "Mes",
       "services.titleOrange": "Services",
-      "services.sub": "Technologue en Génie Logiciel certifié par les Ateliers Google : conception applicative robuste, bases de données, maintenance systèmes & infographie.",
+      "services.sub": "Technologue en Génie Logiciel certifié par les Ateliers Google : conception applicative robuste, bases de données relationnelles et créations graphiques.",
       "services.s1Title": "Génie Logiciel & Applications Web",
-      "services.s1Desc": "Conception d'architectures SaaS et ERP complètes, microservices, APIs RESTful et applications réactives avec synchronisation offline.",
+      "services.s1Desc": "Conception d'architectures SaaS et ERP complètes, modélisation de microservices, APIs RESTful et synchronisation hors-ligne résiliente.",
       "services.s2Title": "Bases de Données & Systèmes LIMS",
-      "services.s2Desc": "Modélisation relationnelle rigoureuse (SQL/PostgreSQL), traçabilité biologique, intégrité transactionnelle et optimisation de requêtes complexes.",
-      "services.s3Title": "Maintenance, Réseaux & Infographie",
-      "services.s3Desc": "Câblage structuré, baies de brassage, bornes biométriques, dépannage hardware/software et création graphique professionnelle (logos, flyers).",
+      "services.s2Desc": "Modélisation relationnelle SQL rigoureuse, intégrité transactionnelle, centralisation des dossiers patients et flux cliniques.",
+      "services.s3Title": "Infographie & Direction Visuelle",
+      "services.s3Desc": "Direction artistique, conception de chartes graphiques, logos vectoriels scalables, flyers et affiches de communication à fort impact.",
       
       "exp.titlePre": "Mon",
       "exp.titleOrange": "Parcours & Expérience",
@@ -58,14 +120,14 @@ document.addEventListener('DOMContentLoaded', () => {
       "exp.ambamDiploma": "Mathématiques & Bac C",
       "exp.ambamRole": "Rigueur Mathématique & Débuts du Web",
       "exp.ambamDesc": "Deux années en Mathématiques fondamentales. Premier déploiement web dès 2017 avec la création du site web officiel du Lycée Bilingue d’AMBAM.",
+      "exp.cvBtn": "Télécharger mon CV complet (PDF)",
 
       "why.titlePre": "Pourquoi",
       "why.titleOrange": "me choisir ?",
-      "why.text": "Polyvalent et rigoureux, je mets mes compétences au service du développement, de la maintenance d'infrastructures et de la création visuelle. Certifié par les Ateliers Google, je conçois des systèmes d'information pensés pour durer.",
+      "why.text": "Polyvalent et rigoureux, je mets mes compétences au service du développement applicatif, de la maintenance d'infrastructures et de la création graphique. Certifié par les Ateliers Google, je conçois des systèmes d'information pensés pour durer.",
       "why.m1Label": "Code en production vérifiable",
       "why.m2Label": "3e Prix National Concours Tech",
       "why.contactBtn": "Me contacter",
-      "why.downloadCvBtn": "Télécharger mon CV (PDF)",
 
       "portfolio.headPre": "Découvrez",
       "portfolio.headSub": "mon",
@@ -73,8 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
       "portfolio.seeAll": "Voir tout",
       "portfolio.tabAll": "Tous les projets",
       "portfolio.tabDev": "Génie Logiciel & ERP",
-      "portfolio.tabDesign": "Infographie & Logos",
-      "portfolio.tabMaintenance": "Maintenance & Réseaux",
+      "portfolio.tabDesign": "Infographie & Design",
+      "portfolio.tabSystems": "Systèmes & Réseaux",
       "portfolio.liveBtn": "Démo en ligne →",
       "portfolio.sourceBtn": "Code Source GitHub",
 
@@ -112,11 +174,10 @@ document.addEventListener('DOMContentLoaded', () => {
       "footer.hireBtn": "Me recruter",
       "footer.bio": "Technologue en Génie Logiciel & Systèmes d'Information, certifié Ateliers Google. Spécialisé dans la conception logicielle, la maintenance d'infrastructures et l'infographie.",
       "footer.navTitle": "Navigation",
-      "footer.cvLink": "📄 Télécharger CV (PDF)",
       "footer.contactTitle": "Coordonnées",
       "footer.stayConnected": "Restons connectés",
       "footer.placeholder": "Votre adresse email...",
-      "footer.copyright": "Copyright © 2026 NDE Jordan Loïc · LaboGraphie Dev. Tous droits réservés.",
+      "footer.copyright": "Copyright © 2026 NDE Jordan L. · LaboGraphie Dev. Tous droits réservés.",
       "footer.terms": "Conditions d'utilisation",
       "footer.privacy": "Politique de confidentialité"
     },
@@ -127,25 +188,23 @@ document.addEventListener('DOMContentLoaded', () => {
       "nav.resume": "Resume",
       "nav.projects": "Projects",
       "nav.contact": "Contact",
-      "hero.status": "Available for contracts, dev & opportunities",
       "hero.hello": "Hello !",
       "hero.intro": "I'm",
       "hero.role": "Full-Stack Developer",
       "hero.quote": "“Jordan's technical excellence and software architecture ensure the success of our projects in production. Highly recommended!”",
       "hero.portfolioBtn": "Portfolio",
       "hero.hireBtn": "Hire me",
-      "hero.cvDownload": "Download CV",
-      "hero.expLabel": "Experience & Engineering",
+      "hero.expLabel": "Experience & Design",
 
       "services.titlePre": "My",
       "services.titleOrange": "Services",
-      "services.sub": "Software Engineering Technologist certified by Google Workshops: robust application architecture, databases, IT maintenance & graphic design.",
+      "services.sub": "Software Engineering Technologist certified by Google Workshops: robust application architecture, databases, and visual creations.",
       "services.s1Title": "Software Engineering & Web Apps",
       "services.s1Desc": "Full-cycle SaaS and ERP architecture design, microservices, RESTful APIs, and responsive applications with resilient offline synchronization.",
       "services.s2Title": "Databases & LIMS Systems",
       "services.s2Desc": "Rigorous relational data modeling (SQL/PostgreSQL), clinical sample tracking, transactional integrity, and high-performance query optimization.",
-      "services.s3Title": "IT Maintenance, Networks & Design",
-      "services.s3Desc": "Structured network cabling, patch panels, biometric access terminals, hardware/software troubleshooting, and professional visual branding (logos, flyers).",
+      "services.s3Title": "Graphic Design & Art Direction",
+      "services.s3Desc": "Art direction, design system development, scalable vector logos, event flyers, and high-impact digital marketing assets.",
 
       "exp.titlePre": "My",
       "exp.titleOrange": "Work Experience & Education",
@@ -161,14 +220,14 @@ document.addEventListener('DOMContentLoaded', () => {
       "exp.ambamDiploma": "Mathematics & Bac C (Sciences)",
       "exp.ambamRole": "Mathematical Rigor & First Web Projects",
       "exp.ambamDesc": "Two foundational years in advanced mathematics. First production web deployment in 2017 with the official website of Ambam Bilingual High School.",
+      "exp.cvBtn": "Download My Full Resume (PDF)",
 
       "why.titlePre": "Why",
       "why.titleOrange": "Hire Me?",
-      "why.text": "Versatile and rigorous, I dedicate my expertise to software development, IT infrastructure maintenance, and visual creativity. Certified by Google Workshops, I build information systems designed to endure.",
+      "why.text": "Versatile and rigorous, I dedicate my expertise to application development, IT infrastructure maintenance, and visual creativity. Certified by Google Workshops, I build information systems designed to endure.",
       "why.m1Label": "Verifiable production code",
       "why.m2Label": "3rd National Tech Award (Palme d'Or)",
       "why.contactBtn": "Contact Me",
-      "why.downloadCvBtn": "Download My Resume (PDF)",
 
       "portfolio.headPre": "Explore",
       "portfolio.headSub": "my",
@@ -176,8 +235,8 @@ document.addEventListener('DOMContentLoaded', () => {
       "portfolio.seeAll": "View All",
       "portfolio.tabAll": "All Projects",
       "portfolio.tabDev": "Software Eng. & ERP",
-      "portfolio.tabDesign": "Graphic Design & Logos",
-      "portfolio.tabMaintenance": "Maintenance & Networks",
+      "portfolio.tabDesign": "Graphic Design & Art",
+      "portfolio.tabSystems": "Systems & Networks",
       "portfolio.liveBtn": "Live Demo →",
       "portfolio.sourceBtn": "GitHub Source Code",
 
@@ -215,11 +274,10 @@ document.addEventListener('DOMContentLoaded', () => {
       "footer.hireBtn": "Hire me",
       "footer.bio": "Software Engineering & Information Systems Technologist, certified by Google Workshops. Specialized in application architecture, network maintenance, and graphic design.",
       "footer.navTitle": "Navigation",
-      "footer.cvLink": "📄 Download Resume (PDF)",
       "footer.contactTitle": "Contact Info",
       "footer.stayConnected": "Stay Connected",
       "footer.placeholder": "Your email address...",
-      "footer.copyright": "Copyright © 2026 NDE Jordan Loïc · LaboGraphie Dev. All Rights Reserved.",
+      "footer.copyright": "Copyright © 2026 NDE Jordan L. · LaboGraphie Dev. All Rights Reserved.",
       "footer.terms": "Terms of Use",
       "footer.privacy": "Privacy Policy"
     }
@@ -232,58 +290,42 @@ document.addEventListener('DOMContentLoaded', () => {
     currentLang = lang;
     localStorage.setItem('jordan_portfolio_lang', lang);
 
-    // Update active state on language buttons
     const langBtns = document.querySelectorAll('.lang-btn');
     langBtns.forEach(btn => {
-      if (btn.getAttribute('data-lang') === lang) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
+      if (btn.getAttribute('data-lang') === lang) btn.classList.add('active');
+      else btn.classList.remove('active');
     });
 
-    // Translate all tagged elements with a smooth micro-fade
-    const i18nElements = document.querySelectorAll('[data-i18n]');
-    i18nElements.forEach(el => {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (translations[lang][key]) {
-        el.style.opacity = '0.7';
-        setTimeout(() => {
-          el.innerHTML = translations[lang][key];
-          el.style.opacity = '1';
-        }, 120);
+        el.innerHTML = translations[lang][key];
       }
     });
 
-    // Translate placeholder attributes
-    const placeholderEls = document.querySelectorAll('[data-i18n-placeholder]');
-    placeholderEls.forEach(el => {
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
       const key = el.getAttribute('data-i18n-placeholder');
       if (translations[lang][key]) {
         el.placeholder = translations[lang][key];
       }
     });
 
-    // Update portfolio detail with current language
     updateActiveProjectDetail();
   }
 
-  // Setup language toggle click handlers
   const langBtns = document.querySelectorAll('.lang-btn');
   langBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const targetLang = btn.getAttribute('data-lang');
-      applyLanguage(targetLang);
+      applyLanguage(btn.getAttribute('data-lang'));
     });
   });
 
-  // Apply on startup
   applyLanguage(currentLang);
 
 
   /* =========================================================================
-     2. DONNÉES DU PORTFOLIO MULTI-CATÉGORIES (DEV, DESIGN, MAINTENANCE)
+     3. VRAI CARROUSEL GLISSANT HORIZONTAL POUR LE PORTFOLIO
      ========================================================================= */
   const projectsData = [
     {
@@ -307,48 +349,49 @@ document.addEventListener('DOMContentLoaded', () => {
       type: "link"
     },
     {
-      title_fr: "Identité Visuelle & Chartes Graphiques — LeGuide Informatique",
-      title_en: "Brand Identity & Design System — LeGuide Informatique",
-      desc_fr: "Direction artistique complète, conception de logos vectoriels scalables, déclinaisons typographiques et guides d'utilisation de marque pour la promotion d'outils et services numériques.",
-      desc_en: "Comprehensive art direction, scalable vector logo design, typography pairings, and complete brand identity guidelines for technology publications.",
-      live: "rsc/img/projets/infographie_branding.jpg",
+      title_fr: "Infographie & Créations Graphiques — NDE Jordan L.",
+      title_en: "Graphic Design & Visual Artwork — NDE Jordan L.",
+      desc_fr: "Direction artistique et réalisations infographiques complètes : chartes visuelles, affiches événementielles promotionnelles, typographie soignée et identité de marque numérique.",
+      desc_en: "Full-scale art direction and graphic design: brand visual systems, high-impact promotional event posters, tailored typography, and digital identity.",
+      live: "rsc/img/projets/infographie_jordan.png",
       github: "https://github.com/Nadroj-ciol",
       category: "infographie",
       type: "image"
     },
     {
-      title_fr: "Campagnes Visuelles & Flyers Événementiels Haute Résolution",
-      title_en: "Visual Campaigns & High-Resolution Event Posters",
-      desc_fr: "Conception infographique avancée de supports de communication imprimés et digitaux : affiches pour conférences tech, bannières pour réseaux sociaux et flyers promotionnels à fort impact visuel.",
-      desc_en: "Advanced graphic design for print and digital marketing campaigns: high-impact event flyers, social media banners, and promotional tech conference posters.",
-      live: "rsc/img/projets/infographie_flyer.jpg",
+      title_fr: "LaboGraphie Web — Plateforme d'Ingénierie & CyberTech",
+      title_en: "LaboGraphie Web — Engineering & CyberTech Platform",
+      desc_fr: "Plateforme web immersive haute performance pour profils tech et télécoms/cybersécurité, temps de chargement éclair et fluidité mobile chirurgicale.",
+      desc_en: "High-performance immersive web platform for tech engineering and cybersecurity profiles, featuring fast load times and clean mobile ergonomics.",
+      live: "https://portfolio-edii.vercel.app",
+      github: "https://github.com/Nadroj-ciol/portfolio-edii",
+      category: "dev",
+      type: "link"
+    },
+    {
+      title_fr: "Consultant IT & Systèmes Cliniques — Sister Schola",
+      title_en: "IT Consultant & Clinical Systems — Sister Schola",
+      desc_fr: "Audit technique, modélisation des flux d'admission et intégration de bornes d'authentification pour structures médicales et scolaires.",
+      desc_en: "Technical auditing, patient intake workflow modeling, and authentication terminal integration for clinical and school organizations.",
+      live: "rsc/img/projets/consultant IT/consultation-sisterShola.png",
       github: "https://github.com/Nadroj-ciol",
-      category: "infographie",
+      category: "systems",
       type: "image"
     },
     {
-      title_fr: "Architecture Réseau, Baie de Brassage & Câblage Structuré",
-      title_en: "Network Architecture, Server Racks & Structured Cabling",
-      desc_fr: "Déploiement et organisation d'armoires serveurs, adressage IP, brassage de câbles Ethernet catégorie 6, configuration de switches administrables et sécurisation de passerelles réseau.",
-      desc_en: "Deployment and structuring of data center racks, IP addressing schemas, Cat6 structured cabling, managed switch configuration, and network security gateways.",
-      live: "rsc/img/projets/reseau_datacenter.jpg",
+      title_fr: "Cartographie de Projet & Architecture Logicielle",
+      title_en: "Project Architecture Mapping & Systems Engineering",
+      desc_fr: "Conception de schémas d'architecture logicielle, diagrammes relationnels, flux de données transactionnels et mapping fonctionnel de modules complexes.",
+      desc_en: "Architectural blueprint design, relational database schematics, transactional data pipelines, and full modular functional mapping.",
+      live: "rsc/img/projets/dev/labographie-rpoject-map.png",
       github: "https://github.com/Nadroj-ciol",
-      category: "maintenance",
-      type: "image"
-    },
-    {
-      title_fr: "Maintenance Hardware, Systèmes & Bornes Biométriques",
-      title_en: "Hardware Maintenance, OS Systems & Biometric Terminals",
-      desc_fr: "Diagnostic matériel au composant, installation et calibrage de bornes biométriques d'émargement universitaire (U.P. Siantou), et maintenance préventive/curative de parcs informatiques.",
-      desc_en: "Component-level hardware diagnostics, university biometric clock-in terminal calibration (U.P. Siantou), and preventive/curative enterprise IT fleet maintenance.",
-      live: "rsc/img/projets/maintenance_hardware.jpg",
-      github: "https://github.com/Nadroj-ciol",
-      category: "maintenance",
+      category: "dev",
       type: "image"
     }
   ];
 
   let currentProjectIdx = 0;
+  const portfolioTrack = document.getElementById('portfolioTrack');
   const cards = document.querySelectorAll('.portfolio-card');
   const dots = document.querySelectorAll('#portfolioDots span');
   const activeTitle = document.getElementById('activeProjectTitle');
@@ -356,6 +399,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const activeLink = document.getElementById('activeProjectLink');
   const btnLive = document.getElementById('btnDetailLive');
   const btnGit = document.getElementById('btnDetailGit');
+  const btnPortfolioPrev = document.getElementById('btnPortfolioPrev');
+  const btnPortfolioNext = document.getElementById('btnPortfolioNext');
 
   function updateActiveProjectDetail() {
     if (currentProjectIdx < 0 || currentProjectIdx >= projectsData.length) return;
@@ -385,25 +430,25 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnGit) btnGit.href = p.github;
   }
 
-  function setProject(idx) {
+  function setProject(idx, scrollToCard = true) {
     if (idx < 0 || idx >= projectsData.length) return;
     currentProjectIdx = idx;
 
     cards.forEach((c, i) => {
       if (i === idx) {
         c.classList.add('active');
-        c.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        if (scrollToCard && portfolioTrack) {
+          const cardLeft = c.offsetLeft - portfolioTrack.offsetLeft;
+          portfolioTrack.scrollTo({ left: cardLeft - 10, behavior: 'smooth' });
+        }
       } else {
         c.classList.remove('active');
       }
     });
 
     dots.forEach((d, i) => {
-      if (i === idx) {
-        d.className = 'dot-bar active';
-      } else {
-        d.className = 'dot-circle';
-      }
+      if (i === idx) d.className = 'dot-bar active';
+      else d.className = 'dot-circle';
     });
 
     updateActiveProjectDetail();
@@ -417,7 +462,24 @@ document.addEventListener('DOMContentLoaded', () => {
     dot.addEventListener('click', () => setProject(i));
   });
 
-  // Filtres de tags sous le carrousel
+  // Boutons flèches de défilement horizontal du carrousel
+  if (btnPortfolioNext) {
+    btnPortfolioNext.addEventListener('click', () => {
+      let nextIdx = currentProjectIdx + 1;
+      if (nextIdx >= projectsData.length) nextIdx = 0;
+      setProject(nextIdx);
+    });
+  }
+
+  if (btnPortfolioPrev) {
+    btnPortfolioPrev.addEventListener('click', () => {
+      let prevIdx = currentProjectIdx - 1;
+      if (prevIdx < 0) prevIdx = projectsData.length - 1;
+      setProject(prevIdx);
+    });
+  }
+
+  // Filtrage par onglets
   const tagPills = document.querySelectorAll('.tag-pill');
   tagPills.forEach(pill => {
     pill.addEventListener('click', () => {
@@ -430,22 +492,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const cat = card.getAttribute('data-cat');
         if (filter === 'all' || cat === filter) {
           card.style.display = 'block';
-          card.style.animation = 'scaleCardIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards';
         } else {
           card.style.display = 'none';
         }
       });
 
-      // Synchroniser avec le premier projet visible
+      if (portfolioTrack) portfolioTrack.scrollTo({ left: 0, behavior: 'smooth' });
+
       const firstVisible = Array.from(cards).find(c => c.style.display !== 'none');
       if (firstVisible) {
         const idx = parseInt(firstVisible.getAttribute('data-index'), 10);
-        setProject(idx);
+        setProject(idx, false);
       }
     });
   });
 
-  // Bouton "Voir tout" : réinitialise le filtre
   const btnToggleAllProjects = document.getElementById('btnToggleAllProjects');
   if (btnToggleAllProjects) {
     btnToggleAllProjects.addEventListener('click', () => {
@@ -456,7 +517,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* =========================================================================
-     3. CARROUSEL TÉMOIGNAGES AVEC DÉFILEMENT AUTOMATIQUE (AUTO-PLAY)
+     4. CARROUSEL TÉMOIGNAGES (AUTO-PLAY & DÉFILEMENT FLUIDE)
      ========================================================================= */
   const testiCards = document.querySelectorAll('.testi-card');
   const testiDots = document.querySelectorAll('#testiDots span');
@@ -467,7 +528,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentTesti = 0;
   let testiInterval = null;
-  const TESTI_INTERVAL_MS = 4800;
+  const TESTI_INTERVAL_MS = 5000;
 
   function showTestimonial(idx) {
     if (idx < 0) idx = testiCards.length - 1;
@@ -482,16 +543,13 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         card.classList.remove('active');
         card.style.opacity = '0.35';
-        card.style.transform = 'translateY(12px) scale(0.97)';
+        card.style.transform = 'translateY(10px) scale(0.97)';
       }
     });
 
     testiDots.forEach((d, i) => {
-      if (i === idx) {
-        d.className = 'dot-bar active';
-      } else {
-        d.className = 'dot-circle';
-      }
+      if (i === idx) d.className = 'dot-bar active';
+      else d.className = 'dot-circle';
     });
   }
 
@@ -514,7 +572,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (btnTestiNext) {
     btnTestiNext.addEventListener('click', () => {
       showTestimonial(currentTesti + 1);
-      startTestiAutoPlay(); // Restart timer
+      startTestiAutoPlay();
     });
   }
 
@@ -532,7 +590,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Pause au survol (hover) pour confort de lecture
   if (testiTrack) {
     testiTrack.addEventListener('mouseenter', stopTestiAutoPlay);
     testiTrack.addEventListener('mouseleave', startTestiAutoPlay);
@@ -542,7 +599,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* =========================================================================
-     4. VISIONNEUSE LIGHTBOX (IMAGE ZOOM MODAL)
+     5. VISIONNEUSE LIGHTBOX (ZOOM PLEIN ÉCRAN)
      ========================================================================= */
   const lightbox = document.getElementById('imageLightbox');
   const lightboxImg = document.getElementById('lightboxImg');
@@ -581,7 +638,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* =========================================================================
-     5. COMPTEURS ANIMÉS (COUNT-UP EFFECT)
+     6. COMPTEURS ANIMÉS (COUNT-UP EFFECT)
      ========================================================================= */
   const countUpElements = document.querySelectorAll('.count-up');
   let countUpTriggered = false;
@@ -590,14 +647,13 @@ document.addEventListener('DOMContentLoaded', () => {
     countUpElements.forEach(el => {
       const target = parseFloat(el.getAttribute('data-target') || '0');
       const suffix = el.textContent.includes('+') ? '+' : (el.textContent.includes('%') ? '%' : (el.textContent.includes('/5') ? '/5' : ''));
-      const isFloat = el.getAttribute('data-target').includes('.');
-      const duration = 1800; // ms
+      const isFloat = (el.getAttribute('data-target') || '').includes('.');
+      const duration = 1600;
       const startTime = performance.now();
 
       function update(currentTime) {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        // Easing out cubic
         const ease = 1 - Math.pow(1 - progress, 3);
         const currentVal = (target * ease);
 
@@ -618,122 +674,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
-  /* =========================================================================
-     6. SCROLL REVEAL & NAVIGATION SCROLL-SPY
-     ========================================================================= */
-  const sections = document.querySelectorAll('section[id]');
-  const navItems = document.querySelectorAll('.nav-item');
-  const reveals = document.querySelectorAll('.reveal-on-scroll');
-
-  const checkScroll = () => {
-    const scrollY = window.pageYOffset;
-    const windowH = window.innerHeight;
-
-    // Highlight menu
-    sections.forEach(current => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 150;
-      const sectionId = current.getAttribute('id');
-      const link = document.querySelector(`.nav-item[href*="${sectionId}"]`);
-
-      if (link) {
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          navItems.forEach(i => i.classList.remove('active'));
-          link.classList.add('active');
+  const whySection = document.querySelector('.why-section');
+  if (whySection) {
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !countUpTriggered) {
+          countUpTriggered = true;
+          runCountUp();
         }
-      }
-    });
-
-    // Reveal animations
-    reveals.forEach(el => {
-      const elTop = el.getBoundingClientRect().top;
-      if (elTop < windowH - 60) {
-        el.classList.add('revealed');
-      }
-    });
-
-    // Count-up on scroll
-    const whySection = document.querySelector('.why-section');
-    if (whySection && !countUpTriggered) {
-      const rect = whySection.getBoundingClientRect();
-      if (rect.top < windowH - 80) {
-        countUpTriggered = true;
-        runCountUp();
-      }
-    }
-  };
-
-  window.addEventListener('scroll', checkScroll, { passive: true });
-  window.addEventListener('load', checkScroll);
-  checkScroll(); // Trigger immediately at script execution
-  setTimeout(checkScroll, 250); // Fallback after font load
-
-
-  /* =========================================================================
-     7. MENU MOBILE TOGGLE
-     ========================================================================= */
-  const mobileToggle = document.getElementById('mobileToggle');
-  const navbar = document.getElementById('navbar');
-
-  if (mobileToggle && navbar) {
-    mobileToggle.addEventListener('click', () => {
-      navbar.classList.toggle('open');
-      const expanded = navbar.classList.contains('open');
-      mobileToggle.setAttribute('aria-expanded', expanded);
-    });
-
-    navItems.forEach(item => {
-      item.addEventListener('click', () => {
-        navbar.classList.remove('open');
-        mobileToggle.setAttribute('aria-expanded', 'false');
       });
-    });
-  }
-
-
-  /* =========================================================================
-     8. MICRO-INTERACTION TILT 3D DIGNE DE FRAMER MOTION
-     ========================================================================= */
-  const tiltCards = document.querySelectorAll('.tilt-card');
-  if (window.innerWidth > 992) {
-    tiltCards.forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        card.style.transform = `perspective(1000px) rotateY(${x * 0.035}deg) rotateX(${-y * 0.035}deg) translateY(-6px)`;
-      });
-
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0)';
-        card.style.transition = 'transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1)';
-      });
-
-      card.addEventListener('mouseenter', () => {
-        card.style.transition = 'none';
-      });
-    });
-
-    // Tilt sur le dôme Hero
-    const heroDome = document.querySelector('.hero-dome-wrapper');
-    if (heroDome) {
-      heroDome.addEventListener('mousemove', (e) => {
-        const rect = heroDome.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        heroDome.style.transform = `perspective(1000px) rotateY(${x * 0.03}deg) rotateX(${-y * 0.03}deg)`;
-      });
-
-      heroDome.addEventListener('mouseleave', () => {
-        heroDome.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
-        heroDome.style.transition = 'transform 0.5s ease';
-      });
-
-      heroDome.addEventListener('mouseenter', () => {
-        heroDome.style.transition = 'none';
-      });
-    }
+    }, { threshold: 0.2 });
+    countObserver.observe(whySection);
   }
 
 });
