@@ -590,6 +590,82 @@ a {
   padding-right: 1.5rem;
 }
 
+.badge-diploma {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--figma-orange);
+  background: var(--figma-orange-light);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+  margin-top: 0.35rem;
+}
+
+.why-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.skill-pill {
+  background: var(--figma-bg-subtle);
+  border: 1px solid var(--figma-border);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--figma-text-dark);
+}
+
+/* Animations Reveal au Scroll & Micro-interactions */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Effet pulsation douce sur les étincelles */
+@keyframes sparkle-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.35) rotate(10deg); opacity: 1; filter: drop-shadow(0 0 6px var(--figma-orange)); }
+}
+
+.doodle-sparkle-left,
+.doodle-sparkle-right,
+.doodle-star {
+  display: inline-block;
+  animation: sparkle-pulse 3s infinite ease-in-out;
+}
+
+/* Hover effects fluides sur cartes */
+.service-card,
+.portfolio-card,
+.blog-card,
+.testi-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.service-card:hover,
+.blog-card:hover {
+  transform: translateY(-8px);
+}
+
+.cta-pill-active:hover,
+.btn-hire-orange:hover,
+.btn-detail-primary:hover,
+.btn-see-all:hover,
+.discuss-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(253, 111, 0, 0.45);
+}
+
 .company-name {
   font-size: 1.35rem;
   font-weight: 700;
