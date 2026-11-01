@@ -404,7 +404,7 @@
             </a>
           </div>
           <p class="detail-desc" id="activeProjectDesc">
-            ERP agricole de pointe digitalisant la gestion des parcelles, le suivi financier des récoltes, les stocks et la traçabilité en temps réel, conçu pour les exploitants d'Afrique subsaharienne avec mode hors-ligne résilient.
+            ERP agricole de pointe digitalisant la gestion des parcelles, le suivi financier des récoltes, les stocks et la traçabilité en temps réel, conçu pour les exploitants avec mode hors-ligne résilient.
           </p>
           <div class="detail-actions">
             <a href="https://agroflowerp.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-detail-primary" id="btnDetailLive">Live Demo &rarr;</a>
@@ -416,51 +416,364 @@
     </section>
 
     <!-- =========================================================================
-         7. SECTION CONTACT & FOOTER (Finition soignée & Liens directs)
+         7. SECTION TESTIMONIALS (Reproduction stricte Image 1)
+         Grand bloc sombre aux coins très arrondis, étincelles (✦),
+         titre 'Testimonials That Speak to My Results' avec 'My Results' en orange,
+         cartes avec guillemets XXL sombres, avatar, nom, rôle, 5 étoiles et avis.
          ========================================================================= -->
-    <section class="contact-section-figma" id="contact">
+    <section class="testimonials-section" id="testimonials">
       <div class="container">
-        <div class="contact-box-figma">
-          <h2 class="contact-heading">
-            Have a project in mind? <br>
-            <span class="text-orange">Let's build it together.</span>
-          </h2>
-          <p class="contact-subtext">
-            Disponible pour missions techniques, architecture logicielle, développement d'applications ou lead d'équipe.
-          </p>
+        <div class="testimonials-black-card">
+          
+          <div class="testi-header">
+            <div class="testi-badge-doodle">
+              <span class="doodle-star">✦</span>
+              <span class="doodle-curve">⌒</span>
+            </div>
+            <h2 class="testi-title">
+              Testimonials That <br>
+              Speak to <span class="text-orange">My Results</span>
+            </h2>
+            <p class="testi-subtitle">
+              Retours d'expérience et appréciations des collaborateurs et parties prenantes ayant éprouvé la rigueur de nos architectures logicielles et l'esprit du collectif LaboGraphie.
+            </p>
+          </div>
 
-          <div class="contact-tiles-row">
-            <a href="https://wa.me/237679279447" target="_blank" rel="noopener noreferrer" class="contact-chip whatsapp">
-              <span class="chip-icon">💬</span>
-              <span>WhatsApp : +237 679 279 447</span>
+          <!-- Grille des témoignages (style exact Figma) -->
+          <div class="testimonials-grid">
+            
+            <!-- Carte 1 : Yvana Ketchap -->
+            <div class="testi-card">
+              <div class="quote-bg-glyph">“</div>
+              <div class="testi-user-row">
+                <img src="rsc/img/avatar_yvana.jpg" alt="Yvana Ketchap" class="testi-avatar">
+                <div class="testi-user-info">
+                  <h4 class="testi-name">Yvana Ketchap</h4>
+                  <span class="testi-role">Software Engineering · GLBD Siantou</span>
+                </div>
+              </div>
+              <div class="testi-stars-row">
+                <span class="stars-gold">★★★★★</span>
+                <span class="rating-num">5.0</span>
+              </div>
+              <p class="testi-text">
+                « Jordan possède une rigueur technique exemplaire et une capacité rare à débloquer des architectures complexes. Son leadership sur le Sprint #1 LaboGraphie a permis à toute la promo d'élever son niveau sans compromis. »
+              </p>
+            </div>
+
+            <!-- Carte 2 : Brinda -->
+            <div class="testi-card">
+              <div class="quote-bg-glyph">“</div>
+              <div class="testi-user-row">
+                <img src="rsc/img/avatar_brinda.jpg" alt="Brinda" class="testi-avatar">
+                <div class="testi-user-info">
+                  <h4 class="testi-name">Brinda</h4>
+                  <span class="testi-role">Collaboratrice Tech &amp; Frontend</span>
+                </div>
+              </div>
+              <div class="testi-stars-row">
+                <span class="stars-gold">★★★★★</span>
+                <span class="rating-num">5.0</span>
+              </div>
+              <p class="testi-text">
+                « Travailler avec Jordan sur des interfaces à fort impact comme AgroFlow et Acuvera prouve sa maîtrise : le souci du détail dans l'UI se combine à une robustesse backend sans faille en production. »
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Points de pagination du carrousel d'avis -->
+          <div class="testi-dots">
+            <span class="dot-bar active"></span>
+            <span class="dot-circle"></span>
+            <span class="dot-circle"></span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         8. SECTION "HAVE AN AWESOME PROJECT IDEA? LET'S DISCUSS" (Reproduction stricte Image 2)
+         Grand titre centré avec "Let's Discuss" en orange,
+         champ pilule d'email avec bouton 'Send' orange intégré,
+         3 métriques de confiance (4.9/5 Rating, 25+ Awards, Certified Lead).
+         ========================================================================= -->
+    <section class="discuss-section">
+      <div class="container discuss-container">
+        
+        <h2 class="discuss-headline">
+          Have an Awesome Project <br>
+          Idea? <span class="text-orange">Let’s Discuss</span>
+        </h2>
+
+        <!-- Pilule de souscription / prise de contact -->
+        <form class="discuss-pill-form" onsubmit="event.preventDefault(); window.location.href='mailto:labographieteam@gmail.com?subject=Awesome Project Idea&body=Bonjour Jordan,';">
+          <div class="pill-input-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A0A0A0" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <input type="email" placeholder="Enter Email Address" class="discuss-email-input" required>
+          <button type="submit" class="discuss-submit-btn">Send</button>
+        </form>
+
+        <!-- Métriques de confiance sous la barre d'email -->
+        <div class="discuss-trust-badges">
+          <div class="trust-badge-item">
+            <span class="trust-icon">⭐</span>
+            <span><strong>4.9/5</strong> Average Rating</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-badge-item">
+            <span class="trust-icon">🏆</span>
+            <span><strong>100%</strong> Production Ready</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-badge-item">
+            <span class="trust-icon">🛡️</span>
+            <span><strong>Certified</strong> Software Architect</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         9. BANNER MARQUEE ORANGE INCLINÉ (Reproduction stricte Image 2)
+         Bandeau ticker infini orange avec texte penché défilant :
+         UI/UX Design ✦ App Design ✦ Dashboard ✦ Wireframe ✦ User Research ✦ Full-Stack
+         ========================================================================= -->
+    <section class="marquee-ribbon-section">
+      <div class="marquee-ribbon-track">
+        <div class="marquee-content">
+          <span>UI/UX Design</span> <span class="star-sep">✦</span>
+          <span>App Design</span> <span class="star-sep">✦</span>
+          <span>Dashboard</span> <span class="star-sep">✦</span>
+          <span>Wireframe</span> <span class="star-sep">✦</span>
+          <span>User Research</span> <span class="star-sep">✦</span>
+          <span>Full-Stack Development</span> <span class="star-sep">✦</span>
+          <span>Software Architecture</span> <span class="star-sep">✦</span>
+          <span>Docker &amp; LIMS</span> <span class="star-sep">✦</span>
+        </div>
+        <div class="marquee-content" aria-hidden="true">
+          <span>UI/UX Design</span> <span class="star-sep">✦</span>
+          <span>App Design</span> <span class="star-sep">✦</span>
+          <span>Dashboard</span> <span class="star-sep">✦</span>
+          <span>Wireframe</span> <span class="star-sep">✦</span>
+          <span>User Research</span> <span class="star-sep">✦</span>
+          <span>Full-Stack Development</span> <span class="star-sep">✦</span>
+          <span>Software Architecture</span> <span class="star-sep">✦</span>
+          <span>Docker &amp; LIMS</span> <span class="star-sep">✦</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         10. SECTION "FROM MY BLOG POST" (Reproduction stricte Image 3)
+         Titre "From my blog post" avec bouton 'See All' orange à droite,
+         3 cartes de blog modernes avec visuel, tag, auteur & date, titre
+         et flèche dans cercle sombre en bas à droite.
+         ========================================================================= -->
+    <section class="blog-section" id="blog">
+      <div class="container">
+        
+        <div class="blog-top-bar">
+          <h2 class="blog-heading">From my <br><span class="text-orange">blog post</span></h2>
+          <a href="#blog" class="btn-see-all">See All</a>
+        </div>
+
+        <div class="blog-grid">
+          
+          <!-- Article 1 -->
+          <article class="blog-card">
+            <div class="blog-img-wrap">
+              <img src="rsc/img/projets/cyber_interface.jpg" alt="UI/UX & Architecture" class="blog-img">
+              <span class="blog-tag-pill">UI/UX Design</span>
+            </div>
+            <div class="blog-meta-row">
+              <span class="blog-dot-orange">●</span>
+              <span class="blog-author">Jordan NDE</span>
+              <span class="blog-sep">•</span>
+              <span class="blog-date">10 Nov, 2026</span>
+            </div>
+            <h3 class="blog-title">
+              Design Unraveled: Behind the Scenes of UI/UX, Performance &amp; Scalable Architecture
+            </h3>
+            <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="blog-arrow-btn" aria-label="Lire l'article">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
             </a>
-            <a href="https://www.linkedin.com/in/jordan-lo%C3%AFc-nde-63b041427/" target="_blank" rel="noopener noreferrer" class="contact-chip linkedin">
-              <span class="chip-icon">🔗</span>
-              <span>LinkedIn : Jordan-Loïc NDE</span>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="blog-card">
+            <div class="blog-img-wrap">
+              <img src="rsc/img/projets/card_agroflow.png" alt="AgroFlow AgriTech" class="blog-img">
+              <span class="blog-tag-pill">App Design &amp; ERP</span>
+            </div>
+            <div class="blog-meta-row">
+              <span class="blog-dot-orange">●</span>
+              <span class="blog-author">Jordan NDE</span>
+              <span class="blog-sep">•</span>
+              <span class="blog-date">09 Oct, 2026</span>
+            </div>
+            <h3 class="blog-title">
+              AgroFlow ERP: Engineering Resilient Agricultural Systems for African Producers
+            </h3>
+            <a href="https://agroflowerp.vercel.app" target="_blank" rel="noopener noreferrer" class="blog-arrow-btn" aria-label="Lire l'article">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
             </a>
-            <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="contact-chip github">
-              <span class="chip-icon">💻</span>
-              <span>GitHub : @Nadroj-ciol</span>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="blog-card">
+            <div class="blog-img-wrap">
+              <img src="rsc/img/projets/card_acuvera.png" alt="Acuvera Clinical" class="blog-img">
+              <span class="blog-tag-pill">HealthTech &amp; LIMS</span>
+            </div>
+            <div class="blog-meta-row">
+              <span class="blog-dot-orange">●</span>
+              <span class="blog-author">Jordan NDE</span>
+              <span class="blog-sep">•</span>
+              <span class="blog-date">18 Aug, 2026</span>
+            </div>
+            <h3 class="blog-title">
+              Acuvera &amp; Baobab: Transforming Medical Records &amp; Biobank Traceability
+            </h3>
+            <a href="https://acuvera-clinical.vercel.app" target="_blank" rel="noopener noreferrer" class="blog-arrow-btn" aria-label="Lire l'article">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
             </a>
-            <a href="mailto:labographieteam@gmail.com" class="contact-chip email">
-              <span class="chip-icon">✉️</span>
-              <span>labographieteam@gmail.com</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         11. SECTION "LETS CONNECT THERE" & FOOTER CARTE NOIRE (Reproduction stricte Image 3)
+         Grand conteneur sombre arrondi :
+         Bannière haute "Lets Connect there" avec bouton orange "Hire me ↗",
+         Ligne séparatrice,
+         4 colonnes : Logo/Bio, Navigation, Contact, Newsletter input avec flèche orange,
+         Copyright & Liens de bas de page.
+         ========================================================================= -->
+    <section class="connect-footer-section" id="contact">
+      <div class="container">
+        <div class="footer-dark-card">
+          
+          <!-- Haut de carte : Titre + Bouton Hire me -->
+          <div class="footer-top-header">
+            <h2 class="connect-title">Lets Connect there</h2>
+            <a href="https://wa.me/237679279447" target="_blank" rel="noopener noreferrer" class="btn-hire-orange">
+              <span>Hire me</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
             </a>
           </div>
+
+          <div class="footer-card-divider"></div>
+
+          <!-- Grille des colonnes du footer -->
+          <div class="footer-columns-grid">
+            
+            <!-- Col 1 : Logo + Bio + Réseaux -->
+            <div class="footer-col col-brand">
+              <div class="footer-logo">
+                <div class="logo-mark">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" fill="#FD6F00"/>
+                    <path d="M8 8h3v5a3 3 0 0 1-3 3H7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M13 16h3v-5a3 3 0 0 0-3-3h-1" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <span class="logo-text">JORDAN<span class="logo-accent">DEV</span></span>
+              </div>
+              <p class="footer-brand-desc">
+                Développeur Full-Stack, Concepteur d'Architectures &amp; Lead Tech chez LaboGraphie Dev. Rigueur d'ingénierie, systèmes scalables et culture du code en production.
+              </p>
+              <div class="footer-social-icons">
+                <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="GitHub">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/jordan-lo%C3%AFc-nde-63b041427/" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="LinkedIn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="https://wa.me/237679279447" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="WhatsApp">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </a>
+                <a href="mailto:labographieteam@gmail.com" class="social-circle" aria-label="Email">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Col 2 : Navigation -->
+            <div class="footer-col col-nav">
+              <h4 class="footer-col-title">Navigation</h4>
+              <ul class="footer-links-list">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Service</a></li>
+                <li><a href="#experience">Resume</a></li>
+                <li><a href="#portfolio">Project</a></li>
+              </ul>
+            </div>
+
+            <!-- Col 3 : Contact -->
+            <div class="footer-col col-contact">
+              <h4 class="footer-col-title">Contact</h4>
+              <ul class="footer-links-list contact-list">
+                <li><span>+237 679 279 447</span></li>
+                <li><span>labographieteam@gmail.com</span></li>
+                <li><span>Yaoundé, Cameroun</span></li>
+                <li><span>github.com/Nadroj-ciol</span></li>
+              </ul>
+            </div>
+
+            <!-- Col 4 : Newsletter -->
+            <div class="footer-col col-newsletter">
+              <h4 class="footer-col-title">Get the latest information</h4>
+              <form class="footer-newsletter-form" onsubmit="event.preventDefault(); window.location.href='mailto:labographieteam@gmail.com?subject=Newsletter Subscription';">
+                <input type="email" placeholder="Email Address" class="footer-email-input" required>
+                <button type="submit" class="footer-email-btn" aria-label="S'inscrire">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </form>
+            </div>
+
+          </div>
+
+          <div class="footer-card-divider subtle"></div>
+
+          <!-- Bottom bar -->
+          <div class="footer-card-bottom">
+            <p class="footer-copyright">Copyright &copy; 2026 JordanDev · LaboGraphie. All Rights Reserved.</p>
+            <div class="footer-legal-links">
+              <a href="#hero">User Terms &amp; Conditions</a>
+              <span class="sep">|</span>
+              <a href="#hero">Privacy Policy</a>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="footer-figma">
-    <div class="container footer-figma-inner">
-      <div class="footer-logo-part">
-        <span class="logo-mark-sm"></span>
-        <strong>JORDAN<span class="text-orange">DEV</span></strong>
-      </div>
-      <p class="footer-copy">&copy; 2026 NDE Jordan Loïc · LaboGraphie Dev. All rights reserved.</p>
-    </div>
-  </footer>
 
   <script src="js/main.js"></script>
 </body>

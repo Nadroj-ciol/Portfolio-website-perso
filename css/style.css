@@ -985,77 +985,455 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   8. SECTION CONTACT & FOOTER
+   8. SECTION TESTIMONIALS (Image 1)
+   Grand bloc sombre avec vagues légères, étincelles ✦, cartes d'avis
+   avec guillemets XXL sombres, avatar, nom, 5 étoiles et avis
    -------------------------------------------------------------------------- */
-.contact-section-figma {
+.testimonials-section {
   padding: 5rem 0;
-  background: var(--figma-bg-subtle);
+  background: #FFFFFF;
 }
 
-.contact-box-figma {
-  background: #FFFFFF;
+.testimonials-black-card {
+  background: #111111;
   border-radius: var(--radius-card-lg);
   padding: 4.5rem 3.5rem;
-  text-align: center;
-  box-shadow: var(--shadow-card);
-  max-width: 960px;
-  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-dark-card);
 }
 
-.contact-heading {
+.testi-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3.5rem auto;
+  position: relative;
+  z-index: 2;
+}
+
+.testi-badge-doodle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--figma-orange);
+  font-size: 1.5rem;
+}
+
+.doodle-curve {
+  font-size: 2rem;
+  line-height: 0.8;
+  transform: rotate(180deg);
+}
+
+.testi-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.testi-subtitle {
+  font-size: 0.95rem;
+  color: #9E9E9E;
+  line-height: 1.6;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.testi-card {
+  background: #1B1B1B;
+  border-radius: var(--radius-card-md);
+  padding: 2.5rem 2.25rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #282828;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.testi-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(253, 111, 0, 0.4);
+}
+
+.quote-bg-glyph {
+  position: absolute;
+  top: -10px;
+  right: 1.5rem;
+  font-size: 7rem;
+  font-family: Georgia, serif;
+  color: #262626;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.testi-user-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.testi-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--figma-orange);
+}
+
+.testi-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.testi-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.testi-role {
+  font-size: 0.825rem;
+  color: #A0A0A0;
+}
+
+.testi-stars-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.stars-gold {
+  color: var(--figma-orange);
+  font-size: 1.15rem;
+  letter-spacing: 0.1rem;
+}
+
+.rating-num {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.testi-text {
+  font-size: 0.95rem;
+  color: #C2C2C2;
+  line-height: 1.65;
+  font-style: italic;
+  position: relative;
+  z-index: 2;
+}
+
+.testi-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   9. SECTION "HAVE AN AWESOME PROJECT IDEA? LET'S DISCUSS" (Image 2)
+   -------------------------------------------------------------------------- */
+.discuss-section {
+  padding: 6rem 0 4rem 0;
+  background: #FFFFFF;
+}
+
+.discuss-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.discuss-headline {
   font-size: 2.75rem;
   font-weight: 700;
   color: #1E1E1E;
   line-height: 1.2;
-  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.5rem;
 }
 
-.contact-subtext {
-  font-size: 1rem;
-  color: var(--figma-text-muted);
-  max-width: 600px;
-  margin: 0 auto 3rem auto;
-}
-
-.contact-tiles-row {
+.discuss-pill-form {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1.5px solid #E5E5E5;
+  border-radius: var(--radius-pill);
+  padding: 0.4rem 0.5rem 0.4rem 1.4rem;
+  width: 100%;
+  max-width: 580px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2.5rem;
+  transition: border-color 0.25s ease;
 }
 
-.contact-chip {
-  display: inline-flex;
+.discuss-pill-form:focus-within {
+  border-color: var(--figma-orange);
+}
+
+.pill-input-icon {
+  display: flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.85rem 1.6rem;
-  border: 1.5px solid #EAEAEA;
-  border-radius: var(--radius-pill);
-  font-size: 0.9rem;
-  font-weight: 500;
+  margin-right: 0.75rem;
+}
+
+.discuss-email-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
   color: #1E1E1E;
-  background: #FFFFFF;
+  background: transparent;
+}
+
+.discuss-email-input::placeholder {
+  color: #9E9E9E;
+}
+
+.discuss-submit-btn {
+  background: var(--figma-orange);
+  color: #FFFFFF;
+  border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
   transition: all 0.25s ease;
 }
 
-.contact-chip:hover {
-  border-color: var(--figma-orange);
-  background: var(--figma-orange-light);
-  color: var(--figma-orange);
-  transform: translateY(-2px);
+.discuss-submit-btn:hover {
+  background: var(--figma-orange-hover);
+  transform: scale(1.02);
 }
 
-.chip-icon {
+.discuss-trust-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.trust-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  color: #555555;
+}
+
+.trust-icon {
   font-size: 1.1rem;
 }
 
-.footer-figma {
-  padding: 2.5rem 0;
-  background: #FFFFFF;
-  border-top: 1px solid #EEEEEE;
+.trust-divider {
+  width: 1px;
+  height: 1.25rem;
+  background: #E0E0E0;
 }
 
-.footer-figma-inner {
+/* --------------------------------------------------------------------------
+   10. BANNER MARQUEE ORANGE INCLINÉ (Image 2)
+   Bandeau ticker défilant penché
+   -------------------------------------------------------------------------- */
+.marquee-ribbon-section {
+  background: var(--figma-orange);
+  padding: 1.4rem 0;
+  transform: rotate(-1.5deg) scaleX(1.05);
+  margin: 3.5rem 0 5rem 0;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(253, 111, 0, 0.25);
+}
+
+.marquee-ribbon-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 25s linear infinite;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-right: 2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.star-sep {
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* --------------------------------------------------------------------------
+   11. SECTION "FROM MY BLOG POST" (Image 3)
+   -------------------------------------------------------------------------- */
+.blog-section {
+  padding: 4rem 0 6rem 0;
+  background: #FFFFFF;
+}
+
+.blog-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3.5rem;
+}
+
+.blog-heading {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.blog-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-card-md);
+  padding: 1.25rem;
+  border: 1px solid #ECECEC;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card);
+}
+
+.blog-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  border-radius: var(--radius-card-sm);
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  background: #111111;
+}
+
+.blog-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-img {
+  transform: scale(1.05);
+}
+
+.blog-tag-pill {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  color: #1E1E1E;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-pill);
+}
+
+.blog-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--figma-text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.blog-dot-orange {
+  color: var(--figma-orange);
+  font-size: 0.6rem;
+}
+
+.blog-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  line-height: 1.45;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.blog-arrow-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 54px;
+  height: 54px;
+  background: #111111;
+  border-top-left-radius: 26px;
+  border-bottom-right-radius: var(--radius-card-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease;
+}
+
+.blog-arrow-btn:hover {
+  background: var(--figma-orange);
+}
+
+/* --------------------------------------------------------------------------
+   12. FOOTER CARTE NOIRE "LETS CONNECT THERE" (Image 3)
+   -------------------------------------------------------------------------- */
+.connect-footer-section {
+  padding: 2rem 0 5rem 0;
+  background: #FFFFFF;
+}
+
+.footer-dark-card {
+  background: #111111;
+  border-radius: var(--radius-card-lg);
+  padding: 4.5rem 4rem 3rem 4rem;
+  box-shadow: var(--shadow-dark-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-top-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1063,14 +1441,221 @@ a {
   gap: 1.5rem;
 }
 
-.footer-logo-part {
-  font-size: 1.1rem;
+.connect-title {
+  font-size: 2.5rem;
   font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
 }
 
-.footer-copy {
+.btn-hire-orange {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--figma-orange);
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.85rem 2.2rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 15px rgba(253, 111, 0, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-hire-orange:hover {
+  background: var(--figma-orange-hover);
+  transform: translateY(-2px);
+}
+
+.footer-card-divider {
+  width: 100%;
+  height: 1px;
+  background: #252525;
+  margin: 2.5rem 0 3.5rem 0;
+}
+
+.footer-card-divider.subtle {
+  margin: 3.5rem 0 2rem 0;
+}
+
+.footer-columns-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 1fr 1.2fr;
+  gap: 3rem;
+}
+
+.col-brand .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.footer-brand-desc {
+  font-size: 0.875rem;
+  color: #9E9E9E;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #1E1E1E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  border: 1px solid #2C2C2C;
+  transition: all 0.25s ease;
+}
+
+.social-circle:hover {
+  background: var(--figma-orange);
+  border-color: var(--figma-orange);
+  transform: translateY(-2px);
+}
+
+.footer-col-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer-links-list a {
+  font-size: 0.9rem;
+  color: #9E9E9E;
+}
+
+.footer-links-list a:hover {
+  color: var(--figma-orange);
+}
+
+.contact-list span {
+  font-size: 0.9rem;
+  color: #9E9E9E;
+}
+
+.footer-newsletter-form {
+  display: flex;
+  align-items: center;
+  background: #1E1E1E;
+  border: 1px solid #2C2C2C;
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 0.35rem 0.35rem 1.25rem;
+}
+
+.footer-email-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
   font-size: 0.85rem;
-  color: var(--figma-text-muted);
+  color: #FFFFFF;
+}
+
+.footer-email-input::placeholder {
+  color: #707070;
+}
+
+.footer-email-btn {
+  width: 38px;
+  height: 38px;
+  background: var(--figma-orange);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.footer-email-btn:hover {
+  background: var(--figma-orange-hover);
+}
+
+.footer-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copyright {
+  font-size: 0.85rem;
+  color: #707070;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: #707070;
+}
+
+.footer-legal-links a:hover {
+  color: #FFFFFF;
+}
+
+.footer-legal-links .sep {
+  color: #444444;
+}
+
+/* Responsive pour les nouvelles sections */
+@media (max-width: 992px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-columns-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-dark-card {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-columns-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .discuss-headline,
+  .testi-title,
+  .connect-title,
+  .blog-heading {
+    font-size: 2rem;
+  }
+
+  .discuss-trust-badges {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .trust-divider {
+    display: none;
+  }
 }
 
 /* --------------------------------------------------------------------------
