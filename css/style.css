@@ -712,57 +712,45 @@ ul, ol {
   margin-left: 0.5rem;
 }
 
-.mockup-content {
-  padding: 2rem;
-  min-height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mockup-banner {
+/* Mockup d image réelle et overlay Figma */
+.mockup-image-frame {
+  position: relative;
   width: 100%;
-  padding: 2.5rem 1.5rem;
-  border-radius: var(--radius-sm);
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #070A10;
 }
 
-.mockup-banner.clinical {
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(7, 10, 16, 0.9) 100%);
+.project-real-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.mockup-banner.biobank {
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.18) 0%, rgba(7, 10, 16, 0.9) 100%);
+.project-card:hover .project-real-img {
+  transform: scale(1.06);
 }
 
-.mockup-banner.shopping {
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(7, 10, 16, 0.9) 100%);
+.mockup-overlay {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
 }
 
-.mockup-banner.agroflow {
-  background: radial-gradient(circle, rgba(34, 197, 94, 0.18) 0%, rgba(7, 10, 16, 0.9) 100%);
-}
-
-.mockup-tag {
+.mockup-pill {
   display: inline-block;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
-}
-
-.mockup-banner h4 {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-weight: 600;
   color: #FFFFFF;
-  margin-bottom: 0.5rem;
-}
-
-.mockup-banner p {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
+  background: rgba(11, 15, 23, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Détails du projet */
