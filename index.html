@@ -233,12 +233,20 @@
           <p class="section-subtitle">
             Chaque projet répond à un besoin métier réel avec code source et démo en ligne vérifiable.
           </p>
+
+          <!-- Filtres de projets inspirés du kit Figma -->
+          <div class="project-filters" id="projectFilters" role="tablist" aria-label="Filtrer les projets">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Tous les projets</button>
+            <button class="filter-btn" data-filter="health" role="tab" aria-selected="false">Santé &amp; LIMS</button>
+            <button class="filter-btn" data-filter="erp" role="tab" aria-selected="false">AgriTech &amp; ERP</button>
+            <button class="filter-btn" data-filter="ui" role="tab" aria-selected="false">Interfaces &amp; Web</button>
+          </div>
         </div>
 
         <div class="projects-list">
           
           <!-- Projet 1 : AgroFlow ERP -->
-          <article class="project-card">
+          <article class="project-card" data-category="erp">
             <div class="project-media">
               <div class="project-preview-mockup">
                 <div class="mockup-bar">
@@ -287,7 +295,7 @@
           </article>
 
           <!-- Projet 2 : Baobab RSD Biobank -->
-          <article class="project-card reverse">
+          <article class="project-card reverse" data-category="health">
             <div class="project-media">
               <div class="project-preview-mockup">
                 <div class="mockup-bar">
@@ -332,7 +340,7 @@
           </article>
 
           <!-- Projet 3 : Acuvera Clinical -->
-          <article class="project-card">
+          <article class="project-card" data-category="health">
             <div class="project-media">
               <div class="project-preview-mockup">
                 <div class="mockup-bar">
@@ -381,7 +389,7 @@
           </article>
 
           <!-- Projet 4 : Portfolio Immersif Edii (LaboGraphie) -->
-          <article class="project-card reverse">
+          <article class="project-card reverse" data-category="ui">
             <div class="project-media">
               <div class="project-preview-mockup">
                 <div class="mockup-bar">
