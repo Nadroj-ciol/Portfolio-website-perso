@@ -3,621 +3,465 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio de NDE Jordan Loïc — Développeur Full-Stack, Lead Tech & Fondateur LaboGraphie. Conception d'architectures logicielles fiables, scalables et centrées produit.">
+  <meta name="description" content="Portfolio de NDE Jordan Loïc — Développeur Full-Stack, Concepteur d'Architectures & Lead Tech LaboGraphie.">
   <meta name="author" content="NDE Jordan Loïc">
-  <meta name="theme-color" content="#0B0F17">
+  <meta name="theme-color" content="#FD6F00">
   
-  <!-- Open Graph -->
-  <meta property="og:title" content="NDE Jordan Loïc | Développeur Full-Stack & Lead Tech">
-  <meta property="og:description" content="Moins de théorie passive, plus de code en production. Ingénierie logicielle & solutions web modernes.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="rsc/img/jordan_portrait_pro.jpg">
+  <title>Jordan.dev | Personal Portfolio — Full-Stack &amp; Software Engineer</title>
   
-  <title>NDE Jordan Loïc | Portfolio Ingénieur Logiciel & Full-Stack</title>
-  
-  <!-- Google Fonts : Inter & Space Grotesk -->
+  <!-- Polices Google : Poppins & Inter (Identique au template Figma JCREA) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header class="site-header" id="header">
-    <div class="container nav-container">
-      <a href="#hero" class="brand-logo" aria-label="Accueil">
-        <span class="brand-badge">&gt;_</span>
-        <span class="brand-name">Jordan<span class="brand-accent">.dev</span></span>
-      </a>
+  <!-- =========================================================================
+       1. TOP FLOATING PILL NAVBAR (Structure exacte Figma JCREA)
+       ========================================================================= -->
+  <header class="header-wrapper">
+    <div class="nav-pill-container">
+      <nav class="nav-pill" id="navbar">
+        <a href="#hero" class="nav-item active">Home</a>
+        <a href="#about" class="nav-item">About</a>
+        <a href="#services" class="nav-item">Service</a>
+        
+        <!-- Logo central JCREA -->
+        <a href="#hero" class="nav-logo" aria-label="Jordan.dev Accueil">
+          <div class="logo-mark">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="10" fill="#FD6F00"/>
+              <path d="M8 8h3v5a3 3 0 0 1-3 3H7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+              <path d="M13 16h3v-5a3 3 0 0 0-3-3h-1" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="logo-text">JORDAN<span class="logo-accent">DEV</span></span>
+        </a>
 
-      <nav class="nav-menu" id="navMenu" aria-label="Navigation principale">
-        <ul class="nav-list">
-          <li><a href="#about" class="nav-link">À propos</a></li>
-          <li><a href="#skills" class="nav-link">Compétences</a></li>
-          <li><a href="#projects" class="nav-link">Projets &amp; Prod</a></li>
-          <li><a href="#parcours" class="nav-link">Parcours</a></li>
-          <li><a href="#community" class="nav-link">Équipe &amp; Sprint</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
+        <a href="#experience" class="nav-item">Resume</a>
+        <a href="#portfolio" class="nav-item">Project</a>
+        <a href="#contact" class="nav-item">Contact</a>
       </nav>
 
-      <div class="nav-actions">
-        <a href="#contact" class="btn btn-sm btn-outline">Discuter projet</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu mobile" aria-expanded="false">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-        </button>
-      </div>
+      <!-- Bouton Menu Mobile -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
   <main>
-    <!-- HERO SECTION (Conforme au croquis : Grande zone visuelle, Accroche percutante, CTA & Badges) -->
-    <section class="section hero-section" id="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="status-badge">
-            <span class="status-dot"></span>
-            <span>Disponible pour projets ambitieux &amp; missions tech</span>
-          </div>
+    <!-- =========================================================================
+         2. HERO SECTION (Reproduction stricte Image 1)
+         Greeting bubble "Hello!" avec étincelles, Gros titre "I'm Jordan, Full-Stack Dev",
+         Grand dôme orange avec ta photo détourée, citation client à gauche,
+         badge d'expérience à droite, boutons pilules Portfolio / Hire me.
+         ========================================================================= -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        
+        <!-- Bulle "Hello!" avec doodles -->
+        <div class="hello-bubble-wrap">
+          <span class="doodle-sparkle-left">✦</span>
+          <div class="hello-bubble">Hello!</div>
+          <span class="doodle-sparkle-right">✦</span>
+        </div>
+
+        <!-- Titre principal -->
+        <h1 class="hero-headline">
+          I'm <span class="text-orange">Jordan</span>, <br>
+          Full-Stack Engineer
+        </h1>
+
+        <!-- Doodles décoratifs latéraux -->
+        <div class="hero-doodle-left">
+          <svg width="40" height="40" viewBox="0 0 50 50" fill="none">
+            <path d="M10 25C15 15 25 15 30 20C35 25 25 35 20 30" stroke="#FD6F00" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- ZONE CENTRALE : DÔME ORANGE + PHOTO DÉTOURÉE + TÉMOIGNAGE + EXPÉRIENCE -->
+        <div class="hero-stage">
           
-          <h1 class="hero-title">
-            Architecte de solutions logicielles, <br>
-            <span class="gradient-text">développeur Full-Stack</span> &amp; Lead Tech.
-          </h1>
-          
-          <p class="hero-lead">
-            « Moins de théorie passive, plus de code en production. » Fondateur de <strong>LaboGraphie Dev</strong> et étudiant en Génie Logiciel (GLBD Siantou), je conçois des systèmes d'information robustes, des plateformes e-commerce et des applications médicales et cloud à haute valeur d'usage.
-          </p>
-
-          <div class="hero-cta-group">
-            <a href="#projects" class="btn btn-primary">
-              <span>Explorer mes projets</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
-            <a href="https://wa.me/237679279447" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span>Me contacter (+237)</span>
-            </a>
-          </div>
-
-          <!-- Métriques clés du wireframe -->
-          <div class="hero-metrics">
-            <div class="metric-card">
-              <span class="metric-number">+10</span>
-              <span class="metric-label">Systèmes &amp; Projets livrés</span>
-            </div>
-            <div class="metric-divider"></div>
-            <div class="metric-card">
-              <span class="metric-number">100%</span>
-              <span class="metric-label">Code en production vérifiable</span>
-            </div>
-            <div class="metric-divider"></div>
-            <div class="metric-card">
-              <span class="metric-number">LaboGraphie</span>
-              <span class="metric-label">Sprint #1 Mentor &amp; Lead</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="portrait-card">
-            <div class="portrait-glow"></div>
-            <div class="portrait-image-wrapper">
-              <img src="rsc/img/jordan_portrait_pro.jpg" alt="NDE Jordan Loïc — Développeur Full-Stack & Architecte Logiciel" class="portrait-img" loading="eager">
-            </div>
-            <div class="portrait-badge">
-              <div class="badge-icon">⚡</div>
-              <div class="badge-text">
-                <strong>NDE Jordan Loïc</strong>
-                <span>Lead Tech @ LaboGraphie</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION À PROPOS & PHILOSOPHIE -->
-    <section class="section about-section" id="about">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">// 01. IDENTITÉ &amp; VISION</span>
-          <h2 class="section-title">Forger des solutions réelles, sans compromis.</h2>
-          <p class="section-subtitle">
-            Du cadrage fonctionnel au déploiement en production, une méthodologie axée sur la rigueur technique et l'autonomie.
-          </p>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-card highlight">
-            <div class="card-icon">🎯</div>
-            <h3>L'ingénierie par la preuve</h3>
-            <p>
-              Je crois fermement que la valeur d'un développeur ne se mesure pas au nombre de tutoriels suivis, mais à sa capacité à diagnostiquer un problème complexe, structurer une architecture propre et expédier (shiper) du code opérationnel testé sur machine et en production.
+          <!-- Colonne Gauche : Citation & Recommandation (comme dans la maquette) -->
+          <div class="hero-quote-box">
+            <span class="quote-mark">“</span>
+            <p class="quote-body">
+              Jordan's exceptional engineering &amp; architecture ensure our website's success. Highly Recommended!
             </p>
           </div>
 
-          <div class="about-card">
-            <div class="card-icon">🔬</div>
-            <h3>LaboGraphie Dev</h3>
-            <p>
-              Initiateur du collectif et animateur des sprints de développement (notamment au campus Siantou / GLBD2). J'accompagne et impulse la dynamique d'apprentissage par les pairs : revue de code, défis sans béquille, respect des standards Git et mise en ligne.
-            </p>
+          <!-- Centre : Grand Dôme Orange + Photo détourée de Jordan -->
+          <div class="hero-dome-wrapper">
+            <div class="orange-dome"></div>
+            <img src="rsc/img/jordan_cutout.png" alt="NDE Jordan Loïc — Full-Stack Engineer" class="hero-person-img" loading="eager">
+            
+            <!-- Bouton flottant pilule double au bas du dôme -->
+            <div class="hero-cta-pill">
+              <a href="#portfolio" class="cta-pill-active">
+                <span>Portfolio</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+              <a href="#contact" class="cta-pill-ghost">Hire me</a>
+            </div>
           </div>
 
-          <div class="about-card">
-            <div class="card-icon">🚀</div>
-            <h3>Polyvalence Full-Stack</h3>
-            <p>
-              À l'aise aussi bien sur la conception des schémas de données, la sécurisation des endpoints et des accès (RBAC/ABAC), que sur l'élaboration d'interfaces réactives, accessibles et fluides sur mobile comme sur desktop.
-            </p>
+          <!-- Colonne Droite : Étoiles + Années d'expérience -->
+          <div class="hero-experience-box">
+            <div class="stars-row">
+              ★ ★ ★ ★ ★
+            </div>
+            <div class="exp-number">5+ Years</div>
+            <div class="exp-label">Experience &amp; Code</div>
           </div>
+
         </div>
+
       </div>
     </section>
 
-    <!-- SECTION COMPÉTENCES CONCRÈTES (Maîtrisées, sans logos au hasard) -->
-    <section class="section skills-section" id="skills">
+    <!-- =========================================================================
+         3. SECTION "MY SERVICES" (Reproduction stricte Image 2)
+         Grand bloc sombre aux coins très arrondis, titre "My Services" (Services en orange),
+         fond vagues sombres + sphères 3D orange, 3 cartes blanches aux coins arrondis
+         avec flèche inclinée vers le haut dans un cercle sombre en bas à droite.
+         ========================================================================= -->
+    <section class="services-section" id="services">
       <div class="container">
-        <div class="section-header">
-          <span class="section-tag">// 02. STACK &amp; COMPÉTENCES</span>
-          <h2 class="section-title">Technologies éprouvées sur le terrain</h2>
-          <p class="section-subtitle">
-            Des outils maîtrisés pour concevoir des architectures fiables, modulaires et maintenables.
-          </p>
-        </div>
-
-        <div class="skills-grid">
-          <!-- Backend & Systèmes -->
-          <div class="skill-category">
-            <div class="skill-cat-header">
-              <span class="cat-pill">Backend &amp; Architecture</span>
-              <h3>Systèmes &amp; Données</h3>
-            </div>
-            <ul class="skill-tags">
-              <li>Python / Django / Fast-LIMS</li>
-              <li>Node.js / Express</li>
-              <li>PostgreSQL &amp; MySQL</li>
-              <li>API RESTful &amp; Sécurisation</li>
-              <li>RBAC / ABAC Permissions</li>
-              <li>Docker &amp; Conteneurisation</li>
-            </ul>
-          </div>
-
-          <!-- Frontend & Design -->
-          <div class="skill-category">
-            <div class="skill-cat-header">
-              <span class="cat-pill">Frontend &amp; UI/UX</span>
-              <h3>Interfaces Réactives</h3>
-            </div>
-            <ul class="skill-tags">
-              <li>HTML5 Sémantique &amp; Accessibilité</li>
-              <li>CSS3 Moderne (Grid, Flexbox, Variables)</li>
-              <li>JavaScript ES6+ Vanilla</li>
-              <li>React &amp; Next.js</li>
-              <li>Mobile-First &amp; Performance Web</li>
-              <li>Affinity Designer &amp; Prototypage</li>
-            </ul>
-          </div>
-
-          <!-- DevOps & Méthodologie -->
-          <div class="skill-category">
-            <div class="skill-cat-header">
-              <span class="cat-pill">DevOps &amp; Méthodes</span>
-              <h3>Cycle de Vie &amp; Qualité</h3>
-            </div>
-            <ul class="skill-tags">
-              <li>Git / GitHub (Workflows rigoureux)</li>
-              <li>Déploiement Vercel, Netlify &amp; VPS</li>
-              <li>Environnements Linux / Kali / Ubuntu</li>
-              <li>Audit de sécurité &amp; Bonnes pratiques</li>
-              <li>Lead Technique &amp; Code Review</li>
-              <li>Méthodologies Agiles / Sprints</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION PROJETS RÉELS (Format challenge : Problème résolu, Stack, Apprentissages, Liens réels) -->
-    <section class="section projects-section" id="projects">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">// 03. RÉALISATIONS &amp; CODE EN PRODUCTION</span>
-          <h2 class="section-title">Projets concrets &amp; Applications déployées</h2>
-          <p class="section-subtitle">
-            Chaque projet répond à un besoin métier réel avec code source et démo en ligne vérifiable.
-          </p>
-
-          <!-- Filtres de projets inspirés du kit Figma -->
-          <div class="project-filters" id="projectFilters" role="tablist" aria-label="Filtrer les projets">
-            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Tous les projets</button>
-            <button class="filter-btn" data-filter="health" role="tab" aria-selected="false">Santé &amp; LIMS</button>
-            <button class="filter-btn" data-filter="erp" role="tab" aria-selected="false">AgriTech &amp; ERP</button>
-            <button class="filter-btn" data-filter="ui" role="tab" aria-selected="false">Interfaces &amp; Web</button>
-          </div>
-        </div>
-
-        <div class="projects-list">
+        <div class="services-black-card">
           
-          <!-- Projet 1 : AgroFlow ERP -->
-          <article class="project-card" data-category="erp">
-            <div class="project-media">
-              <div class="project-preview-mockup">
-                <div class="mockup-bar">
-                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                  <span class="mockup-url">agroflowerp.vercel.app</span>
-                </div>
-                <div class="mockup-image-frame">
-                  <img src="rsc/img/projets/agroflow_agritech.jpg" alt="AgroFlow ERP — Gestion agricole et traçabilité" class="project-real-img" loading="lazy">
-                  <div class="mockup-overlay">
-                    <span class="mockup-pill">AgriTech ERP</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-details">
-              <div class="project-badge">Production Live</div>
-              <h3 class="project-title">AgroFlow ERP — Solution de gestion intégrée agricole</h3>
-              
-              <div class="project-specs">
-                <div class="spec-item">
-                  <strong>Problème résolu :</strong>
-                  <p>Automatiser et digitaliser la gestion des parcelles, la traçabilité des récoltes, les flux de stocks et la comptabilité analytique pour les exploitants agricoles.</p>
-                </div>
-                <div class="spec-item">
-                  <strong>Stack technique :</strong>
-                  <p class="tech-stack-list">Next.js · TypeScript · Tailwind CSS · API RESTful · Vercel Production</p>
-                </div>
-                <div class="spec-item">
-                  <strong>Ce que j'ai appris :</strong>
-                  <p>Modélisation de processus métiers ERP complexes, optimisation des calculs de rentabilité en temps réel et résilience des interfaces hors-ligne partielles.</p>
-                </div>
-              </div>
+          <!-- Sphères/Formes 3D décoratives du design -->
+          <div class="sphere-deco sphere-top"></div>
+          <div class="sphere-deco sphere-bottom-left"></div>
+          <div class="sphere-deco sphere-bottom-right"></div>
 
-              <div class="project-links">
-                <a href="https://agroflowerp.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
-                  <span>Accéder à l'application</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                </a>
-                <a href="https://github.com/Nadroj-ciol/AgroFlowErp-V1" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                  <span>Dépôt GitHub</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                </a>
-              </div>
-            </div>
-          </article>
+          <div class="services-header">
+            <h2 class="services-title">My <span class="text-orange">Services</span></h2>
+            <p class="services-subtitle">
+              Conception d'architectures logicielles scalables, d'applications web de production et d'interfaces réactives soignées au pixel près.
+            </p>
+          </div>
 
-          <!-- Projet 2 : Baobab RSD Biobank -->
-          <article class="project-card reverse" data-category="health">
-            <div class="project-media">
-              <div class="project-preview-mockup">
-                <div class="mockup-bar">
-                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                  <span class="mockup-url">github.com/Nadroj-ciol/baobab-rsd-biobank</span>
-                </div>
-                <div class="mockup-image-frame">
-                  <img src="rsc/img/projets/biobank_lab.jpg" alt="Baobab RSD Biobank — LIMS et gestion de cryotubes" class="project-real-img" loading="lazy">
-                  <div class="mockup-overlay">
-                    <span class="mockup-pill">LIMS &amp; Santé</span>
-                  </div>
-                </div>
+          <!-- Grille des 3 Cartes de Service (style exact Figma) -->
+          <div class="services-grid">
+            
+            <!-- Carte 1 -->
+            <div class="service-card">
+              <h3 class="service-name">Full-Stack Development</h3>
+              <div class="service-preview-stack">
+                <img src="rsc/img/projets/card_agroflow.png" alt="Full-Stack Dev" class="service-screen-img">
               </div>
+              <a href="#portfolio" class="service-arrow-btn" aria-label="Voir service">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
             </div>
-            <div class="project-details">
-              <div class="project-badge accent-blue">Architecture Complexe</div>
-              <h3 class="project-title">Baobab RSD Biobank — LIMS pour le RSD Institute</h3>
-              
-              <div class="project-specs">
-                <div class="spec-item">
-                  <strong>Problème résolu :</strong>
-                  <p>Adapter un LIMS open source de référence aux contraintes strictes d'une biobanque médicale : gestion multi-sites de congélateurs, traçabilité des cryotubes/cryoboxes et synchronisation REDCap.</p>
-                </div>
-                <div class="spec-item">
-                  <strong>Stack technique :</strong>
-                  <p class="tech-stack-list">Python · Baobab LIMS · Docker · PostgreSQL · RBAC/ABAC · REDCap API</p>
-                </div>
-                <div class="spec-item">
-                  <strong>Ce que j'ai appris :</strong>
-                  <p>Conception d'une logique « box-first », préservation de l'intégrité de chaînes de droits (GPL-3.0) et orchestration d'environnements conteneurisés isolés.</p>
-                </div>
-              </div>
 
-              <div class="project-links">
-                <a href="https://github.com/Nadroj-ciol/baobab-rsd-biobank" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
-                  <span>Dépôt &amp; Architecture</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                </a>
+            <!-- Carte 2 -->
+            <div class="service-card">
+              <h3 class="service-name">Software Architecture &amp; LIMS</h3>
+              <div class="service-preview-stack">
+                <img src="rsc/img/projets/card_acuvera.png" alt="Architecture & LIMS" class="service-screen-img">
               </div>
+              <a href="#portfolio" class="service-arrow-btn" aria-label="Voir service">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
             </div>
-          </article>
 
-          <!-- Projet 3 : Acuvera Clinical -->
-          <article class="project-card" data-category="health">
-            <div class="project-media">
-              <div class="project-preview-mockup">
-                <div class="mockup-bar">
-                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                  <span class="mockup-url">acuvera-clinical.vercel.app</span>
-                </div>
-                <div class="mockup-image-frame">
-                  <img src="rsc/img/projets/acuvera_hero.jpg" alt="Acuvera Clinical — Système de suivi clinique" class="project-real-img" loading="lazy">
-                  <div class="mockup-overlay">
-                    <span class="mockup-pill">HealthTech &amp; Clinique</span>
-                  </div>
-                </div>
+            <!-- Carte 3 -->
+            <div class="service-card">
+              <h3 class="service-name">UI / UX &amp; Creative Web</h3>
+              <div class="service-preview-stack">
+                <img src="rsc/img/projets/card_edii.png" alt="UI / UX Design" class="service-screen-img">
               </div>
+              <a href="#portfolio" class="service-arrow-btn" aria-label="Voir service">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
             </div>
-            <div class="project-details">
-              <div class="project-badge">Production Live</div>
-              <h3 class="project-title">Acuvera Clinical — Système de suivi clinique</h3>
-              
-              <div class="project-specs">
-                <div class="spec-item">
-                  <strong>Problème résolu :</strong>
-                  <p>Centraliser et fluidifier la gestion des flux de patients, le suivi des dossiers médicaux et l'accès sécurisé aux données de santé pour les structures de soins.</p>
-                </div>
-                <div class="spec-item">
-                  <strong>Stack technique :</strong>
-                  <p class="tech-stack-list">Next.js · TypeScript · Tailwind CSS · API REST · Vercel Deployment</p>
-                </div>
-                <div class="spec-item">
-                  <strong>Ce que j'ai appris :</strong>
-                  <p>Gestion stricte des états applicatifs, optimisation de la réactivité des dashboards médicaux et implémentation d'une hiérarchie d'accès confidentielle.</p>
-                </div>
-              </div>
 
-              <div class="project-links">
-                <a href="https://acuvera-clinical.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
-                  <span>Voir la démo en ligne</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                </a>
-                <a href="https://github.com/Nadroj-ciol/Acuvera-clinical" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                  <span>Code GitHub</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                </a>
-              </div>
-            </div>
-          </article>
+          </div>
 
-          <!-- Projet 4 : Portfolio Immersif Edii (LaboGraphie) -->
-          <article class="project-card reverse" data-category="ui">
-            <div class="project-media">
-              <div class="project-preview-mockup">
-                <div class="mockup-bar">
-                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                  <span class="mockup-url">portfolio-edii.vercel.app</span>
-                </div>
-                <div class="mockup-image-frame">
-                  <img src="rsc/img/projets/cyber_interface.jpg" alt="Portfolio CyberTech Edii — Interface immersive" class="project-real-img" loading="lazy">
-                  <div class="mockup-overlay">
-                    <span class="mockup-pill">UI/UX &amp; Web</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-details">
-              <div class="project-badge">Production Live</div>
-              <h3 class="project-title">Portfolio CyberTech Edii — Vitrine haut de gamme LaboGraphie</h3>
-              
-              <div class="project-specs">
-                <div class="spec-item">
-                  <strong>Problème résolu :</strong>
-                  <p>Créer une identité visuelle et une expérience portfolio captivante pour un profil d'ingénieur télécoms et cybersécurité, alliant légèreté et animations percutantes.</p>
-                </div>
-                <div class="spec-item">
-                  <strong>Stack technique :</strong>
-                  <p class="tech-stack-list">HTML5 Sémantique · CSS3 Neon/Dark · Vanilla JavaScript · Vercel Production</p>
-                </div>
-                <div class="spec-item">
-                  <strong>Ce que j'ai appris :</strong>
-                  <p>Conception d'une esthétique technique sobre inspirée des terminaux, optimisation du chargement mono-fichier et responsive mobile chirurgical.</p>
-                </div>
-              </div>
-
-              <div class="project-links">
-                <a href="https://portfolio-edii.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
-                  <span>Voir la démo en ligne</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                </a>
-                <a href="https://github.com/Nadroj-ciol/portfolio-edii" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                  <span>Code GitHub</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                </a>
-              </div>
-            </div>
-          </article>
+          <!-- Pagination dots orange/blanc sous les cartes -->
+          <div class="services-dots">
+            <span class="dot-bar active"></span>
+            <span class="dot-circle"></span>
+            <span class="dot-circle"></span>
+            <span class="dot-circle"></span>
+          </div>
 
         </div>
       </div>
     </section>
 
-    <!-- SECTION PARCOURS & ÉTAPES (Correspondant aux blocs reliés du wireframe manuscrit) -->
-    <section class="section parcours-section" id="parcours">
+    <!-- =========================================================================
+         4. SECTION "MY WORK EXPERIENCE" (Reproduction stricte Image 3)
+         Titre "My Work Experience" avec "Work Experience" en orange.
+         Timeline verticale au centre avec ligne pointillée et nœuds cercles orange/sombre.
+         Entreprise/Lieu à gauche, Rôle & Description à droite.
+         ========================================================================= -->
+    <section class="experience-section" id="experience">
       <div class="container">
-        <div class="section-header">
-          <span class="section-tag">// 04. CHEMINEMENT &amp; RIGUEUR</span>
-          <h2 class="section-title">Parcours &amp; Étapes d'apprentissage</h2>
-          <p class="section-subtitle">
-            Une trajectoire orientée ingénierie logicielle et impact communautaire concret.
-          </p>
-        </div>
+        <h2 class="section-heading-center">
+          My <span class="text-orange">Work Experience</span>
+        </h2>
 
-        <div class="timeline-wrapper">
-          <div class="timeline-track"></div>
+        <div class="timeline-figma">
+          <!-- Ligne pointillée centrale -->
+          <div class="timeline-center-line"></div>
 
           <!-- Étape 1 -->
-          <div class="timeline-step">
-            <div class="step-marker">01</div>
-            <div class="step-card">
-              <span class="step-date">Formation continue</span>
-              <h3>Génie Logiciel &amp; Systèmes d'Information (GLBD Siantou)</h3>
-              <p>Acquisition approfondie des bases algorithmiques, structures de données, conception orientée objet, modélisation relationnelle et cycle de vie logiciel.</p>
+          <div class="timeline-row">
+            <div class="timeline-left">
+              <h3 class="company-name">LaboGraphie Dev</h3>
+              <span class="company-date">Sep 2025 - Présent</span>
+            </div>
+            <div class="timeline-node orange-node"></div>
+            <div class="timeline-right">
+              <h4 class="job-role">Lead Tech &amp; Fondateur</h4>
+              <p class="job-desc">
+                Cadrage technique, animation des sprints d'ingénierie logicielle sans béquille d'IA, code review et accompagnement vers les standards de production.
+              </p>
             </div>
           </div>
 
           <!-- Étape 2 -->
-          <div class="timeline-step">
-            <div class="step-marker">02</div>
-            <div class="step-card">
-              <span class="step-date">Initiative tech</span>
-              <h3>Fondation de LaboGraphie Dev</h3>
-              <p>Création d'un cadre d'émulation pratique pour dépasser la théorie académique : animation de sprints, revues de code hebdomadaires et challenges d'autonomie sans béquille d'IA.</p>
+          <div class="timeline-row">
+            <div class="timeline-left">
+              <h3 class="company-name">RSD Institute (Baobab LIMS)</h3>
+              <span class="company-date">2026</span>
+            </div>
+            <div class="timeline-node dark-node"></div>
+            <div class="timeline-right">
+              <h4 class="job-role">Software Architect &amp; Core Dev</h4>
+              <p class="job-desc">
+                Conception d'une extension open source LIMS de biobanque multi-sites : gestion des cryotubes, traçabilité des stocks, permissions RBAC/ABAC et synchronisation API REDCap.
+              </p>
             </div>
           </div>
 
           <!-- Étape 3 -->
-          <div class="timeline-step">
-            <div class="step-marker">03</div>
-            <div class="step-card">
-              <span class="step-date">Projets d'envergure</span>
-              <h3>Conception de plateformes de production</h3>
-              <p>Développement de solutions complètes (santé, e-commerce, LIMS biobanque) intégrées en entreprise avec des standards de production réels.</p>
+          <div class="timeline-row">
+            <div class="timeline-left">
+              <h3 class="company-name">Institut Siantou (GLBD2)</h3>
+              <span class="company-date">2024 - 2026</span>
+            </div>
+            <div class="timeline-node orange-node"></div>
+            <div class="timeline-right">
+              <h4 class="job-role">Génie Logiciel &amp; Systèmes</h4>
+              <p class="job-desc">
+                Approfondissement algorithmique, modélisation relationnelle de bases de données, architectures distribuées et développement full-stack web/mobile.
+              </p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- SECTION COLLECTIF & COLLABORATEURS (Photos de Brinda, Yvana et la dynamique d'équipe) -->
-    <section class="section community-section" id="community">
+    <!-- =========================================================================
+         5. SECTION "WHY HIRE ME?" (Reproduction stricte Image 4)
+         Carte blanche avec dôme orange et photo à gauche, Titre "Why Hire me?",
+         description, 2 colonnes métriques "450+ Project Completed", bouton "Hire me".
+         ========================================================================= -->
+    <section class="why-section" id="about">
       <div class="container">
-        <div class="section-header">
-          <span class="section-tag">// 05. COLLECTIF &amp; ÉQUIPE LABOGRAPHIE</span>
-          <h2 class="section-title">L'énergie d'un groupe en mouvement</h2>
-          <p class="section-subtitle">
-            Célébrer la discipline, l'effort partagé et les talents qui shippent du code réel lors du Sprint #1.
-          </p>
-        </div>
-
-        <div class="community-grid">
+        <div class="why-card">
           
-          <!-- Carte Jordan Lead -->
-          <div class="member-card">
-            <div class="member-photo-frame">
-              <img src="rsc/img/jordan_studio.jpg" alt="NDE Jordan Loïc" class="member-img" loading="lazy">
+          <!-- Côté Gauche : Dôme orange + Photo Jordan en buste -->
+          <div class="why-visual">
+            <div class="why-dome"></div>
+            <img src="rsc/img/jordan_studio.jpg" alt="Pourquoi me choisir" class="why-person-img" loading="lazy">
+          </div>
+
+          <!-- Côté Droit : Contenu texte & Métriques -->
+          <div class="why-content">
+            <h2 class="why-title">Why <span class="text-orange">Hire me?</span></h2>
+            <p class="why-text">
+              Rigueur d'ingénieur logiciel, autonomie totale sur la stack et culture de la livraison réelle. Chaque ligne de code est pensée pour la maintenabilité, la sécurité et la performance en production.
+            </p>
+
+            <div class="why-metrics-grid">
+              <div class="why-metric">
+                <span class="why-number">100%</span>
+                <span class="why-label">Code en production vérifiable</span>
+              </div>
+              <div class="why-metric">
+                <span class="why-number">+10</span>
+                <span class="why-label">Systèmes &amp; Projets livrés</span>
+              </div>
             </div>
-            <div class="member-info">
-              <h3>NDE Jordan Loïc</h3>
-              <span class="member-role">Lead Tech &amp; Initiateur</span>
-              <p>Coordination des sprints, cadrage technique et orientation architecture.</p>
+
+            <div class="why-btn-wrap">
+              <a href="#contact" class="btn-hire-outline">Hire me</a>
             </div>
           </div>
 
-          <!-- Carte Yvana -->
-          <div class="member-card">
-            <div class="member-photo-frame">
-              <img src="rsc/img/yvana.jpg" alt="Yvana Ketchap — GLBD Siantou" class="member-img" loading="lazy">
-            </div>
-            <div class="member-info">
-              <h3>Yvana Ketchap</h3>
-              <span class="member-role">Génie Logiciel · GLBD Siantou</span>
-              <p>Engagement dans le sprint portfolio, intégration rigoureuse et conception UI.</p>
-            </div>
-          </div>
-
-          <!-- Carte Brinda -->
-          <div class="member-card">
-            <div class="member-photo-frame">
-              <img src="rsc/img/brinda.jpg" alt="Brinda — Communauté Dev" class="member-img" loading="lazy">
-            </div>
-            <div class="member-info">
-              <h3>Brinda</h3>
-              <span class="member-role">Développeuse &amp; Collaboratrice Tech</span>
-              <p>Passionnée par les interfaces utilisateurs modernes et la dynamique d'équipe.</p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Citation du challenge issue du PDF et du chat -->
-        <div class="sprint-quote-box">
-          <div class="quote-icon">«</div>
-          <p class="quote-text">
-            C'est l'essai-erreur qui forge l'apprentissage. Moins de théorie passive, plus de code en production. En entreprise, on montre le travail en cours, on recueille les retours et on itère. C'est exactement cette discipline qui sépare un étudiant passif d'un ingénieur logiciel opérationnel.
-          </p>
-          <span class="quote-author">— Charte du Sprint #1 LaboGraphie Dev</span>
         </div>
       </div>
     </section>
 
-    <!-- SECTION CONTACT -->
-    <section class="section contact-section" id="contact">
-      <div class="container contact-container">
-        <div class="section-header">
-          <span class="section-tag">// 06. CONTACT &amp; COLLABORATION</span>
-          <h2 class="section-title">Bâtissons votre prochaine solution</h2>
-          <p class="section-subtitle">
-            Un projet à concrétiser, une architecture à auditer ou une opportunité professionnelle ? Échangeons directement.
-          </p>
+    <!-- =========================================================================
+         6. SECTION "LETS HAVE A LOOK AT MY PORTFOLIO" (Reproduction stricte Image 5)
+         Titre "Lets have a look at my Portfolio", bouton "See All" orange à droite.
+         Carrousel de cartes de projets avec captures d'écran réelles, tags filtres,
+         titre du projet actif avec flèche orange, description détaillée.
+         ========================================================================= -->
+    <section class="portfolio-section" id="portfolio">
+      <div class="container">
+        
+        <div class="portfolio-top-bar">
+          <h2 class="portfolio-heading">
+            Lets have a look at <br>
+            my <span class="text-orange">Portfolio</span>
+          </h2>
+          <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="btn-see-all">See All</a>
         </div>
 
-        <div class="contact-card-main">
-          <div class="contact-methods">
-            <a href="https://wa.me/237679279447" target="_blank" rel="noopener noreferrer" class="contact-tile whatsapp">
-              <div class="tile-icon">💬</div>
-              <div class="tile-details">
-                <strong>WhatsApp Direct</strong>
-                <span>+237 679 279 447</span>
-              </div>
-              <span class="tile-action">Discuter &rarr;</span>
-            </a>
-
-            <a href="https://www.linkedin.com/in/jordan-lo%C3%AFc-nde-63b041427/" target="_blank" rel="noopener noreferrer" class="contact-tile linkedin">
-              <div class="tile-icon">🔗</div>
-              <div class="tile-details">
-                <strong>LinkedIn</strong>
-                <span>Jordan-Loïc NDE</span>
-              </div>
-              <span class="tile-action">Connecter &rarr;</span>
-            </a>
-
-            <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="contact-tile github">
-              <div class="tile-icon">💻</div>
-              <div class="tile-details">
-                <strong>GitHub</strong>
-                <span>@Nadroj-ciol</span>
-              </div>
-              <span class="tile-action">Explorer &rarr;</span>
-            </a>
-
-            <a href="mailto:labographieteam@gmail.com" class="contact-tile email">
-              <div class="tile-icon">✉️</div>
-              <div class="tile-details">
-                <strong>Email professionnel</strong>
-                <span>labographieteam@gmail.com</span>
-              </div>
-              <span class="tile-action">Écrire &rarr;</span>
-            </a>
+        <!-- Carrousel de cartes de projets (style exact Figma) -->
+        <div class="portfolio-carousel">
+          
+          <!-- Carte Projet 1 : AgroFlow ERP -->
+          <div class="portfolio-card active" id="cardAgroflow">
+            <div class="portfolio-card-img-wrap">
+              <img src="rsc/img/projets/card_agroflow.png" alt="AgroFlow ERP" class="portfolio-main-img">
+              <div class="card-brand-overlay">AgroFlow</div>
+              <a href="https://agroflowerp.vercel.app" target="_blank" rel="noopener noreferrer" class="card-corner-arrow" aria-label="Visiter AgroFlow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
           </div>
 
-          <div class="contact-footer-note">
-            <p>📍 Basé à Yaoundé, Cameroun · Disponible en présentiel et en distanciel (Remote).</p>
+          <!-- Carte Projet 2 : Acuvera Clinical -->
+          <div class="portfolio-card" id="cardAcuvera">
+            <div class="portfolio-card-img-wrap">
+              <img src="rsc/img/projets/card_acuvera.png" alt="Acuvera Clinical" class="portfolio-main-img">
+              <div class="card-brand-overlay">Acuvera</div>
+              <a href="https://acuvera-clinical.vercel.app" target="_blank" rel="noopener noreferrer" class="card-corner-arrow" aria-label="Visiter Acuvera">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Carte Projet 3 : Edii CyberTech -->
+          <div class="portfolio-card" id="cardEdii">
+            <div class="portfolio-card-img-wrap">
+              <img src="rsc/img/projets/card_edii.png" alt="Edii CyberTech" class="portfolio-main-img">
+              <div class="card-brand-overlay">CyberEdii</div>
+              <a href="https://portfolio-edii.vercel.app" target="_blank" rel="noopener noreferrer" class="card-corner-arrow" aria-label="Visiter Edii Portfolio">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Indicateurs de carrousel (barre orange + cercles gris) -->
+        <div class="portfolio-dots">
+          <span class="dot-bar active" data-slide="0"></span>
+          <span class="dot-circle" data-slide="1"></span>
+          <span class="dot-circle" data-slide="2"></span>
+        </div>
+
+        <!-- Pilules de tags de catégories (Landing Page, Product Design, Animation, etc.) -->
+        <div class="portfolio-tags-pill-row">
+          <button class="tag-pill active" data-filter="all">All Projects</button>
+          <button class="tag-pill" data-filter="erp">AgriTech ERP</button>
+          <button class="tag-pill" data-filter="health">Health &amp; LIMS</button>
+          <button class="tag-pill" data-filter="ui">Cyber &amp; UI</button>
+        </div>
+
+        <!-- Détail du projet actif sous le carrousel -->
+        <div class="active-project-detail">
+          <div class="detail-header-row">
+            <h3 class="detail-title" id="activeProjectTitle">AgroFlow — Smart Farm Management Solution</h3>
+            <a href="https://agroflowerp.vercel.app" target="_blank" rel="noopener noreferrer" class="detail-arrow-orange" id="activeProjectLink" aria-label="Lien projet">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+          <p class="detail-desc" id="activeProjectDesc">
+            ERP agricole de pointe digitalisant la gestion des parcelles, le suivi financier des récoltes, les stocks et la traçabilité en temps réel, conçu pour les exploitants d'Afrique subsaharienne avec mode hors-ligne résilient.
+          </p>
+          <div class="detail-actions">
+            <a href="https://agroflowerp.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-detail-primary" id="btnDetailLive">Live Demo &rarr;</a>
+            <a href="https://github.com/Nadroj-ciol/AgroFlowErp-V1" target="_blank" rel="noopener noreferrer" class="btn-detail-github" id="btnDetailGit">GitHub Repository</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. SECTION CONTACT & FOOTER (Finition soignée & Liens directs)
+         ========================================================================= -->
+    <section class="contact-section-figma" id="contact">
+      <div class="container">
+        <div class="contact-box-figma">
+          <h2 class="contact-heading">
+            Have a project in mind? <br>
+            <span class="text-orange">Let's build it together.</span>
+          </h2>
+          <p class="contact-subtext">
+            Disponible pour missions techniques, architecture logicielle, développement d'applications ou lead d'équipe.
+          </p>
+
+          <div class="contact-tiles-row">
+            <a href="https://wa.me/237679279447" target="_blank" rel="noopener noreferrer" class="contact-chip whatsapp">
+              <span class="chip-icon">💬</span>
+              <span>WhatsApp : +237 679 279 447</span>
+            </a>
+            <a href="https://www.linkedin.com/in/jordan-lo%C3%AFc-nde-63b041427/" target="_blank" rel="noopener noreferrer" class="contact-chip linkedin">
+              <span class="chip-icon">🔗</span>
+              <span>LinkedIn : Jordan-Loïc NDE</span>
+            </a>
+            <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="contact-chip github">
+              <span class="chip-icon">💻</span>
+              <span>GitHub : @Nadroj-ciol</span>
+            </a>
+            <a href="mailto:labographieteam@gmail.com" class="contact-chip email">
+              <span class="chip-icon">✉️</span>
+              <span>labographieteam@gmail.com</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <div class="footer-brand">
-        <span class="footer-logo">Jordan<span class="brand-accent">.dev</span></span>
-        <p>Conçu selon les standards du Sprint #1 LaboGraphie Dev.</p>
+  <footer class="footer-figma">
+    <div class="container footer-figma-inner">
+      <div class="footer-logo-part">
+        <span class="logo-mark-sm"></span>
+        <strong>JORDAN<span class="text-orange">DEV</span></strong>
       </div>
-      <div class="footer-rights">
-        <p>&copy; 2026 NDE Jordan Loïc. Tous droits réservés.</p>
-      </div>
+      <p class="footer-copy">&copy; 2026 NDE Jordan Loïc · LaboGraphie Dev. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="js/main.js"></script>
 </body>
 </html>
