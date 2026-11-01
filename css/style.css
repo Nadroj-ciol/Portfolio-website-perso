@@ -138,30 +138,75 @@ a {
   box-shadow: 0 4px 15px rgba(253, 111, 0, 0.45);
 }
 
-/* Logo central Figma Style */
+/* Logo central Figma Style avec Monogramme NJ et nom bicolore */
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   padding: 0 0.85rem;
 }
 
-.logo-mark {
+.logo-mark-nj {
+  width: 32px;
+  height: 32px;
+  background: var(--figma-orange);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 12px rgba(253, 111, 0, 0.4);
   transition: transform 0.3s var(--ease-spring);
 }
 
-.nav-logo:hover .logo-mark {
-  transform: rotate(15deg) scale(1.1);
+.nav-logo:hover .logo-mark-nj {
+  transform: rotate(12deg) scale(1.12);
+}
+
+.logo-initials {
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
 }
 
 .logo-text {
   font-size: 0.95rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.logo-nde {
   color: #FFFFFF;
+  font-weight: 800;
+}
+
+.logo-jordan {
+  color: var(--figma-orange);
+  font-weight: 800;
+}
+
+.logo-dot {
+  color: #FFFFFF;
+  font-weight: 800;
+}
+
+.name-nde {
+  color: #1E1E1E;
+  font-weight: 800;
+}
+
+.name-jordan {
+  color: var(--figma-orange);
+  font-weight: 800;
+}
+
+.name-dot {
+  color: #1E1E1E;
+  font-weight: 800;
 }
 
 /* Sélecteur Bilingue discret */
@@ -239,24 +284,31 @@ a {
 .hello-bubble-wrap {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
   margin-bottom: 0.75rem;
 }
 
+.hello-bubble-anchor {
+  position: relative;
+  display: inline-block;
+}
+
 .hello-bubble {
-  padding: 0.35rem 1.25rem;
+  padding: 0.35rem 1.35rem;
   border: 1.5px solid #1E1E1E;
   border-radius: var(--radius-pill);
   font-size: 0.95rem;
   font-weight: 600;
   color: #1E1E1E;
   background: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
-.doodle-sparkle-left,
-.doodle-sparkle-right {
-  color: var(--figma-orange);
-  font-size: 1.1rem;
+.memphis-bubble-ticks {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  pointer-events: none;
 }
 
 .hero-headline {
@@ -1174,6 +1226,212 @@ a {
 }
 
 /* --------------------------------------------------------------------------
+   7.B. BARRE DE RECHERCHE FLUIDE & AUTO-COMPLÉTION DES PROJETS
+   -------------------------------------------------------------------------- */
+.portfolio-controls-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.portfolio-search-wrap {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.search-input-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #F4F5F7;
+  border: 1.5px solid #E2E4E8;
+  border-radius: var(--radius-pill);
+  padding: 0.5rem 1rem 0.5rem 1.25rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.search-input-box:focus-within {
+  background: #FFFFFF;
+  border-color: var(--figma-orange);
+  box-shadow: 0 8px 25px rgba(253, 111, 0, 0.15);
+}
+
+.search-icon {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  opacity: 0.7;
+}
+
+.search-input-box input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font-text);
+  font-size: 0.9rem;
+  color: #1E1E1E;
+}
+
+.search-input-box input::placeholder {
+  color: #8C8C8C;
+}
+
+.search-clear-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: #999;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  display: none;
+}
+
+.search-clear-btn.visible {
+  display: block;
+}
+
+.search-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.search-chip {
+  background: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: var(--radius-pill);
+  padding: 0.3rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #555555;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-spring);
+}
+
+.search-chip:hover {
+  background: var(--figma-orange-light);
+  border-color: var(--figma-orange);
+  color: var(--figma-orange);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   7.C. GALERIE SHOWCASE EN DÉFILEMENT CONTINU (Auto-Scroll Marquee)
+   -------------------------------------------------------------------------- */
+.showcase-gallery-section {
+  margin-top: 4.5rem;
+  padding-top: 3.5rem;
+  border-top: 1px solid #ECECEC;
+}
+
+.showcase-header-row {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.showcase-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.showcase-sub {
+  font-size: 0.85rem;
+  color: var(--figma-text-muted);
+}
+
+.showcase-track-container {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.showcase-track {
+  display: flex;
+  gap: 1.5rem;
+  flex-shrink: 0;
+  animation: showcase-marquee 32s linear infinite;
+}
+
+.showcase-track-container:hover .showcase-track {
+  animation-play-state: paused;
+}
+
+@keyframes showcase-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% - 1.5rem)); }
+}
+
+.showcase-item {
+  flex: 0 0 240px;
+  height: 170px;
+  border-radius: var(--radius-card-sm);
+  overflow: hidden;
+  position: relative;
+  background: #111111;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease;
+}
+
+.showcase-item:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(253, 111, 0, 0.25);
+}
+
+.showcase-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.showcase-item:hover img {
+  transform: scale(1.08);
+}
+
+.showcase-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.showcase-item:hover .showcase-overlay {
+  opacity: 1;
+}
+
+.showcase-overlay span {
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* --------------------------------------------------------------------------
    8. SECTION TESTIMONIALS (Image 6 Figma)
    -------------------------------------------------------------------------- */
 .testimonials-section {
@@ -1284,27 +1542,38 @@ a {
   50% { opacity: 1; transform: scale(1.2); }
 }
 
+.testimonials-slider-viewport {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  padding: 0.5rem 0 1.5rem 0;
+}
+
 .testimonials-slider-track {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 2rem;
   position: relative;
   z-index: 2;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .testi-card {
+  flex: 0 0 calc(50% - 1rem);
   background: #1B1B1B;
   border-radius: var(--radius-card-md);
   padding: 2.5rem 2rem;
   position: relative;
   overflow: hidden;
   border: 1px solid #282828;
-  transition: transform 0.4s var(--ease-spring), opacity 0.4s ease, border-color 0.3s ease;
+  box-sizing: border-box;
+  transition: transform 0.4s var(--ease-spring), opacity 0.4s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .testi-card.active {
-  border-color: rgba(253, 111, 0, 0.45);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(253, 111, 0, 0.6);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(253, 111, 0, 0.15);
 }
 
 .quote-bg-glyph {
@@ -1958,9 +2227,9 @@ a {
 /* --------------------------------------------------------------------------
    14. RESPONSIVE DESIGN
    -------------------------------------------------------------------------- */
-@media (max-width: 1100px) {
-  .testimonials-slider-track {
-    grid-template-columns: 1fr;
+@media (max-width: 900px) {
+  .testi-card {
+    flex: 0 0 100%;
   }
 }
 

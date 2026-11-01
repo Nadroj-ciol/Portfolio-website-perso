@@ -1,11 +1,12 @@
 /**
  * MAIN.JS — Portfolio NDE Jordan L.
- * Reproduction Interactive du Template Figma JCREA
- * - Dynamic Active Navbar (Click & ScrollSpy)
+ * Reproduction Interactive 1:1 du Template Figma JCREA
+ * - Dynamic Active Navbar (Click & ScrollSpy haute précision)
  * - Vrai Carrousel Glissant Horizontal pour les Projets (avec boutons flèches et filtres)
- * - Carrousel Témoignages avec Auto-play, pause au survol et contrôles manuels
+ * - Barre de recherche dynamique avec autocomplétion
+ * - Galerie showcase en défilement continu avec lightbox
+ * - Carrousel Témoignages (6 mentors/collaborateurs) avec Auto-play, pause au survol et contrôles manuels
  * - Dictionnaire Bilingue (Français / Anglais) instantané
- * - Lightbox plein écran pour les affiches et créations graphiques
  * - Compteurs animés (Count-Up)
  */
 
@@ -15,13 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
      1. NAVIGATION DYNAMIQUE & SCROLL-SPY (ACTIF EN TEMPS RÉEL)
      ========================================================================= */
   const navItems = document.querySelectorAll('.nav-item');
-  const sections = document.querySelectorAll('section[id]');
+  const sections = document.querySelectorAll('main section[id]');
   const mobileToggle = document.getElementById('mobileToggle');
   const navbar = document.getElementById('navbar');
+
+  let isClickScrolling = false;
 
   // Clic direct sur un lien de navigation
   navItems.forEach(item => {
     item.addEventListener('click', (e) => {
+      isClickScrolling = true;
       navItems.forEach(n => n.classList.remove('active'));
       item.classList.add('active');
 
@@ -29,6 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
         navbar.classList.remove('open');
         if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
       }
+
+      // Débloquer le scrollspy après la fin du scroll fluide
+      setTimeout(() => {
+        isClickScrolling = false;
+        updateActiveNavLink();
+      }, 700);
     });
   });
 
@@ -41,10 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Gestion du ScrollSpy dynamique fiable
+  // ScrollSpy dynamique fiable via getBoundingClientRect
   function updateActiveNavLink() {
-    const scrollPos = window.scrollY + 180;
-    
+    if (isClickScrolling) return;
+
     if (window.scrollY < 120) {
       const heroLink = document.querySelector('.nav-item[href="#hero"]');
       if (heroLink && !heroLink.classList.contains('active')) {
@@ -54,11 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    const focalPoint = window.innerHeight * 0.35;
     let currentSectionId = '';
+
     sections.forEach(sec => {
-      const top = sec.offsetTop;
-      const height = sec.offsetHeight;
-      if (scrollPos >= top && scrollPos < top + height) {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top <= focalPoint && rect.bottom >= focalPoint) {
         currentSectionId = sec.getAttribute('id');
       }
     });
@@ -96,6 +107,13 @@ document.addEventListener('DOMContentLoaded', () => {
       "hero.hireBtn": "Me recruter",
       "hero.expLabel": "D'expérience & Conception",
       
+      "why.titlePre": "Pourquoi",
+      "why.titleOrange": "me choisir ?",
+      "why.text": "Polyvalent et rigoureux, je mets mes compétences au service du développement applicatif, de la maintenance d'infrastructures et de la création graphique. Certifié par les Ateliers Google, je conçois des systèmes d'information pensés pour durer.",
+      "why.m1Label": "Code en production vérifiable",
+      "why.m2Label": "3e Prix National Concours Tech",
+      "why.contactBtn": "Me contacter",
+
       "services.titlePre": "Mes",
       "services.titleOrange": "Services",
       "services.sub": "Technologue en Génie Logiciel certifié par les Ateliers Google : conception applicative robuste, bases de données relationnelles et créations graphiques.",
@@ -122,13 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
       "exp.ambamDesc": "Deux années en Mathématiques fondamentales. Premier déploiement web dès 2017 avec la création du site web officiel du Lycée Bilingue d’AMBAM.",
       "exp.cvBtn": "Télécharger mon CV complet (PDF)",
 
-      "why.titlePre": "Pourquoi",
-      "why.titleOrange": "me choisir ?",
-      "why.text": "Polyvalent et rigoureux, je mets mes compétences au service du développement applicatif, de la maintenance d'infrastructures et de la création graphique. Certifié par les Ateliers Google, je conçois des systèmes d'information pensés pour durer.",
-      "why.m1Label": "Code en production vérifiable",
-      "why.m2Label": "3e Prix National Concours Tech",
-      "why.contactBtn": "Me contacter",
-
       "portfolio.headPre": "Découvrez",
       "portfolio.headSub": "mon",
       "portfolio.headOrange": "Portfolio",
@@ -140,17 +151,22 @@ document.addEventListener('DOMContentLoaded', () => {
       "portfolio.liveBtn": "Démo en ligne →",
       "portfolio.sourceBtn": "Code Source GitHub",
 
-      "testi.titlePre": "Des témoignages qui",
-      "testi.titleSub": "parlent de",
-      "testi.titleOrange": "mes résultats",
-      "testi.sub": "Appréciations de collaborateurs et partenaires ayant expérimenté ma rigueur dans la conception logicielle, le design et l'encadrement technique.",
+      "testi.titlePre": "Ceux qui m'ont",
+      "testi.titleOrange": "fait confiance",
+      "testi.sub": "Retours et appréciations d'enseignants-chercheurs, d'inspecteurs, de collaborateurs tech et de dirigeants ayant validé ma rigueur d'ingénierie.",
       "testi.autoScroll": "Auto-scroll actif",
-      "testi.t1Role": "Génie Logiciel · U.P. SIANTOU",
-      "testi.t1Text": "« Jordan possède une rigueur technique exemplaire et une capacité rare à modéliser des systèmes d'information complexes. Son encadrement sur nos projets a élevé les standards de toute l'équipe. »",
-      "testi.t2Role": "Collaboratrice Tech & Frontend",
-      "testi.t2Text": "« Collaborer avec Jordan sur des plateformes comme AgroFlow et Sister Schola prouve sa maîtrise : le souci du détail dans l'UI se combine toujours à une robustesse backend irréprochable. »",
-      "testi.t3Role": "Direction Technique · LeGuide Informatique",
-      "testi.t3Text": "« Qu'il s'agisse de la maintenance de nos équipements réseau ou de la création de nos supports graphiques, Jordan fait preuve d'une autonomie et d'une réactivité exceptionnelles. »",
+      "testi.t1Role": "Professeur Réseaux & Sécurité",
+      "testi.t1Text": "« Jordan démontre une compréhension remarquable des architectures réseaux, de la sécurité applicative et du travail d'équipe. Un technologue méthodique, rigoureux et autonome dans l'exécution de ses projets. »",
+      "testi.t2Role": "IPN de Mathématiques · MINESEC",
+      "testi.t2Text": "« Une rigueur logique et un esprit d'analyse exceptionnels hérités de son parcours en mathématiques. Jordan sait traduire des abstractions complexes en solutions logicielles opérationnelles. »",
+      "testi.t3Role": "Fondateur · Petit Colis",
+      "testi.t3Text": "« Pour la communication visuelle et nos campagnes de recrutement chez Petit Colis, le travail infographique et l'écoute de Jordan ont été déterminants. Travail rapide, soigné et très professionnel. »",
+      "testi.t4Role": "Élève Ingénieur · Polytech Yaoundé",
+      "testi.t4Text": "« Collaborer avec Jordan est un véritable plaisir : sa capacité d'analyse, son souci du détail et sa rigueur mathématique font toute la différence sur des modélisations logicielles pointues. »",
+      "testi.t5Role": "Direction · Egesol SARL",
+      "testi.t5Text": "« Jordan allie créativité graphique percutante et précision technique. Les supports visuels et solutions conçus pour notre structure ont parfaitement répondu à nos exigences de professionnalisme. »",
+      "testi.t6Role": "Data Analyst · Systèmes de Données",
+      "testi.t6Text": "« La structuration des bases de données SQL et la modélisation de données réalisées par Jordan sur les plateformes ERP sont d'une clarté exemplaire. Travailler sur ses pipelines de données est un régal. »",
 
       "discuss.headPre": "Vous avez une idée de projet ?",
       "discuss.headOrange": "Discutons-en ensemble",
@@ -196,6 +212,13 @@ document.addEventListener('DOMContentLoaded', () => {
       "hero.hireBtn": "Hire me",
       "hero.expLabel": "Experience & Design",
 
+      "why.titlePre": "Why",
+      "why.titleOrange": "Hire Me?",
+      "why.text": "Versatile and rigorous, I dedicate my expertise to application development, IT infrastructure maintenance, and visual creativity. Certified by Google Workshops, I build information systems designed to endure.",
+      "why.m1Label": "Verifiable production code",
+      "why.m2Label": "3rd National Tech Award (Palme d'Or)",
+      "why.contactBtn": "Contact Me",
+
       "services.titlePre": "My",
       "services.titleOrange": "Services",
       "services.sub": "Software Engineering Technologist certified by Google Workshops: robust application architecture, databases, and visual creations.",
@@ -222,13 +245,6 @@ document.addEventListener('DOMContentLoaded', () => {
       "exp.ambamDesc": "Two foundational years in advanced mathematics. First production web deployment in 2017 with the official website of Ambam Bilingual High School.",
       "exp.cvBtn": "Download My Full Resume (PDF)",
 
-      "why.titlePre": "Why",
-      "why.titleOrange": "Hire Me?",
-      "why.text": "Versatile and rigorous, I dedicate my expertise to application development, IT infrastructure maintenance, and visual creativity. Certified by Google Workshops, I build information systems designed to endure.",
-      "why.m1Label": "Verifiable production code",
-      "why.m2Label": "3rd National Tech Award (Palme d'Or)",
-      "why.contactBtn": "Contact Me",
-
       "portfolio.headPre": "Explore",
       "portfolio.headSub": "my",
       "portfolio.headOrange": "Portfolio",
@@ -240,17 +256,22 @@ document.addEventListener('DOMContentLoaded', () => {
       "portfolio.liveBtn": "Live Demo →",
       "portfolio.sourceBtn": "GitHub Source Code",
 
-      "testi.titlePre": "Testimonials That",
-      "testi.titleSub": "Speak to",
-      "testi.titleOrange": "My Results",
-      "testi.sub": "Feedback from partners and teammates who experienced my technical precision in software design, visual branding, and IT supervision.",
+      "testi.titlePre": "Those Who",
+      "testi.titleOrange": "Trusted My Work",
+      "testi.sub": "Endorsements from research professors, education inspectors, tech teammates, and founders who validated my engineering precision.",
       "testi.autoScroll": "Auto-scroll active",
-      "testi.t1Role": "Software Engineering · U.P. SIANTOU",
-      "testi.t1Text": "“Jordan demonstrates exemplary technical rigor and a rare ability to model complex information systems. His mentorship raised the standards of the entire team.”",
-      "testi.t2Role": "Tech Collaborator & Frontend",
-      "testi.t2Text": "“Collaborating with Jordan on platforms like AgroFlow and Sister Schola proves his craft: extreme attention to UI detail always pairs with rock-solid backend stability.”",
-      "testi.t3Role": "Technical Direction · LeGuide Informatique",
-      "testi.t3Text": "“From network hardware servicing to creating striking promotional graphics, Jordan displays outstanding autonomy and responsiveness.”",
+      "testi.t1Role": "Professor of Networks & Security",
+      "testi.t1Text": "“Jordan demonstrates remarkable mastery of network architectures, application security, and engineering collaboration. A methodical, autonomous technologist.”",
+      "testi.t2Role": "National Inspector of Mathematics · MINESEC",
+      "testi.t2Text": "“Exceptional logical precision and analytical rigor inherited from advanced mathematics. Jordan turns complex conceptual models into reliable operational software.”",
+      "testi.t3Role": "Founder · Petit Colis",
+      "testi.t3Text": "“For visual communications and recruitment campaigns at Petit Colis, Jordan's graphic craftsmanship and active listening were pivotal. Fast, thorough, and highly professional.”",
+      "testi.t4Role": "Engineering Student · Polytech Yaoundé",
+      "testi.t4Text": "“Working with Jordan is a true asset: his analytical acumen, pixel-level precision, and mathematical rigor elevate complex software models.”",
+      "testi.t5Role": "Management · Egesol SARL",
+      "testi.t5Text": "“Jordan blends high-impact visual creativity with technical rigor. The graphic assets and solutions delivered met our highest standards of professional excellence.”",
+      "testi.t6Role": "Data Analyst · Data Systems",
+      "testi.t6Text": "“The SQL database architectures and data models built by Jordan on ERP platforms are remarkably clean. Querying and building upon his pipelines is a joy.”",
 
       "discuss.headPre": "Have an Awesome Project Idea?",
       "discuss.headOrange": "Let's Discuss Together",
@@ -325,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* =========================================================================
-     3. VRAI CARROUSEL GLISSANT HORIZONTAL POUR LE PORTFOLIO
+     3. VRAI CARROUSEL GLISSANT HORIZONTAL POUR LE PORTFOLIO & RECHERCHE
      ========================================================================= */
   const projectsData = [
     {
@@ -351,8 +372,8 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       title_fr: "Infographie & Créations Graphiques — NDE Jordan L.",
       title_en: "Graphic Design & Visual Artwork — NDE Jordan L.",
-      desc_fr: "Direction artistique et réalisations infographiques complètes : chartes visuelles, affiches événementielles promotionnelles, typographie soignée et identité de marque numérique.",
-      desc_en: "Full-scale art direction and graphic design: brand visual systems, high-impact promotional event posters, tailored typography, and digital identity.",
+      desc_fr: "Direction artistique et réalisations infographiques complètes : chartes visuelles, affiches événementielles promotionnelles (Petit Colis, Candace, Fosa'a Academy), typographie soignée et identité de marque numérique.",
+      desc_en: "Full-scale art direction and graphic design: brand visual systems, high-impact promotional event posters (Petit Colis, Candace, Fosa'a Academy), tailored typography, and digital identity.",
       live: "rsc/img/projets/infographie_jordan.png",
       github: "https://github.com/Nadroj-ciol",
       category: "infographie",
@@ -515,15 +536,68 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Barre de recherche fluide avec autocomplétion
+  const searchInput = document.getElementById('projectSearchInput');
+  const searchClear = document.getElementById('projectSearchClear');
+  const searchChips = document.querySelectorAll('.search-chip');
+
+  function filterProjectsByQuery(query) {
+    const q = query.trim().toLowerCase();
+    if (searchClear) {
+      if (q) searchClear.classList.add('visible');
+      else searchClear.classList.remove('visible');
+    }
+
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+      if (!q || text.includes(q) || keywords.includes(q)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    const firstVisible = Array.from(cards).find(c => c.style.display !== 'none');
+    if (firstVisible) {
+      const idx = parseInt(firstVisible.getAttribute('data-index'), 10);
+      setProject(idx, false);
+    }
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      filterProjectsByQuery(e.target.value);
+    });
+  }
+
+  if (searchClear) {
+    searchClear.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      filterProjectsByQuery('');
+      const allPill = document.querySelector('.tag-pill[data-filter="all"]');
+      if (allPill) allPill.click();
+    });
+  }
+
+  searchChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const q = chip.getAttribute('data-query');
+      if (searchInput) searchInput.value = q;
+      filterProjectsByQuery(q);
+    });
+  });
+
 
   /* =========================================================================
-     4. CARROUSEL TÉMOIGNAGES (AUTO-PLAY & DÉFILEMENT FLUIDE)
+     4. CARROUSEL TÉMOIGNAGES (AUTO-PLAY & DÉFILEMENT FLUIDE — 6 RECOMMANDATIONS)
      ========================================================================= */
   const testiCards = document.querySelectorAll('.testi-card');
   const testiDots = document.querySelectorAll('#testiDots span');
   const btnTestiPrev = document.getElementById('btnTestiPrev');
   const btnTestiNext = document.getElementById('btnTestiNext');
   const testiTrack = document.getElementById('testiTrack');
+  const testiViewport = document.getElementById('testiViewport');
   const testiAutoplayStatus = document.getElementById('testiAutoplayStatus');
 
   let currentTesti = 0;
@@ -531,19 +605,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const TESTI_INTERVAL_MS = 5000;
 
   function showTestimonial(idx) {
+    if (!testiCards.length) return;
     if (idx < 0) idx = testiCards.length - 1;
     if (idx >= testiCards.length) idx = 0;
     currentTesti = idx;
 
-    testiCards.forEach((card, i) => {
-      if (i === idx) {
-        card.classList.add('active');
-        card.style.transform = 'translateY(0) scale(1)';
-        card.style.opacity = '1';
+    const card = testiCards[0];
+    const cardWidth = card ? card.offsetWidth : 420;
+    const gap = 32; // 2rem = 32px
+    const isMobile = window.innerWidth <= 900;
+    const maxOffset = isMobile ? testiCards.length - 1 : Math.max(0, testiCards.length - 2);
+    const safeIdx = Math.min(idx, maxOffset);
+
+    if (testiTrack) {
+      testiTrack.style.transform = `translateX(-${safeIdx * (cardWidth + gap)}px)`;
+    }
+
+    testiCards.forEach((c, i) => {
+      if (i === idx || (!isMobile && i === idx + 1)) {
+        c.classList.add('active');
+        c.style.opacity = '1';
       } else {
-        card.classList.remove('active');
-        card.style.opacity = '0.35';
-        card.style.transform = 'translateY(10px) scale(0.97)';
+        c.classList.remove('active');
+        c.style.opacity = '0.45';
       }
     });
 
@@ -568,6 +652,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (testiAutoplayStatus) testiAutoplayStatus.classList.add('paused');
   }
+
+  if (testiViewport) {
+    testiViewport.addEventListener('mouseenter', stopTestiAutoPlay);
+    testiViewport.addEventListener('mouseleave', startTestiAutoPlay);
+  }
+
+  window.addEventListener('resize', () => {
+    showTestimonial(currentTesti);
+  });
 
   if (btnTestiNext) {
     btnTestiNext.addEventListener('click', () => {
