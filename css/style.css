@@ -1,11 +1,12 @@
 /* ==========================================================================
    STYLE.CSS — REPRODUCTION FIDÈLE DU DESIGN FIGMA "JCREA / PORTFOLIO 5+"
+   Avec Motion Design & Micro-interactions dignes de Framer Motion
    Palette Figma exacte :
    - Blanc de fond : #FFFFFF & #F8F9FB
    - Accent Orange Signature : #FD6F00 (Orange vif JCREA)
-   - Cartes Sombre/Noir Profond : #121212 & #1E1E1E
+   - Cartes Sombre/Noir Profond : #111111 & #1B1B1B
    - Textes : #1A1A1A (Noir d'encre) et #666666 (Gris atténué)
-   - Police : 'Poppins', sans-serif
+   - Polices : 'Poppins' (Titres & Marques) et 'Inter' (Corps & UI)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -29,8 +30,8 @@ html {
   --figma-orange-hover: #E56300;
   --figma-orange-light: #FFEDE0;
   --figma-orange-dome: #FD6F00;
-  --figma-dark: #121212;
-  --figma-dark-card: #181818;
+  --figma-dark: #111111;
+  --figma-dark-card: #1B1B1B;
   --figma-dark-surface: #222222;
   --figma-pill-bg: #111111;
   --figma-text-dark: #1E1E1E;
@@ -50,6 +51,10 @@ html {
   --radius-card-lg: 36px;
   --radius-card-md: 24px;
   --radius-card-sm: 16px;
+
+  /* Easing curves style Framer Motion */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Ombres */
   --shadow-dome: 0 30px 60px rgba(253, 111, 0, 0.25);
@@ -90,13 +95,12 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   2. TOP FLOATING PILL NAVBAR (Image 1)
-   Barre noire flottante arrondie avec pastille orange pour l'élément actif,
-   Logo JCREA au milieu et liens de navigation réguliers.
+   2. TOP FLOATING PILL NAVBAR
+   Barre noire flottante avec Logo épuré, Switcher FR/EN & Bouton CV
    -------------------------------------------------------------------------- */
 .header-wrapper {
   position: sticky;
-  top: 1.5rem;
+  top: 1.25rem;
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -112,55 +116,132 @@ a {
 .nav-pill {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   background-color: var(--figma-pill-bg);
-  padding: 0.5rem 0.6rem;
+  padding: 0.45rem 0.65rem;
   border-radius: var(--radius-pill);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .nav-item {
   color: #A0A0A0;
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  padding: 0.6rem 1.4rem;
+  padding: 0.55rem 1.25rem;
   border-radius: var(--radius-pill);
-  transition: all 0.25s ease;
+  transition: all 0.25s var(--ease-spring);
   white-space: nowrap;
 }
 
 .nav-item:hover {
   color: #FFFFFF;
+  transform: translateY(-1px);
 }
 
 .nav-item.active {
   background-color: var(--figma-orange);
   color: #FFFFFF;
   font-weight: 600;
+  box-shadow: 0 4px 15px rgba(253, 111, 0, 0.4);
 }
 
+/* Logo propre et élégant */
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0 1rem;
+  gap: 0.5rem;
+  padding: 0 0.85rem;
+}
+
+.logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.nav-logo:hover .logo-mark {
+  transform: rotate(15deg) scale(1.1);
 }
 
 .logo-text {
   font-size: 1rem;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
   color: #FFFFFF;
 }
 
-.logo-accent {
+.logo-dot {
   color: var(--figma-orange);
+  font-size: 0.65rem;
+  margin-left: 2px;
+}
+
+/* Bouton CV dans la Navbar */
+.nav-cv-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(253, 111, 0, 0.15);
+  border: 1px solid rgba(253, 111, 0, 0.4);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-pill);
+  transition: all 0.25s var(--ease-spring);
+  margin-left: 0.3rem;
+}
+
+.nav-cv-pill:hover {
+  background: var(--figma-orange);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(253, 111, 0, 0.4);
+  transform: scale(1.05);
+}
+
+/* Sélecteur de langue bilingue FR/EN */
+.lang-switch-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  margin-left: 0.35rem;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: #8E8E8E;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.25rem 0.45rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.lang-btn.active {
+  color: #FFFFFF;
+  background: var(--figma-orange);
+  border-radius: var(--radius-pill);
+}
+
+.lang-sep {
+  color: #4A4A4A;
+  font-size: 0.7rem;
 }
 
 .mobile-toggle {
   display: none;
   background: var(--figma-pill-bg);
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-pill);
   padding: 0.75rem;
   cursor: pointer;
@@ -176,10 +257,10 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   3. HERO SECTION (Image 1)
+   3. HERO SECTION (Image 1 Figma + Micro-interactions)
    -------------------------------------------------------------------------- */
 .hero-section {
-  padding-top: 3.5rem;
+  padding-top: 2.5rem;
   padding-bottom: 5rem;
   background: #FFFFFF;
   position: relative;
@@ -194,6 +275,43 @@ a {
   position: relative;
 }
 
+/* Badge statut "Disponible" avec radar pulsé */
+.live-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #F4F5F7;
+  border: 1px solid #E2E4E9;
+  border-radius: var(--radius-pill);
+  padding: 0.4rem 1.25rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #2D3139;
+  margin-bottom: 1.25rem;
+}
+
+.status-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  position: relative;
+}
+
+.status-pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.45);
+  animation: radar-pulse 2s infinite ease-out;
+}
+
+@keyframes radar-pulse {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
 .hello-bubble-wrap {
   display: inline-flex;
   align-items: center;
@@ -202,10 +320,10 @@ a {
 }
 
 .hello-bubble {
-  padding: 0.35rem 1.1rem;
+  padding: 0.35rem 1.25rem;
   border: 1.5px solid #1E1E1E;
   border-radius: var(--radius-pill);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #1E1E1E;
   background: #FFFFFF;
@@ -229,11 +347,18 @@ a {
 .hero-doodle-left {
   position: absolute;
   top: 10rem;
-  left: 12%;
+  left: 10%;
   opacity: 0.8;
 }
 
-/* Zone de scène avec Dôme + Carte gauche/droite */
+.hero-doodle-right {
+  position: absolute;
+  top: 11rem;
+  right: 12%;
+  opacity: 0.7;
+}
+
+/* Zone de scène centrale */
 .hero-stage {
   display: flex;
   align-items: center;
@@ -244,7 +369,7 @@ a {
   margin-top: 1rem;
 }
 
-/* Citation à gauche */
+/* Colonne Gauche : Témoignage */
 .hero-quote-box {
   width: 260px;
   text-align: left;
@@ -253,7 +378,7 @@ a {
 }
 
 .quote-mark {
-  font-size: 3rem;
+  font-size: 3.5rem;
   line-height: 1;
   color: #1E1E1E;
   font-family: Georgia, serif;
@@ -264,7 +389,7 @@ a {
   font-size: 0.9rem;
   color: var(--figma-text-dark);
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 /* Dôme central orange */
@@ -275,6 +400,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  cursor: pointer;
 }
 
 .orange-dome {
@@ -301,19 +427,20 @@ a {
   filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
 }
 
-/* Bouton pilule flottant sur le dôme */
+/* Bouton pilule flottant sur le dôme (Figma spec exacte) */
 .hero-cta-pill {
   position: absolute;
   bottom: 1.75rem;
   z-index: 3;
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.28);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   padding: 0.35rem;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 .cta-pill-active {
@@ -327,6 +454,11 @@ a {
   padding: 0.6rem 1.4rem;
   border-radius: var(--radius-pill);
   box-shadow: 0 4px 15px rgba(253, 111, 0, 0.4);
+  transition: transform 0.25s var(--ease-spring);
+}
+
+.cta-pill-active:hover {
+  transform: scale(1.05);
 }
 
 .cta-pill-ghost {
@@ -334,6 +466,39 @@ a {
   font-weight: 500;
   font-size: 0.85rem;
   padding: 0.6rem 1.25rem;
+  transition: color 0.2s ease;
+}
+
+.cta-pill-ghost:hover {
+  color: #FFE6D2;
+}
+
+/* Badge de téléchargement direct du CV sur le dôme */
+.hero-cv-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(17, 17, 17, 0.85);
+  backdrop-filter: blur(10px);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: all 0.3s var(--ease-spring);
+}
+
+.hero-cv-badge:hover {
+  background: #FFFFFF;
+  color: #111111;
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
 }
 
 /* Boîte Expérience à droite */
@@ -352,8 +517,8 @@ a {
 }
 
 .exp-number {
-  font-size: 2.25rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 800;
   color: #1E1E1E;
   line-height: 1.1;
 }
@@ -364,12 +529,11 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   4. SECTION "MY SERVICES" (Image 2)
-   Grand container sombre #121212 aux bords très arrondis, cartes avec flèche
-   dans cercle sombre en bas à droite.
+   4. SECTION "MY SERVICES" (Image 2 Figma)
+   Grand container sombre #111111 avec encoches angulaires & boutons flèches
    -------------------------------------------------------------------------- */
 .services-section {
-  padding: 4rem 0;
+  padding: 4.5rem 0;
   background: #FFFFFF;
 }
 
@@ -382,7 +546,7 @@ a {
   box-shadow: var(--shadow-dark-card);
 }
 
-/* Sphères 3D d'accentuation orange */
+/* Sphères 3D fluides */
 .sphere-deco {
   position: absolute;
   border-radius: 50%;
@@ -449,39 +613,41 @@ a {
   z-index: 2;
 }
 
-/* Carte de service blanche/claire */
+/* Cartes de service sombres avec encoche arrondie Figma */
 .service-card {
-  background: #F8F9FA;
+  background: #1A1A1A;
   border-radius: var(--radius-card-md);
-  padding: 2rem 1.75rem 1.75rem 1.75rem;
+  padding: 2.25rem 2rem 2.5rem 2rem;
   position: relative;
   display: flex;
   flex-direction: column;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  min-height: 380px;
+  min-height: 440px;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.4s var(--ease-spring), box-shadow 0.4s ease, border-color 0.3s ease;
 }
 
 .service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(253, 111, 0, 0.4);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
 }
 
 .service-name {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: #1E1E1E;
-  margin-bottom: 1.5rem;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
   min-height: 3.2rem;
 }
 
 .service-preview-stack {
   border-radius: var(--radius-card-sm);
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  margin-bottom: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1.25rem;
   aspect-ratio: 16 / 10;
-  background: #FFFFFF;
+  background: #111111;
 }
 
 .service-screen-img {
@@ -492,26 +658,37 @@ a {
 }
 
 .service-card:hover .service-screen-img {
-  transform: scale(1.05);
+  transform: scale(1.06);
+}
+
+.service-card-desc {
+  font-size: 0.875rem;
+  color: #9E9E9E;
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
 /* Bouton flèche dans cercle sombre en bas à droite */
 .service-arrow-btn {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 58px;
-  height: 58px;
-  background: #111111;
-  border-top-left-radius: 28px;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  width: 52px;
+  height: 52px;
+  background: #252830;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: all 0.35s var(--ease-spring);
 }
 
 .service-arrow-btn:hover {
   background: var(--figma-orange);
+  transform: scale(1.15) rotate(45deg);
+  box-shadow: 0 8px 25px rgba(253, 111, 0, 0.5);
 }
 
 /* Points de pagination */
@@ -530,6 +707,7 @@ a {
   height: 8px;
   background: var(--figma-orange);
   border-radius: var(--radius-pill);
+  transition: all 0.3s ease;
 }
 
 .dot-circle {
@@ -537,11 +715,11 @@ a {
   height: 8px;
   background: #3A3A3A;
   border-radius: 50%;
+  transition: all 0.3s ease;
 }
 
 /* --------------------------------------------------------------------------
-   5. SECTION "MY WORK EXPERIENCE" (Image 3)
-   Timeline verticale avec pointillés au centre
+   5. SECTION "MY WORK EXPERIENCE" (Image 3 Figma)
    -------------------------------------------------------------------------- */
 .experience-section {
   padding: 6rem 0;
@@ -586,84 +764,8 @@ a {
 }
 
 .timeline-left {
-  text-align: left;
+  text-align: right;
   padding-right: 1.5rem;
-}
-
-.badge-diploma {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--figma-orange);
-  background: var(--figma-orange-light);
-  padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-pill);
-  margin-top: 0.35rem;
-}
-
-.why-tags-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 2rem;
-}
-
-.skill-pill {
-  background: var(--figma-bg-subtle);
-  border: 1px solid var(--figma-border);
-  padding: 0.35rem 0.9rem;
-  border-radius: var(--radius-pill);
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--figma-text-dark);
-}
-
-/* Animations Reveal au Scroll & Micro-interactions */
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-.reveal-on-scroll.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Effet pulsation douce sur les étincelles */
-@keyframes sparkle-pulse {
-  0%, 100% { transform: scale(1); opacity: 0.9; }
-  50% { transform: scale(1.35) rotate(10deg); opacity: 1; filter: drop-shadow(0 0 6px var(--figma-orange)); }
-}
-
-.doodle-sparkle-left,
-.doodle-sparkle-right,
-.doodle-star {
-  display: inline-block;
-  animation: sparkle-pulse 3s infinite ease-in-out;
-}
-
-/* Hover effects fluides sur cartes */
-.service-card,
-.portfolio-card,
-.blog-card,
-.testi-card {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
-}
-
-.service-card:hover,
-.blog-card:hover {
-  transform: translateY(-8px);
-}
-
-.cta-pill-active:hover,
-.btn-hire-orange:hover,
-.btn-detail-primary:hover,
-.btn-see-all:hover,
-.discuss-submit-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(253, 111, 0, 0.45);
 }
 
 .company-name {
@@ -675,6 +777,18 @@ a {
 .company-date {
   font-size: 0.85rem;
   color: var(--figma-text-muted);
+  display: block;
+}
+
+.badge-diploma {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--figma-orange);
+  background: var(--figma-orange-light);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-pill);
+  margin-top: 0.35rem;
 }
 
 .timeline-node {
@@ -683,7 +797,12 @@ a {
   border-radius: 50%;
   margin: 0.25rem auto 0 auto;
   border: 4px solid #FFFFFF;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.timeline-row:hover .timeline-node {
+  transform: scale(1.25);
 }
 
 .orange-node {
@@ -713,10 +832,10 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   6. SECTION "WHY HIRE ME?" (Image 4)
+   6. SECTION "WHY HIRE ME?" (Image 4 Figma + Téléchargement CV)
    -------------------------------------------------------------------------- */
 .why-section {
-  padding: 4rem 0;
+  padding: 5rem 0;
   background: var(--figma-bg-subtle);
 }
 
@@ -804,25 +923,69 @@ a {
   color: var(--figma-text-muted);
 }
 
+.why-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.skill-pill {
+  background: var(--figma-bg-subtle);
+  border: 1px solid var(--figma-border);
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--figma-text-dark);
+}
+
+.why-btn-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
 .btn-hire-outline {
-  align-self: flex-start;
-  padding: 0.85rem 2.5rem;
+  padding: 0.85rem 2.25rem;
   border: 1.5px solid #1E1E1E;
   border-radius: var(--radius-pill);
   font-size: 0.95rem;
   font-weight: 600;
   color: #1E1E1E;
-  transition: all 0.25s ease;
+  transition: all 0.25s var(--ease-spring);
 }
 
 .btn-hire-outline:hover {
   background: var(--figma-orange);
   border-color: var(--figma-orange);
   color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-cv-download-orange {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--figma-orange);
+  color: #FFFFFF;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(253, 111, 0, 0.35);
+  transition: all 0.25s var(--ease-spring);
+}
+
+.btn-cv-download-orange:hover {
+  background: var(--figma-orange-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(253, 111, 0, 0.45);
 }
 
 /* --------------------------------------------------------------------------
-   7. SECTION "LETS HAVE A LOOK AT MY PORTFOLIO" (Image 5)
+   7. SECTION "LETS HAVE A LOOK AT MY PORTFOLIO" (Image 5 Figma)
    -------------------------------------------------------------------------- */
 .portfolio-section {
   padding: 6rem 0;
@@ -850,8 +1013,11 @@ a {
   font-size: 0.95rem;
   font-weight: 600;
   padding: 0.85rem 2rem;
+  border: none;
+  cursor: pointer;
   border-radius: var(--radius-pill);
   box-shadow: 0 4px 15px rgba(253, 111, 0, 0.3);
+  transition: all 0.25s var(--ease-spring);
 }
 
 .btn-see-all:hover {
@@ -859,7 +1025,41 @@ a {
   transform: translateY(-2px);
 }
 
-/* Carrousel de cartes */
+/* Pilules de filtres sous carrousel */
+.portfolio-tags-pill-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.tag-pill {
+  background: #F4F4F6;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  padding: 0.65rem 1.6rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #555555;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-spring);
+}
+
+.tag-pill:hover {
+  background: #EAEAEF;
+  color: #1E1E1E;
+  transform: translateY(-1px);
+}
+
+.tag-pill.active {
+  background: var(--figma-orange);
+  color: #FFFFFF;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(253, 111, 0, 0.35);
+}
+
+/* Grille carrousel */
 .portfolio-carousel {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -872,17 +1072,19 @@ a {
   overflow: hidden;
   background: #F8F9FA;
   box-shadow: var(--shadow-card);
-  transition: transform 0.35s ease, opacity 0.35s ease;
+  transition: transform 0.35s var(--ease-spring), box-shadow 0.35s ease, border-color 0.35s ease;
   cursor: pointer;
+  border: 2px solid transparent;
 }
 
 .portfolio-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
 }
 
 .portfolio-card.active {
-  box-shadow: 0 20px 45px rgba(253, 111, 0, 0.2);
-  border: 2px solid var(--figma-orange);
+  box-shadow: 0 20px 45px rgba(253, 111, 0, 0.25);
+  border-color: var(--figma-orange);
 }
 
 .portfolio-card-img-wrap {
@@ -900,17 +1102,17 @@ a {
 }
 
 .portfolio-card:hover .portfolio-main-img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .card-brand-overlay {
   position: absolute;
   bottom: 1.25rem;
   left: 1.25rem;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: #FFFFFF;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
 .card-corner-arrow {
@@ -920,16 +1122,18 @@ a {
   width: 42px;
   height: 42px;
   background: #FFFFFF;
+  border: none;
+  cursor: pointer;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.25s ease;
+  transition: transform 0.25s var(--ease-spring);
 }
 
 .card-corner-arrow:hover {
-  transform: scale(1.1);
+  transform: scale(1.15) rotate(15deg);
 }
 
 /* Indicateurs de carrousel */
@@ -941,45 +1145,8 @@ a {
   margin-bottom: 3rem;
 }
 
-.portfolio-dots .dot-circle {
+.portfolio-dots span {
   cursor: pointer;
-}
-
-.portfolio-dots .dot-bar {
-  cursor: pointer;
-}
-
-/* Pilules de tags sous carrousel (Landing Page, Product Design, etc.) */
-.portfolio-tags-pill-row {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 3rem;
-}
-
-.tag-pill {
-  background: #F4F4F6;
-  border: none;
-  border-radius: var(--radius-pill);
-  padding: 0.6rem 1.6rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #555555;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.tag-pill:hover {
-  background: #EAEAEF;
-  color: #1E1E1E;
-}
-
-.tag-pill.active {
-  background: var(--figma-orange);
-  color: #FFFFFF;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(253, 111, 0, 0.3);
 }
 
 /* Détail du projet actif */
@@ -1013,11 +1180,11 @@ a {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 12px rgba(253, 111, 0, 0.35);
-  transition: transform 0.25s ease;
+  transition: transform 0.25s var(--ease-spring);
 }
 
 .detail-arrow-orange:hover {
-  transform: scale(1.1);
+  transform: scale(1.12);
 }
 
 .detail-desc {
@@ -1037,33 +1204,35 @@ a {
 .btn-detail-primary {
   background: var(--figma-orange);
   color: #FFFFFF;
-  padding: 0.75rem 1.75rem;
+  padding: 0.75rem 1.85rem;
   border-radius: var(--radius-pill);
   font-size: 0.9rem;
   font-weight: 600;
+  transition: all 0.25s var(--ease-spring);
 }
 
 .btn-detail-primary:hover {
   background: var(--figma-orange-hover);
+  transform: translateY(-2px);
 }
 
 .btn-detail-github {
   background: #1E1E1E;
   color: #FFFFFF;
-  padding: 0.75rem 1.75rem;
+  padding: 0.75rem 1.85rem;
   border-radius: var(--radius-pill);
   font-size: 0.9rem;
   font-weight: 600;
+  transition: all 0.25s var(--ease-spring);
 }
 
 .btn-detail-github:hover {
   background: #333333;
+  transform: translateY(-2px);
 }
 
 /* --------------------------------------------------------------------------
-   8. SECTION TESTIMONIALS (Image 1)
-   Grand bloc sombre avec vagues légères, étincelles ✦, cartes d'avis
-   avec guillemets XXL sombres, avatar, nom, 5 étoiles et avis
+   8. SECTION TESTIMONIALS (Image 6 Figma + Défilement Automatique)
    -------------------------------------------------------------------------- */
 .testimonials-section {
   padding: 5rem 0;
@@ -1082,7 +1251,7 @@ a {
 .testi-header {
   text-align: center;
   max-width: 650px;
-  margin: 0 auto 3.5rem auto;
+  margin: 0 auto 2.5rem auto;
   position: relative;
   z-index: 2;
 }
@@ -1118,10 +1287,72 @@ a {
   line-height: 1.6;
 }
 
-.testimonials-grid {
+/* Contrôles du défilement automatique */
+.testi-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.testi-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #202020;
+  border: 1px solid #333333;
+  color: #FFFFFF;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-spring);
+}
+
+.testi-nav-btn:hover {
+  background: var(--figma-orange);
+  border-color: var(--figma-orange);
+  transform: scale(1.1);
+}
+
+.testi-autoplay-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  color: #A0A0A0;
+}
+
+.testi-pulse-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--figma-orange);
+  animation: pulse-dot 1.8s infinite;
+}
+
+.testi-autoplay-indicator.paused .testi-pulse-indicator {
+  background: #777777;
+  animation: none;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.5; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Grille de cartes d'avis */
+.testimonials-slider-track {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   position: relative;
   z-index: 2;
 }
@@ -1129,16 +1360,16 @@ a {
 .testi-card {
   background: #1B1B1B;
   border-radius: var(--radius-card-md);
-  padding: 2.5rem 2.25rem;
+  padding: 2.5rem 2rem;
   position: relative;
   overflow: hidden;
   border: 1px solid #282828;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.4s var(--ease-spring), opacity 0.4s ease, border-color 0.3s ease;
 }
 
-.testi-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(253, 111, 0, 0.4);
+.testi-card.active {
+  border-color: rgba(253, 111, 0, 0.45);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 .quote-bg-glyph {
@@ -1168,6 +1399,20 @@ a {
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--figma-orange);
+}
+
+.testi-avatar-placeholder {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #2A2A2A;
+  border: 2px solid var(--figma-orange);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .testi-user-info {
@@ -1226,8 +1471,12 @@ a {
   z-index: 2;
 }
 
+.testi-dots span {
+  cursor: pointer;
+}
+
 /* --------------------------------------------------------------------------
-   9. SECTION "HAVE AN AWESOME PROJECT IDEA? LET'S DISCUSS" (Image 2)
+   9. SECTION "HAVE AN AWESOME PROJECT IDEA? LET'S DISCUSS" (Image 6 Figma)
    -------------------------------------------------------------------------- */
 .discuss-section {
   padding: 6rem 0 4rem 0;
@@ -1261,11 +1510,12 @@ a {
   max-width: 580px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   margin-bottom: 2.5rem;
-  transition: border-color 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .discuss-pill-form:focus-within {
   border-color: var(--figma-orange);
+  box-shadow: 0 12px 35px rgba(253, 111, 0, 0.15);
 }
 
 .pill-input-icon {
@@ -1293,15 +1543,15 @@ a {
   border: none;
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 0.75rem 2rem;
+  padding: 0.8rem 2.2rem;
   border-radius: var(--radius-pill);
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.25s var(--ease-spring);
 }
 
 .discuss-submit-btn:hover {
   background: var(--figma-orange-hover);
-  transform: scale(1.02);
+  transform: scale(1.04);
 }
 
 .discuss-trust-badges {
@@ -1331,8 +1581,7 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   10. BANNER MARQUEE ORANGE INCLINÉ (Image 2)
-   Bandeau ticker défilant penché
+   10. BANNER MARQUEE ORANGE INCLINÉ (Image 6 Figma)
    -------------------------------------------------------------------------- */
 .marquee-ribbon-section {
   background: var(--figma-orange);
@@ -1346,7 +1595,7 @@ a {
 .marquee-ribbon-track {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 25s linear infinite;
+  animation: marquee-scroll 28s linear infinite;
 }
 
 .marquee-content {
@@ -1372,7 +1621,7 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   11. SECTION "FROM MY BLOG POST" (Image 3)
+   11. SECTION "FROM MY BLOG POST" (Image 7 Figma)
    -------------------------------------------------------------------------- */
 .blog-section {
   padding: 4rem 0 6rem 0;
@@ -1408,7 +1657,7 @@ a {
   position: relative;
   display: flex;
   flex-direction: column;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.35s var(--ease-spring), box-shadow 0.35s ease;
 }
 
 .blog-card:hover {
@@ -1434,14 +1683,14 @@ a {
 }
 
 .blog-card:hover .blog-img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .blog-tag-pill {
   position: absolute;
   bottom: 0.75rem;
   left: 0.75rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(8px);
   color: #1E1E1E;
   font-size: 0.75rem;
@@ -1493,7 +1742,7 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   12. FOOTER CARTE NOIRE "LETS CONNECT THERE" (Image 3)
+   12. FOOTER CARTE NOIRE "LETS CONNECT THERE" (Image 7 Figma)
    -------------------------------------------------------------------------- */
 .connect-footer-section {
   padding: 2rem 0 5rem 0;
@@ -1535,7 +1784,7 @@ a {
   padding: 0.85rem 2.2rem;
   border-radius: var(--radius-pill);
   box-shadow: 0 4px 15px rgba(253, 111, 0, 0.35);
-  transition: all 0.25s ease;
+  transition: all 0.25s var(--ease-spring);
 }
 
 .btn-hire-orange:hover {
@@ -1589,13 +1838,13 @@ a {
   justify-content: center;
   color: #FFFFFF;
   border: 1px solid #2C2C2C;
-  transition: all 0.25s ease;
+  transition: all 0.25s var(--ease-spring);
 }
 
 .social-circle:hover {
   background: var(--figma-orange);
   border-color: var(--figma-orange);
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.08);
 }
 
 .footer-col-title {
@@ -1692,51 +1941,118 @@ a {
   color: #444444;
 }
 
-/* Responsive pour les nouvelles sections */
-@media (max-width: 992px) {
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .blog-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-columns-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-  }
-
-  .footer-dark-card {
-    padding: 3rem 2rem;
-  }
+/* --------------------------------------------------------------------------
+   13. LIGHTBOX MODAL (Image Zoom Full Screen)
+   -------------------------------------------------------------------------- */
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
-@media (max-width: 600px) {
-  .footer-columns-grid {
-    grid-template-columns: 1fr;
-  }
+.image-lightbox.open {
+  display: flex;
+}
 
-  .discuss-headline,
-  .testi-title,
-  .connect-title,
-  .blog-heading {
-    font-size: 2rem;
-  }
+.lightbox-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(8px);
+}
 
-  .discuss-trust-badges {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
+.lightbox-content {
+  position: relative;
+  z-index: 2;
+  max-width: 90vw;
+  max-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lightboxZoomIn 0.35s var(--ease-spring) forwards;
+}
 
-  .trust-divider {
-    display: none;
-  }
+@keyframes lightboxZoomIn {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  color: var(--figma-orange);
+  transform: scale(1.15);
+}
+
+/* Animations Reveal au Scroll & Micro-interactions */
+.hero-stage,
+.hero-headline,
+.hello-bubble-wrap,
+.live-status-pill {
+  animation: heroEntrance 0.8s var(--ease-spring) forwards;
+}
+
+@keyframes heroEntrance {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes sparkle-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.35) rotate(10deg); opacity: 1; filter: drop-shadow(0 0 6px var(--figma-orange)); }
+}
+
+.doodle-sparkle-left,
+.doodle-sparkle-right,
+.doodle-star {
+  display: inline-block;
+  animation: sparkle-pulse 3s infinite ease-in-out;
 }
 
 /* --------------------------------------------------------------------------
-   9. RESPONSIVE DESIGN MOBILE-FIRST
+   14. RESPONSIVE DESIGN MOBILE-FIRST
    -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .testimonials-slider-track {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 992px) {
   .hero-stage {
     flex-direction: column;
@@ -1773,6 +2089,19 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-columns-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-dark-card {
+    padding: 3rem 2rem;
+  }
+
   .timeline-center-line {
     left: 1.5rem;
   }
@@ -1793,18 +2122,19 @@ a {
   .timeline-left,
   .timeline-right {
     padding: 0;
+    text-align: left;
   }
 }
 
 @media (max-width: 768px) {
   .header-wrapper {
-    top: 1rem;
+    top: 0.75rem;
   }
 
   .nav-pill {
     display: none;
     position: fixed;
-    top: 5rem;
+    top: 4.5rem;
     left: 1rem;
     right: 1rem;
     flex-direction: column;
@@ -1827,8 +2157,11 @@ a {
   .section-heading-center,
   .why-title,
   .portfolio-heading,
-  .contact-heading {
-    font-size: 2rem;
+  .testi-title,
+  .discuss-headline,
+  .connect-title,
+  .blog-heading {
+    font-size: 2.15rem;
   }
 
   .hero-dome-wrapper {
@@ -1843,5 +2176,18 @@ a {
 
   .services-black-card {
     padding: 3rem 1.5rem;
+  }
+
+  .footer-columns-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .discuss-trust-badges {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .trust-divider {
+    display: none;
   }
 }
