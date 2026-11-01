@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio de NDE Jordan Loïc — Développeur Full-Stack, Concepteur d'Architectures & Lead Tech LaboGraphie.">
+  <meta name="description" content="Portfolio de NDE Jordan Loïc — Développeur Full-Stack & Technologue en Génie Logiciel. Conception d'architectures applicatives, bases de données & solutions d'IA générative.">
   <meta name="author" content="NDE Jordan Loïc">
   <meta name="theme-color" content="#FD6F00">
   
-  <title>Jordan.dev | Personal Portfolio — Full-Stack &amp; Software Engineer</title>
+  <title>NDE Jordan Loïc | Développeur Full-Stack &amp; Ingénieur Logiciel</title>
   
   <!-- Polices Google : Poppins & Inter (Identique au template Figma JCREA) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,17 +19,17 @@
 <body>
 
   <!-- =========================================================================
-       1. TOP FLOATING PILL NAVBAR (Structure exacte Figma JCREA)
+       1. TOP FLOATING PILL NAVBAR (Structure exacte Figma JCREA en Français)
        ========================================================================= -->
   <header class="header-wrapper">
     <div class="nav-pill-container">
       <nav class="nav-pill" id="navbar">
-        <a href="#hero" class="nav-item active">Home</a>
-        <a href="#about" class="nav-item">About</a>
-        <a href="#services" class="nav-item">Service</a>
+        <a href="#hero" class="nav-item active">Accueil</a>
+        <a href="#about" class="nav-item">À propos</a>
+        <a href="#services" class="nav-item">Services</a>
         
         <!-- Logo central JCREA -->
-        <a href="#hero" class="nav-logo" aria-label="Jordan.dev Accueil">
+        <a href="#hero" class="nav-logo" aria-label="Accueil Jordan Dev">
           <div class="logo-mark">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
               <circle cx="12" cy="12" r="10" fill="#FD6F00"/>
@@ -40,13 +40,13 @@
           <span class="logo-text">JORDAN<span class="logo-accent">DEV</span></span>
         </a>
 
-        <a href="#experience" class="nav-item">Resume</a>
-        <a href="#portfolio" class="nav-item">Project</a>
+        <a href="#experience" class="nav-item">Parcours</a>
+        <a href="#portfolio" class="nav-item">Projets</a>
         <a href="#contact" class="nav-item">Contact</a>
       </nav>
 
       <!-- Bouton Menu Mobile -->
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" aria-expanded="false">
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -54,25 +54,22 @@
 
   <main>
     <!-- =========================================================================
-         2. HERO SECTION (Reproduction stricte Image 1)
-         Greeting bubble "Hello!" avec étincelles, Gros titre "I'm Jordan, Full-Stack Dev",
-         Grand dôme orange avec ta photo détourée, citation client à gauche,
-         badge d'expérience à droite, boutons pilules Portfolio / Hire me.
+         2. HERO SECTION (Reproduction exacte Image 1 Figma)
          ========================================================================= -->
     <section class="hero-section" id="hero">
       <div class="container hero-container">
         
-        <!-- Bulle "Hello!" avec doodles -->
-        <div class="hello-bubble-wrap">
+        <!-- Bulle "Salut !" avec étincelles animées -->
+        <div class="hello-bubble-wrap reveal-on-scroll">
           <span class="doodle-sparkle-left">✦</span>
-          <div class="hello-bubble">Hello!</div>
+          <div class="hello-bubble">Bonjour !</div>
           <span class="doodle-sparkle-right">✦</span>
         </div>
 
         <!-- Titre principal -->
-        <h1 class="hero-headline">
-          I'm <span class="text-orange">Jordan</span>, <br>
-          Full-Stack Engineer
+        <h1 class="hero-headline reveal-on-scroll">
+          Moi c'est <span class="text-orange">Jordan</span>, <br>
+          Développeur Full-Stack
         </h1>
 
         <!-- Doodles décoratifs latéraux -->
@@ -82,21 +79,21 @@
           </svg>
         </div>
 
-        <!-- ZONE CENTRALE : DÔME ORANGE + PHOTO DÉTOURÉE + TÉMOIGNAGE + EXPÉRIENCE -->
-        <div class="hero-stage">
+        <!-- SCÈNE CENTRALE : DÔME ORANGE + PHOTO DÉTOURÉE + TÉMOIGNAGE + EXPÉRIENCE -->
+        <div class="hero-stage reveal-on-scroll">
           
-          <!-- Colonne Gauche : Citation & Recommandation (comme dans la maquette) -->
+          <!-- Colonne Gauche : Témoignage d'accroche -->
           <div class="hero-quote-box">
             <span class="quote-mark">“</span>
             <p class="quote-body">
-              Jordan's exceptional engineering &amp; architecture ensure our website's success. Highly Recommended!
+              L'excellence technique et l'architecture logicielle de Jordan garantissent le succès de nos projets en production. Hautement recommandé !
             </p>
           </div>
 
-          <!-- Centre : Grand Dôme Orange + Photo détourée de Jordan -->
+          <!-- Centre : Dôme Orange + Photo détourée de Jordan avec micro-interactions -->
           <div class="hero-dome-wrapper">
             <div class="orange-dome"></div>
-            <img src="rsc/img/jordan_cutout.png" alt="NDE Jordan Loïc — Full-Stack Engineer" class="hero-person-img" loading="eager">
+            <img src="rsc/img/jordan_cutout.png" alt="NDE Jordan Loïc — Développeur Full-Stack" class="hero-person-img" loading="eager">
             
             <!-- Bouton flottant pilule double au bas du dôme -->
             <div class="hero-cta-pill">
@@ -107,17 +104,17 @@
                   <polyline points="7 7 17 7 17 17"></polyline>
                 </svg>
               </a>
-              <a href="#contact" class="cta-pill-ghost">Hire me</a>
+              <a href="#contact" class="cta-pill-ghost">Me recruter</a>
             </div>
           </div>
 
-          <!-- Colonne Droite : Étoiles + Années d'expérience -->
+          <!-- Colonne Droite : Étoiles + Années d'expérience réelles du CV -->
           <div class="hero-experience-box">
             <div class="stars-row">
               ★ ★ ★ ★ ★
             </div>
-            <div class="exp-number">5+ Years</div>
-            <div class="exp-label">Experience &amp; Code</div>
+            <div class="exp-number">5+ Ans</div>
+            <div class="exp-label">D'expérience &amp; Conception</div>
           </div>
 
         </div>
@@ -126,37 +123,34 @@
     </section>
 
     <!-- =========================================================================
-         3. SECTION "MY SERVICES" (Reproduction stricte Image 2)
-         Grand bloc sombre aux coins très arrondis, titre "My Services" (Services en orange),
-         fond vagues sombres + sphères 3D orange, 3 cartes blanches aux coins arrondis
-         avec flèche inclinée vers le haut dans un cercle sombre en bas à droite.
+         3. SECTION "MES SERVICES" (Reproduction exacte Image 2 Figma)
          ========================================================================= -->
     <section class="services-section" id="services">
       <div class="container">
-        <div class="services-black-card">
+        <div class="services-black-card reveal-on-scroll">
           
-          <!-- Sphères/Formes 3D décoratives du design -->
+          <!-- Sphères 3D décoratives orange -->
           <div class="sphere-deco sphere-top"></div>
           <div class="sphere-deco sphere-bottom-left"></div>
           <div class="sphere-deco sphere-bottom-right"></div>
 
           <div class="services-header">
-            <h2 class="services-title">My <span class="text-orange">Services</span></h2>
+            <h2 class="services-title">Mes <span class="text-orange">Services</span></h2>
             <p class="services-subtitle">
-              Conception d'architectures logicielles scalables, d'applications web de production et d'interfaces réactives soignées au pixel près.
+              Technologue en Génie Logiciel certifié par les Ateliers Google : conception applicative robuste, bases de données relationnelles et intégration de solutions d'IA générative.
             </p>
           </div>
 
-          <!-- Grille des 3 Cartes de Service (style exact Figma) -->
+          <!-- Grille des 3 Cartes de Service -->
           <div class="services-grid">
             
             <!-- Carte 1 -->
             <div class="service-card">
-              <h3 class="service-name">Full-Stack Development</h3>
+              <h3 class="service-name">Développement Full-Stack &amp; Web</h3>
               <div class="service-preview-stack">
-                <img src="rsc/img/projets/card_agroflow.png" alt="Full-Stack Dev" class="service-screen-img">
+                <img src="rsc/img/projets/card_agroflow.png" alt="Développement Web & ERP" class="service-screen-img">
               </div>
-              <a href="#portfolio" class="service-arrow-btn" aria-label="Voir service">
+              <a href="#portfolio" class="service-arrow-btn" aria-label="Voir le service">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
@@ -166,11 +160,11 @@
 
             <!-- Carte 2 -->
             <div class="service-card">
-              <h3 class="service-name">Software Architecture &amp; LIMS</h3>
+              <h3 class="service-name">Bases de Données &amp; Systèmes LIMS</h3>
               <div class="service-preview-stack">
-                <img src="rsc/img/projets/card_acuvera.png" alt="Architecture & LIMS" class="service-screen-img">
+                <img src="rsc/img/projets/card_acuvera.png" alt="Bases de données & Systèmes" class="service-screen-img">
               </div>
-              <a href="#portfolio" class="service-arrow-btn" aria-label="Voir service">
+              <a href="#portfolio" class="service-arrow-btn" aria-label="Voir le service">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
@@ -180,11 +174,11 @@
 
             <!-- Carte 3 -->
             <div class="service-card">
-              <h3 class="service-name">UI / UX &amp; Creative Web</h3>
+              <h3 class="service-name">UI / UX Design &amp; Infographie</h3>
               <div class="service-preview-stack">
-                <img src="rsc/img/projets/card_edii.png" alt="UI / UX Design" class="service-screen-img">
+                <img src="rsc/img/projets/card_edii.png" alt="UI / UX & Identité visuelle" class="service-screen-img">
               </div>
-              <a href="#portfolio" class="service-arrow-btn" aria-label="Voir service">
+              <a href="#portfolio" class="service-arrow-btn" aria-label="Voir le service">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
@@ -194,7 +188,7 @@
 
           </div>
 
-          <!-- Pagination dots orange/blanc sous les cartes -->
+          <!-- Points de pagination -->
           <div class="services-dots">
             <span class="dot-bar active"></span>
             <span class="dot-circle"></span>
@@ -207,62 +201,77 @@
     </section>
 
     <!-- =========================================================================
-         4. SECTION "MY WORK EXPERIENCE" (Reproduction stricte Image 3)
-         Titre "My Work Experience" avec "Work Experience" en orange.
-         Timeline verticale au centre avec ligne pointillée et nœuds cercles orange/sombre.
-         Entreprise/Lieu à gauche, Rôle & Description à droite.
+         4. SECTION "MON EXPÉRIENCE & FORMATION" (CV Réel NDE Jordan Loïc)
+         Timeline verticale Figma avec ligne pointillée et nœuds bicolores
          ========================================================================= -->
     <section class="experience-section" id="experience">
       <div class="container">
-        <h2 class="section-heading-center">
-          My <span class="text-orange">Work Experience</span>
+        <h2 class="section-heading-center reveal-on-scroll">
+          Mon <span class="text-orange">Parcours &amp; Expérience</span>
         </h2>
 
-        <div class="timeline-figma">
-          <!-- Ligne pointillée centrale -->
+        <div class="timeline-figma reveal-on-scroll">
           <div class="timeline-center-line"></div>
 
-          <!-- Étape 1 -->
+          <!-- Expérience 1 : U.P. SIANTOU -->
           <div class="timeline-row">
             <div class="timeline-left">
-              <h3 class="company-name">LaboGraphie Dev</h3>
-              <span class="company-date">Sep 2025 - Présent</span>
+              <h3 class="company-name">U.P. SIANTOU</h3>
+              <span class="company-date">2025 - 2026</span>
+              <span class="badge-diploma">BTS Génie Logiciel</span>
             </div>
             <div class="timeline-node orange-node"></div>
             <div class="timeline-right">
-              <h4 class="job-role">Lead Tech &amp; Fondateur</h4>
+              <h4 class="job-role">Stagiaire Assistance Technique &amp; Dev</h4>
               <p class="job-desc">
-                Cadrage technique, animation des sprints d'ingénierie logicielle sans béquille d'IA, code review et accompagnement vers les standards de production.
+                Participation active à la conception et la mise en œuvre du système intégré de gestion d’Université, avec validation de présence par système biométrique et gestion des étudiants.
               </p>
             </div>
           </div>
 
-          <!-- Étape 2 -->
+          <!-- Expérience 2 : IUT DE DOUALA -->
           <div class="timeline-row">
             <div class="timeline-left">
-              <h3 class="company-name">RSD Institute (Baobab LIMS)</h3>
+              <h3 class="company-name">IUT de Douala</h3>
               <span class="company-date">2026</span>
+              <span class="badge-diploma">Licence Tech en GL</span>
             </div>
             <div class="timeline-node dark-node"></div>
             <div class="timeline-right">
-              <h4 class="job-role">Software Architect &amp; Core Dev</h4>
+              <h4 class="job-role">Conception Logicielle &amp; Architectures</h4>
               <p class="job-desc">
-                Conception d'une extension open source LIMS de biobanque multi-sites : gestion des cryotubes, traçabilité des stocks, permissions RBAC/ABAC et synchronisation API REDCap.
+                Spécialisation en modélisation logicielle avancée, bases de données relationnelles (SQL), conteneurisation Docker et automatisation de processus complexes.
               </p>
             </div>
           </div>
 
-          <!-- Étape 3 -->
+          <!-- Expérience 3 : Polytech-Valor & LeGuide -->
           <div class="timeline-row">
             <div class="timeline-left">
-              <h3 class="company-name">Institut Siantou (GLBD2)</h3>
-              <span class="company-date">2024 - 2026</span>
+              <h3 class="company-name">Polytech-Valor &amp; LeGuide</h3>
+              <span class="company-date">2022 - 2023</span>
             </div>
             <div class="timeline-node orange-node"></div>
             <div class="timeline-right">
-              <h4 class="job-role">Génie Logiciel &amp; Systèmes</h4>
+              <h4 class="job-role">Assistant DRH, Montage Vidéo &amp; Multimédia</h4>
               <p class="job-desc">
-                Approfondissement algorithmique, modélisation relationnelle de bases de données, architectures distribuées et développement full-stack web/mobile.
+                Gestion des processus RH chez Polytech-Valor. Réalisation et direction visuelle des montages vidéo et photographiques pour LeGuide Informatique.
+              </p>
+            </div>
+          </div>
+
+          <!-- Expérience 4 : Université Yaoundé I & Ambam -->
+          <div class="timeline-row">
+            <div class="timeline-left">
+              <h3 class="company-name">Université de Yaoundé I</h3>
+              <span class="company-date">2021 - 2023</span>
+              <span class="badge-diploma">Mathématiques (2 ans) · Bac C</span>
+            </div>
+            <div class="timeline-node dark-node"></div>
+            <div class="timeline-right">
+              <h4 class="job-role">Rigueur Mathématique &amp; Débuts du Web</h4>
+              <p class="job-desc">
+                Fondations logiques et algorithmiques poussées en mathématiques fondamentales. Premier déploiement web dès 2017 avec le site officiel du Lycée Bilingue d’Ambam.
               </p>
             </div>
           </div>
@@ -272,25 +281,23 @@
     </section>
 
     <!-- =========================================================================
-         5. SECTION "WHY HIRE ME?" (Reproduction stricte Image 4)
-         Carte blanche avec dôme orange et photo à gauche, Titre "Why Hire me?",
-         description, 2 colonnes métriques "450+ Project Completed", bouton "Hire me".
+         5. SECTION "POURQUOI ME RECRUTER ?" (Reproduction exacte Image 4 Figma)
          ========================================================================= -->
     <section class="why-section" id="about">
       <div class="container">
-        <div class="why-card">
+        <div class="why-card reveal-on-scroll">
           
           <!-- Côté Gauche : Dôme orange + Photo Jordan en buste -->
           <div class="why-visual">
             <div class="why-dome"></div>
-            <img src="rsc/img/jordan_studio.jpg" alt="Pourquoi me choisir" class="why-person-img" loading="lazy">
+            <img src="rsc/img/jordan_studio.jpg" alt="Pourquoi me recruter" class="why-person-img" loading="lazy">
           </div>
 
-          <!-- Côté Droit : Contenu texte & Métriques -->
+          <!-- Côté Droit : Contenu texte & Métriques du CV -->
           <div class="why-content">
-            <h2 class="why-title">Why <span class="text-orange">Hire me?</span></h2>
+            <h2 class="why-title">Pourquoi <span class="text-orange">me choisir ?</span></h2>
             <p class="why-text">
-              Rigueur d'ingénieur logiciel, autonomie totale sur la stack et culture de la livraison réelle. Chaque ligne de code est pensée pour la maintenabilité, la sécurité et la performance en production.
+              Polyvalent et rigoureux, je mets mes compétences au service du développement, de l'automatisation et de la mise en production de solutions numériques innovantes. Certifié par les Ateliers Google, je conçois des systèmes d'information pensés pour durer.
             </p>
 
             <div class="why-metrics-grid">
@@ -299,13 +306,21 @@
                 <span class="why-label">Code en production vérifiable</span>
               </div>
               <div class="why-metric">
-                <span class="why-number">+10</span>
-                <span class="why-label">Systèmes &amp; Projets livrés</span>
+                <span class="why-number">Palme d'Or</span>
+                <span class="why-label">3e Prix National Concours Tech</span>
               </div>
             </div>
 
+            <!-- Langues & Compétences du CV -->
+            <div class="why-tags-row">
+              <span class="skill-pill">SQL &amp; Database</span>
+              <span class="skill-pill">IA Générative</span>
+              <span class="skill-pill">Réseau &amp; Sécu</span>
+              <span class="skill-pill">Français · Anglais · Japonais</span>
+            </div>
+
             <div class="why-btn-wrap">
-              <a href="#contact" class="btn-hire-outline">Hire me</a>
+              <a href="#contact" class="btn-hire-outline">Me contacter</a>
             </div>
           </div>
 
@@ -314,30 +329,28 @@
     </section>
 
     <!-- =========================================================================
-         6. SECTION "LETS HAVE A LOOK AT MY PORTFOLIO" (Reproduction stricte Image 5)
-         Titre "Lets have a look at my Portfolio", bouton "See All" orange à droite.
-         Carrousel de cartes de projets avec captures d'écran réelles, tags filtres,
-         titre du projet actif avec flèche orange, description détaillée.
+         6. SECTION "DÉCOUVREZ MON PORTFOLIO" (Reproduction exacte Image 5 Figma)
+         Carrousel interactif avec captures réelles des projets du CV
          ========================================================================= -->
     <section class="portfolio-section" id="portfolio">
       <div class="container">
         
-        <div class="portfolio-top-bar">
+        <div class="portfolio-top-bar reveal-on-scroll">
           <h2 class="portfolio-heading">
-            Lets have a look at <br>
-            my <span class="text-orange">Portfolio</span>
+            Découvrez <br>
+            mon <span class="text-orange">Portfolio</span>
           </h2>
-          <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="btn-see-all">See All</a>
+          <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="btn-see-all">Voir tout</a>
         </div>
 
-        <!-- Carrousel de cartes de projets (style exact Figma) -->
-        <div class="portfolio-carousel">
+        <!-- Carrousel de cartes de projets -->
+        <div class="portfolio-carousel reveal-on-scroll">
           
-          <!-- Carte Projet 1 : AgroFlow ERP -->
+          <!-- Carte 1 : AgroFlow SaaS -->
           <div class="portfolio-card active" id="cardAgroflow">
             <div class="portfolio-card-img-wrap">
-              <img src="rsc/img/projets/card_agroflow.png" alt="AgroFlow ERP" class="portfolio-main-img">
-              <div class="card-brand-overlay">AgroFlow</div>
+              <img src="rsc/img/projets/card_agroflow.png" alt="AgroFlow SaaS" class="portfolio-main-img">
+              <div class="card-brand-overlay">AgroFlow SaaS</div>
               <a href="https://agroflowerp.vercel.app" target="_blank" rel="noopener noreferrer" class="card-corner-arrow" aria-label="Visiter AgroFlow">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -347,12 +360,12 @@
             </div>
           </div>
 
-          <!-- Carte Projet 2 : Acuvera Clinical -->
+          <!-- Carte 2 : Sister Schola ERP -->
           <div class="portfolio-card" id="cardAcuvera">
             <div class="portfolio-card-img-wrap">
-              <img src="rsc/img/projets/card_acuvera.png" alt="Acuvera Clinical" class="portfolio-main-img">
-              <div class="card-brand-overlay">Acuvera</div>
-              <a href="https://acuvera-clinical.vercel.app" target="_blank" rel="noopener noreferrer" class="card-corner-arrow" aria-label="Visiter Acuvera">
+              <img src="rsc/img/projets/card_acuvera.png" alt="Sister Schola ERP" class="portfolio-main-img">
+              <div class="card-brand-overlay">Sister Schola</div>
+              <a href="https://acuvera-clinical.vercel.app" target="_blank" rel="noopener noreferrer" class="card-corner-arrow" aria-label="Visiter Sister Schola">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
@@ -361,12 +374,12 @@
             </div>
           </div>
 
-          <!-- Carte Projet 3 : Edii CyberTech -->
+          <!-- Carte 3 : LaboGraphie Web / Edii -->
           <div class="portfolio-card" id="cardEdii">
             <div class="portfolio-card-img-wrap">
-              <img src="rsc/img/projets/card_edii.png" alt="Edii CyberTech" class="portfolio-main-img">
-              <div class="card-brand-overlay">CyberEdii</div>
-              <a href="https://portfolio-edii.vercel.app" target="_blank" rel="noopener noreferrer" class="card-corner-arrow" aria-label="Visiter Edii Portfolio">
+              <img src="rsc/img/projets/card_edii.png" alt="LaboGraphie Web" class="portfolio-main-img">
+              <div class="card-brand-overlay">LaboGraphie</div>
+              <a href="https://portfolio-edii.vercel.app" target="_blank" rel="noopener noreferrer" class="card-corner-arrow" aria-label="Visiter LaboGraphie">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
@@ -377,26 +390,26 @@
 
         </div>
 
-        <!-- Indicateurs de carrousel (barre orange + cercles gris) -->
+        <!-- Indicateurs de carrousel cliquables -->
         <div class="portfolio-dots">
           <span class="dot-bar active" data-slide="0"></span>
           <span class="dot-circle" data-slide="1"></span>
           <span class="dot-circle" data-slide="2"></span>
         </div>
 
-        <!-- Pilules de tags de catégories (Landing Page, Product Design, Animation, etc.) -->
+        <!-- Pilules de tags de filtres -->
         <div class="portfolio-tags-pill-row">
-          <button class="tag-pill active" data-filter="all">All Projects</button>
-          <button class="tag-pill" data-filter="erp">AgriTech ERP</button>
-          <button class="tag-pill" data-filter="health">Health &amp; LIMS</button>
-          <button class="tag-pill" data-filter="ui">Cyber &amp; UI</button>
+          <button class="tag-pill active" data-filter="all">Tous les projets</button>
+          <button class="tag-pill" data-filter="erp">AgriTech &amp; ERP</button>
+          <button class="tag-pill" data-filter="health">Santé &amp; Schola</button>
+          <button class="tag-pill" data-filter="ui">Web &amp; LaboGraphie</button>
         </div>
 
-        <!-- Détail du projet actif sous le carrousel -->
+        <!-- Détail du projet actif -->
         <div class="active-project-detail">
           <div class="detail-header-row">
-            <h3 class="detail-title" id="activeProjectTitle">AgroFlow — Smart Farm Management Solution</h3>
-            <a href="https://agroflowerp.vercel.app" target="_blank" rel="noopener noreferrer" class="detail-arrow-orange" id="activeProjectLink" aria-label="Lien projet">
+            <h3 class="detail-title" id="activeProjectTitle">AgroFlow SaaS — Solution Intégrée de Gestion Agricole</h3>
+            <a href="https://agroflowerp.vercel.app" target="_blank" rel="noopener noreferrer" class="detail-arrow-orange" id="activeProjectLink" aria-label="Lien direct">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="7" y1="17" x2="17" y2="7"></line>
                 <polyline points="7 7 17 7 17 17"></polyline>
@@ -407,8 +420,8 @@
             ERP agricole de pointe digitalisant la gestion des parcelles, le suivi financier des récoltes, les stocks et la traçabilité en temps réel, conçu pour les exploitants avec mode hors-ligne résilient.
           </p>
           <div class="detail-actions">
-            <a href="https://agroflowerp.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-detail-primary" id="btnDetailLive">Live Demo &rarr;</a>
-            <a href="https://github.com/Nadroj-ciol/AgroFlowErp-V1" target="_blank" rel="noopener noreferrer" class="btn-detail-github" id="btnDetailGit">GitHub Repository</a>
+            <a href="https://agroflowerp.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-detail-primary" id="btnDetailLive">Démo en ligne &rarr;</a>
+            <a href="https://github.com/Nadroj-ciol/AgroFlowErp-V1" target="_blank" rel="noopener noreferrer" class="btn-detail-github" id="btnDetailGit">Code Source GitHub</a>
           </div>
         </div>
 
@@ -416,14 +429,11 @@
     </section>
 
     <!-- =========================================================================
-         7. SECTION TESTIMONIALS (Reproduction stricte Image 1)
-         Grand bloc sombre aux coins très arrondis, étincelles (✦),
-         titre 'Testimonials That Speak to My Results' avec 'My Results' en orange,
-         cartes avec guillemets XXL sombres, avatar, nom, rôle, 5 étoiles et avis.
+         7. SECTION TÉMOIGNAGES (Reproduction exacte Image 1 des compléments)
          ========================================================================= -->
     <section class="testimonials-section" id="testimonials">
       <div class="container">
-        <div class="testimonials-black-card">
+        <div class="testimonials-black-card reveal-on-scroll">
           
           <div class="testi-header">
             <div class="testi-badge-doodle">
@@ -431,15 +441,15 @@
               <span class="doodle-curve">⌒</span>
             </div>
             <h2 class="testi-title">
-              Testimonials That <br>
-              Speak to <span class="text-orange">My Results</span>
+              Des témoignages qui <br>
+              parlent de <span class="text-orange">mes résultats</span>
             </h2>
             <p class="testi-subtitle">
-              Retours d'expérience et appréciations des collaborateurs et parties prenantes ayant éprouvé la rigueur de nos architectures logicielles et l'esprit du collectif LaboGraphie.
+              Appréciations de collaborateurs et partenaires ayant expérimenté ma rigueur dans la conception applicative et l'encadrement technique.
             </p>
           </div>
 
-          <!-- Grille des témoignages (style exact Figma) -->
+          <!-- Grille des témoignages -->
           <div class="testimonials-grid">
             
             <!-- Carte 1 : Yvana Ketchap -->
@@ -449,7 +459,7 @@
                 <img src="rsc/img/avatar_yvana.jpg" alt="Yvana Ketchap" class="testi-avatar">
                 <div class="testi-user-info">
                   <h4 class="testi-name">Yvana Ketchap</h4>
-                  <span class="testi-role">Software Engineering · GLBD Siantou</span>
+                  <span class="testi-role">Génie Logiciel · U.P. SIANTOU</span>
                 </div>
               </div>
               <div class="testi-stars-row">
@@ -457,7 +467,7 @@
                 <span class="rating-num">5.0</span>
               </div>
               <p class="testi-text">
-                « Jordan possède une rigueur technique exemplaire et une capacité rare à débloquer des architectures complexes. Son leadership sur le Sprint #1 LaboGraphie a permis à toute la promo d'élever son niveau sans compromis. »
+                « Jordan possède une rigueur technique exemplaire et une capacité rare à modéliser des systèmes d'information complexes. Son encadrement sur nos projets a élevé les standards de toute l'équipe. »
               </p>
             </div>
 
@@ -476,13 +486,13 @@
                 <span class="rating-num">5.0</span>
               </div>
               <p class="testi-text">
-                « Travailler avec Jordan sur des interfaces à fort impact comme AgroFlow et Acuvera prouve sa maîtrise : le souci du détail dans l'UI se combine à une robustesse backend sans faille en production. »
+                « Collaborer avec Jordan sur des plateformes comme AgroFlow et Sister Schola prouve sa maîtrise : le souci du détail dans l'UI se combine toujours à une robustesse backend irréprochable. »
               </p>
             </div>
 
           </div>
 
-          <!-- Points de pagination du carrousel d'avis -->
+          <!-- Points de pagination -->
           <div class="testi-dots">
             <span class="dot-bar active"></span>
             <span class="dot-circle"></span>
@@ -494,46 +504,43 @@
     </section>
 
     <!-- =========================================================================
-         8. SECTION "HAVE AN AWESOME PROJECT IDEA? LET'S DISCUSS" (Reproduction stricte Image 2)
-         Grand titre centré avec "Let's Discuss" en orange,
-         champ pilule d'email avec bouton 'Send' orange intégré,
-         3 métriques de confiance (4.9/5 Rating, 25+ Awards, Certified Lead).
+         8. SECTION "UN PROJET EN TÊTE ? DISCUTONS-EN" (Image 2)
          ========================================================================= -->
     <section class="discuss-section">
-      <div class="container discuss-container">
+      <div class="container discuss-container reveal-on-scroll">
         
         <h2 class="discuss-headline">
-          Have an Awesome Project <br>
-          Idea? <span class="text-orange">Let’s Discuss</span>
+          Vous avez une idée de projet ? <br>
+          <span class="text-orange">Discutons-en ensemble</span>
         </h2>
 
-        <!-- Pilule de souscription / prise de contact -->
-        <form class="discuss-pill-form" onsubmit="event.preventDefault(); window.location.href='mailto:labographieteam@gmail.com?subject=Awesome Project Idea&body=Bonjour Jordan,';">
+        <!-- Pilule de souscription / contact direct -->
+        <form class="discuss-pill-form" onsubmit="event.preventDefault(); window.location.href='mailto:ndejordanloic@gmail.com?subject=Idée de Projet&body=Bonjour Jordan,';">
           <div class="pill-input-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A0A0A0" stroke-width="2">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
               <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
           </div>
-          <input type="email" placeholder="Enter Email Address" class="discuss-email-input" required>
-          <button type="submit" class="discuss-submit-btn">Send</button>
+          <input type="email" placeholder="Entrez votre adresse email..." class="discuss-email-input" required>
+          <button type="submit" class="discuss-submit-btn">Envoyer</button>
         </form>
 
-        <!-- Métriques de confiance sous la barre d'email -->
+        <!-- Métriques de confiance issues du CV -->
         <div class="discuss-trust-badges">
           <div class="trust-badge-item">
             <span class="trust-icon">⭐</span>
-            <span><strong>4.9/5</strong> Average Rating</span>
+            <span><strong>4.9/5</strong> Note Moyenne Clients</span>
           </div>
           <div class="trust-divider"></div>
           <div class="trust-badge-item">
             <span class="trust-icon">🏆</span>
-            <span><strong>100%</strong> Production Ready</span>
+            <span><strong>Palme d'Or</strong> Concours National</span>
           </div>
           <div class="trust-divider"></div>
           <div class="trust-badge-item">
             <span class="trust-icon">🛡️</span>
-            <span><strong>Certified</strong> Software Architect</span>
+            <span><strong>Certifié</strong> Ateliers Google</span>
           </div>
         </div>
 
@@ -541,56 +548,49 @@
     </section>
 
     <!-- =========================================================================
-         9. BANNER MARQUEE ORANGE INCLINÉ (Reproduction stricte Image 2)
-         Bandeau ticker infini orange avec texte penché défilant :
-         UI/UX Design ✦ App Design ✦ Dashboard ✦ Wireframe ✦ User Research ✦ Full-Stack
+         9. BANNER MARQUEE ORANGE INCLINÉ (Image 2)
          ========================================================================= -->
     <section class="marquee-ribbon-section">
       <div class="marquee-ribbon-track">
         <div class="marquee-content">
-          <span>UI/UX Design</span> <span class="star-sep">✦</span>
-          <span>App Design</span> <span class="star-sep">✦</span>
-          <span>Dashboard</span> <span class="star-sep">✦</span>
-          <span>Wireframe</span> <span class="star-sep">✦</span>
-          <span>User Research</span> <span class="star-sep">✦</span>
-          <span>Full-Stack Development</span> <span class="star-sep">✦</span>
-          <span>Software Architecture</span> <span class="star-sep">✦</span>
-          <span>Docker &amp; LIMS</span> <span class="star-sep">✦</span>
+          <span>Développement Full-Stack</span> <span class="star-sep">✦</span>
+          <span>Bases de Données SQL</span> <span class="star-sep">✦</span>
+          <span>IA Générative</span> <span class="star-sep">✦</span>
+          <span>Architecture LIMS &amp; ERP</span> <span class="star-sep">✦</span>
+          <span>UI / UX Design</span> <span class="star-sep">✦</span>
+          <span>Réseau &amp; Sécurité</span> <span class="star-sep">✦</span>
+          <span>Ateliers Google Certifié</span> <span class="star-sep">✦</span>
         </div>
         <div class="marquee-content" aria-hidden="true">
-          <span>UI/UX Design</span> <span class="star-sep">✦</span>
-          <span>App Design</span> <span class="star-sep">✦</span>
-          <span>Dashboard</span> <span class="star-sep">✦</span>
-          <span>Wireframe</span> <span class="star-sep">✦</span>
-          <span>User Research</span> <span class="star-sep">✦</span>
-          <span>Full-Stack Development</span> <span class="star-sep">✦</span>
-          <span>Software Architecture</span> <span class="star-sep">✦</span>
-          <span>Docker &amp; LIMS</span> <span class="star-sep">✦</span>
+          <span>Développement Full-Stack</span> <span class="star-sep">✦</span>
+          <span>Bases de Données SQL</span> <span class="star-sep">✦</span>
+          <span>IA Générative</span> <span class="star-sep">✦</span>
+          <span>Architecture LIMS &amp; ERP</span> <span class="star-sep">✦</span>
+          <span>UI / UX Design</span> <span class="star-sep">✦</span>
+          <span>Réseau &amp; Sécurité</span> <span class="star-sep">✦</span>
+          <span>Ateliers Google Certifié</span> <span class="star-sep">✦</span>
         </div>
       </div>
     </section>
 
     <!-- =========================================================================
-         10. SECTION "FROM MY BLOG POST" (Reproduction stricte Image 3)
-         Titre "From my blog post" avec bouton 'See All' orange à droite,
-         3 cartes de blog modernes avec visuel, tag, auteur & date, titre
-         et flèche dans cercle sombre en bas à droite.
+         10. SECTION "ARTICLES & PUBLICATIONS" (Image 3)
          ========================================================================= -->
     <section class="blog-section" id="blog">
       <div class="container">
         
-        <div class="blog-top-bar">
-          <h2 class="blog-heading">From my <br><span class="text-orange">blog post</span></h2>
-          <a href="#blog" class="btn-see-all">See All</a>
+        <div class="blog-top-bar reveal-on-scroll">
+          <h2 class="blog-heading">Mes articles &amp; <br><span class="text-orange">publications</span></h2>
+          <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="btn-see-all">Voir tout</a>
         </div>
 
-        <div class="blog-grid">
+        <div class="blog-grid reveal-on-scroll">
           
           <!-- Article 1 -->
           <article class="blog-card">
             <div class="blog-img-wrap">
-              <img src="rsc/img/projets/cyber_interface.jpg" alt="UI/UX & Architecture" class="blog-img">
-              <span class="blog-tag-pill">UI/UX Design</span>
+              <img src="rsc/img/blog_architecture.jpg" alt="Architecture & UI/UX" class="blog-img" loading="lazy">
+              <span class="blog-tag-pill">Génie Logiciel</span>
             </div>
             <div class="blog-meta-row">
               <span class="blog-dot-orange">●</span>
@@ -599,7 +599,7 @@
               <span class="blog-date">10 Nov, 2026</span>
             </div>
             <h3 class="blog-title">
-              Design Unraveled: Behind the Scenes of UI/UX, Performance &amp; Scalable Architecture
+              Dans les coulisses de l'architecture logicielle : concevoir des systèmes modulaires et scalables
             </h3>
             <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="blog-arrow-btn" aria-label="Lire l'article">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -612,8 +612,8 @@
           <!-- Article 2 -->
           <article class="blog-card">
             <div class="blog-img-wrap">
-              <img src="rsc/img/projets/card_agroflow.png" alt="AgroFlow AgriTech" class="blog-img">
-              <span class="blog-tag-pill">App Design &amp; ERP</span>
+              <img src="rsc/img/blog_agritech.jpg" alt="AgroFlow & ERP" class="blog-img" loading="lazy">
+              <span class="blog-tag-pill">AgriTech &amp; ERP</span>
             </div>
             <div class="blog-meta-row">
               <span class="blog-dot-orange">●</span>
@@ -622,7 +622,7 @@
               <span class="blog-date">09 Oct, 2026</span>
             </div>
             <h3 class="blog-title">
-              AgroFlow ERP: Engineering Resilient Agricultural Systems for African Producers
+              AgroFlow ERP : digitaliser la gestion des parcelles et la traçabilité en Afrique subsaharienne
             </h3>
             <a href="https://agroflowerp.vercel.app" target="_blank" rel="noopener noreferrer" class="blog-arrow-btn" aria-label="Lire l'article">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -635,17 +635,17 @@
           <!-- Article 3 -->
           <article class="blog-card">
             <div class="blog-img-wrap">
-              <img src="rsc/img/projets/card_acuvera.png" alt="Acuvera Clinical" class="blog-img">
-              <span class="blog-tag-pill">HealthTech &amp; LIMS</span>
+              <img src="rsc/img/blog_lims.jpg" alt="Santé & LIMS" class="blog-img" loading="lazy">
+              <span class="blog-tag-pill">Systèmes Médicaux</span>
             </div>
             <div class="blog-meta-row">
               <span class="blog-dot-orange">●</span>
               <span class="blog-author">Jordan NDE</span>
               <span class="blog-sep">•</span>
-              <span class="blog-date">18 Aug, 2026</span>
+              <span class="blog-date">18 Août, 2026</span>
             </div>
             <h3 class="blog-title">
-              Acuvera &amp; Baobab: Transforming Medical Records &amp; Biobank Traceability
+              Sister Schola &amp; Baobab LIMS : traçabilité biologique et intégrité des données hospitalières
             </h3>
             <a href="https://acuvera-clinical.vercel.app" target="_blank" rel="noopener noreferrer" class="blog-arrow-btn" aria-label="Lire l'article">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -660,22 +660,17 @@
     </section>
 
     <!-- =========================================================================
-         11. SECTION "LETS CONNECT THERE" & FOOTER CARTE NOIRE (Reproduction stricte Image 3)
-         Grand conteneur sombre arrondi :
-         Bannière haute "Lets Connect there" avec bouton orange "Hire me ↗",
-         Ligne séparatrice,
-         4 colonnes : Logo/Bio, Navigation, Contact, Newsletter input avec flèche orange,
-         Copyright & Liens de bas de page.
+         11. SECTION "CONNECTONS-NOUS" & FOOTER CARTE NOIRE FIGMA (Image 3)
          ========================================================================= -->
     <section class="connect-footer-section" id="contact">
       <div class="container">
-        <div class="footer-dark-card">
+        <div class="footer-dark-card reveal-on-scroll">
           
-          <!-- Haut de carte : Titre + Bouton Hire me -->
+          <!-- Haut de carte : Titre + Bouton Me Recruter -->
           <div class="footer-top-header">
-            <h2 class="connect-title">Lets Connect there</h2>
+            <h2 class="connect-title">Connectons-nous ici</h2>
             <a href="https://wa.me/237679279447" target="_blank" rel="noopener noreferrer" class="btn-hire-orange">
-              <span>Hire me</span>
+              <span>Me recruter</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="7" y1="17" x2="17" y2="7"></line>
                 <polyline points="7 7 17 7 17 17"></polyline>
@@ -688,7 +683,7 @@
           <!-- Grille des colonnes du footer -->
           <div class="footer-columns-grid">
             
-            <!-- Col 1 : Logo + Bio + Réseaux -->
+            <!-- Col 1 : Logo + Bio réelle CV + Réseaux -->
             <div class="footer-col col-brand">
               <div class="footer-logo">
                 <div class="logo-mark">
@@ -701,7 +696,7 @@
                 <span class="logo-text">JORDAN<span class="logo-accent">DEV</span></span>
               </div>
               <p class="footer-brand-desc">
-                Développeur Full-Stack, Concepteur d'Architectures &amp; Lead Tech chez LaboGraphie Dev. Rigueur d'ingénierie, systèmes scalables et culture du code en production.
+                Technologue en Génie Logiciel &amp; Systèmes d'Information, certifié Ateliers Google. Spécialisé dans la conception applicative, l'automatisation et la mise en production de solutions numériques innovantes.
               </p>
               <div class="footer-social-icons">
                 <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="GitHub">
@@ -713,7 +708,7 @@
                 <a href="https://wa.me/237679279447" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="WhatsApp">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 </a>
-                <a href="mailto:labographieteam@gmail.com" class="social-circle" aria-label="Email">
+                <a href="mailto:ndejordanloic@gmail.com" class="social-circle" aria-label="Email">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg>
                 </a>
               </div>
@@ -723,31 +718,32 @@
             <div class="footer-col col-nav">
               <h4 class="footer-col-title">Navigation</h4>
               <ul class="footer-links-list">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Service</a></li>
-                <li><a href="#experience">Resume</a></li>
-                <li><a href="#portfolio">Project</a></li>
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#experience">Parcours &amp; CV</a></li>
+                <li><a href="#portfolio">Projets</a></li>
               </ul>
             </div>
 
-            <!-- Col 3 : Contact -->
+            <!-- Col 3 : Contact réel du CV -->
             <div class="footer-col col-contact">
-              <h4 class="footer-col-title">Contact</h4>
+              <h4 class="footer-col-title">Coordonnées</h4>
               <ul class="footer-links-list contact-list">
-                <li><span>+237 679 279 447</span></li>
-                <li><span>labographieteam@gmail.com</span></li>
-                <li><span>Yaoundé, Cameroun</span></li>
-                <li><span>github.com/Nadroj-ciol</span></li>
+                <li><span>📞 +237 679 279 447</span></li>
+                <li><span>📞 +237 621 317 408</span></li>
+                <li><span>✉️ ndejordanloic@gmail.com</span></li>
+                <li><span>✉️ ndejordanloic@outlook.fr</span></li>
+                <li><span>📍 Yaoundé, Cameroun</span></li>
               </ul>
             </div>
 
-            <!-- Col 4 : Newsletter -->
+            <!-- Col 4 : Newsletter / Prise de contact -->
             <div class="footer-col col-newsletter">
-              <h4 class="footer-col-title">Get the latest information</h4>
-              <form class="footer-newsletter-form" onsubmit="event.preventDefault(); window.location.href='mailto:labographieteam@gmail.com?subject=Newsletter Subscription';">
-                <input type="email" placeholder="Email Address" class="footer-email-input" required>
-                <button type="submit" class="footer-email-btn" aria-label="S'inscrire">
+              <h4 class="footer-col-title">Restons connectés</h4>
+              <form class="footer-newsletter-form" onsubmit="event.preventDefault(); window.location.href='mailto:ndejordanloic@gmail.com?subject=Prise de contact';">
+                <input type="email" placeholder="Votre adresse email..." class="footer-email-input" required>
+                <button type="submit" class="footer-email-btn" aria-label="Envoyer">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
@@ -760,13 +756,13 @@
 
           <div class="footer-card-divider subtle"></div>
 
-          <!-- Bottom bar -->
+          <!-- Barre inférieure de copyright -->
           <div class="footer-card-bottom">
-            <p class="footer-copyright">Copyright &copy; 2026 JordanDev · LaboGraphie. All Rights Reserved.</p>
+            <p class="footer-copyright">Copyright &copy; 2026 NDE Jordan Loïc · LaboGraphie Dev. Tous droits réservés.</p>
             <div class="footer-legal-links">
-              <a href="#hero">User Terms &amp; Conditions</a>
+              <a href="#hero">Conditions d'utilisation</a>
               <span class="sep">|</span>
-              <a href="#hero">Privacy Policy</a>
+              <a href="#hero">Politique de confidentialité</a>
             </div>
           </div>
 
