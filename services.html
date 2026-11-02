@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services & Solutions — NDE Jordan L. · Technologue & Développeur Full-Stack</title>
+  <meta name="description" content="Découvrez les 6 domaines d'expertise de NDE Jordan L. : Génie Logiciel, ERP & SaaS, Réseaux & Sécurité, Maintenance IT, IA & Automatisation, Infographie & Direction Artistique.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-services">
+
+  <!-- =========================================================================
+       HEADER NAVIGATION PARTAGÉ (Figma 1:1)
+       ========================================================================= -->
+  <header class="header-wrapper">
+    <div class="nav-pill-container">
+      <nav class="nav-pill" id="navbar">
+        <a href="index.html" class="nav-item" data-i18n="nav.home">Accueil</a>
+        <a href="services.html" class="nav-item active" data-i18n="nav.services">Services</a>
+        
+        <!-- Logo central JCREA Style avec monogramme NJ et nom bicolore -->
+        <a href="index.html" class="nav-logo" aria-label="Accueil NDE Jordan L.">
+          <div class="logo-mark-nj">
+            <span class="logo-initials">NJ</span>
+          </div>
+          <span class="logo-text">
+            <span class="logo-nde">NDE</span>
+            <span class="logo-jordan">Jordan L</span><span class="logo-dot">.</span>
+          </span>
+        </a>
+
+        <a href="portfolio.html" class="nav-item" data-i18n="nav.projects">Portfolio</a>
+        <a href="blog.html" class="nav-item" data-i18n="nav.blog">Blog</a>
+        <a href="contact.html" class="nav-item" data-i18n="nav.contact">Contact</a>
+
+        <!-- Sélecteur Bilingue discret FR / EN -->
+        <div class="lang-switch-wrap" role="group" aria-label="Langue / Language">
+          <button class="lang-btn active" data-lang="fr">FR</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </nav>
+
+      <!-- Bouton Menu Mobile Hamburger -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         1. HERO DE LA PAGE SERVICES
+         ========================================================================= -->
+    <section class="subpage-hero">
+      <div class="container">
+        <span class="subpage-badge">✦ Solutions &amp; Prestations d'Ingénierie</span>
+        <h1 class="subpage-title">
+          Mes Services &amp; <span class="text-orange">Domaines d'Expertise</span>
+        </h1>
+        <p class="subpage-desc">
+          Technologue en Génie Logiciel diplômé de l'IUT de Douala et certifié Ateliers Google, je mets mes compétences pluridisciplinaires au service de vos projets : de l'architecture logicielle haute disponibilité à la direction artistique de vos marques.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         2. GRILLE DÉTAILLÉE DES 6 DOMAINES DE SERVICES
+         ========================================================================= -->
+    <section class="services-catalog-section">
+      <div class="container">
+        <div class="services-catalog-grid">
+          
+          <!-- Domaine 1 : Génie Logiciel & ERP -->
+          <div class="service-catalog-card">
+            <div class="service-card-icon-wrap">💻</div>
+            <h3 class="service-catalog-title">Génie Logiciel &amp; Applications Web</h3>
+            <p class="service-catalog-text">
+              Conception et développement sur-mesure d'architectures SaaS, plateformes ERP modulaires et applications web complètes, pensées pour la haute résilience et le mode hors-ligne.
+            </p>
+            <ul class="service-features-list">
+              <li>Architectures ERP agricoles &amp; de santé</li>
+              <li>Modélisation de bases de données relationnelles SQL</li>
+              <li>APIs RESTful performantes et sécurisées</li>
+              <li>Conteneurisation Docker &amp; CI/CD automatisé</li>
+            </ul>
+            <a href="portfolio.html?filter=dev" class="btn-detail-primary" style="text-align:center;">Voir les projets Dev &rarr;</a>
+          </div>
+
+          <!-- Domaine 2 : Réseaux & Sécurité Informatique -->
+          <div class="service-catalog-card">
+            <div class="service-card-icon-wrap">🛡️</div>
+            <h3 class="service-catalog-title">Réseaux &amp; Sécurité Applicative</h3>
+            <p class="service-catalog-text">
+              Mise en œuvre d'infrastructures de télécommunications fiables, câblage d'armoires et baies de brassage, segmentation VLAN et sécurisation des accès réseau d'entreprise.
+            </p>
+            <ul class="service-features-list">
+              <li>Câblage structuré et brassage d'armoires</li>
+              <li>Configuration de routeurs, switchs &amp; pare-feu</li>
+              <li>Contrôle d'accès et authentification biométrique</li>
+              <li>Audit de vulnérabilités et plans de continuité</li>
+            </ul>
+            <a href="contact.html?subject=Reseau" class="btn-detail-github" style="text-align:center;">Demander un audit réseau &rarr;</a>
+          </div>
+
+          <!-- Domaine 3 : Maintenance & Systèmes Hardware -->
+          <div class="service-catalog-card">
+            <div class="service-card-icon-wrap">⚙️</div>
+            <h3 class="service-catalog-title">Maintenance Informatique &amp; Support</h3>
+            <p class="service-catalog-text">
+              Diagnostic approfondi de parcs informatiques, maintenance préventive et curative des postes de travail, optimisation logicielle et assistance technique aux utilisateurs.
+            </p>
+            <ul class="service-features-list">
+              <li>Dépannage matériel et remplacement de composants</li>
+              <li>Installation et durcissement de systèmes d'exploitation</li>
+              <li>Sauvegarde automatisée et récupération de données</li>
+              <li>Assistance sur site et télémaintenance réactive</li>
+            </ul>
+            <a href="contact.html?subject=Maintenance" class="btn-detail-github" style="text-align:center;">Assistance technique &rarr;</a>
+          </div>
+
+          <!-- Domaine 4 : IA Générative & Automatisation -->
+          <div class="service-catalog-card">
+            <div class="service-card-icon-wrap">🤖</div>
+            <h3 class="service-catalog-title">IA Générative &amp; Automatisation</h3>
+            <p class="service-catalog-text">
+              Intégration de flux intelligents automatisés, traitement de langage naturel et modèles génératifs pour optimiser les processus métiers et booster la productivité.
+            </p>
+            <ul class="service-features-list">
+              <li>Intégration d'APIs d'IA (Gemini, OpenAI)</li>
+              <li>Pipelines d'automatisation de tâches répétitives</li>
+              <li>Extraction et analyse intelligente de documents</li>
+              <li>Solutions conversationnelles métier</li>
+            </ul>
+            <a href="contact.html?subject=IA" class="btn-detail-github" style="text-align:center;">Projet d'automatisation &rarr;</a>
+          </div>
+
+          <!-- Domaine 5 : Photographie & Vidéographie -->
+          <div class="service-catalog-card">
+            <div class="service-card-icon-wrap">📸</div>
+            <h3 class="service-catalog-title">Photographie &amp; Vidéographie Pro</h3>
+            <p class="service-catalog-text">
+              Captation photo et vidéo pour structures d'entreprises, événements académiques et packagings produits. Expérience acquise auprès de LeGuide Informatique.
+            </p>
+            <ul class="service-features-list">
+              <li>Shooting produits et packagings commerciaux</li>
+              <li>Couverture photographique d'événements et colloques</li>
+              <li>Montage vidéo promotionnel et clips pour réseaux sociaux</li>
+              <li>Retouches numériques professionnelles</li>
+            </ul>
+            <a href="contact.html?subject=Photo" class="btn-detail-github" style="text-align:center;">Réserver un shooting &rarr;</a>
+          </div>
+
+          <!-- Domaine 6 : Infographie & Direction Artistique -->
+          <div class="service-catalog-card">
+            <div class="service-card-icon-wrap">🎨</div>
+            <h3 class="service-catalog-title">Infographie &amp; Direction Artistique</h3>
+            <p class="service-catalog-text">
+              Création d'identités visuelles complètes, logos vectoriels scalables, supports de communication print grand format (roll-ups, affiches, flyers) et packagings esthétiques.
+            </p>
+            <ul class="service-features-list">
+              <li>Logos vectoriels et chartes graphiques complètes</li>
+              <li>Flyers promotionnels percutants (Petit Colis, GMC, Candace)</li>
+              <li>Mockups 3D réalistes de produits et stands d'exposition</li>
+              <li>Signalétique événementielle et roll-ups 3D</li>
+            </ul>
+            <a href="portfolio.html?filter=infographie" class="btn-detail-primary" style="text-align:center;">Découvrir la galerie graphique &rarr;</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. SECTION "COMMENT ÇA MARCHE" (Processus en 4 étapes)
+         ========================================================================= -->
+    <section class="process-section">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+          <span class="subpage-badge">Méthodologie Éprouvée</span>
+          <h2 style="font-size: 2.5rem; font-weight: 700; color: #1A1A1A;">Comment se déroule <span class="text-orange">notre collaboration</span> ?</h2>
+          <p style="color: #666; font-size: 0.95rem; margin-top: 0.5rem;">De la première prise de contact jusqu'au déploiement et au support continu.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step-card">
+            <div class="step-num">01</div>
+            <h4 class="step-title">Cadrage &amp; Écoute</h4>
+            <p class="step-desc">Analyse fine de votre besoin, définition du cahier des charges et compréhension de vos contraintes techniques ou artistiques.</p>
+          </div>
+          <div class="process-step-card">
+            <div class="step-num">02</div>
+            <h4 class="step-title">Devis &amp; Conception</h4>
+            <p class="step-desc">Élaboration d'une proposition claire avec délais maîtrisés, maquettes visuelles ou schémas d'architecture logicielle.</p>
+          </div>
+          <div class="process-step-card">
+            <div class="step-num">03</div>
+            <h4 class="step-title">Développement &amp; Tests</h4>
+            <p class="step-desc">Implémentation rigoureuse selon les meilleures pratiques du marché, tests fonctionnels et itérations collaboratives.</p>
+          </div>
+          <div class="process-step-card">
+            <div class="step-num">04</div>
+            <h4 class="step-title">Livraison &amp; Support</h4>
+            <p class="step-desc">Mise en production sécurisée, remise des sources vectorielles ou du code testé, et accompagnement technique dans la durée.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. TARIFICATION & MODES D'ENGAGEMENT
+         ========================================================================= -->
+    <section class="pricing-section">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+          <span class="subpage-badge">Transparence &amp; Flexibilité</span>
+          <h2 style="font-size: 2.5rem; font-weight: 700; color: #1A1A1A;">Formules d'intervention <span class="text-orange">adaptées</span></h2>
+          <p style="color: #666; font-size: 0.95rem; margin-top: 0.5rem;">Des formules flexibles calibrées pour les PME, startups, cabinets médicaux et créateurs de projets.</p>
+        </div>
+
+        <div class="pricing-grid">
+          
+          <div class="pricing-card">
+            <h3 class="pricing-name">Mission Ponctuelle</h3>
+            <p class="pricing-desc">Idéal pour un livrable précis : flyer, logo, audit réseau ou composant logiciel isolé.</p>
+            <ul class="pricing-features">
+              <li>Cahier des charges cadré</li>
+              <li>Livrables clés en main sous 2 à 7 jours</li>
+              <li>Révisions incluses</li>
+              <li>Fichiers sources fournis (Code ou Vecteurs)</li>
+            </ul>
+            <a href="contact.html?formule=ponctuelle" class="btn-detail-github" style="text-align:center;">Demander un devis</a>
+          </div>
+
+          <div class="pricing-card featured">
+            <span class="pricing-badge">Recommandé</span>
+            <h3 class="pricing-name">Projet Clé en Main</h3>
+            <p class="pricing-desc">Idéal pour la création complète d'un ERP, SaaS, identité de marque 360° ou infrastructure réseau.</p>
+            <ul class="pricing-features">
+              <li>Accompagnement de A à Z (Architecture + Dev + Tests)</li>
+              <li>Déploiement en production (Vercel, Docker, Serveur)</li>
+              <li>Mode hors-ligne résilient et base de données SQL</li>
+              <li>Garantie et support technique étendu 30 jours</li>
+            </ul>
+            <a href="contact.html?formule=projet" class="btn-detail-primary" style="text-align:center;">Lancer mon projet &rarr;</a>
+          </div>
+
+          <div class="pricing-card">
+            <h3 class="pricing-name">Régie &amp; Maintenance</h3>
+            <p class="pricing-desc">Idéal pour les entreprises souhaitant un suivi technique ou infographique mensuel réactif.</p>
+            <ul class="pricing-features">
+              <li>Support technique prioritaire (24/48h)</li>
+              <li>Maintenance préventive de vos applications et parcs</li>
+              <li>Production graphique régulière (campagnes, affiches)</li>
+              <li>Optimisations continues de performance</li>
+            </ul>
+            <a href="contact.html?formule=regie" class="btn-detail-github" style="text-align:center;">Discuter d'un contrat</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. FOIRE AUX QUESTIONS (FAQ)
+         ========================================================================= -->
+    <section class="faq-section">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <span class="subpage-badge">Questions Fréquentes</span>
+          <h2 style="font-size: 2.3rem; font-weight: 700; color: #1A1A1A;">Tout ce que vous devez <span class="text-orange">savoir</span></h2>
+        </div>
+
+        <div class="faq-item open">
+          <button class="faq-question">
+            <span>Quels sont vos délais habituels de livraison ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Pour les prestations graphiques (logos, affiches, flyers), les propositions initiales sont généralement livrées sous 48 à 72 heures. Pour les applications et ERP complets, le calendrier s'articule généralement entre 2 et 6 semaines selon la complexité et les fonctionnalités requises.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Pouvez-vous intervenir à distance ou uniquement sur place à Yaoundé ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            J'interviens aussi bien en présentiel à Yaoundé et Douala pour les besoins d'infrastructure, de câblage et de maintenance physique, qu'à distance pour le développement logiciel, la conception de bases de données et l'infographie avec des clients nationaux et internationaux.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Comment garantissez-vous la sécurité et la confidentialité des données ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Chaque système développé (notamment dans la santé comme Sister Schola ou l'agriculture avec AgroFlow) applique le principe de moindre privilège, le chiffrement des flux sensibles et le respect strict du secret professionnel. Des accords de confidentialité (NDA) peuvent être signés avant tout début de collaboration.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Quelles sont les modalités de paiement acceptées ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Les paiements s'effectuent généralement avec un acompte au démarrage du projet puis le solde à la livraison finale validée. Les modes acceptés incluent virement bancaire, Orange Money, MTN Mobile Money et solutions internationales.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. APPEL À L'ACTION (CTA CONTACT & WHATSAPP)
+         ========================================================================= -->
+    <section class="discuss-section">
+      <div class="container discuss-container">
+        <h2 class="discuss-headline">
+          <span>Un besoin en développement ou en infographie ?</span> <br>
+          <span class="text-orange">Parlons de votre projet dès aujourd'hui</span>
+        </h2>
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="https://wa.me/237679279447?text=Bonjour%20Jordan,%20je%20souhaite%20un%20devis%20pour%20un%20projet." target="_blank" rel="noopener noreferrer" class="contact-whatsapp-banner" style="margin-top:0;">
+            <span>Discuter directement sur WhatsApp &rarr;</span>
+          </a>
+          <a href="contact.html" class="btn-detail-primary" style="padding: 0.9rem 2rem;">
+            <span>Formulaire de devis complet</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER PARTAGÉ (Figma 1:1)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-card">
+        <div class="footer-columns-grid">
+          
+          <div class="footer-col col-brand">
+            <div class="footer-logo">
+              <div class="logo-mark-nj">
+                <span class="logo-initials">NJ</span>
+              </div>
+              <span class="logo-text">
+                <span class="logo-nde">NDE</span>
+                <span class="logo-jordan">Jordan L</span><span class="logo-dot">.</span>
+              </span>
+            </div>
+            <p class="footer-brand-desc" data-i18n="footer.bio">
+              Technologue en Génie Logiciel &amp; Systèmes d'Information, certifié Ateliers Google. Spécialisé dans la conception logicielle, la maintenance d'infrastructures et l'infographie.
+            </p>
+            <div class="footer-social-icons">
+              <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0 1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/jordan-lo%C3%AFc-nde-63b041427/" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a href="https://wa.me/237679279447?text=Bonjour%20Jordan,%20j'ai%20consult%C3%A9%20votre%20page%20Services%20et%20souhaite%20%C3%A9changer%20avec%20vous." target="_blank" rel="noopener noreferrer" class="social-circle social-whatsapp" aria-label="WhatsApp Jordan L.">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+              </a>
+              <a href="mailto:ndejordanloic@gmail.com" class="social-circle" aria-label="Email Jordan L.">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-col col-nav">
+            <h4 class="footer-col-title">Navigation</h4>
+            <ul class="footer-links-list">
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col col-contact">
+            <h4 class="footer-col-title">Coordonnées</h4>
+            <ul class="footer-links-list contact-list">
+              <li><span>📞 +237 679 279 447</span></li>
+              <li><span>📞 +237 621 317 408</span></li>
+              <li><span>✉️ ndejordanloic@gmail.com</span></li>
+              <li><span>✉️ ndejordanloic@outlook.fr</span></li>
+              <li><span>📍 Yaoundé, Cameroun</span></li>
+            </ul>
+          </div>
+
+          <div class="footer-col col-newsletter">
+            <h4 class="footer-col-title">Demande de Devis Rapide</h4>
+            <form class="footer-newsletter-form" onsubmit="event.preventDefault(); window.location.href='contact.html';">
+              <input type="email" placeholder="Votre email..." class="footer-email-input" required>
+              <button type="submit" class="footer-email-btn" aria-label="Continuer">&rarr;</button>
+            </form>
+          </div>
+
+        </div>
+
+        <div class="footer-card-divider subtle"></div>
+
+        <div class="footer-card-bottom">
+          <p class="footer-copyright">Copyright &copy; 2026 NDE Jordan L. · LaboGraphie Dev. Tous droits réservés.</p>
+          <div class="footer-legal-links">
+            <a href="index.html">Accueil</a>
+            <span class="sep">|</span>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

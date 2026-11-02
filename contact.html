@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Devis — NDE Jordan L. · Technologue & Développeur Full-Stack</title>
+  <meta name="description" content="Contactez NDE Jordan L. pour vos projets d'ingénierie logicielle, SaaS ERP, maintenance d'infrastructures ou identité graphique. Réponse sous 24h.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-contact">
+
+  <!-- =========================================================================
+       HEADER NAVIGATION PARTAGÉ (Figma 1:1)
+       ========================================================================= -->
+  <header class="header-wrapper">
+    <div class="nav-pill-container">
+      <nav class="nav-pill" id="navbar">
+        <a href="index.html" class="nav-item" data-i18n="nav.home">Accueil</a>
+        <a href="services.html" class="nav-item" data-i18n="nav.services">Services</a>
+        
+        <!-- Logo central JCREA Style avec monogramme NJ et nom bicolore -->
+        <a href="index.html" class="nav-logo" aria-label="Accueil NDE Jordan L.">
+          <div class="logo-mark-nj">
+            <span class="logo-initials">NJ</span>
+          </div>
+          <span class="logo-text">
+            <span class="logo-nde">NDE</span>
+            <span class="logo-jordan">Jordan L</span><span class="logo-dot">.</span>
+          </span>
+        </a>
+
+        <a href="portfolio.html" class="nav-item" data-i18n="nav.projects">Portfolio</a>
+        <a href="blog.html" class="nav-item" data-i18n="nav.blog">Blog</a>
+        <a href="contact.html" class="nav-item active" data-i18n="nav.contact">Contact</a>
+
+        <!-- Sélecteur Bilingue discret FR / EN -->
+        <div class="lang-switch-wrap" role="group" aria-label="Langue / Language">
+          <button class="lang-btn active" data-lang="fr">FR</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </nav>
+
+      <!-- Bouton Menu Mobile Hamburger -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         1. HERO DE LA PAGE CONTACT
+         ========================================================================= -->
+    <section class="subpage-hero">
+      <div class="container">
+        <span class="subpage-badge">✦ Échange Direct &amp; Devis Gratuit</span>
+        <h1 class="subpage-title">
+          Discutons de <span class="text-orange">votre Projet</span>
+        </h1>
+        <p class="subpage-desc">
+          Une question, un besoin en architecture logicielle, un audit réseau ou une identité visuelle d'envergure ? Contactez-moi directement ou remplissez le formulaire pour une estimation rapide.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         2. GRILLE DE CONTACT & FORMULAIRE D'ESTIMATION
+         ========================================================================= -->
+    <section class="contact-section" style="padding: 2rem 0 5rem 0;">
+      <div class="container">
+        
+        <div class="contact-page-grid">
+          
+          <!-- Colonne Gauche : Coordonnées Directes -->
+          <div class="contact-info-panel">
+            <h2 class="contact-info-title">Restons en contact</h2>
+            <p class="contact-info-desc">
+              Je réponds personnellement à toutes les demandes techniques et commerciales sous 24 heures ouvrées.
+            </p>
+
+            <div class="contact-direct-items">
+              <div class="contact-direct-item">
+                <div class="contact-direct-icon">📞</div>
+                <div>
+                  <div class="contact-direct-label">Téléphone &amp; WhatsApp</div>
+                  <a href="tel:+237679279447" class="contact-direct-val">+237 679 279 447</a> <br>
+                  <a href="tel:+237621317408" class="contact-direct-val" style="color: #A0A0A0; font-size: 0.9rem;">+237 621 317 408</a>
+                </div>
+              </div>
+
+              <div class="contact-direct-item">
+                <div class="contact-direct-icon">✉️</div>
+                <div>
+                  <div class="contact-direct-label">Adresses Email</div>
+                  <a href="mailto:ndejordanloic@gmail.com" class="contact-direct-val">ndejordanloic@gmail.com</a> <br>
+                  <a href="mailto:ndejordanloic@outlook.fr" class="contact-direct-val" style="color: #A0A0A0; font-size: 0.9rem;">ndejordanloic@outlook.fr</a>
+                </div>
+              </div>
+
+              <div class="contact-direct-item">
+                <div class="contact-direct-icon">📍</div>
+                <div>
+                  <div class="contact-direct-label">Localisation &amp; Mobilité</div>
+                  <div class="contact-direct-val">Yaoundé &amp; Douala, Cameroun</div>
+                  <span style="font-size: 0.82rem; color: #888;">Disponible en présentiel &amp; télétravail international</span>
+                </div>
+              </div>
+
+              <div class="contact-direct-item">
+                <div class="contact-direct-icon">⏱️</div>
+                <div>
+                  <div class="contact-direct-label">Disponibilité</div>
+                  <div class="contact-direct-val" style="color: #25D366;">● Immédiate pour missions &amp; conseil</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bouton WhatsApp Officiel -->
+            <a href="https://wa.me/237679279447?text=Bonjour%20Jordan,%20j'ai%20consult%C3%A9%20votre%20portfolio%20et%20souhaite%20discuter%20d'un%20projet%20avec%20vous." target="_blank" rel="noopener noreferrer" class="contact-whatsapp-banner">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+              <span>Démarrer un chat WhatsApp direct</span>
+            </a>
+          </div>
+
+          <!-- Colonne Droite : Formulaire de contact / Devis -->
+          <div class="contact-form-panel">
+            <h2 style="font-size: 1.75rem; font-weight: 700; color: #1A1A1A; margin-bottom: 0.5rem;">Envoyez un message</h2>
+            <p style="font-size: 0.95rem; color: #666; margin-bottom: 2rem;">
+              Précisez vos besoins pour recevoir une réponse adaptée et un devis préliminaire sous 24h.
+            </p>
+
+            <form id="contactForm" onsubmit="handleContactSubmit(event)">
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label class="form-label" for="contactName">Nom complet *</label>
+                  <input type="text" id="contactName" class="form-input" placeholder="Ex: Jean Dupont" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contactEmail">Adresse email *</label>
+                  <input type="email" id="contactEmail" class="form-input" placeholder="Ex: jean.dupont@entreprise.com" required>
+                </div>
+              </div>
+
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label class="form-label" for="contactPhone">Téléphone / WhatsApp</label>
+                  <input type="tel" id="contactPhone" class="form-input" placeholder="Ex: +237 600 000 000">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contactService">Domaine d'expertise souhaité *</label>
+                  <select id="contactService" class="form-select" required>
+                    <option value="" disabled selected>Sélectionnez un domaine...</option>
+                    <option value="software">Génie Logiciel &amp; SaaS ERP</option>
+                    <option value="infographie">Infographie &amp; Identité de Marque</option>
+                    <option value="systems">Maintenance Systèmes &amp; Réseaux</option>
+                    <option value="consulting">Consultant IT &amp; Audit d'Architecture</option>
+                    <option value="other">Autre collaboration</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contactBudget">Fourchette budgétaire estimative</label>
+                <select id="contactBudget" class="form-select">
+                  <option value="flexible">À déterminer ensemble</option>
+                  <option value="tier1">&lt; 150 000 FCFA (~230 €)</option>
+                  <option value="tier2">150 000 - 500 000 FCFA (~230 - 760 €)</option>
+                  <option value="tier3">500 000 - 1 500 000 FCFA (~760 - 2 300 €)</option>
+                  <option value="tier4">&gt; 1 500 000 FCFA (Projet d'envergure)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contactMessage">Détails de votre besoin ou cahier des charges *</label>
+                <textarea id="contactMessage" class="form-textarea" placeholder="Décrivez les fonctionnalités attendues, les contraintes de délai et le contexte de votre projet..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-form-submit" id="btnSubmitContact">
+                <span>Envoyer ma demande</span>
+                <span>&rarr;</span>
+              </button>
+
+              <div class="form-alert-success" id="contactAlertSuccess">
+                ✓ Merci ! Votre message a été préparé. Vous allez être redirigé vers WhatsApp ou votre messagerie pour confirmation instantanée.
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- =========================================================================
+             3. FAQ TECHNIQUE & COLLABORATION
+             ========================================================================= -->
+        <div class="faq-section" style="margin-top: 4rem;">
+          <div class="faq-header">
+            <span class="subpage-badge">✦ Foire Aux Questions</span>
+            <h2 class="subpage-title" style="font-size: 2.25rem;">Modalités de <span class="text-orange">Collaboration</span></h2>
+          </div>
+
+          <div class="faq-accordion">
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Comment se déroule le premier échange technique ?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                Après réception de votre demande, nous organisons un appel de cadrage de 30 minutes (Google Meet, WhatsApp ou en présentiel à Yaoundé/Douala) pour définir vos exigences techniques, l'architecture optimale et établir une estimation budgétaire transparente.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Proposez-vous une maintenance après la livraison du projet ?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                Oui. Chaque développement applicatif inclut une période de garantie corrective post-déploiement. Je propose également des contrats de maintenance préventive et d'astreinte mensuelle pour assurer la haute disponibilité de vos systèmes.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Travaillez-vous avec des clients à l'international ?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                Absolument. Je collabore régulièrement à distance avec des entreprises et organisations à l'international grâce à des flux de travail structurés (Git, Jira/Trello, réunions synchrones régulières et documentation complète).
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Quels sont les modes de règlement acceptés ?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">
+                Les paiements s'effectuent par virement bancaire, Orange Money, MTN Mobile Money ou solutions de paiement international. Les projets sont généralement découpés en jalons (acompte au démarrage, validation intermédiaire, solde à la livraison).
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER PARTAGÉ (Figma 1:1)
+       ========================================================================= -->
+  <footer class="connect-footer-section" id="footer">
+    <div class="container">
+      <div class="footer-dark-card">
+        
+        <div class="footer-top-row">
+          <div class="footer-col col-brand">
+            <div class="footer-logo">
+              <div class="logo-mark-nj">
+                <span class="logo-initials">NJ</span>
+              </div>
+              <span class="logo-text">
+                <span class="logo-nde">NDE</span>
+                <span class="logo-jordan">Jordan L</span><span class="logo-dot">.</span>
+              </span>
+            </div>
+            <p class="footer-brand-desc" data-i18n="footer.bio">
+              Technologue en Génie Logiciel &amp; Systèmes d'Information, certifié Ateliers Google. Spécialisé dans la conception logicielle, la maintenance d'infrastructures et l'infographie.
+            </p>
+            <div class="footer-social-icons">
+              <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0 1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/jordan-lo%C3%AFc-nde-63b041427/" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a href="https://wa.me/237679279447?text=Bonjour%20Jordan,%20j'ai%20consult%C3%A9%20votre%20portfolio%20et%20souhaite%20%C3%A9changer%20avec%20vous." target="_blank" rel="noopener noreferrer" class="social-circle social-whatsapp" aria-label="WhatsApp Jordan L.">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+              </a>
+              <a href="mailto:ndejordanloic@gmail.com" class="social-circle" aria-label="Email Jordan L.">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-col col-nav">
+            <h4 class="footer-col-title">Navigation</h4>
+            <ul class="footer-links-list">
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col col-contact">
+            <h4 class="footer-col-title">Coordonnées</h4>
+            <ul class="footer-links-list contact-list">
+              <li><span>📞 +237 679 279 447</span></li>
+              <li><span>📞 +237 621 317 408</span></li>
+              <li><span>✉️ ndejordanloic@gmail.com</span></li>
+              <li><span>✉️ ndejordanloic@outlook.fr</span></li>
+              <li><span>📍 Yaoundé, Cameroun</span></li>
+            </ul>
+          </div>
+
+          <div class="footer-col col-newsletter">
+            <h4 class="footer-col-title">Demande de Devis Rapide</h4>
+            <form class="footer-newsletter-form" onsubmit="event.preventDefault(); window.location.href='contact.html';">
+              <input type="email" placeholder="Votre email..." class="footer-email-input" required>
+              <button type="submit" class="footer-email-btn" aria-label="Continuer">&rarr;</button>
+            </form>
+          </div>
+
+        </div>
+
+        <div class="footer-card-divider subtle"></div>
+
+        <div class="footer-card-bottom">
+          <p class="footer-copyright">Copyright &copy; 2026 NDE Jordan L. · LaboGraphie Dev. Tous droits réservés.</p>
+          <div class="footer-legal-links">
+            <a href="index.html">Accueil</a>
+            <span class="sep">|</span>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('contactName').value;
+      const email = document.getElementById('contactEmail').value;
+      const phone = document.getElementById('contactPhone').value;
+      const service = document.getElementById('contactService').value;
+      const budget = document.getElementById('contactBudget').value;
+      const message = document.getElementById('contactMessage').value;
+
+      const alertBox = document.getElementById('contactAlertSuccess');
+      if (alertBox) alertBox.style.display = 'block';
+
+      // Redirection WhatsApp fluide avec les données pré-remplies
+      const waText = encodeURIComponent(`Bonjour Jordan,\n\nJe m'appelle ${name} (${email}, tel: ${phone}).\nBesoin: ${service} (Budget: ${budget}).\nMessage:\n${message}`);
+      setTimeout(() => {
+        window.open(`https://wa.me/237679279447?text=${waText}`, '_blank');
+      }, 1200);
+    }
+  </script>
+</body>
+</html>

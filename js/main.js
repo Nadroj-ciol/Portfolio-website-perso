@@ -304,12 +304,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  let currentLang = localStorage.getItem('jordan_portfolio_lang') || 'fr';
+  let currentLang = 'fr';
+  try {
+    currentLang = localStorage.getItem('jordan_portfolio_lang') || 'fr';
+  } catch (e) {
+    currentLang = 'fr';
+  }
+  let currentProjectIdx = 0;
 
   function applyLanguage(lang) {
     if (!translations[lang]) return;
     currentLang = lang;
-    localStorage.setItem('jordan_portfolio_lang', lang);
+    try {
+      localStorage.setItem('jordan_portfolio_lang', lang);
+    } catch (e) {}
 
     const langBtns = document.querySelectorAll('.lang-btn');
     langBtns.forEach(btn => {
@@ -331,7 +339,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    updateActiveProjectDetail();
+    if (typeof updateActiveProjectDetail === 'function') {
+      try {
+        updateActiveProjectDetail();
+      } catch (err) {}
+    }
   }
 
   const langBtns = document.querySelectorAll('.lang-btn');
@@ -350,6 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
      ========================================================================= */
   const projectsData = [
     {
+      id: "agroflow",
       title_fr: "AgroFlow SaaS — Plateforme ERP & Gestion Agricole Intelligente",
       title_en: "AgroFlow SaaS — Integrated Agricultural ERP Platform",
       desc_fr: "ERP agricole de pointe digitalisant la gestion des parcelles, le suivi financier des récoltes, les stocks et la traçabilité en temps réel, conçu pour les exploitants avec mode hors-ligne résilient.",
@@ -365,6 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     {
+      id: "sisterschola",
       title_fr: "Sister Schola ERP — Pilotage Hospitalier & Clinique",
       title_en: "Sister Schola ERP — Healthcare & Clinical Management",
       desc_fr: "Système de gestion et de suivi clinique complet pour centres de santé : centralisation des dossiers patients, admissions, consultations, prescription médicale, facturation et intégrité des flux cliniques.",
@@ -379,6 +393,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     {
+      id: "candace",
       title_fr: "Candace Distribution & Petit Colis — Identité Visuelle & Direction Artistique",
       title_en: "Candace Distribution & Petit Colis — Brand Identity & Art Direction",
       desc_fr: "Direction artistique, typographie, affiches promotionnelles grand format et packagings produits (Candace Cosmétique, Petit Colis de Gautier Funga, Fosa'a Academy). Des créations vectorielles à fort impact commercial.",
@@ -394,6 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     {
+      id: "labographie",
       title_fr: "LaboGraphie Web — Plateforme d'Ingénierie & Prototypage Logiciel",
       title_en: "LaboGraphie Web — Software Engineering & Prototyping Platform",
       desc_fr: "Vitrine digitale et laboratoire pratique dédié aux développeurs et passionnés de tech camerounais : « Moins de théorie passive, plus de code en production ». Ergonomie moderne, fluidité mobile et performances optimisées.",
@@ -408,6 +424,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     {
+      id: "acuvera",
       title_fr: "Acuvera Clinical — Suivi Clinique & Traçabilité LIMS",
       title_en: "Acuvera Clinical — Clinical Follow-up & LIMS Traceability",
       desc_fr: "Plateforme cloud de gestion des analyses biomédicales et suivi des prélèvements : traçabilité stricte des échantillons, conformité des flux de laboratoire et édition de bilans de diagnostic.",
@@ -423,6 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     {
+      id: "arduino",
       title_fr: "Systèmes Embarqués Arduino, Maintenance & Réseaux",
       title_en: "Arduino Embedded Systems, Maintenance & IT Infrastructure",
       desc_fr: "Programmation de microcontrôleurs Arduino, interfaçage de capteurs environnementaux, câblage d'armoires réseau, configuration de routeurs et switchboards, et validation biométrique d'étudiants (UP Siantou).",
@@ -438,7 +456,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-  let currentProjectIdx = 0;
   const portfolioTrack = document.getElementById('portfolioTrack');
   const cards = document.querySelectorAll('.portfolio-card');
   const dots = document.querySelectorAll('#portfolioDots span');
@@ -452,8 +469,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnPortfolioNext = document.getElementById('btnPortfolioNext');
 
   function updateActiveProjectDetail() {
+    if (typeof projectsData === 'undefined' || typeof currentProjectIdx === 'undefined') return;
     if (currentProjectIdx < 0 || currentProjectIdx >= projectsData.length) return;
     const p = projectsData[currentProjectIdx];
+    if (!p) return;
 
     const title = (currentLang === 'en' && p.title_en) ? p.title_en : p.title_fr;
     const desc = (currentLang === 'en' && p.desc_en) ? p.desc_en : p.desc_fr;
@@ -477,6 +496,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     if (btnGit) btnGit.href = p.github;
+    const btnCase = document.getElementById('btnDetailCase');
+    if (btnCase) btnCase.href = `projet-detail.html?id=${p.id || 'agroflow'}`;
 
     // Mise à jour dynamique de la galerie miniature
     if (activeGallery && p.gallery) {
@@ -545,8 +566,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Filtrage par onglets
+  // Filtrage par onglets (Supporte à la fois index.html et portfolio.html)
   const tagPills = document.querySelectorAll('.tag-pill');
+  const hubCards = document.querySelectorAll('.portfolio-hub-card');
+
   tagPills.forEach(pill => {
     pill.addEventListener('click', () => {
       tagPills.forEach(p => p.classList.remove('active'));
@@ -554,10 +577,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const filter = pill.getAttribute('data-filter');
       
+      // Filtrage du carrousel sur index.html
       cards.forEach((card) => {
         const cat = card.getAttribute('data-cat');
         if (filter === 'all' || cat === filter) {
           card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Filtrage de la grille sur portfolio.html
+      hubCards.forEach((card) => {
+        const cat = card.getAttribute('data-cat');
+        if (filter === 'all' || cat === filter) {
+          card.style.display = 'flex';
         } else {
           card.style.display = 'none';
         }
@@ -581,7 +615,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Barre de recherche fluide avec autocomplétion
+  // Barre de recherche fluide avec autocomplétion (index.html & portfolio.html)
   const searchInput = document.getElementById('projectSearchInput');
   const searchClear = document.getElementById('projectSearchClear');
   const searchChips = document.querySelectorAll('.search-chip');
@@ -593,11 +627,23 @@ document.addEventListener('DOMContentLoaded', () => {
       else searchClear.classList.remove('visible');
     }
 
+    // Filtre des cartes du carrousel
     cards.forEach(card => {
       const text = card.textContent.toLowerCase();
       const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
       if (!q || text.includes(q) || keywords.includes(q)) {
         card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Filtre des cartes de la grille du hub
+    hubCards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+      if (!q || text.includes(q) || keywords.includes(q)) {
+        card.style.display = 'flex';
       } else {
         card.style.display = 'none';
       }
@@ -737,13 +783,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* =========================================================================
-     5. VISIONNEUSE LIGHTBOX (ZOOM PLEIN ÉCRAN)
+     5. VISIONNEUSE LIGHTBOX (ZOOM PLEIN ÉCRAN UNIVERSEL DÉLÉGUÉ)
      ========================================================================= */
   const lightbox = document.getElementById('imageLightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxClose = document.getElementById('lightboxClose');
   const lightboxOverlay = document.getElementById('lightboxOverlay');
-  const zoomBtns = document.querySelectorAll('.btn-zoom-img');
 
   function openLightbox(src) {
     if (!lightbox || !lightboxImg) return;
@@ -758,12 +803,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  zoomBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
+  // Délégation d'événement universelle pour tout élément avec la classe .btn-zoom-img
+  document.addEventListener('click', (e) => {
+    const zoomTarget = e.target.closest('.btn-zoom-img');
+    if (zoomTarget) {
       e.stopPropagation();
-      const imgPath = btn.getAttribute('data-img');
+      const imgPath = zoomTarget.getAttribute('data-img');
       if (imgPath) openLightbox(imgPath);
-    });
+    }
   });
 
   if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
@@ -773,6 +820,276 @@ document.addEventListener('DOMContentLoaded', () => {
       closeLightbox();
     }
   });
+
+
+  /* =========================================================================
+     6. ACCORDÉON FAQ (SERVICES & CONTACT)
+     ========================================================================= */
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    if (question) {
+      question.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        faqItems.forEach(other => other.classList.remove('open'));
+        if (!isOpen) {
+          item.classList.add('open');
+        }
+      });
+    }
+  });
+
+
+  /* =========================================================================
+     7. CHARGEMENT DYNAMIQUE DE L'ÉTUDE DE CAS (projet-detail.html)
+     ========================================================================= */
+  const caseStudiesData = {
+    agroflow: {
+      title: "AgroFlow SaaS ERP — Gestion Agricole & Traçabilité",
+      category: "SaaS ERP & AgriTech",
+      year: "Année 2025 - 2026",
+      role: "Lead Developer & Architecte SI",
+      status: "● En Production",
+      summary: "Conception intégrale d'une suite logicielle cloud et offline-first pour les exploitants agricoles et coopératives. Digitalisation des parcelles, suivi phytosanitaire, comptabilité analytique des récoltes et génération de rapports automatisés.",
+      mainBanner: "rsc/img/projets/card_agroflow.png",
+      liveUrl: "https://agroflowsaas.vercel.app",
+      gitUrl: "https://github.com/Nadroj-ciol/AgroFlowErp-V1",
+      waText: "Bonjour Jordan, j'ai consulté l'étude de cas AgroFlow et souhaite un projet similaire.",
+      problem: "Dans le secteur agro-pastoral, les exploitants et coopératives font face à des pertes considérables dues à une gestion manuelle sur registres papier, à l'absence de traçabilité des intrants et à une connectivité Internet très instable dans les zones de plantation. L'objectif était de développer un outil intuitif, accessible sur mobile et desktop, capable de fonctionner sans interruption même en zone blanche.",
+      architecture: "Pour répondre aux contraintes du terrain, j'ai mis en place une architecture modulaire basée sur React en frontend avec synchronisation locale IndexedDB, couplée à un backend REST en Node.js et une base relationnelle PostgreSQL hautement optimisée. La modélisation a suivi la méthode MERISE (MCD/MLD) garantissant une 3ème forme normale stricte.",
+      results: "Le déploiement d'AgroFlow a permis de réduire le temps de consolidation des stocks de 75%, de supprimer les erreurs de saisie manuelle et de fournir aux exploitants une visibilité immédiate sur leurs marges par parcelle cultivée. Le système de synchronisation offline traite les écritures locales et les résout instantanément dès le rétablissement du réseau.",
+      quoteText: "« L'architecture d'AgroFlow et sa prise en main intuitive ont transformé notre suivi des campagnes agricoles. Jordan a su anticiper toutes les contraintes de connectivité du terrain avec brio. »",
+      quoteAuthor: "— Chanceline, Direction Opérationnelle EGESOL SARL",
+      client: "Exploitants & Coopératives (EGESOL)",
+      industry: "AgriTech & Agro-industrie",
+      duration: "4 Mois (Conception & Déploiement)",
+      authorRole: "Lead Developer & Architecte SI",
+      techs: ["React", "Node.js", "PostgreSQL", "IndexedDB", "Docker"],
+      gallery: [
+        { img: "rsc/img/projets/card_agroflow.png", caption: "Tableau de bord & KPIs" },
+        { img: "rsc/img/projets/shot_agroflow.png", caption: "Interface d'exploitation" },
+        { img: "rsc/img/projets/dev/DC_Agroflow.png", caption: "Diagramme de Classes SQL" }
+      ]
+    },
+    sisterschola: {
+      title: "Sister Schola ERP — Système Hospitalier & LIMS Clinique",
+      category: "Santé & LIMS Clinique",
+      year: "Année 2025 - 2026",
+      role: "Lead Developer Full-Stack",
+      status: "● En Production",
+      summary: "Plateforme ERP sur-mesure pour établissements de santé, cliniques et laboratoires d'analyse médicale. Gestion complète des admissions, dossiers patients confidentiels, facturation des actes et traçabilité des prélèvements biologiques.",
+      mainBanner: "rsc/img/projets/dev/SisterSholaErp.png",
+      liveUrl: "https://sisterscholaerp.vercel.app",
+      gitUrl: "https://github.com/Nadroj-ciol",
+      waText: "Bonjour Jordan, j'ai consulté l'étude de cas Sister Schola et souhaite un projet similaire.",
+      problem: "Les centres hospitaliers et polycliniques gèrent des flux de patients complexes et des dossiers médicaux sensibles. Les retards dans la transmission des ordonnances et la perte de fiches d'admission physiques causaient des files d'attente importantes et des risques d'erreurs médicales.",
+      architecture: "Conception d'une application React/TypeScript avec gestion des permissions par rôles (RBAC : médecins, infirmiers, caissiers, biologistes). Le backend Express et la base PostgreSQL intègrent un journal d'audit immuable conforme aux impératifs du secret médical.",
+      results: "Réduction de 60% du temps d'attente à l'accueil, sécurisation totale des antécédents médicaux et génération automatisée des fiches de liaison entre la caisse et la pharmacie.",
+      quoteText: "« Une fiabilité remarquable sur les dossiers patients. L'interface est claire, ergonomique et a été immédiatement adoptée par tout le personnel soignant. »",
+      quoteAuthor: "— Dr. E. Ndoumbe, Consultant Médical",
+      client: "Cliniques & Centres Hospitaliers Privés",
+      industry: "Santé, Médical & LIMS",
+      duration: "5 Mois (Audit, Conception, Recette)",
+      authorRole: "Lead Developer Full-Stack",
+      techs: ["React", "TypeScript", "Express", "PostgreSQL", "RBAC", "Vercel"],
+      gallery: [
+        { img: "rsc/img/projets/dev/SisterSholaErp.png", caption: "Interface d'Accueil & Admissions" },
+        { img: "rsc/img/projets/consultant IT/consultation-sisterShola.png", caption: "Module de Consultation Médicale" },
+        { img: "rsc/img/projets/dev/rsd_biobank_architecture.png", caption: "Cartographie Système & Flux" }
+      ]
+    },
+    candace: {
+      title: "Candace Distribution & Petit Colis — Branding & Packaging",
+      category: "Branding, Packaging & Print",
+      year: "Année 2025 - 2026",
+      role: "Directeur Artistique & Designer Graphique",
+      status: "● Commercialisé",
+      summary: "Création complète de l'identité de marque cosmétique Candace (lait de beauté, étiquettes réglementaires, modélisation 3D photoréaliste) et direction des campagnes de communication pour la startup logistique Petit Colis.",
+      mainBanner: "rsc/img/projets/infographie/MockupCandace distribution.jpg",
+      liveUrl: "rsc/img/projets/infographie/MockupCandace distribution.jpg",
+      gitUrl: "https://github.com/Nadroj-ciol",
+      waText: "Bonjour Jordan, j'ai vu votre travail de branding Candace et souhaite une identité visuelle.",
+      problem: "Se démarquer sur le marché concurrentiel des cosmétiques et des services de livraison urbaine exige une signature visuelle professionnelle et mémorable, conforme aux normes d'emballage et adaptée aux réseaux sociaux comme aux affichages urbains.",
+      architecture: "Conception vectorielle sur Adobe Illustrator (tracés typographiques personnalisés, palette or et blanc premium), modélisation des flacons sur Adobe Photoshop et déclinaison des gabarits d'impression haute définition pour imprimeurs offset.",
+      results: "Succès commercial immédiat au lancement des gammes Candace, et forte visibilité sur les campagnes de recrutement de chauffeurs-livreurs pour Petit Colis à Douala et Yaoundé.",
+      quoteText: "« Jordan a su capter l'ADN de notre marque avec des mockups et des affiches qui ont immédiatement séduit nos clients et nos partenaires. »",
+      quoteAuthor: "— FUNGA Gautier, Co-fondateur Petit Colis",
+      client: "Candace Cosmetics & Petit Colis Express",
+      industry: "Cosmétique, Logistique & Grande Distribution",
+      duration: "2 Mois",
+      authorRole: "Directeur Artistique & Infographe Senior",
+      techs: ["Adobe Illustrator", "Adobe Photoshop", "Modélisation 3D", "Pré-presse"],
+      gallery: [
+        { img: "rsc/img/projets/infographie/MockupCandace distribution.jpg", caption: "Packaging Candace Lait de Beauté" },
+        { img: "rsc/img/projets/infographie/flyer  recruitement petit colis.jpg", caption: "Campagne Recrutement Petit Colis" },
+        { img: "rsc/img/projets/infographie/flyer goldens pressing.png", caption: "Flyer Commercial Golden Pressing" }
+      ]
+    },
+    labographie: {
+      title: "LaboGraphie Web Platform — Vitrine Tech & Cyber-Hub",
+      category: "Plateforme Web & Architecture",
+      year: "Année 2025 - 2026",
+      role: "Lead Full-Stack & UI/UX Designer",
+      status: "● En Production",
+      summary: "Portail interactif et vitrine technologique des solutions logicielles, matérielles et créatives. Architecture modulaire, micro-interactions 60 FPS, accessibilité et scoring Lighthouse 98+.",
+      mainBanner: "rsc/img/projets/dev/LaboGraphie-web.png",
+      liveUrl: "https://labographie.vercel.app",
+      gitUrl: "https://github.com/Nadroj-ciol",
+      waText: "Bonjour Jordan, j'ai consulté LaboGraphie Web et souhaite une plateforme équivalente.",
+      problem: "Présenter une offre pluridisciplinaire (développement web/SaaS, réseaux, infographie, maintenance) sans submerger l'utilisateur, tout en offrant une expérience interactive immersive et rapide sur les réseaux mobiles à faible débit.",
+      architecture: "Architecture Vanilla JavaScript ultra-légère sans overhead de frameworks lourds, modularisation CSS avec custom properties dynamiques, lazy-loading natif des assets graphiques et transitions CSS optimisées sur le GPU.",
+      results: "Score Lighthouse de 99 sur desktop et 96 sur mobile, temps de chargement inférieur à 1,1 seconde et navigation fluide adoptée par les recruteurs et clients.",
+      quoteText: "« Une vitrine qui allie élégance visuelle et rigueur technique. La clarté du code et l'expérience utilisateur sont irréprochables. »",
+      quoteAuthor: "— Powo Arnold, Data Analyst & Partenaire Tech",
+      client: "LaboGraphie Technologies",
+      industry: "Technologies de l'Information & Digital",
+      duration: "3 Semaines",
+      authorRole: "Lead Full-Stack & Designer",
+      techs: ["HTML5 sémantique", "CSS3 GPU-accelerated", "Vanilla JS ES6+", "Vercel"],
+      gallery: [
+        { img: "rsc/img/projets/dev/LaboGraphie-web.png", caption: "Aperçu de la plateforme" },
+        { img: "rsc/img/projets/dev/labographie-rpoject-map.png", caption: "Cartographie des modules" },
+        { img: "rsc/img/projets/infographie/mockup_logo_business labographie couleur.jpg", caption: "Identité de marque LaboGraphie" }
+      ]
+    },
+    acuvera: {
+      title: "Acuvera Clinical LIMS — Gestion des Analyses Biomédicales",
+      category: "Biomédical & LIMS",
+      year: "Année 2025 - 2026",
+      role: "Développeur Logiciel & Analyste",
+      status: "● En Production",
+      summary: "Plateforme web de gestion des analyses biologiques, suivi des échantillons de laboratoire et génération instantanée des comptes-rendus avec archivage sécurisé.",
+      mainBanner: "rsc/img/projets/card_acuvera.png",
+      liveUrl: "https://acuvera-clinical.vercel.app",
+      gitUrl: "https://github.com/Nadroj-ciol",
+      waText: "Bonjour Jordan, j'ai vu Acuvera Clinical et souhaite un système similaire.",
+      problem: "Les laboratoires d'analyses médicales doivent traiter des centaines de prélèvements quotidiens avec un risque d'erreur zéro dans la saisie des valeurs de référence et le calcul des bilans.",
+      architecture: "Interface React modulaire avec validation des formulaires en temps réel, alertes visuelles sur les valeurs hors normes et stockage relationnel avec traçabilité par horodatage sécurisé.",
+      results: "Zéro doublon de prélèvement constaté, gain de temps de 50% sur l'édition des bilans sanguins et export direct en PDF prêt à l'impression.",
+      quoteText: "« La rigueur de conception d'Acuvera garantit une sécurité essentielle dans le traitement de nos résultats de laboratoire. »",
+      quoteAuthor: "— Marlyse, Ingénieur Polytech Yaoundé",
+      client: "Laboratoires d'Analyses Biomédicales",
+      industry: "Biologie Médicale & Santé",
+      duration: "3 Mois",
+      authorRole: "Développeur Logiciel & Analyste",
+      techs: ["React", "REST API", "TailwindCSS", "PDF Generation", "Vercel"],
+      gallery: [
+        { img: "rsc/img/projets/card_acuvera.png", caption: "Tableau de Bord Acuvera" },
+        { img: "rsc/img/projets/shot_acuvera.png", caption: "Gestion des Bilans Biologiques" },
+        { img: "rsc/img/projets/dev/rsd_biobank_architecture.png", caption: "Architecture des Données" }
+      ]
+    },
+    arduino: {
+      title: "Arduino IoT & Maintenance Réseaux — Électronique & Infrastructure",
+      category: "Systèmes, IoT & Réseaux",
+      year: "Année 2025 - 2026",
+      role: "Technologue en Systèmes & Réseaux",
+      status: "● Déployé",
+      summary: "Conception de prototypes d'acquisition de données sur microcontrôleurs Arduino, programmation en C++, câblage et brassage de baies serveurs et configuration de switches/routeurs.",
+      mainBanner: "rsc/img/projets/maintenance/tp arduino.png",
+      liveUrl: "rsc/img/projets/maintenance/tp arduino.png",
+      gitUrl: "https://github.com/Nadroj-ciol",
+      waText: "Bonjour Jordan, j'ai vu votre projet Arduino & Réseaux et souhaite échanger sur une infrastructure.",
+      problem: "Relier les équipements physiques de terrain (capteurs de température, humidité, déclencheurs) aux réseaux d'entreprise nécessite une maîtrise conjointe du hardware, des protocoles de communication et de la sécurité des baies de brassage.",
+      architecture: "Programmation firmware Arduino en C/C++, communication série / bus I2C / SPI, segmentation des réseaux via VLANs et adressage IPv4/IPv6 sous environnement Cisco Packet Tracer.",
+      results: "Automatisation de la collecte des métriques environnementales, zéro perte de paquets et sécurisation physique et logique des baies de données.",
+      quoteText: "« Les compétences techniques de Jordan en réseaux et systèmes embarqués allient théorie rigoureuse et sens pratique du câblage et de la maintenance. »",
+      quoteAuthor: "— Pr. Edii, Professeur de Réseaux & Sécurité Informatique",
+      client: "Département Informatique & Laboratoires Universitaires",
+      industry: "Électronique, IoT & Réseaux Télécoms",
+      duration: "4 Mois",
+      authorRole: "Technologue en Systèmes & Réseaux",
+      techs: ["C / C++", "Arduino", "Cisco IOS", "VLANs", "Baies de Brassage", "Linux"],
+      gallery: [
+        { img: "rsc/img/projets/maintenance/tp arduino.png", caption: "Prototypage Microcontrôleur Arduino" },
+        { img: "rsc/img/projets/card_edii.png", caption: "Topologie Réseau & Sécurité" },
+        { img: "rsc/img/projets/maintenance/pexels-field-engineer-147254-442154.jpg", caption: "Maintenance Baie Serveur" }
+      ]
+    }
+  };
+
+  const caseTitle = document.getElementById('caseTitle');
+  if (caseTitle) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('id') || 'agroflow';
+    const d = caseStudiesData[projectId] || caseStudiesData['agroflow'];
+
+    caseTitle.textContent = d.title;
+    
+    const caseCatPill = document.getElementById('caseCatPill');
+    if (caseCatPill) caseCatPill.textContent = d.category;
+    const caseYearPill = document.getElementById('caseYearPill');
+    if (caseYearPill) caseYearPill.textContent = d.year;
+    const caseRolePill = document.getElementById('caseRolePill');
+    if (caseRolePill) caseRolePill.textContent = 'Rôle : ' + d.role;
+    const caseStatusPill = document.getElementById('caseStatusPill');
+    if (caseStatusPill) caseStatusPill.textContent = d.status;
+
+    const caseSummary = document.getElementById('caseSummary');
+    if (caseSummary) caseSummary.textContent = d.summary;
+
+    const caseLiveBtn = document.getElementById('caseLiveBtn');
+    if (caseLiveBtn) {
+      if (d.liveUrl.startsWith('http')) {
+        caseLiveBtn.href = d.liveUrl;
+        caseLiveBtn.style.display = 'inline-flex';
+      } else {
+        caseLiveBtn.href = '#';
+        caseLiveBtn.className = 'btn-primary-orange btn-zoom-img';
+        caseLiveBtn.setAttribute('data-img', d.mainBanner);
+        caseLiveBtn.innerHTML = 'Aperçu Plein Écran 🔍';
+      }
+    }
+
+    const caseGitBtn = document.getElementById('caseGitBtn');
+    if (caseGitBtn) caseGitBtn.href = d.gitUrl;
+
+    const caseWaBtn = document.getElementById('caseWaBtn');
+    if (caseWaBtn) {
+      caseWaBtn.href = `https://wa.me/237679279447?text=${encodeURIComponent(d.waText)}`;
+    }
+
+    const caseMainBannerImg = document.getElementById('caseMainBannerImg');
+    const caseMainBannerBox = document.getElementById('caseMainBannerBox');
+    if (caseMainBannerImg) caseMainBannerImg.src = d.mainBanner;
+    if (caseMainBannerBox) caseMainBannerBox.setAttribute('data-img', d.mainBanner);
+
+    const caseProblem = document.getElementById('caseProblem');
+    if (caseProblem) caseProblem.textContent = d.problem;
+    const caseArchitecture = document.getElementById('caseArchitecture');
+    if (caseArchitecture) caseArchitecture.textContent = d.architecture;
+    const caseResults = document.getElementById('caseResults');
+    if (caseResults) caseResults.textContent = d.results;
+
+    const caseQuoteText = document.getElementById('caseQuoteText');
+    if (caseQuoteText) caseQuoteText.textContent = d.quoteText;
+    const caseQuoteAuthor = document.getElementById('caseQuoteAuthor');
+    if (caseQuoteAuthor) caseQuoteAuthor.textContent = d.quoteAuthor;
+
+    const caseClient = document.getElementById('caseClient');
+    if (caseClient) caseClient.textContent = d.client;
+    const caseIndustry = document.getElementById('caseIndustry');
+    if (caseIndustry) caseIndustry.textContent = d.industry;
+    const caseDuration = document.getElementById('caseDuration');
+    if (caseDuration) caseDuration.textContent = d.duration;
+    const caseAuthorRole = document.getElementById('caseAuthorRole');
+    if (caseAuthorRole) caseAuthorRole.textContent = d.authorRole;
+
+    const caseTechStack = document.getElementById('caseTechStack');
+    if (caseTechStack) {
+      caseTechStack.innerHTML = d.techs.map(t => `<span class="hub-tech-pill">${t}</span>`).join('');
+    }
+
+    const caseGalleryGrid = document.getElementById('caseGalleryGrid');
+    if (caseGalleryGrid) {
+      caseGalleryGrid.innerHTML = d.gallery.map(item => `
+        <div class="case-study-thumb btn-zoom-img" data-img="${item.img}">
+          <img src="${item.img}" alt="${item.caption}">
+          <div class="case-thumb-caption">${item.caption}</div>
+        </div>
+      `).join('');
+    }
+  }
 
 
   /* =========================================================================
