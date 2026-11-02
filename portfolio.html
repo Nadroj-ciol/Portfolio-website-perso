@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio & Réalisations — NDE Jordan L. · Technologue & Développeur Full-Stack</title>
+  <meta name="description" content="Découvrez le showroom des réalisations de NDE Jordan L. : ERP AgroFlow, Sister Schola LIMS, identités visuelles Candace et Petit Colis, infrastructures réseaux.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-portfolio">
+
+  <!-- =========================================================================
+       HEADER NAVIGATION PARTAGÉ (Figma 1:1)
+       ========================================================================= -->
+  <header class="header-wrapper">
+    <div class="nav-pill-container">
+      <nav class="nav-pill" id="navbar">
+        <a href="index.html" class="nav-item" data-i18n="nav.home">Accueil</a>
+        <a href="services.html" class="nav-item" data-i18n="nav.services">Services</a>
+        
+        <!-- Logo central JCREA Style avec monogramme NJ et nom bicolore -->
+        <a href="index.html" class="nav-logo" aria-label="Accueil NDE Jordan L.">
+          <div class="logo-mark-nj">
+            <span class="logo-initials">NJ</span>
+          </div>
+          <span class="logo-text">
+            <span class="logo-nde">NDE</span>
+            <span class="logo-jordan">Jordan L</span><span class="logo-dot">.</span>
+          </span>
+        </a>
+
+        <a href="portfolio.html" class="nav-item active" data-i18n="nav.projects">Portfolio</a>
+        <a href="blog.html" class="nav-item" data-i18n="nav.blog">Blog</a>
+        <a href="contact.html" class="nav-item" data-i18n="nav.contact">Contact</a>
+
+        <!-- Sélecteur Bilingue discret FR / EN -->
+        <div class="lang-switch-wrap" role="group" aria-label="Langue / Language">
+          <button class="lang-btn active" data-lang="fr">FR</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </nav>
+
+      <!-- Bouton Menu Mobile Hamburger -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         1. HERO DE LA PAGE PORTFOLIO
+         ========================================================================= -->
+    <section class="subpage-hero">
+      <div class="container">
+        <span class="subpage-badge">✦ Projets Déployés &amp; Travaux Graphiques</span>
+        <h1 class="subpage-title">
+          Portfolio &amp; <span class="text-orange">Galerie de Réalisations</span>
+        </h1>
+        <p class="subpage-desc">
+          De la conception d'architectures SaaS et ERP complexes aux identités visuelles percutantes et infrastructures IoT, découvrez mes projets livrés en production pour des entreprises et institutions.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         2. FILTRES DE CATÉGORIES & RECHERCHE AVANCÉE
+         ========================================================================= -->
+    <section class="portfolio-hub-section" style="padding: 2rem 0 5rem 0;">
+      <div class="container">
+        
+        <div class="portfolio-controls-bar">
+          <div class="portfolio-tags-pill-row">
+            <button class="tag-pill active" data-filter="all">Tous les projets (6+)</button>
+            <button class="tag-pill" data-filter="dev">Génie Logiciel &amp; ERP</button>
+            <button class="tag-pill" data-filter="infographie">Infographie &amp; Branding</button>
+            <button class="tag-pill" data-filter="systems">Systèmes &amp; Réseaux</button>
+          </div>
+
+          <!-- Barre de recherche dynamique -->
+          <div class="portfolio-search-wrap">
+            <div class="search-input-box">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="projectSearchInput" placeholder="Rechercher (ERP, Candace, Petit Colis, LIMS, Arduino...)" autocomplete="off">
+              <button id="projectSearchClear" class="search-clear-btn" aria-label="Effacer">&times;</button>
+            </div>
+            <!-- Puces de raccourcis rapides -->
+            <div class="search-chips-row">
+              <span class="search-chip" data-query="AgroFlow">AgroFlow ERP</span>
+              <span class="search-chip" data-query="Sister Schola">Sister Schola</span>
+              <span class="search-chip" data-query="Petit Colis">Petit Colis</span>
+              <span class="search-chip" data-query="Candace">Candace Lait</span>
+              <span class="search-chip" data-query="Fosa'a">Fosa'a Academy</span>
+              <span class="search-chip" data-query="Arduino">Arduino &amp; IoT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- GRILLE DE PROJETS PRINCIPAUX -->
+        <div class="portfolio-grid-view" id="portfolioHubGrid">
+          
+          <!-- Projet 1 : AgroFlow SaaS ERP -->
+          <div class="portfolio-hub-card" data-cat="dev" data-keywords="agroflow erp saas agritech dev web postgresql react offline sql">
+            <div class="hub-card-thumb">
+              <img src="rsc/img/projets/card_agroflow.png" alt="AgroFlow SaaS ERP" loading="lazy">
+              <span class="hub-card-badge">ERP &amp; AgriTech</span>
+              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/card_agroflow.png" aria-label="Agrandir">🔍</button>
+            </div>
+            <div class="hub-card-body">
+              <h3 class="hub-card-title">AgroFlow SaaS ERP</h3>
+              <p class="hub-card-desc">
+                Plateforme ERP SaaS pour exploitants agricoles. Digitalisation des parcelles, suivi des récoltes, balance financière en temps réel et mode offline-first résilient.
+              </p>
+              <div class="hub-card-techs">
+                <span class="hub-tech-pill">React</span>
+                <span class="hub-tech-pill">Node.js</span>
+                <span class="hub-tech-pill">PostgreSQL</span>
+                <span class="hub-tech-pill">Docker</span>
+                <span class="hub-tech-pill">Offline Sync</span>
+              </div>
+              <div class="hub-card-actions">
+                <a href="projet-detail.html?id=agroflow" class="btn-hub-detail">Étude de cas &rarr;</a>
+                <a href="https://agroflowsaas.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-hub-demo" title="Démo en ligne">
+                  Démo <span>↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 2 : Sister Schola ERP -->
+          <div class="portfolio-hub-card" data-cat="dev" data-keywords="sister schola erp lims clinique sante hopital medecine dossiers admissions">
+            <div class="hub-card-thumb">
+              <img src="rsc/img/projets/dev/SisterSholaErp.png" alt="Sister Schola ERP" loading="lazy">
+              <span class="hub-card-badge">Santé &amp; LIMS</span>
+              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/dev/SisterSholaErp.png" aria-label="Agrandir">🔍</button>
+            </div>
+            <div class="hub-card-body">
+              <h3 class="hub-card-title">Sister Schola ERP</h3>
+              <p class="hub-card-desc">
+                Système de gestion hospitalière et laboratoire clinique. Traçabilité complète du parcours patient, gestion des admissions, ordonnances et sécurité des données.
+              </p>
+              <div class="hub-card-techs">
+                <span class="hub-tech-pill">React</span>
+                <span class="hub-tech-pill">TypeScript</span>
+                <span class="hub-tech-pill">Express</span>
+                <span class="hub-tech-pill">PostgreSQL</span>
+                <span class="hub-tech-pill">RBAC</span>
+              </div>
+              <div class="hub-card-actions">
+                <a href="projet-detail.html?id=sisterschola" class="btn-hub-detail">Étude de cas &rarr;</a>
+                <a href="https://sisterscholaerp.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-hub-demo" title="Démo en ligne">
+                  Démo <span>↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 3 : Candace Distribution & Petit Colis -->
+          <div class="portfolio-hub-card" data-cat="infographie" data-keywords="candace distribution petit colis flyers logos mockup packaging cosmetique livraison affiche branding">
+            <div class="hub-card-thumb">
+              <img src="rsc/img/projets/infographie/MockupCandace distribution.jpg" alt="Candace Distribution Packaging" loading="lazy">
+              <span class="hub-card-badge">Branding &amp; Packaging</span>
+              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.jpg" aria-label="Agrandir">🔍</button>
+            </div>
+            <div class="hub-card-body">
+              <h3 class="hub-card-title">Candace &amp; Petit Colis</h3>
+              <p class="hub-card-desc">
+                Direction artistique, modélisation packaging 3D pour la gamme cosmétique Candace, et campagnes d'affichage/recrutement percutantes pour la startup Petit Colis.
+              </p>
+              <div class="hub-card-techs">
+                <span class="hub-tech-pill">Illustrator</span>
+                <span class="hub-tech-pill">Photoshop</span>
+                <span class="hub-tech-pill">Packaging 3D</span>
+                <span class="hub-tech-pill">Identité Visuelle</span>
+              </div>
+              <div class="hub-card-actions">
+                <a href="projet-detail.html?id=candace" class="btn-hub-detail">Galerie complète &rarr;</a>
+                <button class="btn-hub-demo btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.jpg">
+                  Aperçu <span>🔍</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 4 : LaboGraphie Web Platform -->
+          <div class="portfolio-hub-card" data-cat="dev" data-keywords="labographie web cybertech plateforme portfolio tech showcase interactif vitrine">
+            <div class="hub-card-thumb">
+              <img src="rsc/img/projets/dev/LaboGraphie-web.png" alt="LaboGraphie Web Platform" loading="lazy">
+              <span class="hub-card-badge">Plateforme Web</span>
+              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/dev/LaboGraphie-web.png" aria-label="Agrandir">🔍</button>
+            </div>
+            <div class="hub-card-body">
+              <h3 class="hub-card-title">LaboGraphie Web Platform</h3>
+              <p class="hub-card-desc">
+                Portail interactif et vitrine technologique des solutions logicielles et créatives. Architecture modulaire, micro-interactions soignées et scoring Lighthouse optimal.
+              </p>
+              <div class="hub-card-techs">
+                <span class="hub-tech-pill">JavaScript ES6+</span>
+                <span class="hub-tech-pill">CSS3 Animation</span>
+                <span class="hub-tech-pill">Responsive Design</span>
+                <span class="hub-tech-pill">Vercel</span>
+              </div>
+              <div class="hub-card-actions">
+                <a href="projet-detail.html?id=labographie" class="btn-hub-detail">Étude de cas &rarr;</a>
+                <a href="https://labographie.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-hub-demo" title="Démo en ligne">
+                  Démo <span>↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 5 : Acuvera Clinical LIMS -->
+          <div class="portfolio-hub-card" data-cat="dev" data-keywords="acuvera clinical lims biomédical analyses laboratoire patients sang echantillons">
+            <div class="hub-card-thumb">
+              <img src="rsc/img/projets/card_acuvera.png" alt="Acuvera Clinical LIMS" loading="lazy">
+              <span class="hub-card-badge">Biomédical &amp; LIMS</span>
+              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/card_acuvera.png" aria-label="Agrandir">🔍</button>
+            </div>
+            <div class="hub-card-body">
+              <h3 class="hub-card-title">Acuvera Clinical</h3>
+              <p class="hub-card-desc">
+                Plateforme web d'enregistrement et de suivi des analyses biomédicales. Génération automatisée des fiches d'examens et archivage sécurisé des antécédents médicaux.
+              </p>
+              <div class="hub-card-techs">
+                <span class="hub-tech-pill">React</span>
+                <span class="hub-tech-pill">REST API</span>
+                <span class="hub-tech-pill">TailwindCSS</span>
+                <span class="hub-tech-pill">Analytics</span>
+              </div>
+              <div class="hub-card-actions">
+                <a href="projet-detail.html?id=acuvera" class="btn-hub-detail">Étude de cas &rarr;</a>
+                <a href="https://acuvera-clinical.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-hub-demo" title="Démo en ligne">
+                  Démo <span>↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 6 : Arduino IoT & Infrastructure Réseaux -->
+          <div class="portfolio-hub-card" data-cat="systems" data-keywords="arduino iot embarque reseau cisco baies maintenance switch routeur brassage capteurs tp">
+            <div class="hub-card-thumb">
+              <img src="rsc/img/projets/maintenance/tp arduino.png" alt="Arduino IoT & Réseaux" loading="lazy">
+              <span class="hub-card-badge">IoT &amp; Systèmes</span>
+              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/maintenance/tp arduino.png" aria-label="Agrandir">🔍</button>
+            </div>
+            <div class="hub-card-body">
+              <h3 class="hub-card-title">Arduino IoT &amp; Câblage Réseaux</h3>
+              <p class="hub-card-desc">
+                Prototypage de solutions IoT sur microcontrôleurs Arduino, programmation C++, brassage de baies serveurs et configuration de topologies réseau sécurisées.
+              </p>
+              <div class="hub-card-techs">
+                <span class="hub-tech-pill">C / C++</span>
+                <span class="hub-tech-pill">Arduino IDE</span>
+                <span class="hub-tech-pill">Cisco IOS</span>
+                <span class="hub-tech-pill">Baies &amp; Brassage</span>
+              </div>
+              <div class="hub-card-actions">
+                <a href="projet-detail.html?id=arduino" class="btn-hub-detail">Étude technique &rarr;</a>
+                <button class="btn-hub-demo btn-zoom-img" data-img="rsc/img/projets/maintenance/tp arduino.png">
+                  Schéma <span>🔍</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. SHOWCASE MARQUEE EN DÉFILEMENT CONTINU (Toutes les images réelles)
+         ========================================================================= -->
+    <section class="showcase-gallery-section" style="padding-top: 1rem;">
+      <div class="container">
+        <div class="showcase-header-row">
+          <h2 class="showcase-title">
+            <span>Galerie Complète d'Assets Graphiques &amp; Techniques</span>
+            <span class="text-orange">✦</span>
+          </h2>
+          <span class="showcase-sub">Survolez pour mettre en pause · Cliquez pour examiner en haute définition</span>
+        </div>
+      </div>
+
+      <div class="showcase-track-container" id="showcaseMarquee">
+        <div class="showcase-track">
+          
+          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer  recruitement petit colis.jpg" title="Petit Colis — Campagne Recrutement">
+            <img src="rsc/img/projets/infographie/flyer  recruitement petit colis.jpg" alt="Petit Colis Flyer" loading="lazy">
+            <div class="showcase-overlay"><span>Petit Colis · Flyer Recrutement</span></div>
+          </div>
+
+          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.jpg" title="Candace Distribution — Packaging">
+            <img src="rsc/img/projets/infographie/MockupCandace distribution.jpg" alt="Candace Packaging" loading="lazy">
+            <div class="showcase-overlay"><span>Candace · Lait de Beauté</span></div>
+          </div>
+
+          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer goldens pressing.png" title="Golden Pressing — Flyer Commercial">
+            <img src="rsc/img/projets/infographie/flyer goldens pressing.png" alt="Golden Pressing" loading="lazy">
+            <div class="showcase-overlay"><span>Golden Pressing · Affiche</span></div>
+          </div>
+
+          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/mockup fosa'a academy.jpg" title="Fosa'a Academy — Mockup identité">
+            <img src="rsc/img/projets/infographie/mockup fosa'a academy.jpg" alt="Fosa'a Academy" loading="lazy">
+            <div class="showcase-overlay"><span>Fosa'a Academy · Logo 3D</span></div>
+          </div>
+
+          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer GMC café scientifiue3.jpg" title="Café Scientifique GMC">
+            <img src="rsc/img/projets/infographie/flyer GMC café scientifiue3.jpg" alt="Café Scientifique" loading="lazy">
+            <div class="showcase-overlay"><span>GMC · Café Scientifique</span></div>
+          </div>
+
+          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/mockup_logo_business labographie couleur.jpg" title="LaboGraphie — Logo Business">
+            <img src="rsc/img/projets/infographie/mockup_logo_business labographie couleur.jpg" alt="LaboGraphie Business" loading="lazy">
+            <div class="showcase-overlay"><span>LaboGraphie · Logo Business</span></div>
+          </div>
+
+          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/projet roll-up mockup logo labographie.jpg" title="Roll-Up Événementiel LaboGraphie">
+            <img src="rsc/img/projets/infographie/projet roll-up mockup logo labographie.jpg" alt="Roll-up" loading="lazy">
+            <div class="showcase-overlay"><span>LaboGraphie · Roll-up</span></div>
+          </div>
+
+          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/projet polo mockup labographie.jpg" title="Textile & Polo Mockup LaboGraphie">
+            <img src="rsc/img/projets/infographie/projet polo mockup labographie.jpg" alt="Polo" loading="lazy">
+            <div class="showcase-overlay"><span>LaboGraphie · Polo Textile</span></div>
+          </div>
+
+          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/DC_Agroflow.png" title="Diagramme de Classes AgroFlow ERP">
+            <img src="rsc/img/projets/dev/DC_Agroflow.png" alt="Architecture AgroFlow" loading="lazy">
+            <div class="showcase-overlay"><span>AgroFlow · Diagramme UML</span></div>
+          </div>
+
+          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/rsd_biobank_architecture.png" title="Architecture RSD Biobank">
+            <img src="rsc/img/projets/dev/rsd_biobank_architecture.png" alt="Biobank" loading="lazy">
+            <div class="showcase-overlay"><span>Biobank · Cartographie SI</span></div>
+          </div>
+
+          <!-- Répétition pour défilement infini sans coupure -->
+          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer  recruitement petit colis.jpg" title="Petit Colis — Campagne Recrutement">
+            <img src="rsc/img/projets/infographie/flyer  recruitement petit colis.jpg" alt="Petit Colis Flyer" loading="lazy">
+            <div class="showcase-overlay"><span>Petit Colis · Flyer Recrutement</span></div>
+          </div>
+
+          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.jpg" title="Candace Distribution — Packaging">
+            <img src="rsc/img/projets/infographie/MockupCandace distribution.jpg" alt="Candace Packaging" loading="lazy">
+            <div class="showcase-overlay"><span>Candace · Lait de Beauté</span></div>
+          </div>
+
+          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer goldens pressing.png" title="Golden Pressing — Flyer Commercial">
+            <img src="rsc/img/projets/infographie/flyer goldens pressing.png" alt="Golden Pressing" loading="lazy">
+            <div class="showcase-overlay"><span>Golden Pressing · Affiche</span></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. BANNIÈRE CTA CONCRÈTE (WhatsApp & Devis)
+         ========================================================================= -->
+    <section class="discuss-section">
+      <div class="container">
+        <div class="discuss-card">
+          <div class="discuss-doodle-star top-left">✦</div>
+          <div class="discuss-doodle-star bottom-right">✦</div>
+          
+          <h2 class="discuss-headline">
+            Vous avez un projet similaire ? <br>
+            <span class="text-orange">Donnons-lui vie ensemble.</span>
+          </h2>
+          <p class="discuss-subtext">
+            Qu'il s'agisse d'un ERP critique, d'une vitrine web moderne ou d'une identité de marque haut de gamme, discutons directement de votre cahier des charges.
+          </p>
+          <div class="discuss-buttons-row">
+            <a href="https://wa.me/237679279447?text=Bonjour%20Jordan,%20j'ai%20consult%C3%A9%20votre%20portfolio%20et%20souhaite%20discuter%20d'un%20projet%20similaire." target="_blank" rel="noopener noreferrer" class="btn-discuss-white">
+              Échanger sur WhatsApp 💬
+            </a>
+            <a href="contact.html" class="btn-discuss-orange">
+              Demander un devis &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER PARTAGÉ (Figma 1:1)
+       ========================================================================= -->
+  <footer class="connect-footer-section" id="footer">
+    <div class="container">
+      <div class="footer-dark-card">
+        
+        <div class="footer-top-row">
+          <div class="footer-col col-brand">
+            <div class="footer-logo">
+              <div class="logo-mark-nj">
+                <span class="logo-initials">NJ</span>
+              </div>
+              <span class="logo-text">
+                <span class="logo-nde">NDE</span>
+                <span class="logo-jordan">Jordan L</span><span class="logo-dot">.</span>
+              </span>
+            </div>
+            <p class="footer-brand-desc" data-i18n="footer.bio">
+              Technologue en Génie Logiciel &amp; Systèmes d'Information, certifié Ateliers Google. Spécialisé dans la conception logicielle, la maintenance d'infrastructures et l'infographie.
+            </p>
+            <div class="footer-social-icons">
+              <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0 1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/jordan-lo%C3%AFc-nde-63b041427/" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a href="https://wa.me/237679279447?text=Bonjour%20Jordan,%20j'ai%20consult%C3%A9%20votre%20portfolio%20et%20souhaite%20%C3%A9changer%20avec%20vous." target="_blank" rel="noopener noreferrer" class="social-circle social-whatsapp" aria-label="WhatsApp Jordan L.">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+              </a>
+              <a href="mailto:ndejordanloic@gmail.com" class="social-circle" aria-label="Email Jordan L.">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-col col-nav">
+            <h4 class="footer-col-title">Navigation</h4>
+            <ul class="footer-links-list">
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col col-contact">
+            <h4 class="footer-col-title">Coordonnées</h4>
+            <ul class="footer-links-list contact-list">
+              <li><span>📞 +237 679 279 447</span></li>
+              <li><span>📞 +237 621 317 408</span></li>
+              <li><span>✉️ ndejordanloic@gmail.com</span></li>
+              <li><span>✉️ ndejordanloic@outlook.fr</span></li>
+              <li><span>📍 Yaoundé, Cameroun</span></li>
+            </ul>
+          </div>
+
+          <div class="footer-col col-newsletter">
+            <h4 class="footer-col-title">Demande de Devis Rapide</h4>
+            <form class="footer-newsletter-form" onsubmit="event.preventDefault(); window.location.href='contact.html';">
+              <input type="email" placeholder="Votre email..." class="footer-email-input" required>
+              <button type="submit" class="footer-email-btn" aria-label="Continuer">&rarr;</button>
+            </form>
+          </div>
+
+        </div>
+
+        <div class="footer-card-divider subtle"></div>
+
+        <div class="footer-card-bottom">
+          <p class="footer-copyright">Copyright &copy; 2026 NDE Jordan L. · LaboGraphie Dev. Tous droits réservés.</p>
+          <div class="footer-legal-links">
+            <a href="index.html">Accueil</a>
+            <span class="sep">|</span>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- VISIONNEUSE LIGHTBOX (ZOOM PLEIN ÉCRAN) -->
+  <div class="image-lightbox" id="imageLightbox" role="dialog" aria-modal="true" aria-label="Agrandissement image">
+    <div class="lightbox-overlay" id="lightboxOverlay"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Fermer la visionneuse">&times;</button>
+      <img src="" alt="Agrandissement plein écran" id="lightboxImg">
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

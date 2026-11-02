@@ -24,12 +24,11 @@
   <header class="header-wrapper">
     <div class="nav-pill-container">
       <nav class="nav-pill" id="navbar">
-        <a href="#hero" class="nav-item active" data-i18n="nav.home">Accueil</a>
-        <a href="#about" class="nav-item" data-i18n="nav.about">À propos</a>
-        <a href="#services" class="nav-item" data-i18n="nav.services">Services</a>
+        <a href="index.html" class="nav-item active" data-i18n="nav.home">Accueil</a>
+        <a href="services.html" class="nav-item" data-i18n="nav.services">Services</a>
         
         <!-- Logo central JCREA Style avec monogramme NJ et nom bicolore NDE Jordan L. -->
-        <a href="#hero" class="nav-logo" aria-label="Accueil NDE Jordan L.">
+        <a href="index.html" class="nav-logo" aria-label="Accueil NDE Jordan L.">
           <div class="logo-mark-nj">
             <span class="logo-initials">NJ</span>
           </div>
@@ -39,9 +38,9 @@
           </span>
         </a>
 
-        <a href="#experience" class="nav-item" data-i18n="nav.resume">Parcours</a>
-        <a href="#portfolio" class="nav-item" data-i18n="nav.projects">Projets</a>
-        <a href="#contact" class="nav-item" data-i18n="nav.contact">Contact</a>
+        <a href="portfolio.html" class="nav-item" data-i18n="nav.projects">Portfolio</a>
+        <a href="blog.html" class="nav-item" data-i18n="nav.blog">Blog</a>
+        <a href="contact.html" class="nav-item" data-i18n="nav.contact">Contact</a>
 
         <!-- Sélecteur Bilingue discret FR / EN -->
         <div class="lang-switch-wrap" role="group" aria-label="Langue / Language">
@@ -117,14 +116,14 @@
             
             <!-- Double bouton pilule flottant sur le dôme (Figma 1:1) -->
             <div class="hero-cta-pill">
-              <a href="#portfolio" class="cta-pill-active">
+              <a href="portfolio.html" class="cta-pill-active">
                 <span data-i18n="hero.portfolioBtn">Portfolio</span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
                 </svg>
               </a>
-              <a href="#contact" class="cta-pill-ghost" data-i18n="hero.hireBtn">Me recruter</a>
+              <a href="contact.html" class="cta-pill-ghost" data-i18n="hero.hireBtn">Me recruter</a>
             </div>
           </div>
 
@@ -188,7 +187,7 @@
 
             <!-- Bouton contour Figma 1:1 -->
             <div class="why-btn-wrap">
-              <a href="#contact" class="btn-hire-outline" data-i18n="why.contactBtn">Me contacter</a>
+              <a href="contact.html" class="btn-hire-outline" data-i18n="why.contactBtn">Me contacter</a>
             </div>
           </div>
 
@@ -230,7 +229,7 @@
               <p class="service-card-desc" data-i18n="services.s1Desc">
                 Conception d'architectures SaaS et ERP complètes, modélisation de microservices, APIs RESTful et synchronisation hors-ligne résiliente.
               </p>
-              <a href="#portfolio" class="service-arrow-btn" aria-label="Voir les projets Dev">
+              <a href="services.html" class="service-arrow-btn" aria-label="Découvrir l'expertise Génie Logiciel">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
@@ -247,7 +246,7 @@
               <p class="service-card-desc" data-i18n="services.s2Desc">
                 Modélisation relationnelle SQL rigoureuse, intégrité transactionnelle, centralisation des dossiers patients et flux cliniques.
               </p>
-              <a href="#portfolio" class="service-arrow-btn" aria-label="Voir les projets Santé">
+              <a href="services.html" class="service-arrow-btn" aria-label="Découvrir l'expertise Bases de Données & LIMS">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
@@ -264,7 +263,7 @@
               <p class="service-card-desc" data-i18n="services.s3Desc">
                 Direction artistique, conception de chartes graphiques, logos vectoriels scalables, flyers et affiches de communication à fort impact.
               </p>
-              <a href="#portfolio" class="service-arrow-btn" aria-label="Voir les projets Infographie">
+              <a href="services.html" class="service-arrow-btn" aria-label="Découvrir l'expertise Infographie & Design">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
@@ -394,7 +393,7 @@
           <div class="portfolio-nav-buttons">
             <button class="carousel-arrow-btn" id="btnPortfolioPrev" aria-label="Projet précédent">&larr;</button>
             <button class="carousel-arrow-btn" id="btnPortfolioNext" aria-label="Projet suivant">&rarr;</button>
-            <button class="btn-see-all" id="btnToggleAllProjects" data-i18n="portfolio.seeAll">Voir tout</button>
+            <a href="portfolio.html" class="btn-see-all" data-i18n="portfolio.seeAll">Voir tout</a>
           </div>
         </div>
 
@@ -561,6 +560,9 @@
           <div class="detail-actions">
             <a href="https://agroflowsaas.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-detail-primary" id="btnDetailLive">
               <span data-i18n="portfolio.liveBtn">Démo en ligne &rarr;</span>
+            </a>
+            <a href="projet-detail.html?id=agroflow" class="btn-detail-github" id="btnDetailCase" style="background: #1B1B1B; color: #FFFFFF; border: 1px solid #333;">
+              <span>Étude de cas 📖</span>
             </a>
             <a href="https://github.com/Nadroj-ciol/AgroFlowErp-V1" target="_blank" rel="noopener noreferrer" class="btn-detail-github" id="btnDetailGit">
               <span data-i18n="portfolio.sourceBtn">Code Source GitHub</span>
@@ -1024,7 +1026,7 @@
             <span data-i18n="blog.headPre">Mes articles &amp;</span> <br>
             <span class="text-orange" data-i18n="blog.headOrange">publications</span>
           </h2>
-          <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="btn-see-all" data-i18n="portfolio.seeAll">Voir tout</a>
+          <a href="blog.html" class="btn-see-all" data-i18n="portfolio.seeAll">Voir tout</a>
         </div>
 
         <div class="blog-grid">
@@ -1044,7 +1046,7 @@
             <h3 class="blog-title" data-i18n="blog.a1Title">
               Dans les coulisses de l'architecture logicielle : concevoir des systèmes modulaires et scalables
             </h3>
-            <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="blog-arrow-btn" aria-label="Lire l'article">
+            <a href="blog.html" class="blog-arrow-btn" aria-label="Lire l'article">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="7" y1="17" x2="17" y2="7"></line>
                 <polyline points="7 7 17 7 17 17"></polyline>
@@ -1067,7 +1069,7 @@
             <h3 class="blog-title" data-i18n="blog.a2Title">
               AgroFlow ERP : digitaliser la gestion des parcelles et la traçabilité en Afrique subsaharienne
             </h3>
-            <a href="https://agroflowsaas.vercel.app" target="_blank" rel="noopener noreferrer" class="blog-arrow-btn" aria-label="Lire l'article">
+            <a href="blog.html" class="blog-arrow-btn" aria-label="Lire l'article">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="7" y1="17" x2="17" y2="7"></line>
                 <polyline points="7 7 17 7 17 17"></polyline>
@@ -1090,7 +1092,7 @@
             <h3 class="blog-title" data-i18n="blog.a3Title">
               Sister Schola : dossier patient informatisé et intégrité des flux cliniques hospitaliers
             </h3>
-            <a href="https://sisterscholaerp.vercel.app" target="_blank" rel="noopener noreferrer" class="blog-arrow-btn" aria-label="Lire l'article">
+            <a href="blog.html" class="blog-arrow-btn" aria-label="Lire l'article">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="7" y1="17" x2="17" y2="7"></line>
                 <polyline points="7 7 17 7 17 17"></polyline>
@@ -1162,11 +1164,11 @@
             <div class="footer-col col-nav">
               <h4 class="footer-col-title" data-i18n="footer.navTitle">Navigation</h4>
               <ul class="footer-links-list">
-                <li><a href="#hero" data-i18n="nav.home">Accueil</a></li>
-                <li><a href="#about" data-i18n="nav.about">À propos</a></li>
-                <li><a href="#services" data-i18n="nav.services">Services</a></li>
-                <li><a href="#experience" data-i18n="nav.resume">Parcours &amp; CV</a></li>
-                <li><a href="#portfolio" data-i18n="nav.projects">Projets</a></li>
+                <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+                <li><a href="portfolio.html" data-i18n="nav.projects">Portfolio</a></li>
+                <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
               </ul>
             </div>
 
