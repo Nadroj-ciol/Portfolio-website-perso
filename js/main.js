@@ -350,64 +350,91 @@ document.addEventListener('DOMContentLoaded', () => {
      ========================================================================= */
   const projectsData = [
     {
-      title_fr: "AgroFlow SaaS — Solution Intégrée de Gestion Agricole",
+      title_fr: "AgroFlow SaaS — Plateforme ERP & Gestion Agricole Intelligente",
       title_en: "AgroFlow SaaS — Integrated Agricultural ERP Platform",
       desc_fr: "ERP agricole de pointe digitalisant la gestion des parcelles, le suivi financier des récoltes, les stocks et la traçabilité en temps réel, conçu pour les exploitants avec mode hors-ligne résilient.",
       desc_en: "Cutting-edge AgriTech ERP platform digitizing plot management, harvest financial accounting, inventory, and real-time traceability, built with resilient offline sync.",
-      live: "https://agroflowerp.vercel.app",
+      live: "https://agroflowsaas.vercel.app",
       github: "https://github.com/Nadroj-ciol/AgroFlowErp-V1",
       category: "dev",
-      type: "link"
+      type: "link",
+      gallery: [
+        { img: "rsc/img/projets/card_agroflow.png", label: "Dashboard UI", title: "AgroFlow · Interface SaaS" },
+        { img: "rsc/img/projets/shot_agroflow.png", label: "Plein Écran", title: "AgroFlow · Capture Complète" },
+        { img: "rsc/img/projets/dev/DC_Agroflow.png", label: "Architecture SI", title: "AgroFlow · Modélisation Relationnelle" }
+      ]
     },
     {
-      title_fr: "Sister Schola ERP — Pilotage Intelligent des Établissements & Cliniques",
-      title_en: "Sister Schola ERP — Smart Clinical & School Management",
-      desc_fr: "Système de gestion et de suivi clinique complet permettant la centralisation des dossiers patients, la gestion des constantes médicales et l'orchestration des flux de consultations pour structures de santé.",
+      title_fr: "Sister Schola ERP — Pilotage Hospitalier & Clinique",
+      title_en: "Sister Schola ERP — Healthcare & Clinical Management",
+      desc_fr: "Système de gestion et de suivi clinique complet pour centres de santé : centralisation des dossiers patients, admissions, consultations, prescription médicale, facturation et intégrité des flux cliniques.",
       desc_en: "Complete clinical records and health management system enabling patient history centralization, vital signs monitoring, and healthcare workflow orchestration.",
+      live: "https://sisterscholaerp.vercel.app",
+      github: "https://github.com/Nadroj-ciol",
+      category: "dev",
+      type: "link",
+      gallery: [
+        { img: "rsc/img/projets/dev/SisterSholaErp.png", label: "Portail Médical", title: "Sister Schola · Système Clinique" },
+        { img: "rsc/img/projets/consultant IT/consultation-sisterShola.png", label: "Audit & Consultation", title: "Sister Schola · Audit IT" }
+      ]
+    },
+    {
+      title_fr: "Candace Distribution & Petit Colis — Identité Visuelle & Direction Artistique",
+      title_en: "Candace Distribution & Petit Colis — Brand Identity & Art Direction",
+      desc_fr: "Direction artistique, typographie, affiches promotionnelles grand format et packagings produits (Candace Cosmétique, Petit Colis de Gautier Funga, Fosa'a Academy). Des créations vectorielles à fort impact commercial.",
+      desc_en: "Full-scale art direction and graphic design: brand visual systems, high-impact promotional event posters (Petit Colis, Candace, Fosa'a Academy), tailored typography, and digital identity.",
+      live: "rsc/img/projets/infographie/MockupCandace distribution.jpg",
+      github: "https://github.com/Nadroj-ciol",
+      category: "infographie",
+      type: "image",
+      gallery: [
+        { img: "rsc/img/projets/infographie/MockupCandace distribution.jpg", label: "Packaging Candace", title: "Candace Distribution · Cosmétique" },
+        { img: "rsc/img/projets/infographie/flyer  recruitement petit colis.jpg", label: "Petit Colis Flyer", title: "Petit Colis · Flyer Recrutement" },
+        { img: "rsc/img/projets/infographie/flyer produit Candace Lait de beauté.jpg", label: "Lait de Beauté", title: "Candace Lait de Beauté" }
+      ]
+    },
+    {
+      title_fr: "LaboGraphie Web — Plateforme d'Ingénierie & Prototypage Logiciel",
+      title_en: "LaboGraphie Web — Software Engineering & Prototyping Platform",
+      desc_fr: "Vitrine digitale et laboratoire pratique dédié aux développeurs et passionnés de tech camerounais : « Moins de théorie passive, plus de code en production ». Ergonomie moderne, fluidité mobile et performances optimisées.",
+      desc_en: "High-performance immersive web platform for tech engineering and cybersecurity profiles, featuring fast load times and clean mobile ergonomics.",
+      live: "https://labographie.vercel.app",
+      github: "https://github.com/Nadroj-ciol/LaboGraphie-web",
+      category: "dev",
+      type: "link",
+      gallery: [
+        { img: "rsc/img/projets/dev/LaboGraphie-web.png", label: "Vitrine Web", title: "LaboGraphie · Plateforme Digitale" },
+        { img: "rsc/img/projets/dev/labographie-rpoject-map.png", label: "Mapping Projet", title: "LaboGraphie · Cartographie" }
+      ]
+    },
+    {
+      title_fr: "Acuvera Clinical — Suivi Clinique & Traçabilité LIMS",
+      title_en: "Acuvera Clinical — Clinical Follow-up & LIMS Traceability",
+      desc_fr: "Plateforme cloud de gestion des analyses biomédicales et suivi des prélèvements : traçabilité stricte des échantillons, conformité des flux de laboratoire et édition de bilans de diagnostic.",
+      desc_en: "Cloud-based biological sample and laboratory analysis tracking platform ensuring clinical traceability and regulatory medical compliance.",
       live: "https://acuvera-clinical.vercel.app",
       github: "https://github.com/Nadroj-ciol/Acuvera-clinical",
       category: "dev",
-      type: "link"
+      type: "link",
+      gallery: [
+        { img: "rsc/img/projets/card_acuvera.png", label: "Portail LIMS", title: "Acuvera Clinical · Dashboard" },
+        { img: "rsc/img/projets/shot_acuvera.png", label: "Analyses", title: "Acuvera Clinical · Suivi Biologique" },
+        { img: "rsc/img/projets/dev/baobab-rsd.jpeg", label: "BioBank Schema", title: "Baobab LIMS · Schéma Données" }
+      ]
     },
     {
-      title_fr: "Infographie & Créations Graphiques — NDE Jordan L.",
-      title_en: "Graphic Design & Visual Artwork — NDE Jordan L.",
-      desc_fr: "Direction artistique et réalisations infographiques complètes : chartes visuelles, affiches événementielles promotionnelles (Petit Colis, Candace, Fosa'a Academy), typographie soignée et identité de marque numérique.",
-      desc_en: "Full-scale art direction and graphic design: brand visual systems, high-impact promotional event posters (Petit Colis, Candace, Fosa'a Academy), tailored typography, and digital identity.",
-      live: "rsc/img/projets/infographie_jordan.png",
-      github: "https://github.com/Nadroj-ciol",
-      category: "infographie",
-      type: "image"
-    },
-    {
-      title_fr: "LaboGraphie Web — Plateforme d'Ingénierie & CyberTech",
-      title_en: "LaboGraphie Web — Engineering & CyberTech Platform",
-      desc_fr: "Plateforme web immersive haute performance pour profils tech et télécoms/cybersécurité, temps de chargement éclair et fluidité mobile chirurgicale.",
-      desc_en: "High-performance immersive web platform for tech engineering and cybersecurity profiles, featuring fast load times and clean mobile ergonomics.",
-      live: "https://portfolio-edii.vercel.app",
-      github: "https://github.com/Nadroj-ciol/portfolio-edii",
-      category: "dev",
-      type: "link"
-    },
-    {
-      title_fr: "Consultant IT & Systèmes Cliniques — Sister Schola",
-      title_en: "IT Consultant & Clinical Systems — Sister Schola",
-      desc_fr: "Audit technique, modélisation des flux d'admission et intégration de bornes d'authentification pour structures médicales et scolaires.",
-      desc_en: "Technical auditing, patient intake workflow modeling, and authentication terminal integration for clinical and school organizations.",
-      live: "rsc/img/projets/consultant IT/consultation-sisterShola.png",
+      title_fr: "Systèmes Embarqués Arduino, Maintenance & Réseaux",
+      title_en: "Arduino Embedded Systems, Maintenance & IT Infrastructure",
+      desc_fr: "Programmation de microcontrôleurs Arduino, interfaçage de capteurs environnementaux, câblage d'armoires réseau, configuration de routeurs et switchboards, et validation biométrique d'étudiants (UP Siantou).",
+      desc_en: "Arduino microcontroller programming, environmental sensor interfacing, patch panel cabling, switchboard setup, and student biometric validation.",
+      live: "rsc/img/projets/maintenance/tp arduino.png",
       github: "https://github.com/Nadroj-ciol",
       category: "systems",
-      type: "image"
-    },
-    {
-      title_fr: "Cartographie de Projet & Architecture Logicielle",
-      title_en: "Project Architecture Mapping & Systems Engineering",
-      desc_fr: "Conception de schémas d'architecture logicielle, diagrammes relationnels, flux de données transactionnels et mapping fonctionnel de modules complexes.",
-      desc_en: "Architectural blueprint design, relational database schematics, transactional data pipelines, and full modular functional mapping.",
-      live: "rsc/img/projets/dev/labographie-rpoject-map.png",
-      github: "https://github.com/Nadroj-ciol",
-      category: "dev",
-      type: "image"
+      type: "image",
+      gallery: [
+        { img: "rsc/img/projets/maintenance/tp arduino.png", label: "Arduino IoT", title: "Prototypage Arduino · Systèmes Embarqués" },
+        { img: "rsc/img/projets/Reseau & Sécu/pexels-brett-sayles-4716292.jpg", label: "Baies de Brassage", title: "Infrastructures Réseaux & Switchboards" }
+      ]
     }
   ];
 
@@ -418,6 +445,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const activeTitle = document.getElementById('activeProjectTitle');
   const activeDesc = document.getElementById('activeProjectDesc');
   const activeLink = document.getElementById('activeProjectLink');
+  const activeGallery = document.getElementById('activeProjectGallery');
   const btnLive = document.getElementById('btnDetailLive');
   const btnGit = document.getElementById('btnDetailGit');
   const btnPortfolioPrev = document.getElementById('btnPortfolioPrev');
@@ -449,6 +477,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     if (btnGit) btnGit.href = p.github;
+
+    // Mise à jour dynamique de la galerie miniature
+    if (activeGallery && p.gallery) {
+      activeGallery.innerHTML = p.gallery.map(item => `
+        <div class="detail-thumb-item btn-zoom-img" data-img="${item.img}" title="${item.title}">
+          <img src="${item.img}" alt="${item.label}">
+          <span class="detail-thumb-badge">${item.label}</span>
+        </div>
+      `).join('');
+
+      activeGallery.querySelectorAll('.btn-zoom-img').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const src = btn.getAttribute('data-img');
+          if (src) openLightbox(src);
+        });
+      });
+    }
   }
 
   function setProject(idx, scrollToCard = true) {
