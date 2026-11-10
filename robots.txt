@@ -1,0 +1,9 @@
+# ==============================================================================
+# robots.txt — Portfolio Professionnel de NDE Jordan L.
+# ==============================================================================
+# Autorisation d'exploration pour tous les moteurs de recherche respectueux des standards
+User-agent: *
+Allow: /
+
+# Fichier sitemap XML de référence (URL absolue de production à confirmer au Lot 7)
+Sitemap: sitemap.xml

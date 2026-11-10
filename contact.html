@@ -6,12 +6,37 @@
   <title>Contact & Devis — NDE Jordan L. · Technologue & Développeur Full-Stack</title>
   <meta name="description" content="Contactez NDE Jordan L. pour vos projets d'ingénierie logicielle, SaaS ERP, maintenance d'infrastructures ou identité graphique. Réponse sous 24h.">
   
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NDE Jordan L. Portfolio">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Contact &amp; Devis — NDE Jordan L. · Technologue &amp; Développeur Full-Stack">
+  <meta property="og:description" content="Contactez NDE Jordan L. pour vos projets d'ingénierie logicielle, SaaS ERP, maintenance d'infrastructures ou identité graphique. Réponse sous 24h.">
+  <meta property="og:image" content="rsc/img/jordan_portrait_pro.webp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact &amp; Devis — NDE Jordan L. · Technologue &amp; Développeur Full-Stack">
+  <meta name="twitter:description" content="Contactez NDE Jordan L. pour vos projets d'ingénierie logicielle, SaaS ERP, maintenance ou graphisme.">
+  <meta name="twitter:image" content="rsc/img/jordan_portrait_pro.webp">
+
+  <!-- URL canonique (À confirmer lors du déploiement en production - Lot 7) -->
+  <!-- <link rel="canonical" href="https://ndejordanloic.com/contact.html"> -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="page-contact">
+  <!-- Lien d'évitement accessible (WCAG 2.4.1) -->
+  <a href="#main-content" class="skip-link" data-i18n="aria.skipToContent">Passer au contenu principal</a>
 
   <!-- =========================================================================
        HEADER NAVIGATION PARTAGÉ (Figma 1:1)
@@ -37,11 +62,13 @@
         <a href="blog.html" class="nav-item" data-i18n="nav.blog">Blog</a>
         <a href="contact.html" class="nav-item active" data-i18n="nav.contact">Contact</a>
 
-        <!-- Sélecteur Bilingue discret FR / EN -->
-        <div class="lang-switch-wrap" role="group" aria-label="Langue / Language">
-          <button class="lang-btn active" data-lang="fr">FR</button>
+        <!-- Sélecteur Trilingue discret FR / EN / JA -->
+        <div class="lang-switch-wrap" role="group" aria-label="Choix de la langue" data-i18n-aria-label="aria.langSelect">
+          <button type="button" class="lang-btn active" data-lang="fr" aria-label="Passer en Français" data-i18n-aria-label="aria.langFr">FR</button>
           <span class="lang-sep">|</span>
-          <button class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-label="Switch to English" data-i18n-aria-label="aria.langEn">EN</button>
+          <span class="lang-sep">|</span>
+          <button type="button" class="lang-btn" data-lang="ja" aria-label="日本語に切り替え" data-i18n-aria-label="aria.langJa">JA</button>
         </div>
       </nav>
 
@@ -52,18 +79,18 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- =========================================================================
          1. HERO DE LA PAGE CONTACT
          ========================================================================= -->
     <section class="subpage-hero">
       <div class="container">
-        <span class="subpage-badge">✦ Échange Direct &amp; Devis Gratuit</span>
+        <span class="subpage-badge" data-i18n="contact.heroBadge">✦ Échange Direct &amp; Devis Gratuit</span>
         <h1 class="subpage-title">
-          Discutons de <span class="text-orange">votre Projet</span>
+          <span data-i18n="contact.pageTitlePre">Discutons de</span> <span class="text-orange" data-i18n="contact.pageTitleOrange">Votre Projet</span>
         </h1>
-        <p class="subpage-desc">
-          Une question, un besoin en architecture logicielle, un audit réseau ou une identité visuelle d'envergure ? Contactez-moi directement ou remplissez le formulaire pour une estimation rapide.
+        <p class="subpage-desc" data-i18n="contact.pageSubtitle">
+          Une idée, un cahier des charges ou un besoin d'expertise en génie logiciel et design graphique ? Parlons-en concrètement.
         </p>
       </div>
     </section>
@@ -78,8 +105,8 @@
           
           <!-- Colonne Gauche : Coordonnées Directes -->
           <div class="contact-info-panel">
-            <h2 class="contact-info-title">Restons en contact</h2>
-            <p class="contact-info-desc">
+            <h2 class="contact-info-title" data-i18n="contact.stayInTouch">Restons en contact</h2>
+            <p class="contact-info-desc" data-i18n="contact.stayInTouchDesc">
               Je réponds personnellement à toutes les demandes techniques et commerciales sous 24 heures ouvrées.
             </p>
 
@@ -87,7 +114,7 @@
               <div class="contact-direct-item">
                 <div class="contact-direct-icon">📞</div>
                 <div>
-                  <div class="contact-direct-label">Téléphone &amp; WhatsApp</div>
+                  <div class="contact-direct-label" data-i18n="contact.phoneLabel">Téléphone &amp; WhatsApp</div>
                   <a href="tel:+237679279447" class="contact-direct-val">+237 679 279 447</a> <br>
                   <a href="tel:+237621317408" class="contact-direct-val" style="color: #A0A0A0; font-size: 0.9rem;">+237 621 317 408</a>
                 </div>
@@ -96,7 +123,7 @@
               <div class="contact-direct-item">
                 <div class="contact-direct-icon">✉️</div>
                 <div>
-                  <div class="contact-direct-label">Adresses Email</div>
+                  <div class="contact-direct-label" data-i18n="contact.emailDirectLabel">Adresses Email</div>
                   <a href="mailto:ndejordanloic@gmail.com" class="contact-direct-val">ndejordanloic@gmail.com</a> <br>
                   <a href="mailto:ndejordanloic@outlook.fr" class="contact-direct-val" style="color: #A0A0A0; font-size: 0.9rem;">ndejordanloic@outlook.fr</a>
                 </div>
@@ -105,89 +132,137 @@
               <div class="contact-direct-item">
                 <div class="contact-direct-icon">📍</div>
                 <div>
-                  <div class="contact-direct-label">Localisation &amp; Mobilité</div>
+                  <div class="contact-direct-label" data-i18n="contact.locDirectLabel">Localisation &amp; Mobilité</div>
                   <div class="contact-direct-val">Yaoundé &amp; Douala, Cameroun</div>
-                  <span style="font-size: 0.82rem; color: #888;">Disponible en présentiel &amp; télétravail international</span>
+                  <span style="font-size: 0.82rem; color: #888;" data-i18n="contact.locDirectSub">Disponible en présentiel &amp; télétravail international</span>
                 </div>
               </div>
 
               <div class="contact-direct-item">
                 <div class="contact-direct-icon">⏱️</div>
                 <div>
-                  <div class="contact-direct-label">Disponibilité</div>
-                  <div class="contact-direct-val" style="color: #25D366;">● Immédiate pour missions &amp; conseil</div>
+                  <div class="contact-direct-label" data-i18n="contact.availLabel">Disponibilité</div>
+                  <div class="contact-direct-val" style="color: #25D366;" data-i18n="contact.availVal">● Immédiate pour missions &amp; conseil</div>
                 </div>
               </div>
             </div>
 
             <!-- Bouton WhatsApp Officiel -->
             <a href="https://wa.me/237679279447?text=Bonjour%20Jordan,%20j'ai%20consult%C3%A9%20votre%20portfolio%20et%20souhaite%20discuter%20d'un%20projet%20avec%20vous." target="_blank" rel="noopener noreferrer" class="contact-whatsapp-banner">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
               </svg>
-              <span>Démarrer un chat WhatsApp direct</span>
+              <span data-i18n="contact.whatsappDirect">Démarrer un chat WhatsApp direct</span>
             </a>
+
+            <!-- Zone d'intervention & Localisation interactive (Sitemap Relume 1:1) -->
+            <div class="contact-map-card" style="background: #111111; color: #FFFFFF; border-radius: 16px; padding: 1.5rem; margin-top: 1.5rem; border: 1px solid #282828;">
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                <span style="font-size: 1.5rem;">🌍</span>
+                <div>
+                  <h4 style="font-size: 1rem; font-weight: 700; color: #FFF; margin: 0;" data-i18n="contact.zoneTitle">Zone d'Intervention</h4>
+                  <span style="font-size: 0.8rem; color: var(--figma-orange);" data-i18n="contact.zoneSub">Cameroun &amp; International</span>
+                </div>
+              </div>
+              <div style="background: #1B1B1B; border-radius: 12px; padding: 1rem; border: 1px solid #333; margin-bottom: 0.75rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <span style="font-weight: 600; font-size: 0.85rem;">📍 Yaoundé</span>
+                  <span style="font-size: 0.75rem; color: #25D366; background: rgba(37,211,102,0.12); padding: 0.2rem 0.5rem; border-radius: 999px;" data-i18n="contact.zoneMain">Base Principale</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <span style="font-weight: 600; font-size: 0.85rem;">📍 Douala</span>
+                  <span style="font-size: 0.75rem; color: #FD6F00; background: rgba(253,111,0,0.12); padding: 0.2rem 0.5rem; border-radius: 999px;" data-i18n="contact.zoneHub">Pôle Économique &amp; IUT</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-weight: 600; font-size: 0.85rem;">🌐 International Remote</span>
+                  <span style="font-size: 0.75rem; color: #FFF; background: #333; padding: 0.2rem 0.5rem; border-radius: 999px;" data-i18n="contact.zoneWorld">Monde Entier</span>
+                </div>
+              </div>
+              <p style="font-size: 0.78rem; color: #888; margin: 0; line-height: 1.5;" data-i18n="contact.zoneNote">
+                Interventions sur site pour audit d'infrastructures et réunions stratégiques. Télétravail outillé (Slack, GitHub, Zoom, Jira) pour les missions longue durée.
+              </p>
+            </div>
           </div>
 
           <!-- Colonne Droite : Formulaire de contact / Devis -->
           <div class="contact-form-panel">
-            <h2 style="font-size: 1.75rem; font-weight: 700; color: #1A1A1A; margin-bottom: 0.5rem;">Envoyez un message</h2>
-            <p style="font-size: 0.95rem; color: #666; margin-bottom: 2rem;">
+            <h2 style="font-size: 1.75rem; font-weight: 700; color: #1A1A1A; margin-bottom: 0.5rem;" data-i18n="contact.formTitle">Envoyez un message</h2>
+            <p style="font-size: 0.95rem; color: #666; margin-bottom: 2rem;" data-i18n="contact.formSub">
               Précisez vos besoins pour recevoir une réponse adaptée et un devis préliminaire sous 24h.
             </p>
 
             <form id="contactForm" onsubmit="handleContactSubmit(event)">
               <div class="form-group-row">
                 <div class="form-group">
-                  <label class="form-label" for="contactName">Nom complet *</label>
-                  <input type="text" id="contactName" class="form-input" placeholder="Ex: Jean Dupont" required>
+                  <label class="form-label" for="contactName" data-i18n="contact.nameLabel">Nom complet *</label>
+                  <input type="text" id="contactName" class="form-input" placeholder="Votre nom complet" data-i18n-placeholder="contact.namePlaceholder" required>
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="contactEmail">Adresse email *</label>
-                  <input type="email" id="contactEmail" class="form-input" placeholder="Ex: jean.dupont@entreprise.com" required>
+                  <label class="form-label" for="contactEmail" data-i18n="contact.emailLabel">Adresse email *</label>
+                  <input type="email" id="contactEmail" class="form-input" placeholder="votre.email@domaine.com" data-i18n-placeholder="contact.emailPlaceholder" required>
                 </div>
               </div>
 
               <div class="form-group-row">
                 <div class="form-group">
-                  <label class="form-label" for="contactPhone">Téléphone / WhatsApp</label>
-                  <input type="tel" id="contactPhone" class="form-input" placeholder="Ex: +237 600 000 000">
+                  <label class="form-label" for="contactPhone" data-i18n="contact.phoneLabel">Téléphone / WhatsApp</label>
+                  <input type="tel" id="contactPhone" class="form-input" placeholder="Ex: +237 670 00 00 00" data-i18n-placeholder="contact.phonePlaceholder">
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="contactService">Domaine d'expertise souhaité *</label>
+                  <label class="form-label" for="contactService" data-i18n="contact.serviceLabel">Domaine d'expertise souhaité *</label>
                   <select id="contactService" class="form-select" required>
-                    <option value="" disabled selected>Sélectionnez un domaine...</option>
-                    <option value="software">Génie Logiciel &amp; SaaS ERP</option>
-                    <option value="infographie">Infographie &amp; Identité de Marque</option>
-                    <option value="systems">Maintenance Systèmes &amp; Réseaux</option>
-                    <option value="consulting">Consultant IT &amp; Audit d'Architecture</option>
-                    <option value="other">Autre collaboration</option>
+                    <option value="" disabled selected data-i18n="contact.serviceSelectDefault">Sélectionnez un domaine...</option>
+                    <option value="software" data-i18n="contact.serviceOptSoftware">Génie Logiciel &amp; SaaS ERP</option>
+                    <option value="infographie" data-i18n="contact.serviceOptInfographie">Infographie &amp; Identité de Marque</option>
+                    <option value="systems" data-i18n="contact.serviceOptSystems">Maintenance Systèmes &amp; Réseaux</option>
+                    <option value="consulting" data-i18n="contact.serviceOptConsulting">Consultant IT &amp; Audit d'Architecture</option>
+                    <option value="other" data-i18n="contact.serviceOptOther">Autre collaboration</option>
                   </select>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="contactBudget">Fourchette budgétaire estimative</label>
+                <label class="form-label" for="contactBudget" data-i18n="contact.budgetLabel">Fourchette budgétaire estimative</label>
                 <select id="contactBudget" class="form-select">
-                  <option value="flexible">À déterminer ensemble</option>
-                  <option value="tier1">&lt; 150 000 FCFA (~230 €)</option>
-                  <option value="tier2">150 000 - 500 000 FCFA (~230 - 760 €)</option>
-                  <option value="tier3">500 000 - 1 500 000 FCFA (~760 - 2 300 €)</option>
-                  <option value="tier4">&gt; 1 500 000 FCFA (Projet d'envergure)</option>
+                  <option value="flexible" data-i18n="contact.budgetOptFlexible">À déterminer ensemble</option>
+                  <option value="tier1" data-i18n="contact.budgetOptTier1">&lt; 150 000 FCFA (~230 €)</option>
+                  <option value="tier2" data-i18n="contact.budgetOptTier2">150 000 - 500 000 FCFA (~230 - 760 €)</option>
+                  <option value="tier3" data-i18n="contact.budgetOptTier3">500 000 - 1 500 000 FCFA (~760 - 2 300 €)</option>
+                  <option value="tier4" data-i18n="contact.budgetOptTier4">&gt; 1 500 000 FCFA (Projet d'envergure)</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="contactMessage">Détails de votre besoin ou cahier des charges *</label>
-                <textarea id="contactMessage" class="form-textarea" placeholder="Décrivez les fonctionnalités attendues, les contraintes de délai et le contexte de votre projet..." required></textarea>
+                <label class="form-label" for="contactMessage" data-i18n="contact.messageLabel">Détails de votre besoin ou cahier des charges *</label>
+                <textarea id="contactMessage" class="form-textarea" placeholder="Décrivez les fonctionnalités attendues, les contraintes de délai et le contexte de votre projet..." data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
               </div>
 
+              <!-- Pièce jointe / Cahier des charges (Sitemap Relume 1:1) -->
+              <div class="form-group">
+                <label class="form-label" for="contactFile" data-i18n="contact.fileLabel">Pièce jointe / Cahier des charges (Optionnel)</label>
+                <div class="file-drop-zone" id="fileDropZone">
+                  <input type="file" id="contactFile" name="project_brief" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.zip" class="file-input-hidden">
+                  <div class="file-drop-content">
+                    <span class="file-drop-icon">📎</span>
+                    <span class="file-drop-text" id="fileDropText" data-i18n="contact.fileDropText">Glissez-déposez votre cahier des charges, brief ou maquette (PDF, DOCX, ZIP max 15 Mo) ou <strong style="color: var(--figma-orange); text-decoration: underline; cursor: pointer;">parcourir</strong></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mention de confidentialité -->
+              <p class="form-privacy-note" style="font-size: 0.82rem; color: #777; margin: 1rem 0 1.25rem 0; line-height: 1.45;" data-i18n="contact.privacyNote">
+                🔒 <strong>Confidentialité &amp; Données :</strong> Vos coordonnées et documents transmis sont strictement confidentiels. Aucune donnée n'est cédée ni exploitée commercialement.
+              </p>
+
+              <!-- Bloc d'erreur accessible -->
+              <div class="form-alert-error" id="contactAlertError" role="alert" aria-live="assertive" style="display:none;"></div>
+
               <button type="submit" class="btn-form-submit" id="btnSubmitContact">
-                <span>Envoyer ma demande</span>
+                <span data-i18n="contact.submitBtn">Envoyer ma demande</span>
                 <span>&rarr;</span>
               </button>
 
-              <div class="form-alert-success" id="contactAlertSuccess">
+              <div class="form-alert-success" id="contactAlertSuccess" role="status" aria-live="polite" style="display:none;" data-i18n="contact.alertSuccess">
                 ✓ Merci ! Votre message a été préparé. Vous allez être redirigé vers WhatsApp ou votre messagerie pour confirmation instantanée.
               </div>
             </form>
@@ -200,47 +275,47 @@
              ========================================================================= -->
         <div class="faq-section" style="margin-top: 4rem;">
           <div class="faq-header">
-            <span class="subpage-badge">✦ Foire Aux Questions</span>
-            <h2 class="subpage-title" style="font-size: 2.25rem;">Modalités de <span class="text-orange">Collaboration</span></h2>
+            <span class="subpage-badge" data-i18n="contact.faqBadge">✦ Foire Aux Questions</span>
+            <h2 class="subpage-title" style="font-size: 2.25rem;"><span data-i18n="contact.collabTitlePre">Modalités de</span> <span class="text-orange" data-i18n="contact.collabTitleOrange">Collaboration</span></h2>
           </div>
 
           <div class="faq-accordion">
             <div class="faq-item">
-              <div class="faq-question">
-                <span>Comment se déroule le premier échange technique ?</span>
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span data-i18n="contact.q1">Comment se déroule le premier échange technique ?</span>
                 <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
+              </button>
+              <div class="faq-answer" data-i18n="contact.a1">
                 Après réception de votre demande, nous organisons un appel de cadrage de 30 minutes (Google Meet, WhatsApp ou en présentiel à Yaoundé/Douala) pour définir vos exigences techniques, l'architecture optimale et établir une estimation budgétaire transparente.
               </div>
             </div>
 
             <div class="faq-item">
-              <div class="faq-question">
-                <span>Proposez-vous une maintenance après la livraison du projet ?</span>
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span data-i18n="contact.q2">Proposez-vous une maintenance après la livraison du projet ?</span>
                 <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
+              </button>
+              <div class="faq-answer" data-i18n="contact.a2">
                 Oui. Chaque développement applicatif inclut une période de garantie corrective post-déploiement. Je propose également des contrats de maintenance préventive et d'astreinte mensuelle pour assurer la haute disponibilité de vos systèmes.
               </div>
             </div>
 
             <div class="faq-item">
-              <div class="faq-question">
-                <span>Travaillez-vous avec des clients à l'international ?</span>
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span data-i18n="contact.q3">Travaillez-vous avec des clients à l'international ?</span>
                 <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
+              </button>
+              <div class="faq-answer" data-i18n="contact.a3">
                 Absolument. Je collabore régulièrement à distance avec des entreprises et organisations à l'international grâce à des flux de travail structurés (Git, Jira/Trello, réunions synchrones régulières et documentation complète).
               </div>
             </div>
 
             <div class="faq-item">
-              <div class="faq-question">
-                <span>Quels sont les modes de règlement acceptés ?</span>
+              <button type="button" class="faq-question" aria-expanded="false">
+                <span data-i18n="contact.q4">Quels sont les modes de règlement acceptés ?</span>
                 <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
+              </button>
+              <div class="faq-answer" data-i18n="contact.a4">
                 Les paiements s'effectuent par virement bancaire, Orange Money, MTN Mobile Money ou solutions de paiement international. Les projets sont généralement découpés en jalons (acompte au démarrage, validation intermédiaire, solde à la livraison).
               </div>
             </div>
@@ -270,52 +345,52 @@
               </span>
             </div>
             <p class="footer-brand-desc" data-i18n="footer.bio">
-              Technologue en Génie Logiciel &amp; Systèmes d'Information, certifié Ateliers Google. Spécialisé dans la conception logicielle, la maintenance d'infrastructures et l'infographie.
+              Développeur logiciel &amp; Infographe, diplômé de l'IUT de Douala et certifié en marketing digital (Google). Fondateur de LaboGraphie, spécialisé dans la conception applicative, l'infrastructure et l'identité visuelle.
             </p>
             <div class="footer-social-icons">
               <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0 1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0 1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
               </a>
               <a href="https://www.linkedin.com/in/jordan-lo%C3%AFc-nde-63b041427/" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="LinkedIn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
               </a>
               <a href="https://wa.me/237679279447?text=Bonjour%20Jordan,%20j'ai%20consult%C3%A9%20votre%20portfolio%20et%20souhaite%20%C3%A9changer%20avec%20vous." target="_blank" rel="noopener noreferrer" class="social-circle social-whatsapp" aria-label="WhatsApp Jordan L.">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                 </svg>
               </a>
               <a href="mailto:ndejordanloic@gmail.com" class="social-circle" aria-label="Email Jordan L.">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
               </a>
             </div>
           </div>
 
           <div class="footer-col col-nav">
-            <h4 class="footer-col-title">Navigation</h4>
+            <h4 class="footer-col-title" data-i18n="footer.navTitle">Navigation</h4>
             <ul class="footer-links-list">
-              <li><a href="index.html">Accueil</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+              <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+              <li><a href="portfolio.html" data-i18n="nav.projects">Portfolio</a></li>
+              <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+              <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
             </ul>
           </div>
 
           <div class="footer-col col-contact">
-            <h4 class="footer-col-title">Coordonnées</h4>
+            <h4 class="footer-col-title" data-i18n="footer.contactTitle">Coordonnées</h4>
             <ul class="footer-links-list contact-list">
               <li><span>📞 +237 679 279 447</span></li>
               <li><span>📞 +237 621 317 408</span></li>
               <li><span>✉️ ndejordanloic@gmail.com</span></li>
               <li><span>✉️ ndejordanloic@outlook.fr</span></li>
-              <li><span>📍 Yaoundé, Cameroun</span></li>
+              <li data-i18n="footer.location"><span>📍 Yaoundé, Cameroun</span></li>
             </ul>
           </div>
 
           <div class="footer-col col-newsletter">
-            <h4 class="footer-col-title">Demande de Devis Rapide</h4>
+            <h4 class="footer-col-title" data-i18n="footer.quickQuote">Demande de Devis Rapide</h4>
             <form class="footer-newsletter-form" onsubmit="event.preventDefault(); window.location.href='contact.html';">
-              <input type="email" placeholder="Votre email..." class="footer-email-input" required>
+              <input type="email" placeholder="Votre email..." data-i18n-placeholder="footer.placeholder" class="footer-email-input" required aria-label="Votre adresse email" data-i18n-aria-label="aria.newsletterEmail">
               <button type="submit" class="footer-email-btn" aria-label="Continuer">&rarr;</button>
             </form>
           </div>
@@ -325,11 +400,11 @@
         <div class="footer-card-divider subtle"></div>
 
         <div class="footer-card-bottom">
-          <p class="footer-copyright">Copyright &copy; 2026 NDE Jordan L. · LaboGraphie Dev. Tous droits réservés.</p>
+          <p class="footer-copyright" data-i18n="footer.copyright">Copyright &copy; 2026 NDE Jordan L. · LaboGraphie Dev. Tous droits réservés.</p>
           <div class="footer-legal-links">
-            <a href="index.html">Accueil</a>
+            <a href="index.html" data-i18n="nav.home">Accueil</a>
             <span class="sep">|</span>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" data-i18n="nav.contact">Contact</a>
           </div>
         </div>
 
@@ -339,23 +414,240 @@
 
   <script src="js/main.js"></script>
   <script>
+    // Pré-remplissage des champs selon les paramètres URL (?subject=, ?formule=)
+    function prefillContactFormFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const subjectParam = params.get('subject') || params.get('service');
+      const formuleParam = params.get('formule') || params.get('budget');
+
+      if (subjectParam) {
+        const serviceSelect = document.getElementById('contactService');
+        if (serviceSelect) {
+          const s = subjectParam.toLowerCase();
+          if (s.includes('reseau') || s.includes('maintenance') || s.includes('system')) {
+            serviceSelect.value = 'systems';
+          } else if (s.includes('photo') || s.includes('infographie') || s.includes('design')) {
+            serviceSelect.value = 'infographie';
+          } else if (s.includes('logiciel') || s.includes('software') || s.includes('ia') || s.includes('erp')) {
+            serviceSelect.value = 'software';
+          } else if (s.includes('consulting') || s.includes('audit')) {
+            serviceSelect.value = 'consulting';
+          } else if (s.includes('other')) {
+            serviceSelect.value = 'other';
+          }
+        }
+      }
+
+      if (formuleParam) {
+        const budgetSelect = document.getElementById('contactBudget');
+        if (budgetSelect) {
+          const f = formuleParam.toLowerCase();
+          if (f.includes('ponctuelle') || f.includes('tier1')) {
+            budgetSelect.value = 'tier1';
+          } else if (f.includes('tier2')) {
+            budgetSelect.value = 'tier2';
+          } else if (f.includes('projet') || f.includes('tier3')) {
+            budgetSelect.value = 'tier3';
+          } else if (f.includes('regie') || f.includes('tier4') || f.includes('envergure')) {
+            budgetSelect.value = 'tier4';
+          } else if (f.includes('flexible')) {
+            budgetSelect.value = 'flexible';
+          }
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', prefillContactFormFromUrl);
+    prefillContactFormFromUrl();
+
     function handleContactSubmit(e) {
       e.preventDefault();
-      const name = document.getElementById('contactName').value;
-      const email = document.getElementById('contactEmail').value;
-      const phone = document.getElementById('contactPhone').value;
-      const service = document.getElementById('contactService').value;
-      const budget = document.getElementById('contactBudget').value;
-      const message = document.getElementById('contactMessage').value;
 
-      const alertBox = document.getElementById('contactAlertSuccess');
-      if (alertBox) alertBox.style.display = 'block';
+      const nameInput = document.getElementById('contactName');
+      const emailInput = document.getElementById('contactEmail');
+      const phoneInput = document.getElementById('contactPhone');
+      const serviceSelect = document.getElementById('contactService');
+      const budgetSelect = document.getElementById('contactBudget');
+      const messageInput = document.getElementById('contactMessage');
+      const fileInput = document.getElementById('contactFile');
+      const alertError = document.getElementById('contactAlertError');
+      const alertSuccess = document.getElementById('contactAlertSuccess');
+      const submitBtn = document.getElementById('btnSubmitContact');
 
-      // Redirection WhatsApp fluide avec les données pré-remplies
-      const waText = encodeURIComponent(`Bonjour Jordan,\n\nJe m'appelle ${name} (${email}, tel: ${phone}).\nBesoin: ${service} (Budget: ${budget}).\nMessage:\n${message}`);
+      // Réinitialisation des erreurs et états
+      const inputs = [nameInput, emailInput, serviceSelect, messageInput];
+      inputs.forEach(input => {
+        if (input) {
+          input.classList.remove('is-invalid');
+          input.removeAttribute('aria-invalid');
+        }
+      });
+      if (alertError) {
+        alertError.style.display = 'none';
+        alertError.innerHTML = '';
+      }
+      if (alertSuccess) {
+        alertSuccess.style.display = 'none';
+      }
+
+      const errors = [];
+      let firstInvalidEl = null;
+
+      // 1. Validation Nom
+      const nameVal = nameInput ? nameInput.value.trim() : '';
+      if (!nameVal || nameVal.length < 2) {
+        errors.push("Veuillez renseigner votre nom complet (au moins 2 caractères).");
+        if (nameInput) {
+          nameInput.classList.add('is-invalid');
+          nameInput.setAttribute('aria-invalid', 'true');
+          if (!firstInvalidEl) firstInvalidEl = nameInput;
+        }
+      }
+
+      // 2. Validation Email
+      const emailVal = emailInput ? emailInput.value.trim() : '';
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailVal || !emailRegex.test(emailVal)) {
+        errors.push("Veuillez renseigner une adresse email valide (ex: nom@domaine.com).");
+        if (emailInput) {
+          emailInput.classList.add('is-invalid');
+          emailInput.setAttribute('aria-invalid', 'true');
+          if (!firstInvalidEl) firstInvalidEl = emailInput;
+        }
+      }
+
+      // 3. Validation Service
+      const serviceVal = serviceSelect ? serviceSelect.value : '';
+      if (!serviceVal) {
+        errors.push("Veuillez sélectionner un domaine d'expertise souhaité.");
+        if (serviceSelect) {
+          serviceSelect.classList.add('is-invalid');
+          serviceSelect.setAttribute('aria-invalid', 'true');
+          if (!firstInvalidEl) firstInvalidEl = serviceSelect;
+        }
+      }
+
+      // 4. Validation Message
+      const messageVal = messageInput ? messageInput.value.trim() : '';
+      if (!messageVal || messageVal.length < 10) {
+        errors.push("Veuillez décrire votre besoin ou cahier des charges (au moins 10 caractères).");
+        if (messageInput) {
+          messageInput.classList.add('is-invalid');
+          messageInput.setAttribute('aria-invalid', 'true');
+          if (!firstInvalidEl) firstInvalidEl = messageInput;
+        }
+      }
+
+      // 5. Validation Fichier (si présent)
+      const file = fileInput && fileInput.files && fileInput.files[0] ? fileInput.files[0] : null;
+      if (file) {
+        const maxBytes = 15 * 1024 * 1024;
+        const allowedExts = ['pdf', 'doc', 'docx', 'png', 'jpg', 'jpeg', 'zip'];
+        const ext = file.name.split('.').pop().toLowerCase();
+        if (file.size > maxBytes) {
+          errors.push(`La pièce jointe (${(file.size / (1024 * 1024)).toFixed(1)} Mo) dépasse la limite autorisée de 15 Mo.`);
+        }
+        if (!allowedExts.includes(ext)) {
+          errors.push(`Le format de la pièce jointe (.${ext}) n'est pas autorisé. Formats acceptés : PDF, DOC, DOCX, PNG, JPG, ZIP.`);
+        }
+      }
+
+      if (errors.length > 0) {
+        if (alertError) {
+          alertError.innerHTML = `
+            <strong>Des informations requises sont manquantes ou incomplètes :</strong>
+            <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
+          `;
+          alertError.style.display = 'block';
+        }
+        if (firstInvalidEl) firstInvalidEl.focus();
+        return;
+      }
+
+      // Protection anti-double soumission & état de chargement
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.setAttribute('data-original-html', submitBtn.innerHTML);
+        submitBtn.innerHTML = '<span>Préparation du message en cours... ⏳</span>';
+      }
+
+      const phoneVal = phoneInput && phoneInput.value.trim() ? phoneInput.value.trim() : 'Non précisé';
+      const budgetVal = budgetSelect && budgetSelect.options[budgetSelect.selectedIndex]
+        ? budgetSelect.options[budgetSelect.selectedIndex].text
+        : 'À déterminer ensemble';
+      const serviceText = serviceSelect && serviceSelect.options[serviceSelect.selectedIndex]
+        ? serviceSelect.options[serviceSelect.selectedIndex].text
+        : serviceVal;
+
+      // Construction du message structuré WhatsApp
+      let waMessage = `*Demande de contact — Portfolio NDE Jordan L.*\n\n`;
+      waMessage += `👤 *Client :* ${nameVal}\n`;
+      waMessage += `✉️ *Email :* ${emailVal}\n`;
+      waMessage += `📞 *Téléphone :* ${phoneVal}\n`;
+      waMessage += `🎯 *Domaine :* ${serviceText}\n`;
+      waMessage += `💰 *Budget :* ${budgetVal}\n`;
+      waMessage += `📝 *Cahier des charges :*\n${messageVal}\n`;
+      if (file) {
+        waMessage += `\n📎 *Pièce jointe signalée :* ${file.name} (${(file.size / (1024 * 1024)).toFixed(2)} Mo)`;
+      }
+
+      const encodedWa = encodeURIComponent(waMessage);
+      const waUrl = `https://wa.me/237679279447?text=${encodedWa}`;
+
+      const mailSubject = encodeURIComponent(`Brief Projet — ${nameVal} [${serviceText}]`);
+      const mailBody = encodeURIComponent(
+        `Bonjour Jordan,\n\nVoici les détails de mon projet :\n\n` +
+        `Nom : ${nameVal}\n` +
+        `Email : ${emailVal}\n` +
+        `Téléphone : ${phoneVal}\n` +
+        `Domaine : ${serviceText}\n` +
+        `Budget estimatif : ${budgetVal}\n\n` +
+        `Description du besoin :\n${messageVal}\n\n` +
+        (file ? `Pièce jointe : ${file.name} (${(file.size / (1024 * 1024)).toFixed(2)} Mo)\n(Veuillez joindre le fichier à cet email)\n\n` : '') +
+        `Cordialement,\n${nameVal}`
+      );
+      const mailtoUrl = `mailto:ndejordanloic@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+
+      // Affichage du retour transparent dans alertSuccess
+      if (alertSuccess) {
+        alertSuccess.innerHTML = `
+          <div style="font-weight: 700; font-size: 1.05rem; margin-bottom: 0.5rem;">
+            ✓ Votre brief a été préparé avec succès !
+          </div>
+          <p style="margin-bottom: 0.75rem; font-size: 0.92rem; line-height: 1.5;">
+            Une fenêtre <strong>WhatsApp</strong> va s'ouvrir pour transmettre directement votre message. Vous pouvez également l'envoyer par <strong>email</strong>.
+          </p>
+          ${file ? `
+            <div style="background: rgba(253, 111, 0, 0.08); border-left: 3px solid var(--figma-orange); padding: 0.75rem; border-radius: 4px; font-size: 0.85rem; color: #333; margin: 0.75rem 0; text-align: left;">
+              📎 <strong>Pièce jointe (${file.name}) :</strong> Par mesure de sécurité et en l'absence de serveur tiers, les navigateurs web ne peuvent pas attacher automatiquement un fichier local à un lien externe. Veuillez simplement glisser votre fichier dans la discussion WhatsApp ou l'ajouter à votre email.
+            </div>
+          ` : ''}
+          <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem;">
+            <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary-orange" style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.25rem; font-size: 0.88rem; text-decoration: none; border-radius: 8px;">
+              💬 Ouvrir WhatsApp
+            </a>
+            <a href="${mailtoUrl}" class="btn-outline-white" style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.25rem; font-size: 0.88rem; text-decoration: none; border-radius: 8px; color: #111; border-color: #CCC;">
+              ✉️ Envoyer par Email
+            </a>
+          </div>
+        `;
+        alertSuccess.style.display = 'block';
+      }
+
+      // Redirection WhatsApp
       setTimeout(() => {
-        window.open(`https://wa.me/237679279447?text=${waText}`, '_blank');
-      }, 1200);
+        window.open(waUrl, '_blank');
+      }, 1000);
+
+      // Réactivation du bouton après 3.5 secondes
+      setTimeout(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          const orig = submitBtn.getAttribute('data-original-html');
+          if (orig) submitBtn.innerHTML = orig;
+          else submitBtn.innerHTML = '<span data-i18n="contact.submitBtn">Envoyer ma demande</span> <span>&rarr;</span>';
+        }
+      }, 3500);
     }
   </script>
 </body>

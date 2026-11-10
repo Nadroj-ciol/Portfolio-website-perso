@@ -6,12 +6,37 @@
   <title>Portfolio & Réalisations — NDE Jordan L. · Technologue & Développeur Full-Stack</title>
   <meta name="description" content="Découvrez le showroom des réalisations de NDE Jordan L. : ERP AgroFlow, Sister Schola LIMS, identités visuelles Candace et Petit Colis, infrastructures réseaux.">
   
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NDE Jordan L. Portfolio">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Portfolio &amp; Réalisations — NDE Jordan L. · Technologue &amp; Développeur Full-Stack">
+  <meta property="og:description" content="Découvrez le showroom des réalisations de NDE Jordan L. : ERP AgroFlow, Sister Schola LIMS, identités visuelles Candace et Petit Colis, infrastructures réseaux.">
+  <meta property="og:image" content="rsc/img/jordan_portrait_pro.webp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portfolio &amp; Réalisations — NDE Jordan L. · Technologue &amp; Développeur Full-Stack">
+  <meta name="twitter:description" content="Découvrez le showroom des réalisations de NDE Jordan L. : ERP AgroFlow, Sister Schola LIMS, identités visuelles et réseaux.">
+  <meta name="twitter:image" content="rsc/img/jordan_portrait_pro.webp">
+
+  <!-- URL canonique (À confirmer lors du déploiement en production - Lot 7) -->
+  <!-- <link rel="canonical" href="https://ndejordanloic.com/portfolio.html"> -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="page-portfolio">
+  <!-- Lien d'évitement accessible (WCAG 2.4.1) -->
+  <a href="#main-content" class="skip-link" data-i18n="aria.skipToContent">Passer au contenu principal</a>
 
   <!-- =========================================================================
        HEADER NAVIGATION PARTAGÉ (Figma 1:1)
@@ -37,11 +62,13 @@
         <a href="blog.html" class="nav-item" data-i18n="nav.blog">Blog</a>
         <a href="contact.html" class="nav-item" data-i18n="nav.contact">Contact</a>
 
-        <!-- Sélecteur Bilingue discret FR / EN -->
-        <div class="lang-switch-wrap" role="group" aria-label="Langue / Language">
-          <button class="lang-btn active" data-lang="fr">FR</button>
+        <!-- Sélecteur Trilingue discret FR / EN / JA -->
+        <div class="lang-switch-wrap" role="group" aria-label="Choix de la langue" data-i18n-aria-label="aria.langSelect">
+          <button type="button" class="lang-btn active" data-lang="fr" aria-label="Passer en Français" data-i18n-aria-label="aria.langFr">FR</button>
           <span class="lang-sep">|</span>
-          <button class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-label="Switch to English" data-i18n-aria-label="aria.langEn">EN</button>
+          <span class="lang-sep">|</span>
+          <button type="button" class="lang-btn" data-lang="ja" aria-label="日本語に切り替え" data-i18n-aria-label="aria.langJa">JA</button>
         </div>
       </nav>
 
@@ -52,19 +79,116 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- =========================================================================
          1. HERO DE LA PAGE PORTFOLIO
          ========================================================================= -->
     <section class="subpage-hero">
       <div class="container">
-        <span class="subpage-badge">✦ Projets Déployés &amp; Travaux Graphiques</span>
+        <span class="subpage-badge" data-i18n="portfolio.heroBadge">✦ Projets Déployés &amp; Travaux Graphiques</span>
         <h1 class="subpage-title">
-          Portfolio &amp; <span class="text-orange">Galerie de Réalisations</span>
+          <span data-i18n="portfolio.pageTitlePre">Réalisations,</span> <span class="text-orange" data-i18n="portfolio.pageTitleOrange">SaaS &amp; Packaging 3D</span>
         </h1>
-        <p class="subpage-desc">
-          De la conception d'architectures SaaS et ERP complexes aux identités visuelles percutantes et infrastructures IoT, découvrez mes projets livrés en production pour des entreprises et institutions.
+        <p class="subpage-desc" data-i18n="portfolio.pageSubtitle">
+          ERP en production, modélisation relationnelle stricte, identités vectorielles et modélisation de packaging industriel.
         </p>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION STATISTIQUES CLÉS & COMPÉTENCES DÉMONTRÉES (Sitemap Relume 1:1)
+         ========================================================================= -->
+    <section class="portfolio-stats-section" style="padding: 1.5rem 0 3rem 0; border-bottom: 1px solid #ECECEC;">
+      <div class="container">
+        <!-- Chiffres Clés par Domaine -->
+        <div class="why-metrics-grid" style="margin-bottom: 2.5rem;">
+          <div class="why-metric">
+            <span class="why-number count-up" data-target="6">6+</span>
+            <span class="why-label" data-i18n="portfolio.stat1Label">Études de Cas &amp; Démos Déployées</span>
+          </div>
+          <div class="why-metric">
+            <span class="why-number count-up" data-target="11">11+</span>
+            <span class="why-label" data-i18n="portfolio.stat2Label">Marques &amp; 30+ Travaux Graphiques</span>
+          </div>
+          <div class="why-metric">
+            <span class="why-number" style="font-size: 1.45rem; font-weight: 800; color: var(--figma-orange, #FD6F00);" data-i18n="portfolio.stat3Val">Local-First</span>
+            <span class="why-label" data-i18n="portfolio.stat3Label">Résilience Hors-Ligne &amp; Intégrité SQL</span>
+          </div>
+          <div class="why-metric">
+            <span class="why-number" data-i18n="portfolio.stat4Val">Depuis 2019</span>
+            <span class="why-label" data-i18n="portfolio.stat4Label">Pratique Continue de la Conception</span>
+          </div>
+        </div>
+
+        <!-- Compétences Clés Démontrées (6 Domaines Structurés) -->
+        <div style="background: #111111; color: #FFFFFF; border-radius: 20px; padding: 2rem; border: 1px solid #282828;">
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #FFF; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span style="color: var(--figma-orange);">✦</span> <span data-i18n="portfolio.competenciesTitle">Compétences Clés Démontrées à travers ces Réalisations</span>
+          </h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+            <div style="background: #1B1B1B; padding: 1.25rem; border-radius: 12px; border: 1px solid #333;">
+              <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(253, 111, 0, 0.12); color: var(--figma-orange); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h4 style="font-size: 0.95rem; font-weight: 600; color: #FFF; margin-bottom: 0.35rem;" data-i18n="portfolio.dom1Title">Développement Logiciel &amp; Web</h4>
+              <p style="font-size: 0.8rem; color: #AAA; line-height: 1.5; margin: 0;" data-i18n="portfolio.dom1Desc">Architectures SaaS, Vanilla JS, React, Node.js, interfaces réactives et synchronisation offline-first (AgroFlow, Sister Schola).</p>
+            </div>
+            <div style="background: #1B1B1B; padding: 1.25rem; border-radius: 12px; border: 1px solid #333;">
+              <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(253, 111, 0, 0.12); color: var(--figma-orange); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <h4 style="font-size: 0.95rem; font-weight: 600; color: #FFF; margin-bottom: 0.35rem;" data-i18n="portfolio.dom2Title">Infrastructure, DevOps &amp; Systèmes</h4>
+              <p style="font-size: 0.8rem; color: #AAA; line-height: 1.5; margin: 0;" data-i18n="portfolio.dom2Desc">Bases relationnelles PostgreSQL/MySQL (MERISE 3NF), conteneurisation Docker, hébergement Vercel et intégrité transactionnelle.</p>
+            </div>
+            <div style="background: #1B1B1B; padding: 1.25rem; border-radius: 12px; border: 1px solid #333;">
+              <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(253, 111, 0, 0.12); color: var(--figma-orange); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                  <path d="M2 2l7.586 7.586"></path>
+                  <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+              </div>
+              <h4 style="font-size: 0.95rem; font-weight: 600; color: #FFF; margin-bottom: 0.35rem;" data-i18n="portfolio.dom3Title">UI/UX &amp; Conception Graphique</h4>
+              <p style="font-size: 0.8rem; color: #AAA; line-height: 1.5; margin: 0;" data-i18n="portfolio.dom3Desc">Design vectoriel sur Illustrator, modélisation packaging 3D de flacons, mockups produits et identités de marque (Candace, LaboGraphie).</p>
+            </div>
+            <div style="background: #1B1B1B; padding: 1.25rem; border-radius: 12px; border: 1px solid #333;">
+              <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(253, 111, 0, 0.12); color: var(--figma-orange); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                  <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                </svg>
+              </div>
+              <h4 style="font-size: 0.95rem; font-weight: 600; color: #FFF; margin-bottom: 0.35rem;" data-i18n="portfolio.dom4Title">Conseil &amp; Accompagnement SI</h4>
+              <p style="font-size: 0.8rem; color: #AAA; line-height: 1.5; margin: 0;" data-i18n="portfolio.dom4Desc">Cadrage de besoins, modélisation conceptuelle (MCD/MLD), rédaction de spécifications techniques et choix d'architectures adaptées.</p>
+            </div>
+            <div style="background: #1B1B1B; padding: 1.25rem; border-radius: 12px; border: 1px solid #333;">
+              <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(253, 111, 0, 0.12); color: var(--figma-orange); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <h4 style="font-size: 0.95rem; font-weight: 600; color: #FFF; margin-bottom: 0.35rem;" data-i18n="portfolio.dom5Title">Marketing Digital &amp; Communication</h4>
+              <p style="font-size: 0.8rem; color: #AAA; line-height: 1.5; margin: 0;" data-i18n="portfolio.dom5Desc">Stratégie de contenu, certification marketing digital Google, communication visuelle et animation d'initiatives tech locales.</p>
+            </div>
+            <div style="background: #1B1B1B; padding: 1.25rem; border-radius: 12px; border: 1px solid #333;">
+              <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(253, 111, 0, 0.12); color: var(--figma-orange); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+              </div>
+              <h4 style="font-size: 0.95rem; font-weight: 600; color: #FFF; margin-bottom: 0.35rem;" data-i18n="portfolio.dom6Title">Maintenance Informatique &amp; Réseaux</h4>
+              <p style="font-size: 0.8rem; color: #AAA; line-height: 1.5; margin: 0;" data-i18n="portfolio.dom6Desc">Câblage structuré de baies, adressage VLAN/Cisco, maintenance préventive/curative hardware et intégration Arduino.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -76,18 +200,18 @@
         
         <div class="portfolio-controls-bar">
           <div class="portfolio-tags-pill-row">
-            <button class="tag-pill active" data-filter="all">Tous les projets (6+)</button>
-            <button class="tag-pill" data-filter="dev">Génie Logiciel &amp; ERP</button>
-            <button class="tag-pill" data-filter="infographie">Infographie &amp; Branding</button>
-            <button class="tag-pill" data-filter="systems">Systèmes &amp; Réseaux</button>
+            <button class="tag-pill active" data-filter="all" data-i18n="portfolio.tabAll">Tous les projets (6+)</button>
+            <button class="tag-pill" data-filter="dev" data-i18n="portfolio.tabDev">Génie Logiciel &amp; ERP</button>
+            <button class="tag-pill" data-filter="infographie" data-i18n="portfolio.tabDesign">Infographie &amp; Branding</button>
+            <button class="tag-pill" data-filter="systems" data-i18n="portfolio.tabSystems">Systèmes &amp; Réseaux</button>
           </div>
 
           <!-- Barre de recherche dynamique -->
           <div class="portfolio-search-wrap">
             <div class="search-input-box">
-              <span class="search-icon">🔍</span>
-              <input type="text" id="projectSearchInput" placeholder="Rechercher (ERP, Candace, Petit Colis, LIMS, Arduino...)" autocomplete="off">
-              <button id="projectSearchClear" class="search-clear-btn" aria-label="Effacer">&times;</button>
+              <span class="search-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+              <input type="text" id="projectSearchInput" aria-label="Rechercher un projet" data-i18n-aria-label="aria.searchProjects" placeholder="Rechercher (ERP, Candace, Petit Colis, LIMS, Arduino...)" data-i18n-placeholder="portfolio.searchPlaceholder" autocomplete="off">
+              <button id="projectSearchClear" class="search-clear-btn" aria-label="Effacer" data-i18n-aria-label="aria.clearSearch">&times;</button>
             </div>
             <!-- Puces de raccourcis rapides -->
             <div class="search-chips-row">
@@ -107,14 +231,14 @@
           <!-- Projet 1 : AgroFlow SaaS ERP -->
           <div class="portfolio-hub-card" data-cat="dev" data-keywords="agroflow erp saas agritech dev web postgresql react offline sql">
             <div class="hub-card-thumb">
-              <img src="rsc/img/projets/card_agroflow.png" alt="AgroFlow SaaS ERP" loading="lazy">
-              <span class="hub-card-badge">ERP &amp; AgriTech</span>
-              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/card_agroflow.png" aria-label="Agrandir">🔍</button>
+              <img src="rsc/img/projets/card_agroflow.webp" alt="AgroFlow SaaS ERP" loading="lazy" width="800" height="500" decoding="async">
+              <span class="hub-card-badge" data-i18n="portfolio.cardAgroBadge">ERP &amp; AgriTech (Prototype)</span>
+              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/card_agroflow.webp" aria-label="Agrandir"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
             </div>
             <div class="hub-card-body">
               <h3 class="hub-card-title">AgroFlow SaaS ERP</h3>
-              <p class="hub-card-desc">
-                Plateforme ERP SaaS pour exploitants agricoles. Digitalisation des parcelles, suivi des récoltes, balance financière en temps réel et mode offline-first résilient.
+              <p class="hub-card-desc" data-i18n="portfolio.cardAgroDesc">
+                Prototype d'ERP SaaS pour exploitants agricoles. Digitalisation des parcelles, suivi des récoltes, balance financière en temps réel et mode offline-first résilient.
               </p>
               <div class="hub-card-techs">
                 <span class="hub-tech-pill">React</span>
@@ -124,8 +248,8 @@
                 <span class="hub-tech-pill">Offline Sync</span>
               </div>
               <div class="hub-card-actions">
-                <a href="projet-detail.html?id=agroflow" class="btn-hub-detail">Étude de cas &rarr;</a>
-                <a href="https://agroflowsaas.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-hub-demo" title="Démo en ligne">
+                <a href="projet-detail.html?id=agroflow" class="btn-hub-detail" data-i18n="portfolio.btnCaseStudy">Étude de cas &rarr;</a>
+                <a href="https://agroflowsaas.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-hub-demo" title="Démo en ligne" data-i18n="portfolio.btnDemo">
                   Démo <span>↗</span>
                 </a>
               </div>
@@ -135,14 +259,14 @@
           <!-- Projet 2 : Sister Schola ERP -->
           <div class="portfolio-hub-card" data-cat="dev" data-keywords="sister schola erp lims clinique sante hopital medecine dossiers admissions">
             <div class="hub-card-thumb">
-              <img src="rsc/img/projets/dev/SisterSholaErp.png" alt="Sister Schola ERP" loading="lazy">
-              <span class="hub-card-badge">Santé &amp; LIMS</span>
-              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/dev/SisterSholaErp.png" aria-label="Agrandir">🔍</button>
+              <img src="rsc/img/projets/dev/SisterSholaErp.webp" alt="Sister Schola ERP" loading="lazy" width="1920" height="1200" decoding="async">
+              <span class="hub-card-badge" data-i18n="portfolio.cardSisterBadge">Santé &amp; LIMS (Prototype)</span>
+              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/dev/SisterSholaErp.webp" aria-label="Agrandir"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
             </div>
             <div class="hub-card-body">
               <h3 class="hub-card-title">Sister Schola ERP</h3>
-              <p class="hub-card-desc">
-                Système de gestion hospitalière et laboratoire clinique. Traçabilité complète du parcours patient, gestion des admissions, ordonnances et sécurité des données.
+              <p class="hub-card-desc" data-i18n="portfolio.cardSisterDesc">
+                Prototype d'ERP hospitalier et gestion clinique. Traçabilité complète du parcours patient, gestion des admissions, ordonnances et sécurité des flux hospitaliers.
               </p>
               <div class="hub-card-techs">
                 <span class="hub-tech-pill">React</span>
@@ -152,8 +276,8 @@
                 <span class="hub-tech-pill">RBAC</span>
               </div>
               <div class="hub-card-actions">
-                <a href="projet-detail.html?id=sisterschola" class="btn-hub-detail">Étude de cas &rarr;</a>
-                <a href="https://sisterscholaerp.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-hub-demo" title="Démo en ligne">
+                <a href="projet-detail.html?id=sisterschola" class="btn-hub-detail" data-i18n="portfolio.btnCaseStudy">Étude de cas &rarr;</a>
+                <a href="https://sisterscholaerp.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-hub-demo" title="Démo en ligne" data-i18n="portfolio.btnDemo">
                   Démo <span>↗</span>
                 </a>
               </div>
@@ -163,13 +287,13 @@
           <!-- Projet 3 : Candace Distribution & Petit Colis -->
           <div class="portfolio-hub-card" data-cat="infographie" data-keywords="candace distribution petit colis flyers logos mockup packaging cosmetique livraison affiche branding">
             <div class="hub-card-thumb">
-              <img src="rsc/img/projets/infographie/MockupCandace distribution.jpg" alt="Candace Distribution Packaging" loading="lazy">
-              <span class="hub-card-badge">Branding &amp; Packaging</span>
-              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.jpg" aria-label="Agrandir">🔍</button>
+              <img src="rsc/img/projets/infographie/MockupCandace distribution.webp" alt="Candace Distribution Packaging" loading="lazy" width="1920" height="1344" decoding="async">
+              <span class="hub-card-badge" data-i18n="portfolio.cardCandaceBadge">Branding &amp; Packaging</span>
+              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.webp" aria-label="Agrandir"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
             </div>
             <div class="hub-card-body">
               <h3 class="hub-card-title">Candace &amp; Petit Colis</h3>
-              <p class="hub-card-desc">
+              <p class="hub-card-desc" data-i18n="portfolio.cardCandaceDesc">
                 Direction artistique, modélisation packaging 3D pour la gamme cosmétique Candace, et campagnes d'affichage/recrutement percutantes pour la startup Petit Colis.
               </p>
               <div class="hub-card-techs">
@@ -179,9 +303,9 @@
                 <span class="hub-tech-pill">Identité Visuelle</span>
               </div>
               <div class="hub-card-actions">
-                <a href="projet-detail.html?id=candace" class="btn-hub-detail">Galerie complète &rarr;</a>
-                <button class="btn-hub-demo btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.jpg">
-                  Aperçu <span>🔍</span>
+                <a href="projet-detail.html?id=candace" class="btn-hub-detail" data-i18n="portfolio.btnFullGallery">Galerie complète &rarr;</a>
+                <button class="btn-hub-demo btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.webp">
+                  Aperçu <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
                 </button>
               </div>
             </div>
@@ -190,14 +314,14 @@
           <!-- Projet 4 : LaboGraphie Web Platform -->
           <div class="portfolio-hub-card" data-cat="dev" data-keywords="labographie web cybertech plateforme portfolio tech showcase interactif vitrine">
             <div class="hub-card-thumb">
-              <img src="rsc/img/projets/dev/LaboGraphie-web.png" alt="LaboGraphie Web Platform" loading="lazy">
-              <span class="hub-card-badge">Plateforme Web</span>
-              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/dev/LaboGraphie-web.png" aria-label="Agrandir">🔍</button>
+              <img src="rsc/img/projets/dev/LaboGraphie-web.webp" alt="LaboGraphie Web Platform" loading="lazy" width="1912" height="1038" decoding="async">
+              <span class="hub-card-badge" data-i18n="portfolio.cardLaboBadge">Collectif LaboGraphie</span>
+              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/dev/LaboGraphie-web.webp" aria-label="Agrandir"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
             </div>
             <div class="hub-card-body">
               <h3 class="hub-card-title">LaboGraphie Web Platform</h3>
-              <p class="hub-card-desc">
-                Portail interactif et vitrine technologique des solutions logicielles et créatives. Architecture modulaire, micro-interactions soignées et scoring Lighthouse optimal.
+              <p class="hub-card-desc" data-i18n="portfolio.cardLaboDesc">
+                Portail interactif et vitrine des solutions logicielles et créatives du collectif LaboGraphie fondé avec des camarades. Architecture modulaire Vanilla JS et performances optimales.
               </p>
               <div class="hub-card-techs">
                 <span class="hub-tech-pill">JavaScript ES6+</span>
@@ -206,8 +330,8 @@
                 <span class="hub-tech-pill">Vercel</span>
               </div>
               <div class="hub-card-actions">
-                <a href="projet-detail.html?id=labographie" class="btn-hub-detail">Étude de cas &rarr;</a>
-                <a href="https://labographie.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-hub-demo" title="Démo en ligne">
+                <a href="projet-detail.html?id=labographie" class="btn-hub-detail" data-i18n="portfolio.btnCaseStudy">Étude de cas &rarr;</a>
+                <a href="https://labographie.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-hub-demo" title="Démo en ligne" data-i18n="portfolio.btnDemo">
                   Démo <span>↗</span>
                 </a>
               </div>
@@ -217,14 +341,14 @@
           <!-- Projet 5 : Acuvera Clinical LIMS -->
           <div class="portfolio-hub-card" data-cat="dev" data-keywords="acuvera clinical lims biomédical analyses laboratoire patients sang echantillons">
             <div class="hub-card-thumb">
-              <img src="rsc/img/projets/card_acuvera.png" alt="Acuvera Clinical LIMS" loading="lazy">
-              <span class="hub-card-badge">Biomédical &amp; LIMS</span>
-              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/card_acuvera.png" aria-label="Agrandir">🔍</button>
+              <img src="rsc/img/projets/card_acuvera.webp" alt="Acuvera Clinical LIMS" loading="lazy" width="800" height="500" decoding="async">
+              <span class="hub-card-badge" data-i18n="portfolio.cardAcuveraBadge">Site Client · Dr Zemzi</span>
+              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/card_acuvera.webp" aria-label="Agrandir"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
             </div>
             <div class="hub-card-body">
               <h3 class="hub-card-title">Acuvera Clinical</h3>
-              <p class="hub-card-desc">
-                Plateforme web d'enregistrement et de suivi des analyses biomédicales. Génération automatisée des fiches d'examens et archivage sécurisé des antécédents médicaux.
+              <p class="hub-card-desc" data-i18n="portfolio.cardAcuveraDesc">
+                Site web vitrine et espace de suivi des analyses biomédicales conçu pour le cabinet du Dr Zemzi (prestation facturée 40 000 FCFA). Consultation sécurisée des résultats d'examens.
               </p>
               <div class="hub-card-techs">
                 <span class="hub-tech-pill">React</span>
@@ -233,8 +357,8 @@
                 <span class="hub-tech-pill">Analytics</span>
               </div>
               <div class="hub-card-actions">
-                <a href="projet-detail.html?id=acuvera" class="btn-hub-detail">Étude de cas &rarr;</a>
-                <a href="https://acuvera-clinical.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-hub-demo" title="Démo en ligne">
+                <a href="projet-detail.html?id=acuvera" class="btn-hub-detail" data-i18n="portfolio.btnCaseStudy">Étude de cas &rarr;</a>
+                <a href="https://acuvera-clinical.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-hub-demo" title="Démo en ligne" data-i18n="portfolio.btnDemo">
                   Démo <span>↗</span>
                 </a>
               </div>
@@ -244,13 +368,13 @@
           <!-- Projet 6 : Arduino IoT & Infrastructure Réseaux -->
           <div class="portfolio-hub-card" data-cat="systems" data-keywords="arduino iot embarque reseau cisco baies maintenance switch routeur brassage capteurs tp">
             <div class="hub-card-thumb">
-              <img src="rsc/img/projets/maintenance/tp arduino.png" alt="Arduino IoT & Réseaux" loading="lazy">
-              <span class="hub-card-badge">IoT &amp; Systèmes</span>
-              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/maintenance/tp arduino.png" aria-label="Agrandir">🔍</button>
+              <img src="rsc/img/projets/maintenance/tp arduino.webp" alt="Arduino IoT & Réseaux" loading="lazy" width="1920" height="1080" decoding="async">
+              <span class="hub-card-badge" data-i18n="portfolio.cardArduinoBadge">IoT &amp; Systèmes</span>
+              <button class="hub-card-zoom btn-zoom-img" data-img="rsc/img/projets/maintenance/tp arduino.webp" aria-label="Agrandir"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
             </div>
             <div class="hub-card-body">
               <h3 class="hub-card-title">Arduino IoT &amp; Câblage Réseaux</h3>
-              <p class="hub-card-desc">
+              <p class="hub-card-desc" data-i18n="portfolio.cardArduinoDesc">
                 Prototypage de solutions IoT sur microcontrôleurs Arduino, programmation C++, brassage de baies serveurs et configuration de topologies réseau sécurisées.
               </p>
               <div class="hub-card-techs">
@@ -260,9 +384,9 @@
                 <span class="hub-tech-pill">Baies &amp; Brassage</span>
               </div>
               <div class="hub-card-actions">
-                <a href="projet-detail.html?id=arduino" class="btn-hub-detail">Étude technique &rarr;</a>
-                <button class="btn-hub-demo btn-zoom-img" data-img="rsc/img/projets/maintenance/tp arduino.png">
-                  Schéma <span>🔍</span>
+                <a href="projet-detail.html?id=arduino" class="btn-hub-detail" data-i18n="portfolio.btnTechStudy">Étude technique &rarr;</a>
+                <button class="btn-hub-demo btn-zoom-img" data-img="rsc/img/projets/maintenance/tp arduino.webp">
+                  <span data-i18n="portfolio.btnSchema">Schéma</span> <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
                 </button>
               </div>
             </div>
@@ -270,93 +394,381 @@
 
         </div>
 
+        <!-- État vide catalogue si aucun résultat -->
+        <div class="portfolio-empty-state" id="portfolioHubEmptyState" style="display: none;">
+          <span class="empty-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+          <h3 class="empty-title" data-i18n="portfolio.emptyTitle">Aucun projet trouvé</h3>
+          <p class="empty-desc" data-i18n="portfolio.emptyText">Aucune réalisation ne correspond à ce filtre ou mot-clé. Essayez un autre terme ou réinitialisez les filtres.</p>
+          <button type="button" class="btn-primary-orange btn-reset-filters" id="btnResetHubEmpty" data-i18n="portfolio.emptyReset">Réinitialiser les filtres</button>
+        </div>
+
       </div>
     </section>
 
     <!-- =========================================================================
-         3. SHOWCASE MARQUEE EN DÉFILEMENT CONTINU (Toutes les images réelles)
+         3. GALERIE EXHAUSTIVE D'ASSETS RÉELS (33+ CRÉATIONS DE JORDAN)
          ========================================================================= -->
-    <section class="showcase-gallery-section" style="padding-top: 1rem;">
+    <section class="gallery-full-section" style="padding: 3rem 0 5rem 0; background: #FAFAFA; border-top: 1px solid #ECECEC;">
       <div class="container">
-        <div class="showcase-header-row">
-          <h2 class="showcase-title">
-            <span>Galerie Complète d'Assets Graphiques &amp; Techniques</span>
-            <span class="text-orange">✦</span>
+        
+        <div style="text-align: center; max-width: 760px; margin: 0 auto 2.5rem auto;">
+          <span class="subpage-badge">✦ Direction Artistique &amp; Modélisation Réelle</span>
+          <h2 style="font-size: 2.25rem; font-weight: 800; color: #111; margin: 0.5rem 0 1rem 0;" data-i18n="portfolio.galleryTitle">
+            Galerie Complète d'Infographie, Packaging 3D &amp; Branding
           </h2>
-          <span class="showcase-sub">Survolez pour mettre en pause · Cliquez pour examiner en haute définition</span>
-        </div>
-      </div>
+          <p style="font-size: 0.95rem; color: #666; line-height: 1.6;" data-i18n="portfolio.gallerySubtitle">
+            Explorez l'ensemble des 33 créations authentiques conçues pour des marques et institutions : modélisation de packagings produits 3D, identités de marque, chartes graphiques et affiches professionnelles.
+          </p>
 
-      <div class="showcase-track-container" id="showcaseMarquee">
-        <div class="showcase-track">
+          <!-- Filtres de la galerie d'infographie -->
+          <div class="portfolio-tags-pill-row" style="justify-content: center; margin-top: 1.5rem;" id="galleryFilterRow">
+            <button class="tag-pill active" data-gfilter="all" data-i18n="portfolio.filterAll">Tous les Visuels (33)</button>
+            <button class="tag-pill" data-gfilter="packaging" data-i18n="portfolio.filterPackaging">Modélisation Packaging 3D</button>
+            <button class="tag-pill" data-gfilter="logos" data-i18n="portfolio.filterLogos">Logos &amp; Identités Vectorielles</button>
+            <button class="tag-pill" data-gfilter="affiches" data-i18n="portfolio.filterAffiches">Affiches, Rollups &amp; Édition</button>
+            <button class="tag-pill" data-gfilter="infra" data-i18n="portfolio.filterInfra">Réseaux &amp; Infrastructures</button>
+          </div>
+        </div>
+
+        <!-- Grille Responsive des 33 Créations -->
+        <div class="gallery-real-grid" id="galleryRealGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
           
-          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer  recruitement petit colis.jpg" title="Petit Colis — Campagne Recrutement">
-            <img src="rsc/img/projets/infographie/flyer  recruitement petit colis.jpg" alt="Petit Colis Flyer" loading="lazy">
-            <div class="showcase-overlay"><span>Petit Colis · Flyer Recrutement</span></div>
+          <!-- PACKAGING 3D (10 items) -->
+          <div class="gallery-item-card btn-zoom-img" data-gcat="packaging" data-img="rsc/img/projets/infographie/projet bouteil d'eau demi litre mockup labographie.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/projet bouteil d'eau demi litre mockup labographie.webp" alt="Bouteille d'eau demi-litre LaboGraphie" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1281" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Packaging 3D</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Bouteille d'Eau Demi-Litre</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Modélisation 3D, étiquette &amp; rendu réaliste · LaboGraphie</p>
+            </div>
           </div>
 
-          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.jpg" title="Candace Distribution — Packaging">
-            <img src="rsc/img/projets/infographie/MockupCandace distribution.jpg" alt="Candace Packaging" loading="lazy">
-            <div class="showcase-overlay"><span>Candace · Lait de Beauté</span></div>
+          <div class="gallery-item-card btn-zoom-img" data-gcat="packaging" data-img="rsc/img/projets/infographie/projet clé usb mockup labographie.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/projet clé usb mockup labographie.webp" alt="Clé USB personnalisée LaboGraphie" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1440" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Objet Publicitaire</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Clé USB Métallique Custom</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Branding produit &amp; gravure vectorielle · LaboGraphie</p>
+            </div>
           </div>
 
-          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer goldens pressing.png" title="Golden Pressing — Flyer Commercial">
-            <img src="rsc/img/projets/infographie/flyer goldens pressing.png" alt="Golden Pressing" loading="lazy">
-            <div class="showcase-overlay"><span>Golden Pressing · Affiche</span></div>
+          <div class="gallery-item-card btn-zoom-img" data-gcat="packaging" data-img="rsc/img/projets/infographie/MockupCandace distribution.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/MockupCandace distribution.webp" alt="Gamme Cosmétique Candace Distribution" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1344" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Cosmétique 3D</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Flacon &amp; Lait de Beauté Candace</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Packaging premium &amp; charte de distribution</p>
+            </div>
           </div>
 
-          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/mockup fosa'a academy.jpg" title="Fosa'a Academy — Mockup identité">
-            <img src="rsc/img/projets/infographie/mockup fosa'a academy.jpg" alt="Fosa'a Academy" loading="lazy">
-            <div class="showcase-overlay"><span>Fosa'a Academy · Logo 3D</span></div>
+          <div class="gallery-item-card btn-zoom-img" data-gcat="packaging" data-img="rsc/img/projets/infographie/Mockup logo candace distribution.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/Mockup logo candace distribution.webp" alt="Packaging Carton Candace" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1920" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Packaging 3D</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Boîtier &amp; Packaging Candace</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Mise en situation volumique et découpe industrielle</p>
+            </div>
           </div>
 
-          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer GMC café scientifiue3.jpg" title="Café Scientifique GMC">
-            <img src="rsc/img/projets/infographie/flyer GMC café scientifiue3.jpg" alt="Café Scientifique" loading="lazy">
-            <div class="showcase-overlay"><span>GMC · Café Scientifique</span></div>
+          <div class="gallery-item-card btn-zoom-img" data-gcat="packaging" data-img="rsc/img/projets/infographie/projet mockup cache nez logo labographie.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/projet mockup cache nez logo labographie.webp" alt="Masque de protection personnalisé" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1280" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Textile &amp; Sécurité</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Masque Cache-Nez Corporate</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Sérigraphie &amp; charte LaboGraphie</p>
+            </div>
           </div>
 
-          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/mockup_logo_business labographie couleur.jpg" title="LaboGraphie — Logo Business">
-            <img src="rsc/img/projets/infographie/mockup_logo_business labographie couleur.jpg" alt="LaboGraphie Business" loading="lazy">
-            <div class="showcase-overlay"><span>LaboGraphie · Logo Business</span></div>
+          <div class="gallery-item-card btn-zoom-img" data-gcat="packaging" data-img="rsc/img/projets/infographie/projet polo mockup labographie.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/projet polo mockup labographie.webp" alt="Polo brodé corporate LaboGraphie" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1493" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Merchandising</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Polo Corporate Brodé</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Tenue d'équipe &amp; branding textile</p>
+            </div>
           </div>
 
-          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/projet roll-up mockup logo labographie.jpg" title="Roll-Up Événementiel LaboGraphie">
-            <img src="rsc/img/projets/infographie/projet roll-up mockup logo labographie.jpg" alt="Roll-up" loading="lazy">
-            <div class="showcase-overlay"><span>LaboGraphie · Roll-up</span></div>
+          <div class="gallery-item-card btn-zoom-img" data-gcat="packaging" data-img="rsc/img/projets/infographie/projet roll-up mockup logo labographie.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/projet roll-up mockup logo labographie.webp" alt="Roll-up événementiel LaboGraphie" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1152" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Signalétique</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Roll-Up Événementiel 85x200cm</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Kakemono pour foires et conférences tech</p>
+            </div>
           </div>
 
-          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/projet polo mockup labographie.jpg" title="Textile & Polo Mockup LaboGraphie">
-            <img src="rsc/img/projets/infographie/projet polo mockup labographie.jpg" alt="Polo" loading="lazy">
-            <div class="showcase-overlay"><span>LaboGraphie · Polo Textile</span></div>
+          <div class="gallery-item-card btn-zoom-img" data-gcat="packaging" data-img="rsc/img/projets/infographie/projet mockup 3D logo labographie.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/projet mockup 3D logo labographie.webp" alt="Enseigne 3D Murale LaboGraphie" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1329" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Enseigne 3D</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Logo 3D en Relief Mural</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Signalétique de bureaux et accueil client</p>
+            </div>
           </div>
 
-          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/DC_Agroflow.png" title="Diagramme de Classes AgroFlow ERP">
-            <img src="rsc/img/projets/dev/DC_Agroflow.png" alt="Architecture AgroFlow" loading="lazy">
-            <div class="showcase-overlay"><span>AgroFlow · Diagramme UML</span></div>
+          <div class="gallery-item-card btn-zoom-img" data-gcat="packaging" data-img="rsc/img/projets/infographie/fosa'a academy mockup.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/fosa'a academy mockup.webp" alt="Fosa'a Academy Mockup" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1280" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Éducation</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Fosa'a Academy — Papeterie 3D</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Identité visuelle &amp; supports académiques</p>
+            </div>
           </div>
 
-          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/rsd_biobank_architecture.png" title="Architecture RSD Biobank">
-            <img src="rsc/img/projets/dev/rsd_biobank_architecture.png" alt="Biobank" loading="lazy">
-            <div class="showcase-overlay"><span>Biobank · Cartographie SI</span></div>
+          <div class="gallery-item-card btn-zoom-img" data-gcat="packaging" data-img="rsc/img/projets/infographie/mockup salon projet labographie logo.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/mockup salon projet labographie logo.webp" alt="Stand d'exposition salon LaboGraphie" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1680" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Stand &amp; Expo</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Stand d'Exposition LaboGraphie</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Agencement scénographique et mobilier de salon</p>
+            </div>
           </div>
 
-          <!-- Répétition pour défilement infini sans coupure -->
-          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer  recruitement petit colis.jpg" title="Petit Colis — Campagne Recrutement">
-            <img src="rsc/img/projets/infographie/flyer  recruitement petit colis.jpg" alt="Petit Colis Flyer" loading="lazy">
-            <div class="showcase-overlay"><span>Petit Colis · Flyer Recrutement</span></div>
+          <!-- LOGOS & IDENTITÉS (8 items) -->
+          <div class="gallery-item-card btn-zoom-img" data-gcat="logos" data-img="rsc/img/projets/infographie/logo  coiffure Shawel beauty.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/logo  coiffure Shawel beauty.webp" alt="Logo Shawel Beauty" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1080" height="1080" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Logo &amp; Marque</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Shawel Beauty · Logo Officiel</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Salon de coiffure &amp; soins esthétiques premium</p>
+            </div>
           </div>
 
-          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.jpg" title="Candace Distribution — Packaging">
-            <img src="rsc/img/projets/infographie/MockupCandace distribution.jpg" alt="Candace Packaging" loading="lazy">
-            <div class="showcase-overlay"><span>Candace · Lait de Beauté</span></div>
+          <div class="gallery-item-card btn-zoom-img" data-gcat="logos" data-img="rsc/img/projets/infographie/logo GTA.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/logo GTA.webp" alt="Logo GTA Transport" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1080" height="1080" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Transport</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">GTA Transport &amp; Logistique</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Logo vectoriel dynamique &amp; marquage véhicules</p>
+            </div>
           </div>
 
-          <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer goldens pressing.png" title="Golden Pressing — Flyer Commercial">
-            <img src="rsc/img/projets/infographie/flyer goldens pressing.png" alt="Golden Pressing" loading="lazy">
-            <div class="showcase-overlay"><span>Golden Pressing · Affiche</span></div>
+          <div class="gallery-item-card btn-zoom-img" data-gcat="logos" data-img="rsc/img/projets/infographie/logo golden pressing.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/logo golden pressing.webp" alt="Logo Golden Pressing" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1920" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Services</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Golden Pressing Douala</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Identité visuelle sobre, dorée et moderne</p>
+            </div>
+          </div>
+
+          <div class="gallery-item-card btn-zoom-img" data-gcat="logos" data-img="rsc/img/projets/infographie/logo fosa'a dimension & geometrie.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/logo fosa'a dimension & geometrie.webp" alt="Logo Fosa'a Géométrie" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1358" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Architecture</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Fosa'a Dimension &amp; Géométrie</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Construction géométrique au compas et règles d'or</p>
+            </div>
+          </div>
+
+          <div class="gallery-item-card btn-zoom-img" data-gcat="logos" data-img="rsc/img/projets/infographie/projet logo candace.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/projet logo candace.webp" alt="Logo Candace Beauté" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="375" height="375" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Beauté</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Candace Cosmétiques</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Logotype organique &amp; typographie personnalisée</p>
+            </div>
+          </div>
+
+          <div class="gallery-item-card btn-zoom-img" data-gcat="logos" data-img="rsc/img/projets/infographie/projet logo labographie.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/projet logo labographie.webp" alt="Logo LaboGraphie Officiel" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1080" height="1080" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Studio Tech</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">LaboGraphie Tech &amp; Design</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Emblème numérique du studio créatif et dev</p>
+            </div>
+          </div>
+
+          <div class="gallery-item-card btn-zoom-img" data-gcat="logos" data-img="rsc/img/projets/infographie/mockup_logo_business labographie couleur.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/mockup_logo_business labographie couleur.webp" alt="Carte de Visite LaboGraphie" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1320" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Papeterie</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Carte de Visite Business LaboGraphie</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Finitions vernis sélectif &amp; typographie contrastée</p>
+            </div>
+          </div>
+
+          <div class="gallery-item-card btn-zoom-img" data-gcat="logos" data-img="rsc/img/projets/infographie/projet logo coiffure3_1.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/projet logo coiffure3_1.webp" alt="Logo Stylisme & Coiffure" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1080" height="1080" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Coiffure Pro</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Coiffure &amp; Soins Stylisés</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Identité visuelle douce et féminine</p>
+            </div>
+          </div>
+
+          <!-- AFFICHES & SUPPORTS (12 items) -->
+          <div class="gallery-item-card btn-zoom-img" data-gcat="affiches" data-img="rsc/img/projets/infographie/flyer  recruitement petit colis.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/flyer  recruitement petit colis.webp" alt="Flyer Recrutement Petit Colis" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1772" height="1920" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Logistique · FUNGA G.</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Campagne Recrutement Petit Colis</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Flyer commercial &amp; réseaux pour livreurs urbains</p>
+            </div>
+          </div>
+
+          <div class="gallery-item-card btn-zoom-img" data-gcat="affiches" data-img="rsc/img/projets/infographie/flyer soutenance maelou 1.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/flyer soutenance maelou 1.webp" alt="Affiche Soutenance Maelou" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1920" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Polytech Yaoundé</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Affiche Soutenance Académique Maelou</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Mémoire d'ingénieur · Polytechnique Yaoundé</p>
+            </div>
+          </div>
+
+          <div class="gallery-item-card btn-zoom-img" data-gcat="affiches" data-img="rsc/img/projets/infographie/projet premier mai Legiude info_1.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/projet premier mai Legiude info_1.webp" alt="Affiche 1er Mai LeGuide Info" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1080" height="1080" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">LeGuide Info</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Affiche Officielle 1er Mai</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Fête du Travail · Conception pour LeGuide Info</p>
+            </div>
+          </div>
+
+          <div class="gallery-item-card btn-zoom-img" data-gcat="affiches" data-img="rsc/img/projets/infographie/flyer GMC café scientifiue3.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/flyer GMC café scientifiue3.webp" alt="Café Scientifique GMC" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1080" height="1080" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Sciences &amp; Recherche</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Colloque GMC Café Scientifique</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Affiche de vulgarisation scientifique et débats</p>
+            </div>
+          </div>
+
+          <div class="gallery-item-card btn-zoom-img" data-gcat="affiches" data-img="rsc/img/projets/infographie/flyer goldens pressing.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/flyer goldens pressing.webp" alt="Affiche Golden Pressing" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1536" height="1920" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Offre Commerciale</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Campagne Commerciale Golden Pressing</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Affiche tarifaire et communication client</p>
+            </div>
+          </div>
+
+          <div class="gallery-item-card btn-zoom-img" data-gcat="affiches" data-img="rsc/img/projets/infographie/flyer allokev kev baby.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/flyer allokev kev baby.webp" alt="AllôKev Campagne Commerciale" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1080" height="1080" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Campagne</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">AllôKev · Campagne Commerciale</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Affiche publicitaire pour univers enfance &amp; soins</p>
+            </div>
+          </div>
+
+          <div class="gallery-item-card btn-zoom-img" data-gcat="affiches" data-img="rsc/img/projets/infographie/flyer produit Candace Lait de beauté.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/flyer produit Candace Lait de beauté.webp" alt="Affiche Lait de beauté Candace" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="719" height="946" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Cosmétique</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Affiche Produit Lait Candace</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Promotion point de vente et visuel vitrine</p>
+            </div>
+          </div>
+
+          <div class="gallery-item-card btn-zoom-img" data-gcat="affiches" data-img="rsc/img/projets/infographie/projet soutenance frère de nick_16.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/projet soutenance frère de nick_16.webp" alt="Affiche de Soutenance" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1080" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Université</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Soutenance Universitaire de Master</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Mise en page académique &amp; composition visuelle</p>
+            </div>
+          </div>
+
+          <div class="gallery-item-card btn-zoom-img" data-gcat="affiches" data-img="rsc/img/projets/infographie/projet mockup flyer A4 labographie.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/infographie/projet mockup flyer A4 labographie.webp" alt="Plaquette Commerciale A4" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1280" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Édition A4</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Plaquette Commerciale A4 LaboGraphie</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Brochure d'offres logicielles et multimédia</p>
+            </div>
+          </div>
+
+          <!-- INFRASTRUCTURES & RÉSEAUX (3 items) -->
+          <div class="gallery-item-card btn-zoom-img" data-gcat="infra" data-img="rsc/img/projets/Reseau & Sécu/pexels-brett-sayles-5242294.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/Reseau & Sécu/pexels-brett-sayles-5242294.webp" alt="Baie de Brassage Datacenter" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1280" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Réseaux &amp; Infra</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Baie de Brassage &amp; Câblage</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Topologie réseau d'entreprise &amp; switchboards</p>
+            </div>
+          </div>
+
+          <div class="gallery-item-card btn-zoom-img" data-gcat="infra" data-img="rsc/img/projets/Reseau & Sécu/pexels-pixabay-207580.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/Reseau & Sécu/pexels-pixabay-207580.webp" alt="Serveurs Haute Densité" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1440" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Datacenter</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Serveurs &amp; Haute Disponibilité</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Clustering, virtualisation et plans de reprise (PRA)</p>
+            </div>
+          </div>
+
+          <div class="gallery-item-card btn-zoom-img" data-gcat="infra" data-img="rsc/img/projets/maintenance/pexels-field-engineer-147254-442154.webp">
+            <div class="gallery-thumb-wrap" style="height: 240px; border-radius: 14px; overflow: hidden; background: #FFF; border: 1px solid #E5E5E5; position: relative;">
+              <img src="rsc/img/projets/maintenance/pexels-field-engineer-147254-442154.webp" alt="Maintenance Matériel & Hardware" style="width:100%; height:100%; object-fit:cover;" loading="lazy" width="1920" height="1280" decoding="async">
+              <span class="gallery-badge" style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #FFF; font-size: 0.72rem; padding: 0.25rem 0.6rem; border-radius: 999px;">Maintenance IT</span>
+            </div>
+            <div style="padding: 0.75rem 0.25rem 0.25rem 0.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: #111; margin: 0 0 0.25rem 0;">Maintenance &amp; Diagnostic Hardware</h4>
+              <p style="font-size: 0.8rem; color: #777; margin: 0;">Dépannage parc machines, processeurs et cartes mères</p>
+            </div>
           </div>
 
         </div>
+
       </div>
     </section>
 
@@ -370,17 +782,17 @@
           <div class="discuss-doodle-star bottom-right">✦</div>
           
           <h2 class="discuss-headline">
-            Vous avez un projet similaire ? <br>
-            <span class="text-orange">Donnons-lui vie ensemble.</span>
+            <span data-i18n="portfolio.ctaHeadlinePre">Vous avez un projet similaire ?</span> <br>
+            <span class="text-orange" data-i18n="portfolio.ctaHeadlineOrange">Donnons-lui vie ensemble.</span>
           </h2>
-          <p class="discuss-subtext">
+          <p class="discuss-subtext" data-i18n="portfolio.ctaSubtext">
             Qu'il s'agisse d'un ERP critique, d'une vitrine web moderne ou d'une identité de marque haut de gamme, discutons directement de votre cahier des charges.
           </p>
           <div class="discuss-buttons-row">
-            <a href="https://wa.me/237679279447?text=Bonjour%20Jordan,%20j'ai%20consult%C3%A9%20votre%20portfolio%20et%20souhaite%20discuter%20d'un%20projet%20similaire." target="_blank" rel="noopener noreferrer" class="btn-discuss-white">
-              Échanger sur WhatsApp 💬
+            <a href="https://wa.me/237679279447?text=Bonjour%20Jordan,%20j'ai%20consult%C3%A9%20votre%20portfolio%20et%20souhaite%20discuter%20d'un%20projet%20similaire." target="_blank" rel="noopener noreferrer" class="btn-discuss-white" data-i18n="portfolio.btnDiscussWhatsapp">
+              Échanger sur WhatsApp &rarr;
             </a>
-            <a href="contact.html" class="btn-discuss-orange">
+            <a href="contact.html" class="btn-discuss-orange" data-i18n="portfolio.btnDiscussQuote">
               Demander un devis &rarr;
             </a>
           </div>
@@ -408,52 +820,52 @@
               </span>
             </div>
             <p class="footer-brand-desc" data-i18n="footer.bio">
-              Technologue en Génie Logiciel &amp; Systèmes d'Information, certifié Ateliers Google. Spécialisé dans la conception logicielle, la maintenance d'infrastructures et l'infographie.
+              Développeur logiciel &amp; Infographe, diplômé de l'IUT de Douala et certifié en marketing digital (Google). Fondateur de LaboGraphie, spécialisé dans la conception applicative, l'infrastructure et l'identité visuelle.
             </p>
             <div class="footer-social-icons">
               <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0 1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0 1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
               </a>
               <a href="https://www.linkedin.com/in/jordan-lo%C3%AFc-nde-63b041427/" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="LinkedIn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
               </a>
               <a href="https://wa.me/237679279447?text=Bonjour%20Jordan,%20j'ai%20consult%C3%A9%20votre%20portfolio%20et%20souhaite%20%C3%A9changer%20avec%20vous." target="_blank" rel="noopener noreferrer" class="social-circle social-whatsapp" aria-label="WhatsApp Jordan L.">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                 </svg>
               </a>
               <a href="mailto:ndejordanloic@gmail.com" class="social-circle" aria-label="Email Jordan L.">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
               </a>
             </div>
           </div>
 
           <div class="footer-col col-nav">
-            <h4 class="footer-col-title">Navigation</h4>
+            <h4 class="footer-col-title" data-i18n="footer.navTitle">Navigation</h4>
             <ul class="footer-links-list">
-              <li><a href="index.html">Accueil</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+              <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+              <li><a href="portfolio.html" data-i18n="nav.projects">Portfolio</a></li>
+              <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+              <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
             </ul>
           </div>
 
           <div class="footer-col col-contact">
-            <h4 class="footer-col-title">Coordonnées</h4>
+            <h4 class="footer-col-title" data-i18n="footer.contactTitle">Coordonnées</h4>
             <ul class="footer-links-list contact-list">
               <li><span>📞 +237 679 279 447</span></li>
               <li><span>📞 +237 621 317 408</span></li>
               <li><span>✉️ ndejordanloic@gmail.com</span></li>
               <li><span>✉️ ndejordanloic@outlook.fr</span></li>
-              <li><span>📍 Yaoundé, Cameroun</span></li>
+              <li data-i18n="footer.location"><span>📍 Yaoundé, Cameroun</span></li>
             </ul>
           </div>
 
           <div class="footer-col col-newsletter">
-            <h4 class="footer-col-title">Demande de Devis Rapide</h4>
+            <h4 class="footer-col-title" data-i18n="footer.quickQuote">Demande de Devis Rapide</h4>
             <form class="footer-newsletter-form" onsubmit="event.preventDefault(); window.location.href='contact.html';">
-              <input type="email" placeholder="Votre email..." class="footer-email-input" required>
+              <input type="email" placeholder="Votre email..." data-i18n-placeholder="footer.placeholder" class="footer-email-input" required aria-label="Votre adresse email" data-i18n-aria-label="aria.newsletterEmail">
               <button type="submit" class="footer-email-btn" aria-label="Continuer">&rarr;</button>
             </form>
           </div>
@@ -463,11 +875,11 @@
         <div class="footer-card-divider subtle"></div>
 
         <div class="footer-card-bottom">
-          <p class="footer-copyright">Copyright &copy; 2026 NDE Jordan L. · LaboGraphie Dev. Tous droits réservés.</p>
+          <p class="footer-copyright" data-i18n="footer.copyright">Copyright &copy; 2026 NDE Jordan L. · LaboGraphie Dev. Tous droits réservés.</p>
           <div class="footer-legal-links">
-            <a href="index.html">Accueil</a>
+            <a href="index.html" data-i18n="nav.home">Accueil</a>
             <span class="sep">|</span>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" data-i18n="nav.contact">Contact</a>
           </div>
         </div>
 

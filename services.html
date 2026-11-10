@@ -6,12 +6,37 @@
   <title>Services & Solutions — NDE Jordan L. · Technologue & Développeur Full-Stack</title>
   <meta name="description" content="Découvrez les 6 domaines d'expertise de NDE Jordan L. : Génie Logiciel, ERP & SaaS, Réseaux & Sécurité, Maintenance IT, IA & Automatisation, Infographie & Direction Artistique.">
   
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NDE Jordan L. Portfolio">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Services &amp; Solutions — NDE Jordan L. · Technologue &amp; Développeur Full-Stack">
+  <meta property="og:description" content="Découvrez les 6 domaines d'expertise de NDE Jordan L. : Génie Logiciel, ERP &amp; SaaS, Réseaux &amp; Sécurité, Maintenance IT, IA &amp; Automatisation, Infographie &amp; Direction Artistique.">
+  <meta property="og:image" content="rsc/img/jordan_portrait_pro.webp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Services &amp; Solutions — NDE Jordan L. · Technologue &amp; Développeur Full-Stack">
+  <meta name="twitter:description" content="Découvrez les 6 domaines d'expertise de NDE Jordan L. : Génie Logiciel, ERP &amp; SaaS, Réseaux &amp; Sécurité, Maintenance IT, Infographie.">
+  <meta name="twitter:image" content="rsc/img/jordan_portrait_pro.webp">
+
+  <!-- URL canonique (À confirmer lors du déploiement en production - Lot 7) -->
+  <!-- <link rel="canonical" href="https://ndejordanloic.com/services.html"> -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="page-services">
+  <!-- Lien d'évitement accessible (WCAG 2.4.1) -->
+  <a href="#main-content" class="skip-link" data-i18n="aria.skipToContent">Passer au contenu principal</a>
 
   <!-- =========================================================================
        HEADER NAVIGATION PARTAGÉ (Figma 1:1)
@@ -37,11 +62,13 @@
         <a href="blog.html" class="nav-item" data-i18n="nav.blog">Blog</a>
         <a href="contact.html" class="nav-item" data-i18n="nav.contact">Contact</a>
 
-        <!-- Sélecteur Bilingue discret FR / EN -->
-        <div class="lang-switch-wrap" role="group" aria-label="Langue / Language">
-          <button class="lang-btn active" data-lang="fr">FR</button>
+        <!-- Sélecteur Trilingue discret FR / EN / JA -->
+        <div class="lang-switch-wrap" role="group" aria-label="Choix de la langue" data-i18n-aria-label="aria.langSelect">
+          <button type="button" class="lang-btn active" data-lang="fr" aria-label="Passer en Français" data-i18n-aria-label="aria.langFr">FR</button>
           <span class="lang-sep">|</span>
-          <button class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-label="Switch to English" data-i18n-aria-label="aria.langEn">EN</button>
+          <span class="lang-sep">|</span>
+          <button type="button" class="lang-btn" data-lang="ja" aria-label="日本語に切り替え" data-i18n-aria-label="aria.langJa">JA</button>
         </div>
       </nav>
 
@@ -52,18 +79,18 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- =========================================================================
          1. HERO DE LA PAGE SERVICES
          ========================================================================= -->
     <section class="subpage-hero">
       <div class="container">
-        <span class="subpage-badge">✦ Solutions &amp; Prestations d'Ingénierie</span>
+        <span class="subpage-badge" data-i18n="services.heroBadge">✦ Solutions &amp; Prestations d'Ingénierie</span>
         <h1 class="subpage-title">
-          Mes Services &amp; <span class="text-orange">Domaines d'Expertise</span>
+          <span data-i18n="services.pageTitlePre">Solutions d'Ingénierie &amp;</span> <span class="text-orange" data-i18n="services.pageTitleOrange">Services Spécialisés</span>
         </h1>
-        <p class="subpage-desc">
-          Technologue en Génie Logiciel diplômé de l'IUT de Douala et certifié Ateliers Google, je mets mes compétences pluridisciplinaires au service de vos projets : de l'architecture logicielle haute disponibilité à la direction artistique de vos marques.
+        <p class="subpage-desc" data-i18n="services.pageSubtitle">
+          De l'architecture logicielle critique à la création graphique percutante, découvrez l'ensemble de mes domaines d'intervention.
         </p>
       </div>
     </section>
@@ -75,100 +102,216 @@
       <div class="container">
         <div class="services-catalog-grid">
           
-          <!-- Domaine 1 : Génie Logiciel & ERP -->
+          <!-- Domaine 1 : Génie Logiciel & ERP (Pôle Principal 1) -->
           <div class="service-catalog-card">
-            <div class="service-card-icon-wrap">💻</div>
-            <h3 class="service-catalog-title">Génie Logiciel &amp; Applications Web</h3>
-            <p class="service-catalog-text">
-              Conception et développement sur-mesure d'architectures SaaS, plateformes ERP modulaires et applications web complètes, pensées pour la haute résilience et le mode hors-ligne.
+            <div class="service-catalog-visual">
+              <img src="rsc/img/projets/card_agroflow.webp" alt="AgroFlow SaaS ERP" width="800" height="500" loading="lazy" decoding="async">
+              <span class="service-catalog-badge" data-i18n="services.c1Badge">AgroFlow ERP · Architecture Web</span>
+            </div>
+            <div class="service-header-row">
+              <div class="service-card-icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3 class="service-catalog-title" style="margin-bottom:0;" data-i18n="services.s1Title">Génie Logiciel &amp; Applications Web</h3>
+            </div>
+            <p class="service-catalog-text" data-i18n="services.c1Desc">
+              Conception et développement sur-mesure d'architectures SaaS, plateformes ERP modulaires et applications web complètes, pensées pour la résilience et le mode hors-ligne.
             </p>
             <ul class="service-features-list">
-              <li>Architectures ERP agricoles &amp; de santé</li>
-              <li>Modélisation de bases de données relationnelles SQL</li>
-              <li>APIs RESTful performantes et sécurisées</li>
-              <li>Conteneurisation Docker &amp; CI/CD automatisé</li>
+              <li data-i18n="services.c1F1">Architectures SaaS &amp; ERP modulaires</li>
+              <li data-i18n="services.c1F2">Modélisation relationnelle SQL stricte (MERISE 3NF)</li>
+              <li data-i18n="services.c1F3">APIs RESTful performantes et sécurisées</li>
+              <li data-i18n="services.c1F4">Synchronisation hors-ligne Local-First (IndexedDB)</li>
             </ul>
-            <a href="portfolio.html?filter=dev" class="btn-detail-primary" style="text-align:center;">Voir les projets Dev &rarr;</a>
+            <a href="portfolio.html?filter=dev" class="btn-detail-primary" style="text-align:center;" data-i18n="services.c1Cta">Voir les projets Dev &rarr;</a>
           </div>
 
-          <!-- Domaine 2 : Réseaux & Sécurité Informatique -->
+          <!-- Domaine 2 : Infographie, Packaging 3D & Branding (Pôle Principal 2) -->
           <div class="service-catalog-card">
-            <div class="service-card-icon-wrap">🛡️</div>
-            <h3 class="service-catalog-title">Réseaux &amp; Sécurité Applicative</h3>
-            <p class="service-catalog-text">
-              Mise en œuvre d'infrastructures de télécommunications fiables, câblage d'armoires et baies de brassage, segmentation VLAN et sécurisation des accès réseau d'entreprise.
+            <div class="service-catalog-visual">
+              <img src="rsc/img/projets/infographie/MockupCandace distribution.webp" alt="Packaging Candace Distribution" width="1920" height="1344" loading="lazy" decoding="async">
+              <span class="service-catalog-badge" data-i18n="services.c2Badge">Candace Distribution · Packaging 3D</span>
+            </div>
+            <div class="service-header-row">
+              <div class="service-card-icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                  <path d="M2 2l7.586 7.586"></path>
+                  <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+              </div>
+              <h3 class="service-catalog-title" style="margin-bottom:0;" data-i18n="services.s3Title">Infographie, Packaging 3D &amp; Branding</h3>
+            </div>
+            <p class="service-catalog-text" data-i18n="services.c2Desc">
+              Création d'identités visuelles complètes, logos vectoriels scalables, modélisation volumique de packaging 3D pour flacons/bouteilles et supports de communication à fort impact.
             </p>
             <ul class="service-features-list">
-              <li>Câblage structuré et brassage d'armoires</li>
-              <li>Configuration de routeurs, switchs &amp; pare-feu</li>
-              <li>Contrôle d'accès et authentification biométrique</li>
-              <li>Audit de vulnérabilités et plans de continuité</li>
+              <li data-i18n="services.c2F1">Modélisation 3D de flacons, bouteilles &amp; boîtiers (Candace, LaboGraphie)</li>
+              <li data-i18n="services.c2F2">Identités visuelles et chartes graphiques complètes (Shawel, Fosa'a, GTA)</li>
+              <li data-i18n="services.c2F3">Affiches événementielles et flyers commerciaux (Petit Colis, GMC)</li>
+              <li data-i18n="services.c2F4">Signalétique grand format, stands d'exposition et roll-ups 3D</li>
             </ul>
-            <a href="contact.html?subject=Reseau" class="btn-detail-github" style="text-align:center;">Demander un audit réseau &rarr;</a>
+            <a href="portfolio.html?filter=infographie" class="btn-detail-primary" style="text-align:center;" data-i18n="services.c2Cta">Explorer la galerie graphique &rarr;</a>
           </div>
 
-          <!-- Domaine 3 : Maintenance & Systèmes Hardware -->
+          <!-- Domaine 3 : Bases de Données & Systèmes Médicaux -->
           <div class="service-catalog-card">
-            <div class="service-card-icon-wrap">⚙️</div>
-            <h3 class="service-catalog-title">Maintenance Informatique &amp; Support</h3>
-            <p class="service-catalog-text">
-              Diagnostic approfondi de parcs informatiques, maintenance préventive et curative des postes de travail, optimisation logicielle et assistance technique aux utilisateurs.
+            <div class="service-catalog-visual">
+              <img src="rsc/img/projets/dev/SisterSholaErp.webp" alt="Sister Schola ERP Médical" width="1920" height="1200" loading="lazy" decoding="async">
+              <span class="service-catalog-badge" data-i18n="services.c3Badge">Sister Schola ERP · Gestion Clinique</span>
+            </div>
+            <div class="service-header-row">
+              <div class="service-card-icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <h3 class="service-catalog-title" style="margin-bottom:0;" data-i18n="services.s2Title">Bases de Données &amp; Systèmes Médicaux</h3>
+            </div>
+            <p class="service-catalog-text" data-i18n="services.c3Desc">
+              Conception de systèmes d'information hospitaliers et de santé, modélisation relationnelle garantissant l'intégrité transactionnelle, le secret médical et la centralisation des dossiers patients.
             </p>
             <ul class="service-features-list">
-              <li>Dépannage matériel et remplacement de composants</li>
-              <li>Installation et durcissement de systèmes d'exploitation</li>
-              <li>Sauvegarde automatisée et récupération de données</li>
-              <li>Assistance sur site et télémaintenance réactive</li>
+              <li data-i18n="services.c3F1">Gestion des admissions et dossiers patients informatisés</li>
+              <li data-i18n="services.c3F2">Traçabilité des actes cliniques et audits de consultations</li>
+              <li data-i18n="services.c3F3">Modélisation relationnelle haute cohérence (PostgreSQL / MySQL)</li>
+              <li data-i18n="services.c3F4">Contrôle des accès basé sur les rôles (RBAC)</li>
             </ul>
-            <a href="contact.html?subject=Maintenance" class="btn-detail-github" style="text-align:center;">Assistance technique &rarr;</a>
+            <a href="projet-detail.html?id=sisterschola" class="btn-detail-github" style="text-align:center;" data-i18n="services.c3Cta">Étude de cas clinique &rarr;</a>
           </div>
 
-          <!-- Domaine 4 : IA Générative & Automatisation -->
+          <!-- Domaine 4 : Réseaux & Câblage Informatique -->
           <div class="service-catalog-card">
-            <div class="service-card-icon-wrap">🤖</div>
-            <h3 class="service-catalog-title">IA Générative &amp; Automatisation</h3>
-            <p class="service-catalog-text">
-              Intégration de flux intelligents automatisés, traitement de langage naturel et modèles génératifs pour optimiser les processus métiers et booster la productivité.
+            <div class="service-catalog-visual">
+              <img src="rsc/img/projets/Reseau & Sécu/pexels-brett-sayles-4716292.webp" alt="Baie de brassage réseau" width="1920" height="1277" loading="lazy" decoding="async">
+              <span class="service-catalog-badge badge-contextual" data-i18n="services.c4Badge">Illustration contextuelle · Baie de brassage</span>
+            </div>
+            <div class="service-header-row">
+              <div class="service-card-icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <h3 class="service-catalog-title" style="margin-bottom:0;" data-i18n="services.c4Title">Réseaux &amp; Sécurité Applicative</h3>
+            </div>
+            <p class="service-catalog-text" data-i18n="services.c4Desc">
+              Mise en œuvre d'infrastructures locales d'entreprise fiables, câblage structuré d'armoires et baies de brassage, segmentation VLAN et sécurisation des accès réseau.
             </p>
             <ul class="service-features-list">
-              <li>Intégration d'APIs d'IA (Gemini, OpenAI)</li>
-              <li>Pipelines d'automatisation de tâches répétitives</li>
-              <li>Extraction et analyse intelligente de documents</li>
-              <li>Solutions conversationnelles métier</li>
+              <li data-i18n="services.c4F1">Câblage structuré, repérage et brassage d'armoires</li>
+              <li data-i18n="services.c4F2">Configuration de switchs administrables et routeurs</li>
+              <li data-i18n="services.c4F3">Segmentation VLAN et filtrage des accès par pare-feu</li>
+              <li data-i18n="services.c4F4">Audit de vulnérabilités réseau et plans de reprise d'activité</li>
             </ul>
-            <a href="contact.html?subject=IA" class="btn-detail-github" style="text-align:center;">Projet d'automatisation &rarr;</a>
+            <a href="contact.html?subject=Reseau" class="btn-detail-github" style="text-align:center;" data-i18n="services.c4Cta">Demander un audit réseau &rarr;</a>
           </div>
 
-          <!-- Domaine 5 : Photographie & Vidéographie -->
+          <!-- Domaine 5 : Maintenance Informatique & Support Matériel (Composition Sobre Swiss/Linear) -->
           <div class="service-catalog-card">
-            <div class="service-card-icon-wrap">📸</div>
-            <h3 class="service-catalog-title">Photographie &amp; Vidéographie Pro</h3>
-            <p class="service-catalog-text">
-              Captation photo et vidéo pour structures d'entreprises, événements académiques et packagings produits. Expérience acquise auprès de LeGuide Informatique.
+            <div class="service-catalog-visual">
+              <div class="service-catalog-schematic">
+                <div class="schematic-header">
+                  <span>Hardware &amp; Systems</span>
+                  <span>Diagnostic Matrix</span>
+                </div>
+                <div class="schematic-list">
+                  <div class="schematic-row">
+                    <span class="schematic-key">POSTES_CLIENTS</span>
+                    <span class="schematic-val">DIAGNOSTIC &amp; OPTIM</span>
+                  </div>
+                  <div class="schematic-row">
+                    <span class="schematic-key">SYSTEMES_OS</span>
+                    <span class="schematic-val">DURCISSEMENT</span>
+                  </div>
+                  <div class="schematic-row">
+                    <span class="schematic-key">SAUVEGARDES</span>
+                    <span class="schematic-val">AUTOMATISÉES</span>
+                  </div>
+                  <div class="schematic-row">
+                    <span class="schematic-key">SUPPORT_PRO</span>
+                    <span class="schematic-val">RÉACTION &lt; 24H</span>
+                  </div>
+                </div>
+                <div style="font-size: 0.68rem; color: #888; border-top: 1px solid #222; padding-top: 0.35rem;" data-i18n="services.sch1Footer">Support préventif &amp; curatif pour PME et structures</div>
+              </div>
+            </div>
+            <div class="service-header-row">
+              <div class="service-card-icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+              </div>
+              <h3 class="service-catalog-title" style="margin-bottom:0;" data-i18n="services.c5Title">Maintenance Informatique &amp; Support</h3>
+            </div>
+            <p class="service-catalog-text" data-i18n="services.c5Desc">
+              Diagnostic approfondi de parcs informatiques, maintenance préventive et curative des postes de travail, déploiement sécurisé de systèmes d'exploitation et assistance réactive.
             </p>
             <ul class="service-features-list">
-              <li>Shooting produits et packagings commerciaux</li>
-              <li>Couverture photographique d'événements et colloques</li>
-              <li>Montage vidéo promotionnel et clips pour réseaux sociaux</li>
-              <li>Retouches numériques professionnelles</li>
+              <li data-i18n="services.c5F1">Diagnostic matériel, remplacement de composants et nettoyage</li>
+              <li data-i18n="services.c5F2">Installation, durcissement et optimisation de systèmes d'exploitation</li>
+              <li data-i18n="services.c5F3">Mise en place de protocoles de sauvegarde locale et cloud</li>
+              <li data-i18n="services.c5F4">Assistance technique sur site et téléassistance réactive</li>
             </ul>
-            <a href="contact.html?subject=Photo" class="btn-detail-github" style="text-align:center;">Réserver un shooting &rarr;</a>
+            <a href="contact.html?subject=Maintenance" class="btn-detail-github" style="text-align:center;" data-i18n="services.c5Cta">Assistance technique &rarr;</a>
           </div>
 
-          <!-- Domaine 6 : Infographie & Direction Artistique -->
+          <!-- Domaine 6 : Conseil IT & Productivité Numérique par l'IA (Composition Sobre Swiss/Linear) -->
           <div class="service-catalog-card">
-            <div class="service-card-icon-wrap">🎨</div>
-            <h3 class="service-catalog-title">Infographie &amp; Direction Artistique</h3>
-            <p class="service-catalog-text">
-              Création d'identités visuelles complètes, logos vectoriels scalables, supports de communication print grand format (roll-ups, affiches, flyers) et packagings esthétiques.
+            <div class="service-catalog-visual">
+              <div class="service-catalog-schematic">
+                <div class="schematic-header">
+                  <span>Workflow Optimization</span>
+                  <span>Productivité &amp; IA</span>
+                </div>
+                <div class="schematic-list">
+                  <div class="schematic-row">
+                    <span class="schematic-key">01. AUDIT_METIER</span>
+                    <span class="schematic-val">FLUX &amp; GOULETS</span>
+                  </div>
+                  <div class="schematic-row">
+                    <span class="schematic-key">02. SELECTION_IA</span>
+                    <span class="schematic-val">OUTILS ADAPTÉS</span>
+                  </div>
+                  <div class="schematic-row">
+                    <span class="schematic-key">03. AUTOMATION</span>
+                    <span class="schematic-val">SCRIPTS &amp; PIPELINES</span>
+                  </div>
+                  <div class="schematic-row">
+                    <span class="schematic-key">04. FORMATION</span>
+                    <span class="schematic-val">AUTONOMIE ÉQUIPES</span>
+                  </div>
+                </div>
+                <div style="font-size: 0.68rem; color: #888; border-top: 1px solid #222; padding-top: 0.35rem;" data-i18n="services.sch2Footer">Accompagnement pragmatique des professionnels</div>
+              </div>
+            </div>
+            <div class="service-header-row">
+              <div class="service-card-icon-wrap" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="4 17 10 11 4 5"></polyline>
+                  <line x1="12" y1="19" x2="20" y2="19"></line>
+                </svg>
+              </div>
+              <h3 class="service-catalog-title" style="margin-bottom:0;" data-i18n="services.c6Title">Conseil IT &amp; Productivité Numérique</h3>
+            </div>
+            <p class="service-catalog-text" data-i18n="services.c6Desc">
+              Accompagnement des professionnels et PME dans le choix de leurs outils numériques, l'automatisation de tâches chronophages et l'adoption pragmatique des outils d'IA pour décupler leur productivité.
             </p>
             <ul class="service-features-list">
-              <li>Logos vectoriels et chartes graphiques complètes</li>
-              <li>Flyers promotionnels percutants (Petit Colis, GMC, Candace)</li>
-              <li>Mockups 3D réalistes de produits et stands d'exposition</li>
-              <li>Signalétique événementielle et roll-ups 3D</li>
+              <li data-i18n="services.c6F1">Audit des processus de travail et identification des tâches répétitives</li>
+              <li data-i18n="services.c6F2">Conseil sur l'adoption raisonnée des modèles génératifs et assistants IA</li>
+              <li data-i18n="services.c6F3">Mise en place de scripts et flux automatisés de traitement documentaire</li>
+              <li data-i18n="services.c6F4">Formation pratique des équipes pour une appropriation rapide et autonome</li>
             </ul>
-            <a href="portfolio.html?filter=infographie" class="btn-detail-primary" style="text-align:center;">Découvrir la galerie graphique &rarr;</a>
+            <a href="contact.html?subject=IA" class="btn-detail-github" style="text-align:center;" data-i18n="services.c6Cta">Projet d'automatisation &rarr;</a>
           </div>
 
         </div>
@@ -181,31 +324,31 @@
     <section class="process-section">
       <div class="container">
         <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-          <span class="subpage-badge">Méthodologie Éprouvée</span>
-          <h2 style="font-size: 2.5rem; font-weight: 700; color: #1A1A1A;">Comment se déroule <span class="text-orange">notre collaboration</span> ?</h2>
-          <p style="color: #666; font-size: 0.95rem; margin-top: 0.5rem;">De la première prise de contact jusqu'au déploiement et au support continu.</p>
+          <span class="subpage-badge" data-i18n="services.processBadge">Méthodologie Éprouvée</span>
+          <h2 style="font-size: 2.5rem; font-weight: 700; color: #1A1A1A;"><span data-i18n="services.processTitlePre">Comment se déroule</span> <span class="text-orange" data-i18n="services.processTitleOrange">notre collaboration ?</span></h2>
+          <p style="color: #666; font-size: 0.95rem; margin-top: 0.5rem;" data-i18n="services.processSubtitle">De la première prise de contact jusqu'au déploiement et au support continu.</p>
         </div>
 
         <div class="process-grid">
           <div class="process-step-card">
             <div class="step-num">01</div>
-            <h4 class="step-title">Cadrage &amp; Écoute</h4>
-            <p class="step-desc">Analyse fine de votre besoin, définition du cahier des charges et compréhension de vos contraintes techniques ou artistiques.</p>
+            <h4 class="step-title" data-i18n="services.step1Title">Cadrage &amp; Écoute</h4>
+            <p class="step-desc" data-i18n="services.step1Desc">Analyse fine de votre besoin, définition du cahier des charges et compréhension de vos contraintes techniques ou artistiques.</p>
           </div>
           <div class="process-step-card">
             <div class="step-num">02</div>
-            <h4 class="step-title">Devis &amp; Conception</h4>
-            <p class="step-desc">Élaboration d'une proposition claire avec délais maîtrisés, maquettes visuelles ou schémas d'architecture logicielle.</p>
+            <h4 class="step-title" data-i18n="services.step2Title">Devis &amp; Conception</h4>
+            <p class="step-desc" data-i18n="services.step2Desc">Élaboration d'une proposition claire avec délais maîtrisés, maquettes visuelles ou schémas d'architecture logicielle.</p>
           </div>
           <div class="process-step-card">
             <div class="step-num">03</div>
-            <h4 class="step-title">Développement &amp; Tests</h4>
-            <p class="step-desc">Implémentation rigoureuse selon les meilleures pratiques du marché, tests fonctionnels et itérations collaboratives.</p>
+            <h4 class="step-title" data-i18n="services.step3Title">Développement &amp; Tests</h4>
+            <p class="step-desc" data-i18n="services.step3Desc">Implémentation rigoureuse selon les meilleures pratiques du marché, tests fonctionnels et itérations collaboratives.</p>
           </div>
           <div class="process-step-card">
             <div class="step-num">04</div>
-            <h4 class="step-title">Livraison &amp; Support</h4>
-            <p class="step-desc">Mise en production sécurisée, remise des sources vectorielles ou du code testé, et accompagnement technique dans la durée.</p>
+            <h4 class="step-title" data-i18n="services.step4Title">Livraison &amp; Support</h4>
+            <p class="step-desc" data-i18n="services.step4Desc">Mise en production sécurisée, remise des sources vectorielles ou du code testé, et accompagnement technique dans la durée.</p>
           </div>
         </div>
       </div>
@@ -217,48 +360,48 @@
     <section class="pricing-section">
       <div class="container">
         <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-          <span class="subpage-badge">Transparence &amp; Flexibilité</span>
-          <h2 style="font-size: 2.5rem; font-weight: 700; color: #1A1A1A;">Formules d'intervention <span class="text-orange">adaptées</span></h2>
-          <p style="color: #666; font-size: 0.95rem; margin-top: 0.5rem;">Des formules flexibles calibrées pour les PME, startups, cabinets médicaux et créateurs de projets.</p>
+          <span class="subpage-badge" data-i18n="services.pricingBadge">Transparence &amp; Flexibilité</span>
+          <h2 style="font-size: 2.5rem; font-weight: 700; color: #1A1A1A;"><span data-i18n="services.pricingTitlePre">Formules d'intervention</span> <span class="text-orange" data-i18n="services.pricingTitleOrange">adaptées</span></h2>
+          <p style="color: #666; font-size: 0.95rem; margin-top: 0.5rem;" data-i18n="services.pricingSubtitle">Des formules flexibles calibrées pour les PME, startups, cabinets médicaux et créateurs de projets.</p>
         </div>
 
         <div class="pricing-grid">
           
           <div class="pricing-card">
-            <h3 class="pricing-name">Mission Ponctuelle</h3>
-            <p class="pricing-desc">Idéal pour un livrable précis : flyer, logo, audit réseau ou composant logiciel isolé.</p>
+            <h3 class="pricing-name" data-i18n="services.plan1Name">Mission Ponctuelle</h3>
+            <p class="pricing-desc" data-i18n="services.plan1Desc">Idéal pour un livrable précis : flyer, logo, audit réseau ou composant logiciel isolé.</p>
             <ul class="pricing-features">
-              <li>Cahier des charges cadré</li>
-              <li>Livrables clés en main sous 2 à 7 jours</li>
-              <li>Révisions incluses</li>
-              <li>Fichiers sources fournis (Code ou Vecteurs)</li>
+              <li data-i18n="services.plan1F1">Cahier des charges cadré</li>
+              <li data-i18n="services.plan1F2">Livrables clés en main sous 2 à 7 jours</li>
+              <li data-i18n="services.plan1F3">Révisions incluses</li>
+              <li data-i18n="services.plan1F4">Fichiers sources fournis (Code ou Vecteurs)</li>
             </ul>
-            <a href="contact.html?formule=ponctuelle" class="btn-detail-github" style="text-align:center;">Demander un devis</a>
+            <a href="contact.html?formule=ponctuelle" class="btn-detail-github" style="text-align:center;" data-i18n="services.plan1Cta">Demander un devis</a>
           </div>
 
           <div class="pricing-card featured">
-            <span class="pricing-badge">Recommandé</span>
-            <h3 class="pricing-name">Projet Clé en Main</h3>
-            <p class="pricing-desc">Idéal pour la création complète d'un ERP, SaaS, identité de marque 360° ou infrastructure réseau.</p>
+            <span class="pricing-badge" data-i18n="services.plan2Badge">Recommandé</span>
+            <h3 class="pricing-name" data-i18n="services.plan2Name">Projet Clé en Main</h3>
+            <p class="pricing-desc" data-i18n="services.plan2Desc">Idéal pour la création complète d'un ERP, SaaS, identité de marque 360° ou infrastructure réseau.</p>
             <ul class="pricing-features">
-              <li>Accompagnement de A à Z (Architecture + Dev + Tests)</li>
-              <li>Déploiement en production (Vercel, Docker, Serveur)</li>
-              <li>Mode hors-ligne résilient et base de données SQL</li>
-              <li>Garantie et support technique étendu 30 jours</li>
+              <li data-i18n="services.plan2F1">Accompagnement de A à Z (Architecture + Dev + Tests)</li>
+              <li data-i18n="services.plan2F2">Déploiement en production (Vercel, Docker, Serveur)</li>
+              <li data-i18n="services.plan2F3">Mode hors-ligne résilient et base de données SQL</li>
+              <li data-i18n="services.plan2F4">Garantie et support technique étendu 30 jours</li>
             </ul>
-            <a href="contact.html?formule=projet" class="btn-detail-primary" style="text-align:center;">Lancer mon projet &rarr;</a>
+            <a href="contact.html?formule=projet" class="btn-detail-primary" style="text-align:center;" data-i18n="services.plan2Cta">Lancer mon projet &rarr;</a>
           </div>
 
           <div class="pricing-card">
-            <h3 class="pricing-name">Régie &amp; Maintenance</h3>
-            <p class="pricing-desc">Idéal pour les entreprises souhaitant un suivi technique ou infographique mensuel réactif.</p>
+            <h3 class="pricing-name" data-i18n="services.plan3Name">Régie &amp; Maintenance</h3>
+            <p class="pricing-desc" data-i18n="services.plan3Desc">Idéal pour les entreprises souhaitant un suivi technique ou infographique mensuel réactif.</p>
             <ul class="pricing-features">
-              <li>Support technique prioritaire (24/48h)</li>
-              <li>Maintenance préventive de vos applications et parcs</li>
-              <li>Production graphique régulière (campagnes, affiches)</li>
-              <li>Optimisations continues de performance</li>
+              <li data-i18n="services.plan3F1">Support technique prioritaire (24/48h)</li>
+              <li data-i18n="services.plan3F2">Maintenance préventive de vos applications et parcs</li>
+              <li data-i18n="services.plan3F3">Production graphique régulière (campagnes, affiches)</li>
+              <li data-i18n="services.plan3F4">Optimisations continues de performance</li>
             </ul>
-            <a href="contact.html?formule=regie" class="btn-detail-github" style="text-align:center;">Discuter d'un contrat</a>
+            <a href="contact.html?formule=regie" class="btn-detail-github" style="text-align:center;" data-i18n="services.plan3Cta">Discuter d'un contrat</a>
           </div>
 
         </div>
@@ -271,46 +414,46 @@
     <section class="faq-section">
       <div class="container">
         <div style="text-align: center; margin-bottom: 3rem;">
-          <span class="subpage-badge">Questions Fréquentes</span>
-          <h2 style="font-size: 2.3rem; font-weight: 700; color: #1A1A1A;">Tout ce que vous devez <span class="text-orange">savoir</span></h2>
+          <span class="subpage-badge" data-i18n="services.faqBadge">Questions Fréquentes</span>
+          <h2 style="font-size: 2.3rem; font-weight: 700; color: #1A1A1A;"><span data-i18n="services.faqTitlePre">Tout ce que vous devez</span> <span class="text-orange" data-i18n="services.faqTitleOrange">savoir</span></h2>
         </div>
 
         <div class="faq-item open">
           <button class="faq-question">
-            <span>Quels sont vos délais habituels de livraison ?</span>
+            <span data-i18n="services.faqQ1">Quels sont vos délais habituels de livraison ?</span>
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" data-i18n="services.faqA1">
             Pour les prestations graphiques (logos, affiches, flyers), les propositions initiales sont généralement livrées sous 48 à 72 heures. Pour les applications et ERP complets, le calendrier s'articule généralement entre 2 et 6 semaines selon la complexité et les fonctionnalités requises.
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question">
-            <span>Pouvez-vous intervenir à distance ou uniquement sur place à Yaoundé ?</span>
+            <span data-i18n="services.faqQ2">Pouvez-vous intervenir à distance ou uniquement sur place à Yaoundé ?</span>
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" data-i18n="services.faqA2">
             J'interviens aussi bien en présentiel à Yaoundé et Douala pour les besoins d'infrastructure, de câblage et de maintenance physique, qu'à distance pour le développement logiciel, la conception de bases de données et l'infographie avec des clients nationaux et internationaux.
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question">
-            <span>Comment garantissez-vous la sécurité et la confidentialité des données ?</span>
+            <span data-i18n="services.faqQ3">Comment garantissez-vous la sécurité et la confidentialité des données ?</span>
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" data-i18n="services.faqA3">
             Chaque système développé (notamment dans la santé comme Sister Schola ou l'agriculture avec AgroFlow) applique le principe de moindre privilège, le chiffrement des flux sensibles et le respect strict du secret professionnel. Des accords de confidentialité (NDA) peuvent être signés avant tout début de collaboration.
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question">
-            <span>Quelles sont les modalités de paiement acceptées ?</span>
+            <span data-i18n="services.faqQ4">Quelles sont les modalités de paiement acceptées ?</span>
             <span class="faq-icon">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" data-i18n="services.faqA4">
             Les paiements s'effectuent généralement avec un acompte au démarrage du projet puis le solde à la livraison finale validée. Les modes acceptés incluent virement bancaire, Orange Money, MTN Mobile Money et solutions internationales.
           </div>
         </div>
@@ -324,15 +467,15 @@
     <section class="discuss-section">
       <div class="container discuss-container">
         <h2 class="discuss-headline">
-          <span>Un besoin en développement ou en infographie ?</span> <br>
-          <span class="text-orange">Parlons de votre projet dès aujourd'hui</span>
+          <span data-i18n="services.ctaHeadlinePre">Un besoin en développement ou en infographie ?</span> <br>
+          <span class="text-orange" data-i18n="services.ctaHeadlineOrange">Parlons de votre projet dès aujourd'hui</span>
         </h2>
         <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
           <a href="https://wa.me/237679279447?text=Bonjour%20Jordan,%20je%20souhaite%20un%20devis%20pour%20un%20projet." target="_blank" rel="noopener noreferrer" class="contact-whatsapp-banner" style="margin-top:0;">
-            <span>Discuter directement sur WhatsApp &rarr;</span>
+            <span data-i18n="services.ctaWaBtn">Discuter directement sur WhatsApp &rarr;</span>
           </a>
           <a href="contact.html" class="btn-detail-primary" style="padding: 0.9rem 2rem;">
-            <span>Formulaire de devis complet</span>
+            <span data-i18n="services.ctaFormBtn">Formulaire de devis complet</span>
           </a>
         </div>
       </div>
@@ -358,52 +501,52 @@
               </span>
             </div>
             <p class="footer-brand-desc" data-i18n="footer.bio">
-              Technologue en Génie Logiciel &amp; Systèmes d'Information, certifié Ateliers Google. Spécialisé dans la conception logicielle, la maintenance d'infrastructures et l'infographie.
+              Développeur logiciel &amp; Infographe, diplômé de l'IUT de Douala et certifié en marketing digital (Google). Fondateur de LaboGraphie, spécialisé dans la conception applicative, l'infrastructure et l'identité visuelle.
             </p>
             <div class="footer-social-icons">
               <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0 1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0 1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
               </a>
               <a href="https://www.linkedin.com/in/jordan-lo%C3%AFc-nde-63b041427/" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="LinkedIn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
               </a>
               <a href="https://wa.me/237679279447?text=Bonjour%20Jordan,%20j'ai%20consult%C3%A9%20votre%20page%20Services%20et%20souhaite%20%C3%A9changer%20avec%20vous." target="_blank" rel="noopener noreferrer" class="social-circle social-whatsapp" aria-label="WhatsApp Jordan L.">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                 </svg>
               </a>
               <a href="mailto:ndejordanloic@gmail.com" class="social-circle" aria-label="Email Jordan L.">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
               </a>
             </div>
           </div>
 
           <div class="footer-col col-nav">
-            <h4 class="footer-col-title">Navigation</h4>
+            <h4 class="footer-col-title" data-i18n="footer.navTitle">Navigation</h4>
             <ul class="footer-links-list">
-              <li><a href="index.html">Accueil</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+              <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+              <li><a href="portfolio.html" data-i18n="nav.projects">Portfolio</a></li>
+              <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+              <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
             </ul>
           </div>
 
           <div class="footer-col col-contact">
-            <h4 class="footer-col-title">Coordonnées</h4>
+            <h4 class="footer-col-title" data-i18n="footer.contactTitle">Coordonnées</h4>
             <ul class="footer-links-list contact-list">
               <li><span>📞 +237 679 279 447</span></li>
               <li><span>📞 +237 621 317 408</span></li>
               <li><span>✉️ ndejordanloic@gmail.com</span></li>
               <li><span>✉️ ndejordanloic@outlook.fr</span></li>
-              <li><span>📍 Yaoundé, Cameroun</span></li>
+              <li data-i18n="footer.location"><span>📍 Yaoundé, Cameroun</span></li>
             </ul>
           </div>
 
           <div class="footer-col col-newsletter">
-            <h4 class="footer-col-title">Demande de Devis Rapide</h4>
+            <h4 class="footer-col-title" data-i18n="footer.quickQuote">Demande de Devis Rapide</h4>
             <form class="footer-newsletter-form" onsubmit="event.preventDefault(); window.location.href='contact.html';">
-              <input type="email" placeholder="Votre email..." class="footer-email-input" required>
+              <input type="email" placeholder="Votre email..." data-i18n-placeholder="footer.placeholder" class="footer-email-input" required aria-label="Votre adresse email" data-i18n-aria-label="aria.newsletterEmail">
               <button type="submit" class="footer-email-btn" aria-label="Continuer">&rarr;</button>
             </form>
           </div>
@@ -413,11 +556,11 @@
         <div class="footer-card-divider subtle"></div>
 
         <div class="footer-card-bottom">
-          <p class="footer-copyright">Copyright &copy; 2026 NDE Jordan L. · LaboGraphie Dev. Tous droits réservés.</p>
+          <p class="footer-copyright" data-i18n="footer.copyright">Copyright &copy; 2026 NDE Jordan L. · LaboGraphie Dev. Tous droits réservés.</p>
           <div class="footer-legal-links">
-            <a href="index.html">Accueil</a>
+            <a href="index.html" data-i18n="nav.home">Accueil</a>
             <span class="sep">|</span>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" data-i18n="nav.contact">Contact</a>
           </div>
         </div>
 

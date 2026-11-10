@@ -6,12 +6,37 @@
   <title>Étude de Cas — NDE Jordan L. · Portfolio & Architecture Logicielle</title>
   <meta name="description" content="Étude de cas détaillée, architecture technique et résultats concrets des projets conçus et déployés par NDE Jordan L.">
   
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="NDE Jordan L. Portfolio">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Étude de Cas — NDE Jordan L. · Portfolio &amp; Architecture Logicielle">
+  <meta property="og:description" content="Étude de cas détaillée, architecture technique et résultats concrets des projets conçus et déployés par NDE Jordan L.">
+  <meta property="og:image" content="rsc/img/jordan_portrait_pro.webp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Étude de Cas — NDE Jordan L. · Portfolio &amp; Architecture Logicielle">
+  <meta name="twitter:description" content="Étude de cas détaillée, architecture technique et résultats concrets des projets conçus et déployés par NDE Jordan L.">
+  <meta name="twitter:image" content="rsc/img/jordan_portrait_pro.webp">
+
+  <!-- URL canonique (À confirmer lors du déploiement en production - Lot 7) -->
+  <!-- <link rel="canonical" href="https://ndejordanloic.com/projet-detail.html"> -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="page-project-detail">
+  <!-- Lien d'évitement accessible (WCAG 2.4.1) -->
+  <a href="#main-content" class="skip-link" data-i18n="aria.skipToContent">Passer au contenu principal</a>
 
   <!-- =========================================================================
        HEADER NAVIGATION PARTAGÉ (Figma 1:1)
@@ -37,11 +62,13 @@
         <a href="blog.html" class="nav-item" data-i18n="nav.blog">Blog</a>
         <a href="contact.html" class="nav-item" data-i18n="nav.contact">Contact</a>
 
-        <!-- Sélecteur Bilingue discret FR / EN -->
-        <div class="lang-switch-wrap" role="group" aria-label="Langue / Language">
-          <button class="lang-btn active" data-lang="fr">FR</button>
+        <!-- Sélecteur Trilingue discret FR / EN / JA -->
+        <div class="lang-switch-wrap" role="group" aria-label="Choix de la langue" data-i18n-aria-label="aria.langSelect">
+          <button type="button" class="lang-btn active" data-lang="fr" aria-label="Passer en Français" data-i18n-aria-label="aria.langFr">FR</button>
           <span class="lang-sep">|</span>
-          <button class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-label="Switch to English" data-i18n-aria-label="aria.langEn">EN</button>
+          <span class="lang-sep">|</span>
+          <button type="button" class="lang-btn" data-lang="ja" aria-label="日本語に切り替え" data-i18n-aria-label="aria.langJa">JA</button>
         </div>
       </nav>
 
@@ -52,7 +79,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- =========================================================================
          1. HERO DE L'ÉTUDE DE CAS (DYNAMIQUE SELON L'ID)
          ========================================================================= -->
@@ -60,7 +87,7 @@
       <div class="container">
         
         <div style="margin-bottom: 1.5rem;">
-          <a href="portfolio.html" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #666; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: color 0.2s ease;">
+          <a href="portfolio.html" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #666; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: color 0.2s ease;" data-i18n="project.backLink">
             &larr; Retourner au Portfolio
           </a>
         </div>
@@ -68,8 +95,8 @@
         <div class="project-meta-pills" id="caseMetaPills">
           <span class="meta-pill highlight" id="caseCatPill">SaaS ERP &amp; AgriTech</span>
           <span class="meta-pill" id="caseYearPill">Année 2025 - 2026</span>
-          <span class="meta-pill" id="caseRolePill">Rôle : Lead Developer &amp; Architecte SI</span>
-          <span class="meta-pill" style="color: #25D366; border-color: rgba(37, 211, 102, 0.4);" id="caseStatusPill">● En Production</span>
+          <span class="meta-pill" id="caseRolePill">Rôle : Concepteur &amp; Développeur Full-Stack</span>
+          <span class="meta-pill" style="color: #25D366; border-color: rgba(37, 211, 102, 0.4);" id="caseStatusPill">● Prototype Opérationnel</span>
         </div>
 
         <h1 class="project-detail-title" id="caseTitle">
@@ -98,8 +125,8 @@
          2. BANNIÈRE VISUELLE PRINCIPALE
          ========================================================================= -->
     <section class="container project-showcase-visuals">
-      <div class="project-main-banner btn-zoom-img" id="caseMainBannerBox" data-img="rsc/img/projets/card_agroflow.png" title="Cliquez pour agrandir">
-        <img src="rsc/img/projets/card_agroflow.png" alt="Aperçu principal" id="caseMainBannerImg">
+      <div class="project-main-banner btn-zoom-img" id="caseMainBannerBox" data-img="rsc/img/projets/card_agroflow.webp" title="Cliquez pour agrandir">
+        <img src="rsc/img/projets/card_agroflow.webp" alt="Aperçu principal" id="caseMainBannerImg" width="800" height="500" loading="eager" decoding="async">
       </div>
     </section>
 
@@ -112,38 +139,38 @@
         <!-- Contenu Détaillé du Cas d'Étude -->
         <div class="project-story-content">
           
-          <h3>1. Contexte &amp; Problématique Métier</h3>
+          <h3 data-i18n="project.sectionContext">1. Contexte &amp; Problématique Métier</h3>
           <p id="caseProblem">
             Dans le secteur agro-pastoral, les exploitants et coopératives font face à des pertes considérables dues à une gestion manuelle sur registres papier, à l'absence de traçabilité des intrants et à une connectivité Internet très instable dans les zones de plantation. L'objectif était de développer un outil intuitif, accessible sur mobile et desktop, capable de fonctionner sans interruption même en zone blanche.
           </p>
 
-          <h3>2. Architecture Technique &amp; Choix Technologiques</h3>
+          <h3 data-i18n="project.sectionArch">2. Architecture Technique &amp; Choix Technologiques</h3>
           <p id="caseArchitecture">
             Pour répondre aux contraintes du terrain, j'ai mis en place une architecture modulaire basée sur React en frontend avec synchronisation locale IndexedDB, couplée à un backend REST en Node.js et une base relationnelle PostgreSQL hautement optimisée. La modélisation a suivi la méthode MERISE (MCD/MLD) garantissant une 3ème forme normale stricte.
           </p>
 
           <!-- Galerie de captures & schémas -->
-          <h3>3. Galerie de Captures &amp; Schémas d'Architecture</h3>
-          <p style="font-size: 0.9rem; color: #888;">Cliquez sur n'importe quelle capture pour l'ouvrir en haute définition.</p>
+          <h3 data-i18n="project.sectionGallery">3. Galerie de Captures &amp; Schémas d'Architecture</h3>
+          <p style="font-size: 0.9rem; color: #888;" data-i18n="project.galleryHint">Cliquez sur n'importe quelle capture pour l'ouvrir en haute définition.</p>
           <div class="case-study-gallery-grid" id="caseGalleryGrid">
             <!-- Dynamically populated or default AgroFlow items -->
-            <div class="case-study-thumb btn-zoom-img" data-img="rsc/img/projets/card_agroflow.png">
-              <img src="rsc/img/projets/card_agroflow.png" alt="Dashboard AgroFlow">
+            <div class="case-study-thumb btn-zoom-img" data-img="rsc/img/projets/card_agroflow.webp">
+              <img src="rsc/img/projets/card_agroflow.webp" alt="Dashboard AgroFlow" width="800" height="500" loading="lazy" decoding="async">
               <div class="case-thumb-caption">Tableau de bord &amp; KPIs</div>
             </div>
-            <div class="case-study-thumb btn-zoom-img" data-img="rsc/img/projets/shot_agroflow.png">
-              <img src="rsc/img/projets/shot_agroflow.png" alt="Capture AgroFlow">
+            <div class="case-study-thumb btn-zoom-img" data-img="rsc/img/projets/shot_agroflow.webp">
+              <img src="rsc/img/projets/shot_agroflow.webp" alt="Capture AgroFlow" width="1440" height="900" loading="lazy" decoding="async">
               <div class="case-thumb-caption">Interface d'exploitation</div>
             </div>
-            <div class="case-study-thumb btn-zoom-img" data-img="rsc/img/projets/dev/DC_Agroflow.png">
-              <img src="rsc/img/projets/dev/DC_Agroflow.png" alt="Diagramme de Classes UML">
+            <div class="case-study-thumb btn-zoom-img" data-img="rsc/img/projets/dev/DC_Agroflow.webp">
+              <img src="rsc/img/projets/dev/DC_Agroflow.webp" alt="Diagramme de Classes UML" width="1920" height="1046" loading="lazy" decoding="async">
               <div class="case-thumb-caption">Diagramme de Classes SQL</div>
             </div>
           </div>
 
-          <h3>4. Résultats Obtenus &amp; Impact Opérationnel</h3>
+          <h3 data-i18n="project.sectionResults">4. Résultats Obtenus &amp; Impact Opérationnel</h3>
           <p id="caseResults">
-            Le déploiement d'AgroFlow a permis de réduire le temps de consolidation des stocks de 75%, de supprimer les erreurs de saisie manuelle et de fournir aux exploitants une visibilité immédiate sur leurs marges par parcelle cultivée. Le système de synchronisation offline traite les écritures locales et les résout instantanément dès le rétablissement du réseau.
+            L'architecture d'AgroFlow permet de supprimer les erreurs de double saisie manuelle, d'automatiser la consolidation des stocks et de fournir aux exploitants une visibilité directe sur la rentabilité de chaque parcelle cultivée. Le système de synchronisation hors-ligne traite les écritures locales et les synchronise de manière transparente dès le rétablissement du réseau.
           </p>
 
           <!-- Témoignage Associé -->
@@ -160,30 +187,30 @@
 
         <!-- Sidebar Données Métier & Spécifications -->
         <aside class="project-sidebar-card">
-          <h4>Spécifications du Projet</h4>
+          <h4 data-i18n="project.specsTitle">Spécifications du Projet</h4>
           
           <div class="sidebar-data-row">
-            <div class="sidebar-data-label">Organisation / Client</div>
+            <div class="sidebar-data-label" data-i18n="project.clientLabel">Organisation / Client</div>
             <div class="sidebar-data-val" id="caseClient">Exploitants &amp; Coopératives (EGESOL)</div>
           </div>
 
           <div class="sidebar-data-row">
-            <div class="sidebar-data-label">Domaine d'Activité</div>
+            <div class="sidebar-data-label" data-i18n="project.industryLabel">Domaine d'Activité</div>
             <div class="sidebar-data-val" id="caseIndustry">AgriTech &amp; Agro-industrie</div>
           </div>
 
           <div class="sidebar-data-row">
-            <div class="sidebar-data-label">Durée de Réalisation</div>
+            <div class="sidebar-data-label" data-i18n="project.durationLabel">Durée de Réalisation</div>
             <div class="sidebar-data-val" id="caseDuration">4 Mois (Conception &amp; Déploiement)</div>
           </div>
 
           <div class="sidebar-data-row">
-            <div class="sidebar-data-label">Rôle de NDE Jordan L.</div>
-            <div class="sidebar-data-val" id="caseAuthorRole">Lead Developer &amp; Architecte SI</div>
+            <div class="sidebar-data-label" data-i18n="project.roleLabel">Rôle de NDE Jordan L.</div>
+            <div class="sidebar-data-val" id="caseAuthorRole">Concepteur &amp; Développeur Full-Stack</div>
           </div>
 
           <div class="sidebar-data-row">
-            <div class="sidebar-data-label">Stack Technologique</div>
+            <div class="sidebar-data-label" data-i18n="project.techStackLabel">Stack Technologique</div>
             <div class="hub-card-techs" id="caseTechStack" style="margin-top: 0.5rem;">
               <span class="hub-tech-pill">React</span>
               <span class="hub-tech-pill">Node.js</span>
@@ -194,13 +221,13 @@
           </div>
 
           <div class="sidebar-data-row">
-            <div class="sidebar-data-label">Méthodologie</div>
-            <div class="sidebar-data-val">Agile Scrum · Modélisation MERISE / UML</div>
+            <div class="sidebar-data-label" data-i18n="project.methodologyLabel">Méthodologie</div>
+            <div class="sidebar-data-val" data-i18n="project.methodologyVal">Agile Scrum · Modélisation MERISE / UML</div>
           </div>
 
           <div style="margin-top: 2rem;">
             <a href="https://wa.me/237679279447?text=Bonjour%20Jordan,%20j'ai%20vu%20votre%20%C3%A9tude%20de%20cas%20et%20souhaite%20un%20devis%20pour%20un%20projet%20similaire." target="_blank" rel="noopener noreferrer" class="contact-whatsapp-banner" style="font-size: 0.85rem; padding: 0.75rem 1rem;">
-              <span>Demander un devis similaire</span>
+              <span data-i18n="project.requestQuoteBtn">Demander un devis similaire</span>
               <span>&rarr;</span>
             </a>
           </div>
@@ -214,10 +241,10 @@
          ========================================================================= -->
     <section class="container" style="margin-bottom: 5rem;">
       <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #EBEBEB; padding-top: 2rem; flex-wrap: gap;">
-        <a href="portfolio.html" class="btn-discuss-white" style="border: 1px solid #CCC; color: #111; text-decoration: none;">
+        <a href="portfolio.html" class="btn-discuss-white" style="border: 1px solid #CCC; color: #111; text-decoration: none;" data-i18n="project.bottomBackBtn">
           &larr; Voir tous les projets
         </a>
-        <a href="contact.html" class="btn-discuss-orange" style="text-decoration: none;">
+        <a href="contact.html" class="btn-discuss-orange" style="text-decoration: none;" data-i18n="project.bottomContactBtn">
           Initier un projet avec Jordan &rarr;
         </a>
       </div>
@@ -243,52 +270,52 @@
               </span>
             </div>
             <p class="footer-brand-desc" data-i18n="footer.bio">
-              Technologue en Génie Logiciel &amp; Systèmes d'Information, certifié Ateliers Google. Spécialisé dans la conception logicielle, la maintenance d'infrastructures et l'infographie.
+              Développeur logiciel &amp; Infographe, diplômé de l'IUT de Douala et certifié en marketing digital (Google). Fondateur de LaboGraphie, spécialisé dans la conception applicative, l'infrastructure et l'identité visuelle.
             </p>
             <div class="footer-social-icons">
               <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0 1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0 1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
               </a>
               <a href="https://www.linkedin.com/in/jordan-lo%C3%AFc-nde-63b041427/" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="LinkedIn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
               </a>
               <a href="https://wa.me/237679279447?text=Bonjour%20Jordan,%20j'ai%20consult%C3%A9%20votre%20portfolio%20et%20souhaite%20%C3%A9changer%20avec%20vous." target="_blank" rel="noopener noreferrer" class="social-circle social-whatsapp" aria-label="WhatsApp Jordan L.">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                 </svg>
               </a>
               <a href="mailto:ndejordanloic@gmail.com" class="social-circle" aria-label="Email Jordan L.">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
               </a>
             </div>
           </div>
 
           <div class="footer-col col-nav">
-            <h4 class="footer-col-title">Navigation</h4>
+            <h4 class="footer-col-title" data-i18n="footer.navTitle">Navigation</h4>
             <ul class="footer-links-list">
-              <li><a href="index.html">Accueil</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+              <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+              <li><a href="portfolio.html" data-i18n="nav.projects">Portfolio</a></li>
+              <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+              <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
             </ul>
           </div>
 
           <div class="footer-col col-contact">
-            <h4 class="footer-col-title">Coordonnées</h4>
+            <h4 class="footer-col-title" data-i18n="footer.contactTitle">Coordonnées</h4>
             <ul class="footer-links-list contact-list">
               <li><span>📞 +237 679 279 447</span></li>
               <li><span>📞 +237 621 317 408</span></li>
               <li><span>✉️ ndejordanloic@gmail.com</span></li>
               <li><span>✉️ ndejordanloic@outlook.fr</span></li>
-              <li><span>📍 Yaoundé, Cameroun</span></li>
+              <li data-i18n="footer.location"><span>📍 Yaoundé, Cameroun</span></li>
             </ul>
           </div>
 
           <div class="footer-col col-newsletter">
-            <h4 class="footer-col-title">Demande de Devis Rapide</h4>
+            <h4 class="footer-col-title" data-i18n="footer.quickQuote">Demande de Devis Rapide</h4>
             <form class="footer-newsletter-form" onsubmit="event.preventDefault(); window.location.href='contact.html';">
-              <input type="email" placeholder="Votre email..." class="footer-email-input" required>
+              <input type="email" placeholder="Votre email..." data-i18n-placeholder="footer.placeholder" class="footer-email-input" required aria-label="Votre adresse email" data-i18n-aria-label="aria.newsletterEmail">
               <button type="submit" class="footer-email-btn" aria-label="Continuer">&rarr;</button>
             </form>
           </div>
@@ -298,11 +325,11 @@
         <div class="footer-card-divider subtle"></div>
 
         <div class="footer-card-bottom">
-          <p class="footer-copyright">Copyright &copy; 2026 NDE Jordan L. · LaboGraphie Dev. Tous droits réservés.</p>
+          <p class="footer-copyright" data-i18n="footer.copyright">Copyright &copy; 2026 NDE Jordan L. · LaboGraphie Dev. Tous droits réservés.</p>
           <div class="footer-legal-links">
-            <a href="index.html">Accueil</a>
+            <a href="index.html" data-i18n="nav.home">Accueil</a>
             <span class="sep">|</span>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" data-i18n="nav.contact">Contact</a>
           </div>
         </div>
 

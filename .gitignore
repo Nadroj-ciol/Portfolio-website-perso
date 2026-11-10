@@ -1,0 +1,27 @@
+# ==============================================================================
+# .gitignore — Portfolio Professionnel NDE Jordan Loïc
+# ==============================================================================
+
+# Confidentialité & Données Privées
+doc/chat.md
+doc/chat.txt
+doc/chat*
+*.chat
+
+# Fichiers temporaires & Systèmes
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.swp
+*~
+scratch
+
+# IDEs & Editeurs
+.vscode/
+.idea/
+
+# Logs & Archives
+*.log
+*.zip
+*.tar.gz

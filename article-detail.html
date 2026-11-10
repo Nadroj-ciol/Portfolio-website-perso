@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article Technique — NDE Jordan L. · Technologue en Génie Logiciel</title>
+  <meta name="description" content="Publication technique par NDE Jordan L. : Architecture logicielle modulaire, conception d'ERP résilients et bases de données haute disponibilité.">
+  
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="NDE Jordan L. Portfolio">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Article Technique — NDE Jordan L. · Technologue en Génie Logiciel">
+  <meta property="og:description" content="Publication technique par NDE Jordan L. : Architecture logicielle modulaire, conception d'ERP résilients et bases de données haute disponibilité.">
+  <meta property="og:image" content="rsc/img/blog_architecture.webp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Article Technique — NDE Jordan L. · Technologue en Génie Logiciel">
+  <meta name="twitter:description" content="Publication technique par NDE Jordan L. : Architecture logicielle modulaire, ERP résilients et bases de données.">
+  <meta name="twitter:image" content="rsc/img/blog_architecture.webp">
+
+  <!-- URL canonique (À confirmer lors du déploiement en production - Lot 7) -->
+  <!-- <link rel="canonical" href="https://ndejordanloic.com/article-detail.html"> -->
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-container { max-width: 880px; margin: 0 auto; padding: 2rem 1.5rem 5rem 1.5rem; }
+    .article-header { margin-bottom: 2.5rem; }
+    .article-badge-cat { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.85rem; border-radius: 999px; background: rgba(253, 111, 0, 0.12); color: var(--figma-orange); font-size: 0.82rem; font-weight: 600; margin-bottom: 1.25rem; }
+    .article-main-title { font-size: 2.25rem; font-weight: 800; color: #111111; line-height: 1.25; margin-bottom: 1.5rem; }
+    .article-meta-bar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: 1.25rem 0; border-top: 1px solid #ECECEC; border-bottom: 1px solid #ECECEC; margin-bottom: 2.5rem; }
+    .article-author-info { display: flex; align-items: center; gap: 0.85rem; }
+    .article-author-avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--figma-orange); }
+    .article-author-name { font-weight: 700; color: #111; font-size: 0.95rem; }
+    .article-author-role { font-size: 0.8rem; color: #777; }
+    .article-reading-stats { display: flex; align-items: center; gap: 1rem; font-size: 0.85rem; color: #666; }
+    .article-lead { font-size: 1.2rem; line-height: 1.7; color: #333; font-weight: 500; margin-bottom: 2rem; border-left: 4px solid var(--figma-orange); padding-left: 1.25rem; }
+    .article-cover-wrap { width: 100%; border-radius: 20px; overflow: hidden; margin-bottom: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
+    .article-cover-img { width: 100%; max-height: 480px; object-fit: cover; display: block; }
+    .article-content h2 { font-size: 1.5rem; font-weight: 700; color: #111; margin: 2.5rem 0 1rem 0; }
+    .article-content h3 { font-size: 1.2rem; font-weight: 600; color: #222; margin: 1.75rem 0 0.75rem 0; }
+    .article-content p { font-size: 1.02rem; line-height: 1.8; color: #444; margin-bottom: 1.25rem; }
+    .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 1.5rem; line-height: 1.8; color: #444; }
+    .article-code-block { background: #1B1B1B; color: #F0F0F0; border-radius: 12px; padding: 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.88rem; overflow-x: auto; margin: 1.5rem 0 2rem 0; border: 1px solid #333; }
+    .article-code-header { display: flex; justify-content: space-between; color: #888; font-size: 0.75rem; border-bottom: 1px solid #333; padding-bottom: 0.5rem; margin-bottom: 0.75rem; }
+    .article-callout { background: #FFF7ED; border-left: 4px solid var(--figma-orange); padding: 1.25rem; border-radius: 0 12px 12px 0; margin: 2rem 0; font-size: 0.95rem; color: #9A3412; line-height: 1.6; }
+    .article-related-box { background: #111111; color: #FFFFFF; border-radius: 20px; padding: 2.5rem 2rem; margin-top: 3.5rem; border: 1px solid #282828; }
+    .article-related-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .article-newsletter-card { background: #F8F8F8; border-radius: 20px; padding: 2.5rem; margin-top: 3rem; text-align: center; border: 1px solid #EAEAEA; }
+  </style>
+</head>
+<body class="page-article-detail">
+  <!-- Lien d'évitement accessible (WCAG 2.4.1) -->
+  <a href="#main-content" class="skip-link" data-i18n="aria.skipToContent">Passer au contenu principal</a>
+
+  <!-- =========================================================================
+       HEADER NAVIGATION PARTAGÉ (Figma 1:1)
+       ========================================================================= -->
+  <header class="header-wrapper">
+    <div class="nav-pill-container">
+      <nav class="nav-pill" id="navbar">
+        <a href="index.html" class="nav-item" data-i18n="nav.home">Accueil</a>
+        <a href="services.html" class="nav-item" data-i18n="nav.services">Services</a>
+        
+        <a href="index.html" class="nav-logo" aria-label="Accueil NDE Jordan L.">
+          <div class="logo-mark-nj">
+            <span class="logo-initials">NJ</span>
+          </div>
+          <span class="logo-text">
+            <span class="logo-nde">NDE</span>
+            <span class="logo-jordan">Jordan L</span><span class="logo-dot">.</span>
+          </span>
+        </a>
+
+        <a href="portfolio.html" class="nav-item" data-i18n="nav.projects">Portfolio</a>
+        <a href="blog.html" class="nav-item active" data-i18n="nav.blog">Blog</a>
+        <a href="contact.html" class="nav-item" data-i18n="nav.contact">Contact</a>
+
+        <!-- Sélecteur Trilingue discret FR / EN / JA -->
+        <div class="lang-switch-wrap" role="group" aria-label="Choix de la langue" data-i18n-aria-label="aria.langSelect">
+          <button type="button" class="lang-btn active" data-lang="fr" aria-label="Passer en Français" data-i18n-aria-label="aria.langFr">FR</button>
+          <span class="lang-sep">|</span>
+          <button type="button" class="lang-btn" data-lang="en" aria-label="Switch to English" data-i18n-aria-label="aria.langEn">EN</button>
+          <span class="lang-sep">|</span>
+          <button type="button" class="lang-btn" data-lang="ja" aria-label="日本語に切り替え" data-i18n-aria-label="aria.langJa">JA</button>
+        </div>
+      </nav>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <article class="article-container">
+      
+      <!-- Fil d'Ariane -->
+      <nav style="margin-bottom: 1.5rem; font-size: 0.85rem; color: #888;">
+        <a href="index.html" style="color: #666; text-decoration: none;" data-i18n="nav.home">Accueil</a> &gt; 
+        <a href="blog.html" style="color: #666; text-decoration: none;" data-i18n="nav.blog">Blog</a> &gt; 
+        <span style="color: var(--figma-orange);" id="articleBreadcrumb">Publication</span>
+      </nav>
+
+      <!-- En-tête de l'Article -->
+      <header class="article-header">
+        <span class="article-badge-cat" id="articleCategory">✦ Génie Logiciel &amp; Architecture</span>
+        <h1 class="article-main-title" id="articleTitle">
+          Concevoir une architecture logicielle modulaire et résiliente en milieu à connectivité intermittente
+        </h1>
+
+        <!-- Méta Bar (Auteur, Date, Temps de lecture) -->
+        <div class="article-meta-bar">
+          <div class="article-author-info">
+            <img src="rsc/img/jordan_portrait_pro.webp" alt="NDE Jordan L." class="article-author-avatar" width="999" height="999" loading="lazy" decoding="async">
+            <div>
+              <div class="article-author-name">NDE Jordan L.</div>
+              <div class="article-author-role" data-i18n="article.authorRole">Technologue en Génie Logiciel · IUT Douala</div>
+            </div>
+          </div>
+          <div class="article-reading-stats">
+            <span>📅 <span id="articleDate">18 Octobre 2026</span></span>
+            <span>⏱️ <span id="articleReadTime">7 min de lecture</span></span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Image de Couverture -->
+      <div class="article-cover-wrap">
+        <img src="rsc/img/blog_architecture.webp" alt="Architecture Logicielle" class="article-cover-img" id="articleCover" width="1000" height="667" loading="lazy" decoding="async">
+      </div>
+
+      <!-- Chapô / Lead -->
+      <div class="article-lead" id="articleLead">
+        Dans les contextes d'exploitation où le réseau Internet et l'alimentation électrique connaissent des coupures fréquentes, concevoir une application critique requiert de repenser l'architecture système de fond en comble.
+      </div>
+
+      <!-- Bannière d'indication linguistique pour le corps éditorial -->
+      <aside class="article-lang-notice" data-i18n="blog.langNotice" style="background: rgba(253, 111, 0, 0.08); border-left: 4px solid var(--figma-orange, #FD6F00); padding: 0.85rem 1.25rem; margin: 1.5rem 0; border-radius: 4px 8px 8px 4px; font-size: 0.92rem; color: #444; font-weight: 500;">
+        [Article rédigé en français · Retours d'expérience du terrain]
+      </aside>
+
+      <!-- Corps de l'Article -->
+      <div class="article-content" id="articleBody">
+        <h2>1. Le défi : la dépendance aux connexions permanentes</h2>
+        <p>
+          La majorité des architectures cloud modernes supposent une latence réseau sous les 50ms et une disponibilité de 99.9%. Sur le terrain au Cameroun et en Afrique subsaharienne, qu'il s'agisse d'un hôpital ou d'une exploitation agricole, ces hypothèses échouent dès les premières heures de déploiement.
+        </p>
+        <p>
+          Lors du développement de <strong>Sister Schola ERP</strong> et d'<strong>AgroFlow SaaS</strong>, notre objectif prioritaire a été d'adopter le paradigme <em>Local-First</em> : l'application doit continuer à fonctionner à 100% de ses capacités même sans aucune connexion Internet active.
+        </p>
+
+        <div class="article-callout">
+          <strong>Principe fondamental :</strong> Tout événement de saisie (admission d'un patient, enregistrement d'une récolte, pesée) doit être écrit immédiatement dans le stockage local persistant et sécurisé avant même toute tentative d'émission réseau.
+        </div>
+
+        <h2>2. Modèle de synchronisation bidirectionnelle résiliente</h2>
+        <p>
+          Pour garantir la cohérence des données sans perte ni conflit d'écrasement, nous avons implémenté une file de messages d'événements (Event-Driven Queue) s'appuyant sur IndexedDB côté client et un gestionnaire de transactions ACID PostgreSQL côté serveur.
+        </p>
+
+        <div class="article-code-block">
+          <div class="article-code-header">
+            <span>TypeScript / EventSyncEngine.ts</span>
+            <span>Pattern Outbox Local-First</span>
+          </div>
+<pre><code>interface SyncEvent&lt;T = unknown&gt; {
+  id: string;              // UUID v4 unique généré localement
+  aggregateType: string;   // Ex: 'STUDENT_ENROLLMENT' | 'PATIENT_ADMISSION'
+  payload: T;
+  createdAt: number;       // Timestamp UNIX côté client
+  synced: boolean;
+  retryCount: number;
+}
+
+// Transaction atomique locale avant synchronisation réseau
+async function commitLocalFirst&lt;T&gt;(event: Omit&lt;SyncEvent&lt;T&gt;, 'id' | 'synced' | 'retryCount'&gt;) {
+  const transaction = db.transaction(['outbox_queue', 'local_view'], 'readwrite');
+  const record: SyncEvent&lt;T&gt; = {
+    ...event,
+    id: crypto.randomUUID(),
+    synced: false,
+    retryCount: 0
+  };
+  
+  await transaction.objectStore('outbox_queue').add(record);
+  await updateLocalOptimisticView(record);
+  
+  // Déclenchement de la synchronisation asynchrone en arrière-plan
+  triggerBackgroundSync();
+}</code></pre>
+        </div>
+
+        <h2>3. Résolution des conflits et horodatage vectoriel</h2>
+        <p>
+          Lorsque deux terminaux modifient simultanément une ressource hors-ligne, la stratégie naïve du <em>Last-Write-Wins</em> basé sur l'horloge système peut écraser des données cruciales en cas de désynchronisation NTP. Nous appliquons plutôt une résolution par type d'attribut combinée à un log d'audit immuable.
+        </p>
+
+        <h2>4. Résultats mesurés en production</h2>
+        <ul>
+          <li><strong>Zéro perte de saisie</strong> lors des coupures de fibre optique ou réseau 4G.</li>
+          <li><strong>Temps de réponse UI instantané (&lt; 15ms)</strong> pour toutes les opérations utilisateur grâce au rendu optimiste.</li>
+          <li><strong>Synchronisation silencieuse</strong> dès le rétablissement de la connectivité avec reprise automatique en cas de rupture de flux.</li>
+        </ul>
+      </div>
+
+      <!-- Section Études de Cas Liées (Conforme Sitemap Relume) -->
+      <div class="article-related-box">
+        <div class="article-related-header">
+          <div>
+            <span style="color: var(--figma-orange); font-size: 0.85rem; font-weight: 700; text-transform: uppercase;" data-i18n="article.relatedTitle">✦ Projet &amp; Étude de cas liée</span>
+            <h3 style="font-size: 1.4rem; color: #FFF; margin-top: 0.35rem;" id="relatedProjectTitle">AgroFlow SaaS ERP</h3>
+          </div>
+          <a href="https://agroflowsaas.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-detail-primary" id="relatedProjectLive" data-i18n="article.demoBtn">
+            Tester la Démo en Ligne ↗
+          </a>
+        </div>
+        <p style="color: #BBB; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;" id="relatedProjectDesc">
+          Découvrez concrètement l'implémentation de cette architecture dans notre ERP agricole utilisé pour le suivi des exploitations, la traçabilité des récoltes et la gestion financière décentralisée.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="projet-detail.html?id=agroflow" class="btn-detail-github" style="background: #252525; color: #FFF; border: 1px solid #444;" id="relatedProjectCase" data-i18n="article.caseBtn">
+            Lire l'Étude de Cas Complète &rarr;
+          </a>
+          <a href="https://wa.me/237679279447?text=Bonjour%20Jordan,%20j'ai%20lu%20votre%20article%20sur%20l'architecture%20logicielle%20et%20je%20souhaite%20un%20devis." target="_blank" rel="noopener noreferrer" class="btn-detail-github" style="background: #25D366; color: #FFF; border: none;">
+            <span data-i18n="article.whatsappDiscuss">💬 En discuter sur WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Formulaire Newsletter & Veille Tech (Conforme Sitemap Relume) -->
+      <div class="article-newsletter-card">
+        <span style="font-size: 2rem;">📬</span>
+        <h3 style="font-size: 1.4rem; font-weight: 700; color: #111; margin: 0.5rem 0;" data-i18n="article.newsletterTitle">Recevoir mes prochaines analyses techniques</h3>
+        <p style="font-size: 0.92rem; color: #666; max-width: 520px; margin: 0 auto 1.5rem auto;" data-i18n="article.newsletterSub">
+          Inscrivez-vous pour recevoir directement par email mes retours d'expérience sur le génie logiciel, la sécurité réseau et l'architecture de systèmes.
+        </p>
+        <form class="discuss-pill-form" style="max-width: 480px; margin: 0 auto;" onsubmit="event.preventDefault(); alert('Merci pour votre inscription ! Vous recevrez mes prochaines publications.');">
+          <input type="email" placeholder="Votre email professionnel..." class="discuss-email-input" required aria-label="Votre adresse email" data-i18n-aria-label="aria.newsletterEmail">
+          <button type="submit" class="discuss-submit-btn" data-i18n="article.subscribeBtn">S'abonner</button>
+        </form>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER CARTE NOIRE FIGMA (Image 7)
+       ========================================================================= -->
+  <footer class="footer-dark-card" style="margin: 3rem 1.5rem 2rem 1.5rem;">
+    <div class="footer-top-header">
+      <h2 class="connect-title" data-i18n="footer.connectTitle">Connectons-nous ici</h2>
+      <a href="https://wa.me/237679279447" target="_blank" rel="noopener noreferrer" class="btn-hire-orange">
+        <span data-i18n="footer.hireBtn">Lancer un projet</span>
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+      </a>
+    </div>
+    <div class="footer-card-divider"></div>
+    <div class="footer-columns-grid">
+      <div class="footer-col col-brand">
+        <div class="footer-logo">
+          <div class="logo-mark-nj"><span class="logo-initials">NJ</span></div>
+          <span class="logo-text"><span class="logo-nde">NDE</span> <span class="logo-jordan">Jordan L</span><span class="logo-dot">.</span></span>
+        </div>
+        <p class="footer-brand-desc" data-i18n="footer.bio">
+          Développeur logiciel &amp; Infographe, diplômé de l'IUT de Douala et certifié en marketing digital (Google). Fondateur de LaboGraphie, spécialisé dans la conception applicative, l'infrastructure et l'identité visuelle.
+        </p>
+      </div>
+      <div class="footer-col col-nav">
+        <h4 class="footer-col-title" data-i18n="footer.navTitle">Navigation</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="portfolio.html" data-i18n="nav.projects">Portfolio</a></li>
+          <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col col-contact">
+        <h4 class="footer-col-title" data-i18n="footer.contactTitle">Coordonnées</h4>
+        <ul class="footer-links-list contact-list">
+          <li><span>📞 +237 679 279 447</span></li>
+          <li><span>📞 +237 621 317 408</span></li>
+          <li><span>✉️ ndejordanloic@gmail.com</span></li>
+          <li><span>📍 Yaoundé &amp; Douala, Cameroun</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-card-divider subtle"></div>
+    <div class="footer-card-bottom">
+      <p class="footer-copyright" data-i18n="footer.copyright">Copyright &copy; 2026 NDE Jordan L. · LaboGraphie Dev. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

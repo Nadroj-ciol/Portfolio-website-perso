@@ -3,11 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio de NDE Jordan L. — Technologue en Génie Logiciel, Développeur Full-Stack, Réseaux & Infographie. Certifié Ateliers Google, lauréat Palme d'Or.">
+  <meta name="description" content="Portfolio de NDE Jordan Loïc — Développeur logiciel &amp; Infographe, diplômé de l'IUT de Douala et certifié en marketing digital (Google). Fondateur de LaboGraphie.">
   <meta name="author" content="NDE Jordan L.">
   <meta name="theme-color" content="#FD6F00">
   
   <title>NDE Jordan L. | Développeur Full-Stack &amp; Technologue en Génie Logiciel</title>
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NDE Jordan L. Portfolio">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="NDE Jordan L. | Développeur Full-Stack &amp; Technologue en Génie Logiciel">
+  <meta property="og:description" content="Portfolio de NDE Jordan Loïc — Développeur logiciel &amp; Infographe, diplômé de l'IUT de Douala et certifié en marketing digital (Google). Fondateur de LaboGraphie.">
+  <meta property="og:image" content="rsc/img/jordan_portrait_pro.webp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NDE Jordan L. | Développeur Full-Stack &amp; Technologue en Génie Logiciel">
+  <meta name="twitter:description" content="Portfolio de NDE Jordan L. — Technologue en Génie Logiciel, Développeur Full-Stack, Réseaux &amp; Infographie.">
+  <meta name="twitter:image" content="rsc/img/jordan_portrait_pro.webp">
+
+  <!-- URL canonique (À confirmer lors du déploiement en production - Lot 7) -->
+  <!-- <link rel="canonical" href="https://ndejordanloic.com/"> -->
   
   <!-- Polices Google : Poppins & Inter (Identique au template Figma JCREA) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +40,8 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Lien d'évitement accessible (WCAG 2.4.1) -->
+  <a href="#main-content" class="skip-link" data-i18n="aria.skipToContent">Passer au contenu principal</a>
 
   <!-- =========================================================================
        1. TOP FLOATING PILL NAVBAR (Figma JCREA 1:1 + Logo NJ & Navigation Dynamique)
@@ -24,11 +49,11 @@
   <header class="header-wrapper">
     <div class="nav-pill-container">
       <nav class="nav-pill" id="navbar">
-        <a href="index.html" class="nav-item active" data-i18n="nav.home">Accueil</a>
-        <a href="services.html" class="nav-item" data-i18n="nav.services">Services</a>
+        <a href="#hero" class="nav-item active" data-section="hero" data-i18n="nav.home">Accueil</a>
+        <a href="#services" class="nav-item" data-section="services" data-i18n="nav.services">Services</a>
         
         <!-- Logo central JCREA Style avec monogramme NJ et nom bicolore NDE Jordan L. -->
-        <a href="index.html" class="nav-logo" aria-label="Accueil NDE Jordan L.">
+        <a href="#hero" class="nav-logo" aria-label="Accueil NDE Jordan L.">
           <div class="logo-mark-nj">
             <span class="logo-initials">NJ</span>
           </div>
@@ -38,15 +63,17 @@
           </span>
         </a>
 
-        <a href="portfolio.html" class="nav-item" data-i18n="nav.projects">Portfolio</a>
-        <a href="blog.html" class="nav-item" data-i18n="nav.blog">Blog</a>
-        <a href="contact.html" class="nav-item" data-i18n="nav.contact">Contact</a>
+        <a href="#portfolio" class="nav-item" data-section="portfolio" data-i18n="nav.projects">Portfolio</a>
+        <a href="#blog" class="nav-item" data-section="blog" data-i18n="nav.blog">Blog</a>
+        <a href="#contact" class="nav-item" data-section="contact" data-i18n="nav.contact">Contact</a>
 
-        <!-- Sélecteur Bilingue discret FR / EN -->
-        <div class="lang-switch-wrap" role="group" aria-label="Langue / Language">
-          <button class="lang-btn active" data-lang="fr">FR</button>
+        <!-- Sélecteur Trilingue discret FR / EN / JA -->
+        <div class="lang-switch-wrap" role="group" aria-label="Choix de la langue" data-i18n-aria-label="aria.langSelect">
+          <button type="button" class="lang-btn active" data-lang="fr" aria-label="Passer en Français" data-i18n-aria-label="aria.langFr">FR</button>
           <span class="lang-sep">|</span>
-          <button class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-label="Switch to English" data-i18n-aria-label="aria.langEn">EN</button>
+          <span class="lang-sep">|</span>
+          <button type="button" class="lang-btn" data-lang="ja" aria-label="日本語に切り替え" data-i18n-aria-label="aria.langJa">JA</button>
         </div>
       </nav>
 
@@ -57,7 +84,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- =========================================================================
          2. HERO SECTION (Reproduction exacte Image 1 Figma)
          ========================================================================= -->
@@ -69,12 +96,13 @@
           <div class="hello-bubble-anchor">
             <div class="hello-bubble" data-i18n="hero.hello">Bonjour !</div>
             <div class="memphis-bubble-ticks" aria-hidden="true">
-              <svg width="22" height="18" viewBox="0 0 22 18" fill="none">
+              <svg aria-hidden="true" width="22" height="18" viewBox="0 0 22 18" fill="none">
                 <path d="M2 16C6 8 13 4 20 2" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round"/>
                 <path d="M9 17C12 11 16 9 20 7" stroke="#FD6F00" stroke-width="2" stroke-linecap="round"/>
               </svg>
             </div>
           </div>
+
         </div>
 
         <!-- Titre principal sans troncature : NDE (sombre), Jordan L (orange), point (sombre) -->
@@ -82,18 +110,18 @@
           <span data-i18n="hero.intro">Moi c'est</span>
           <span class="name-nde">NDE</span>
           <span class="name-jordan text-orange">Jordan L</span><span class="name-dot">.</span><br>
-          <span data-i18n="hero.role">Développeur Full-Stack</span>
+          <span data-i18n="hero.role">Développeur logiciel &amp; Infographe</span>
         </h1>
 
         <!-- Doodles Memphis authentiques (Figma style, pure SVG) -->
         <div class="hero-doodle-left" aria-hidden="true">
-          <svg width="46" height="28" viewBox="0 0 46 28" fill="none">
+          <svg aria-hidden="true" width="46" height="28" viewBox="0 0 46 28" fill="none">
             <path d="M3 16C10 7 19 7 26 14C33 21 40 21 44 12" stroke="#FD6F00" stroke-width="3.2" stroke-linecap="round"/>
             <path d="M5 24C12 15 21 15 28 22C35 29 42 29 46 20" stroke="#FD6F00" stroke-width="2.6" stroke-linecap="round" opacity="0.6"/>
           </svg>
         </div>
         <div class="hero-doodle-right" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 32 32" fill="none">
             <path d="M16 0L18.8 11.2L30 14L18.8 16.8L16 28L13.2 16.8L2 14L13.2 11.2L16 0Z" fill="#FD6F00" opacity="0.85"/>
           </svg>
         </div>
@@ -112,28 +140,28 @@
           <!-- Centre : Dôme Orange + Photo détourée de Jordan -->
           <div class="hero-dome-wrapper">
             <div class="orange-dome"></div>
-            <img src="rsc/img/jordan_cutout.png" alt="NDE Jordan L. — Développeur Full-Stack" class="hero-person-img" loading="eager">
+            <img src="rsc/img/jordan_cutout.webp" alt="NDE Jordan Loïc — Développeur logiciel &amp; Infographe" class="hero-person-img" loading="eager" width="999" height="999" fetchpriority="high" decoding="async">
             
             <!-- Double bouton pilule flottant sur le dôme (Figma 1:1) -->
             <div class="hero-cta-pill">
               <a href="portfolio.html" class="cta-pill-active">
                 <span data-i18n="hero.portfolioBtn">Portfolio</span>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
                 </svg>
               </a>
-              <a href="contact.html" class="cta-pill-ghost" data-i18n="hero.hireBtn">Me recruter</a>
+              <a href="contact.html" class="cta-pill-ghost" data-i18n="hero.hireBtn">Lancer un projet</a>
             </div>
           </div>
 
-          <!-- Colonne Droite : Étoiles + Années d'expérience du CV -->
+          <!-- Colonne Droite : Étoiles + Réalisations concrètes -->
           <div class="hero-experience-box">
             <div class="stars-row">
               ★ ★ ★ ★ ★
             </div>
-            <div class="exp-number count-up" data-target="5">5+ Ans</div>
-            <div class="exp-label" data-i18n="hero.expLabel">D'expérience &amp; Conception</div>
+            <div class="exp-number count-up" data-target="30">30+</div>
+            <div class="exp-label" data-i18n="hero.expLabel">Réalisations &amp; Projets Concrets</div>
           </div>
 
         </div>
@@ -152,7 +180,7 @@
           <!-- Côté Gauche : Dôme orange + Photo Jordan en studio -->
           <div class="why-visual">
             <div class="why-dome"></div>
-            <img src="rsc/img/jordan_studio.jpg" alt="Pourquoi me choisir - NDE Jordan L." class="why-person-img" loading="lazy">
+            <img src="rsc/img/jordan_studio.webp" alt="Pourquoi me choisir - NDE Jordan L." class="why-person-img" loading="lazy" width="682" height="1024" decoding="async">
           </div>
 
           <!-- Côté Droit : Contenu texte & Métriques du CV -->
@@ -161,28 +189,28 @@
               <span data-i18n="why.titlePre">Pourquoi</span> <span class="text-orange" data-i18n="why.titleOrange">me choisir ?</span>
             </h2>
             <p class="why-text" data-i18n="why.text">
-              Polyvalent et rigoureux, je mets mes compétences au service du développement applicatif, de la maintenance d'infrastructures et de la création graphique. Certifié par les Ateliers Google, je conçois des systèmes d'information pensés pour durer.
+              Polyvalent et rigoureux, je mets mes compétences au service du développement logiciel, de la création graphique et de l'infrastructure réseau. Certifié en marketing digital par Google, je conçois des systèmes d'information et des identités visuelles pensés pour durer.
             </p>
 
             <div class="why-metrics-grid">
               <div class="why-metric">
-                <span class="why-number count-up" data-target="100">100%</span>
-                <span class="why-label" data-i18n="why.m1Label">Code en production vérifiable</span>
+                <span class="why-number" style="font-size: 1.45rem; font-weight: 800; color: var(--figma-orange, #FD6F00);" data-i18n="why.m1Val">Code Ouvert</span>
+                <span class="why-label" data-i18n="why.m1Label">Projets &amp; démos vérifiables</span>
               </div>
               <div class="why-metric">
-                <span class="why-number">Palme d'Or</span>
+                <span class="why-number" data-i18n="why.m2Val">Palme d'Or</span>
                 <span class="why-label" data-i18n="why.m2Label">3e Prix National Concours Tech</span>
               </div>
             </div>
 
             <!-- Pôles de compétences réels du CV -->
             <div class="why-tags-row">
-              <span class="skill-pill">Database &amp; SQL</span>
-              <span class="skill-pill">Infographie &amp; Flyers</span>
-              <span class="skill-pill">Réseau &amp; Sécu</span>
-              <span class="skill-pill">Maintenance IT</span>
-              <span class="skill-pill">Systèmes Embarqués</span>
-              <span class="skill-pill">Français · Anglais · Japonais</span>
+              <span class="skill-pill" data-i18n="why.skillDB">Database &amp; SQL</span>
+              <span class="skill-pill" data-i18n="why.skillDesign">Infographie &amp; Flyers</span>
+              <span class="skill-pill" data-i18n="why.skillNetwork">Réseau &amp; Sécu</span>
+              <span class="skill-pill" data-i18n="why.skillMaint">Maintenance IT</span>
+              <span class="skill-pill" data-i18n="why.skillDev">Systèmes Embarqués</span>
+              <span class="skill-pill" data-i18n="why.skillLangs">Français · Anglais · Japonais</span>
             </div>
 
             <!-- Bouton contour Figma 1:1 -->
@@ -203,17 +231,41 @@
       <div class="container">
         <div class="services-black-card">
           
-          <!-- Sphères 3D décoratives orange -->
-          <div class="sphere-deco sphere-top"></div>
-          <div class="sphere-deco sphere-bottom-left"></div>
-          <div class="sphere-deco sphere-bottom-right"></div>
+          <!-- Ondes 3D fluides vectorielles néo-brutalistes (Figma maq2.png) -->
+          <div class="services-fluid-waves" aria-hidden="true">
+            <svg aria-hidden="true" viewBox="0 0 1200 600" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FD6F00" stop-opacity="0.45"/>
+                  <stop offset="50%" stop-color="#FFA04D" stop-opacity="0.25"/>
+                  <stop offset="100%" stop-color="#FD6F00" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="waveGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#FF9E4A" stop-opacity="0.4"/>
+                  <stop offset="60%" stop-color="#FD6F00" stop-opacity="0.15"/>
+                  <stop offset="100%" stop-color="#111111" stop-opacity="0"/>
+                </linearGradient>
+                <filter id="waveGlow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="30" result="blur"/>
+                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+              </defs>
+              <!-- Ruban d'ondes 1 -->
+              <path d="M-50 150 C 250 50, 450 350, 750 180 C 1000 40, 1150 220, 1250 120 L 1250 650 L -50 650 Z" fill="url(#waveGrad1)" filter="url(#waveGlow)"/>
+              <!-- Ruban d'ondes 2 entrelacé -->
+              <path d="M-50 380 C 200 200, 500 480, 850 250 C 1050 120, 1180 320, 1250 260 L 1250 650 L -50 650 Z" fill="url(#waveGrad2)"/>
+              <!-- Courbes vectorielles fines lumineuses -->
+              <path d="M0 180 C 300 80, 500 320, 800 190 C 1000 100, 1150 220, 1200 160" stroke="#FD6F00" stroke-width="2" stroke-opacity="0.55" stroke-dasharray="6 6"/>
+              <path d="M0 240 C 320 140, 520 380, 820 250 C 1020 160, 1150 280, 1200 220" stroke="#FFA04D" stroke-width="1.5" stroke-opacity="0.35"/>
+            </svg>
+          </div>
 
           <div class="services-header">
             <h2 class="services-title">
               <span data-i18n="services.titlePre">Mes</span> <span class="text-orange" data-i18n="services.titleOrange">Services</span>
             </h2>
             <p class="services-subtitle" data-i18n="services.sub">
-              Technologue en Génie Logiciel certifié par les Ateliers Google : conception applicative robuste, bases de données relationnelles et créations graphiques.
+              Développeur logiciel &amp; Infographe · Fondateur de LaboGraphie : conception d'applications robustes, bases de données relationnelles, infrastructure et création graphique.
             </p>
           </div>
 
@@ -224,13 +276,13 @@
             <div class="service-card tilt-card">
               <h3 class="service-name" data-i18n="services.s1Title">Génie Logiciel &amp; Applications Web</h3>
               <div class="service-preview-stack">
-                <img src="rsc/img/projets/card_agroflow.png" alt="AgroFlow ERP" class="service-screen-img">
+                <img src="rsc/img/projets/card_agroflow.webp" alt="AgroFlow ERP" class="service-screen-img" width="800" height="500" loading="lazy" decoding="async">
               </div>
               <p class="service-card-desc" data-i18n="services.s1Desc">
                 Conception d'architectures SaaS et ERP complètes, modélisation de microservices, APIs RESTful et synchronisation hors-ligne résiliente.
               </p>
               <a href="services.html" class="service-arrow-btn" aria-label="Découvrir l'expertise Génie Logiciel">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
                 </svg>
@@ -241,13 +293,13 @@
             <div class="service-card tilt-card">
               <h3 class="service-name" data-i18n="services.s2Title">Bases de Données &amp; Systèmes LIMS</h3>
               <div class="service-preview-stack">
-                <img src="rsc/img/projets/dev/SisterSholaErp.png" alt="Sister Schola ERP" class="service-screen-img">
+                <img src="rsc/img/projets/dev/SisterSholaErp.webp" alt="Sister Schola ERP" class="service-screen-img" width="1920" height="1200" loading="lazy" decoding="async">
               </div>
               <p class="service-card-desc" data-i18n="services.s2Desc">
                 Modélisation relationnelle SQL rigoureuse, intégrité transactionnelle, centralisation des dossiers patients et flux cliniques.
               </p>
               <a href="services.html" class="service-arrow-btn" aria-label="Découvrir l'expertise Bases de Données & LIMS">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
                 </svg>
@@ -258,13 +310,13 @@
             <div class="service-card tilt-card">
               <h3 class="service-name" data-i18n="services.s3Title">Infographie &amp; Direction Visuelle</h3>
               <div class="service-preview-stack">
-                <img src="rsc/img/projets/infographie/MockupCandace distribution.jpg" alt="Créations Infographie & Packaging" class="service-screen-img">
+                <img src="rsc/img/projets/infographie/MockupCandace distribution.webp" alt="Créations Infographie & Packaging" class="service-screen-img" width="1920" height="1344" loading="lazy" decoding="async">
               </div>
               <p class="service-card-desc" data-i18n="services.s3Desc">
                 Direction artistique, conception de chartes graphiques, logos vectoriels scalables, flyers et affiches de communication à fort impact.
               </p>
               <a href="services.html" class="service-arrow-btn" aria-label="Découvrir l'expertise Infographie & Design">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
                 </svg>
@@ -297,34 +349,34 @@
         <div class="timeline-figma">
           <div class="timeline-center-line"></div>
 
-          <!-- Expérience 1 : U.P. SIANTOU -->
+          <!-- Formation 1 : IUT DE DOUALA (Licence de Technologie en Génie Logiciel) -->
           <div class="timeline-row">
             <div class="timeline-left">
-              <h3 class="company-name">U.P. SIANTOU, Yaoundé</h3>
-              <span class="company-date">2025 - 2026</span>
-              <span class="badge-diploma" data-i18n="exp.siantouDiploma">BTS en Génie Logiciel</span>
+              <h3 class="company-name" data-i18n="exp.iutCompany">Institut Universitaire de Technologie (IUT) de Douala</h3>
+              <span class="company-date" data-i18n="exp.session2026">2025–2026</span>
+              <span class="badge-diploma" data-i18n="exp.iutDiploma">Licence de Technologie en Génie Logiciel</span>
             </div>
             <div class="timeline-node orange-node"></div>
             <div class="timeline-right">
-              <h4 class="job-role" data-i18n="exp.siantouRole">Stagiaire Assistance Technique &amp; Dev</h4>
-              <p class="job-desc" data-i18n="exp.siantouDesc">
-                Participation active à la conception et à la mise en œuvre du système intégré de gestion d’Université, avec validation de présence par système biométrique et gestion des étudiants.
+              <h4 class="job-role" data-i18n="exp.iutRole">Licence de Technologie en Génie Logiciel</h4>
+              <p class="job-desc" data-i18n="exp.iutDesc">
+                Formation universitaire de niveau Bac+3 en Génie Logiciel à l'Institut Universitaire de Technologie (IUT) de Douala (2025–2026) : architecture logicielle, bases relationnelles SQL (MERISE 3NF), conteneurisation Docker et architectures web résilientes.
               </p>
             </div>
           </div>
 
-          <!-- Expérience 2 : IUT DE DOUALA -->
+          <!-- Formation 2 : U.P. SIANTOU (BTS en Génie Logiciel et Bases de Données) -->
           <div class="timeline-row">
             <div class="timeline-left">
-              <h3 class="company-name">IUT de Douala</h3>
-              <span class="company-date">2026</span>
-              <span class="badge-diploma" data-i18n="exp.iutDiploma">Licence Tech en GL</span>
+              <h3 class="company-name" data-i18n="exp.siantouCompany">Université Privée Siantou</h3>
+              <span class="company-date" data-i18n="exp.session2025">2024–2025</span>
+              <span class="badge-diploma" data-i18n="exp.siantouDiploma">BTS en Génie Logiciel et Bases de Données (GLBD)</span>
             </div>
             <div class="timeline-node dark-node"></div>
             <div class="timeline-right">
-              <h4 class="job-role" data-i18n="exp.iutRole">Conception Logicielle, Modélisation &amp; IA</h4>
-              <p class="job-desc" data-i18n="exp.iutDesc">
-                Spécialisation en modélisation logicielle avancée, bases de données relationnelles SQL, conteneurisation Docker et automatisation de processus complexes.
+              <h4 class="job-role" data-i18n="exp.siantouRole">BTS en Génie Logiciel et Bases de Données (GLBD)</h4>
+              <p class="job-desc" data-i18n="exp.siantouDesc">
+                Formation d'enseignement supérieur de deux ans en Génie Logiciel et Bases de Données (GLBD) à l'Université Privée Siantou (2024–2025) : modélisation relationnelle de bases de données (SQL, MERISE), programmation logicielle, algorithmique appliquée et administration des systèmes.
               </p>
             </div>
           </div>
@@ -334,29 +386,29 @@
             <div class="timeline-left">
               <h3 class="company-name">LeGuide Informatique &amp; Polytech-Valor</h3>
               <span class="company-date">2022 - 2023</span>
-              <span class="badge-diploma" data-i18n="exp.leguideDiploma">Infographie &amp; Multimédia</span>
+              <span class="badge-diploma" data-i18n="exp.leguideDiploma">Infographie, Multimédia &amp; RH</span>
             </div>
             <div class="timeline-node orange-node"></div>
             <div class="timeline-right">
-              <h4 class="job-role" data-i18n="exp.leguideRole">Infographiste, Vidéographe &amp; Assistant DRH</h4>
+              <h4 class="job-role" data-i18n="exp.leguideRole">Infographiste, Vidéographe &amp; Assistant RH</h4>
               <p class="job-desc" data-i18n="exp.leguideDesc">
-                Création de chartes graphiques, logos et affiches professionnelles. Production multimédia et montage vidéo pour LeGuide Informatique. Gestion des processus RH chez Polytech-Valor.
+                Conception de chartes graphiques, logos vectoriels et affiches professionnelles. Production multimédia et montage vidéo pour LeGuide Informatique. Gestion des processus RH chez Polytech-Valor.
               </p>
             </div>
           </div>
 
-          <!-- Expérience 4 : Université Yaoundé I & Ambam -->
+          <!-- Formation 4 : Université Yaoundé I & Lycée Mendong / Ambam -->
           <div class="timeline-row">
             <div class="timeline-left">
-              <h3 class="company-name">Univ. Yaoundé I &amp; Lycée Ambam</h3>
-              <span class="company-date">2017 - 2023</span>
-              <span class="badge-diploma" data-i18n="exp.ambamDiploma">Mathématiques &amp; Bac C</span>
+              <h3 class="company-name">Univ. Yaoundé I &amp; Lycée Mendong</h3>
+              <span class="company-date">2019 - 2023</span>
+              <span class="badge-diploma" data-i18n="exp.ambamDiploma">Mathématiques &amp; Baccalauréat C</span>
             </div>
             <div class="timeline-node dark-node"></div>
             <div class="timeline-right">
-              <h4 class="job-role" data-i18n="exp.ambamRole">Rigueur Mathématique &amp; Débuts du Web</h4>
+              <h4 class="job-role" data-i18n="exp.ambamRole">Socle en Mathématiques Fondamentales &amp; Débuts du Web</h4>
               <p class="job-desc" data-i18n="exp.ambamDesc">
-                Deux années en Mathématiques fondamentales. Premier déploiement web dès 2017 avec la création du site web officiel du Lycée Bilingue d’AMBAM.
+                Deux années d'études universitaires en Mathématiques fondamentales à l'Université de Yaoundé I, apportant une rigueur formelle en algorithmique et logique. Titulaire du Baccalauréat C au Lycée Bilingue de Mendong (2021). Premier déploiement web dès 2017 pour le Lycée Bilingue d’Ambam.
               </p>
             </div>
           </div>
@@ -366,12 +418,12 @@
         <!-- Bouton unique et naturel pour télécharger le CV en PDF -->
         <div class="timeline-cv-download-wrap">
           <a href="rsc/CV_NDE_Jordan_Loic.pdf" download="CV_NDE_Jordan_Loic.pdf" class="btn-timeline-cv" data-i18n="exp.cvBtn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
-            <span>Télécharger mon CV complet (PDF)</span>
+            <span data-i18n="exp.cvBtn">Télécharger mon CV complet (PDF)</span>
           </a>
         </div>
 
@@ -391,13 +443,113 @@
           </h2>
           
           <div class="portfolio-nav-buttons">
-            <button class="carousel-arrow-btn" id="btnPortfolioPrev" aria-label="Projet précédent">&larr;</button>
-            <button class="carousel-arrow-btn" id="btnPortfolioNext" aria-label="Projet suivant">&rarr;</button>
+            <button class="carousel-arrow-btn" id="btnPortfolioPrev" aria-label="Projet précédent" data-i18n-aria-label="aria.prevSlide">&larr;</button>
+            <button class="carousel-arrow-btn" id="btnPortfolioNext" aria-label="Projet suivant" data-i18n-aria-label="aria.nextSlide">&rarr;</button>
             <a href="portfolio.html" class="btn-see-all" data-i18n="portfolio.seeAll">Voir tout</a>
+          </div>
+
+        </div>
+
+        <!-- CARROUSEL D'IMAGES À DÉFILEMENT HORIZONTAL FLUIDE (2 CARTES PAR VUE FIGMA 1:1) -->
+        <div class="portfolio-slider-container">
+          <div class="portfolio-carousel-track" id="portfolioTrack">
+            
+            <!-- Carte 1 : AgroFlow SaaS ERP (Dev) -->
+            <div class="portfolio-card active" data-cat="dev" data-keywords="agroflow erp saas agritech dev web" data-index="0">
+              <div class="portfolio-card-img-wrap">
+                <img src="rsc/img/projets/card_agroflow.webp" alt="AgroFlow ERP" class="portfolio-main-img" width="800" height="500" loading="lazy" decoding="async">
+                <div class="card-brand-overlay">AgroFlow SaaS ERP</div>
+                <a href="https://agroflowsaas.vercel.app" target="_blank" rel="noopener noreferrer" class="card-corner-arrow" aria-label="Visiter AgroFlow">
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Carte 2 : Sister Schola ERP (Dev) -->
+            <div class="portfolio-card" data-cat="dev" data-keywords="sister schola erp lims clinique sante dev sql" data-index="1">
+              <div class="portfolio-card-img-wrap">
+                <img src="rsc/img/projets/dev/SisterSholaErp.webp" alt="Sister Schola ERP" class="portfolio-main-img" width="1920" height="1200" loading="lazy" decoding="async">
+                <div class="card-brand-overlay">Sister Schola ERP</div>
+                <a href="https://sisterscholaerp.vercel.app" target="_blank" rel="noopener noreferrer" class="card-corner-arrow" aria-label="Visiter Sister Schola">
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Carte 3 : Candace & Petit Colis (Infographie) -->
+            <div class="portfolio-card" data-cat="infographie" data-keywords="candace petit colis flyers logos design affiche" data-index="2">
+              <div class="portfolio-card-img-wrap">
+                <img src="rsc/img/projets/infographie/MockupCandace distribution.webp" alt="Candace & Petit Colis" class="portfolio-main-img" width="1920" height="1344" loading="lazy" decoding="async">
+                <div class="card-brand-overlay">Candace &amp; Petit Colis</div>
+                <button class="card-corner-arrow btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.webp" aria-label="Agrandir">
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Carte 4 : LaboGraphie Web (Dev) -->
+            <div class="portfolio-card" data-cat="dev" data-keywords="labographie web cybertech plateforme portfolio tech" data-index="3">
+              <div class="portfolio-card-img-wrap">
+                <img src="rsc/img/projets/dev/LaboGraphie-web.webp" alt="LaboGraphie Web Platform" class="portfolio-main-img" width="1912" height="1038" loading="lazy" decoding="async">
+                <div class="card-brand-overlay">LaboGraphie Web</div>
+                <a href="https://labographie.vercel.app" target="_blank" rel="noopener noreferrer" class="card-corner-arrow" aria-label="Visiter LaboGraphie">
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Carte 5 : Acuvera Clinical LIMS (Dev & Santé) -->
+            <div class="portfolio-card" data-cat="dev" data-keywords="acuvera clinical lims sante laboratoire analyses" data-index="4">
+              <div class="portfolio-card-img-wrap">
+                <img src="rsc/img/projets/card_acuvera.webp" alt="Acuvera Clinical LIMS" class="portfolio-main-img" width="800" height="500" loading="lazy" decoding="async">
+                <div class="card-brand-overlay">Acuvera Clinical</div>
+                <a href="https://acuvera-clinical.vercel.app" target="_blank" rel="noopener noreferrer" class="card-corner-arrow" aria-label="Visiter Acuvera Clinical">
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Carte 6 : Systèmes Embarqués & Réseaux (Systèmes) -->
+            <div class="portfolio-card" data-cat="systems" data-keywords="arduino iot maintenance reseau baies switchboard" data-index="5">
+              <div class="portfolio-card-img-wrap">
+                <img src="rsc/img/projets/maintenance/tp arduino.webp" alt="Arduino IoT & Réseaux" class="portfolio-main-img" width="1920" height="1080" loading="lazy" decoding="async">
+                <div class="card-brand-overlay">Arduino &amp; Réseaux</div>
+                <button class="card-corner-arrow btn-zoom-img" data-img="rsc/img/projets/maintenance/tp arduino.webp" aria-label="Agrandir">
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- État vide carrousel si aucun résultat de recherche -->
+          <div class="portfolio-empty-state" id="portfolioEmptyState" style="display: none;">
+            <span class="empty-icon">🔍</span>
+            <h3 class="empty-title" data-i18n="portfolio.emptyTitle">Aucun projet ne correspond à votre recherche</h3>
+            <p class="empty-desc" data-i18n="portfolio.emptyText">Essayez un autre mot-clé (ex: ERP, LIMS, packaging, Arduino) ou réinitialisez les filtres.</p>
+            <button type="button" class="btn-primary-orange btn-reset-filters" id="btnResetPortfolioEmpty" data-i18n="portfolio.emptyReset">Réinitialiser les filtres</button>
           </div>
         </div>
 
-        <!-- Filtres par catégories + Barre de recherche instantanée avec autocomplétion -->
+        <!-- Filtres par catégories + Barre de recherche instantanée (Figma maq5.png : sous le carrousel) -->
         <div class="portfolio-controls-bar">
           <div class="portfolio-tags-pill-row">
             <button class="tag-pill active" data-filter="all" data-i18n="portfolio.tabAll">Tous les projets</button>
@@ -410,8 +562,8 @@
           <div class="portfolio-search-wrap">
             <div class="search-input-box">
               <span class="search-icon">🔍</span>
-              <input type="text" id="projectSearchInput" placeholder="Rechercher (ERP, Candace, Petit Colis, SQL, Logo...)" autocomplete="off">
-              <button id="projectSearchClear" class="search-clear-btn" aria-label="Effacer">&times;</button>
+              <input type="text" id="projectSearchInput" aria-label="Rechercher un projet" data-i18n-aria-label="aria.searchProjects" placeholder="Rechercher (ERP, Candace, Petit Colis, SQL, Logo...)" data-i18n-placeholder="portfolio.searchPlaceholder" autocomplete="off">
+              <button id="projectSearchClear" class="search-clear-btn" aria-label="Effacer" data-i18n-aria-label="aria.clearSearch">&times;</button>
             </div>
             <!-- Puces de suggestions rapides cliquables -->
             <div class="search-chips-row">
@@ -423,97 +575,7 @@
               <span class="search-chip" data-query="Arduino">Arduino &amp; IoT</span>
             </div>
           </div>
-        </div>
 
-        <!-- CARROUSEL D'IMAGES À DÉFILEMENT HORIZONTAL FLUIDE (2 CARTES PAR VUE FIGMA 1:1) -->
-        <div class="portfolio-slider-container">
-          <div class="portfolio-carousel-track" id="portfolioTrack">
-            
-            <!-- Carte 1 : AgroFlow SaaS ERP (Dev) -->
-            <div class="portfolio-card active" data-cat="dev" data-keywords="agroflow erp saas agritech dev web" data-index="0">
-              <div class="portfolio-card-img-wrap">
-                <img src="rsc/img/projets/card_agroflow.png" alt="AgroFlow ERP" class="portfolio-main-img">
-                <div class="card-brand-overlay">AgroFlow SaaS ERP</div>
-                <a href="https://agroflowsaas.vercel.app" target="_blank" rel="noopener noreferrer" class="card-corner-arrow" aria-label="Visiter AgroFlow">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <!-- Carte 2 : Sister Schola ERP (Dev) -->
-            <div class="portfolio-card" data-cat="dev" data-keywords="sister schola erp lims clinique sante dev sql" data-index="1">
-              <div class="portfolio-card-img-wrap">
-                <img src="rsc/img/projets/dev/SisterSholaErp.png" alt="Sister Schola ERP" class="portfolio-main-img">
-                <div class="card-brand-overlay">Sister Schola ERP</div>
-                <a href="https://sisterscholaerp.vercel.app" target="_blank" rel="noopener noreferrer" class="card-corner-arrow" aria-label="Visiter Sister Schola">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <!-- Carte 3 : Candace & Petit Colis (Infographie) -->
-            <div class="portfolio-card" data-cat="infographie" data-keywords="candace petit colis flyers logos design affiche" data-index="2">
-              <div class="portfolio-card-img-wrap">
-                <img src="rsc/img/projets/infographie/MockupCandace distribution.jpg" alt="Candace & Petit Colis" class="portfolio-main-img">
-                <div class="card-brand-overlay">Candace &amp; Petit Colis</div>
-                <button class="card-corner-arrow btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.jpg" aria-label="Agrandir">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <!-- Carte 4 : LaboGraphie Web (Dev) -->
-            <div class="portfolio-card" data-cat="dev" data-keywords="labographie web cybertech plateforme portfolio tech" data-index="3">
-              <div class="portfolio-card-img-wrap">
-                <img src="rsc/img/projets/dev/LaboGraphie-web.png" alt="LaboGraphie Web Platform" class="portfolio-main-img">
-                <div class="card-brand-overlay">LaboGraphie Web</div>
-                <a href="https://labographie.vercel.app" target="_blank" rel="noopener noreferrer" class="card-corner-arrow" aria-label="Visiter LaboGraphie">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <!-- Carte 5 : Acuvera Clinical LIMS (Dev & Santé) -->
-            <div class="portfolio-card" data-cat="dev" data-keywords="acuvera clinical lims sante laboratoire analyses" data-index="4">
-              <div class="portfolio-card-img-wrap">
-                <img src="rsc/img/projets/card_acuvera.png" alt="Acuvera Clinical LIMS" class="portfolio-main-img">
-                <div class="card-brand-overlay">Acuvera Clinical</div>
-                <a href="https://acuvera-clinical.vercel.app" target="_blank" rel="noopener noreferrer" class="card-corner-arrow" aria-label="Visiter Acuvera Clinical">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <!-- Carte 6 : Systèmes Embarqués & Réseaux (Systèmes) -->
-            <div class="portfolio-card" data-cat="systems" data-keywords="arduino iot maintenance reseau baies switchboard" data-index="5">
-              <div class="portfolio-card-img-wrap">
-                <img src="rsc/img/projets/maintenance/tp arduino.png" alt="Arduino IoT & Réseaux" class="portfolio-main-img">
-                <div class="card-brand-overlay">Arduino &amp; Réseaux</div>
-                <button class="card-corner-arrow btn-zoom-img" data-img="rsc/img/projets/maintenance/tp arduino.png" aria-label="Agrandir">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FD6F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-          </div>
         </div>
 
         <!-- Indicateurs de carrousel cliquables -->
@@ -531,7 +593,7 @@
           <div class="detail-header-row">
             <h3 class="detail-title" id="activeProjectTitle">AgroFlow SaaS — Plateforme ERP &amp; Gestion Agricole Intelligente</h3>
             <a href="https://agroflowsaas.vercel.app" target="_blank" rel="noopener noreferrer" class="detail-arrow-orange" id="activeProjectLink" aria-label="Lien direct vers la démo">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="7" y1="17" x2="17" y2="7"></line>
                 <polyline points="7 7 17 7 17 17"></polyline>
               </svg>
@@ -543,16 +605,16 @@
 
           <!-- Vues miniatures & captures du projet actif cliquables -->
           <div class="detail-gallery-preview" id="activeProjectGallery">
-            <div class="detail-thumb-item btn-zoom-img" data-img="rsc/img/projets/card_agroflow.png" title="AgroFlow · Dashboard & Landing">
-              <img src="rsc/img/projets/card_agroflow.png" alt="Aperçu UI">
+            <div class="detail-thumb-item btn-zoom-img" data-img="rsc/img/projets/card_agroflow.webp" title="AgroFlow · Dashboard & Landing">
+              <img src="rsc/img/projets/card_agroflow.webp" alt="Aperçu UI" width="800" height="500" loading="lazy" decoding="async">
               <span class="detail-thumb-badge">UI Dashboard</span>
             </div>
-            <div class="detail-thumb-item btn-zoom-img" data-img="rsc/img/projets/shot_agroflow.png" title="AgroFlow · Interface Plein Écran">
-              <img src="rsc/img/projets/shot_agroflow.png" alt="Capture d'écran">
+            <div class="detail-thumb-item btn-zoom-img" data-img="rsc/img/projets/shot_agroflow.webp" title="AgroFlow · Interface Plein Écran">
+              <img src="rsc/img/projets/shot_agroflow.webp" alt="Capture d'écran" width="1440" height="900" loading="lazy" decoding="async">
               <span class="detail-thumb-badge">Capture Complète</span>
             </div>
-            <div class="detail-thumb-item btn-zoom-img" data-img="rsc/img/projets/dev/DC_Agroflow.png" title="AgroFlow · Architecture SQL & Diagramme de Classes">
-              <img src="rsc/img/projets/dev/DC_Agroflow.png" alt="Architecture Relationnelle">
+            <div class="detail-thumb-item btn-zoom-img" data-img="rsc/img/projets/dev/DC_Agroflow.webp" title="AgroFlow · Architecture SQL & Diagramme de Classes">
+              <img src="rsc/img/projets/dev/DC_Agroflow.webp" alt="Architecture Relationnelle" width="1920" height="1046" loading="lazy" decoding="async">
               <span class="detail-thumb-badge">Architecture SI</span>
             </div>
           </div>
@@ -562,12 +624,13 @@
               <span data-i18n="portfolio.liveBtn">Démo en ligne &rarr;</span>
             </a>
             <a href="projet-detail.html?id=agroflow" class="btn-detail-github" id="btnDetailCase" style="background: #1B1B1B; color: #FFFFFF; border: 1px solid #333;">
-              <span>Étude de cas 📖</span>
+              <span data-i18n="portfolio.detailsBtn">Étude de cas 📖</span>
             </a>
             <a href="https://github.com/Nadroj-ciol/AgroFlowErp-V1" target="_blank" rel="noopener noreferrer" class="btn-detail-github" id="btnDetailGit">
               <span data-i18n="portfolio.sourceBtn">Code Source GitHub</span>
             </a>
           </div>
+
         </div>
 
         <!-- GALERIE INTERACTIVE EN DÉFILEMENT CONTINU (Auto-Scroll Marquee Showcase) -->
@@ -583,190 +646,191 @@
           <div class="showcase-track-container" id="showcaseMarquee">
             <div class="showcase-track">
               <!-- Item 1: Petit Colis Flyer (FUNGA Gautier) -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer  recruitement petit colis.jpg" title="Recrutement Petit Colis — FUNGA Gautier">
-                <img src="rsc/img/projets/infographie/flyer  recruitement petit colis.jpg" alt="Flyer Recrutement Petit Colis" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer  recruitement petit colis.webp" title="Recrutement Petit Colis — FUNGA Gautier">
+                <img src="rsc/img/projets/infographie/flyer  recruitement petit colis.webp" alt="Flyer Recrutement Petit Colis" loading="lazy" width="1772" height="1920" decoding="async">
                 <div class="showcase-overlay"><span>Petit Colis · Flyer Recrutement</span></div>
               </div>
 
               <!-- Item 2: Mockup Candace Distribution -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.jpg" title="Candace Distribution — Mockup Lait de Beauté">
-                <img src="rsc/img/projets/infographie/MockupCandace distribution.jpg" alt="Mockup Candace Distribution" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.webp" title="Candace Distribution — Mockup Lait de Beauté">
+                <img src="rsc/img/projets/infographie/MockupCandace distribution.webp" alt="Mockup Candace Distribution" loading="lazy" width="1920" height="1344" decoding="async">
                 <div class="showcase-overlay"><span>Candace Distribution · Cosmétique</span></div>
               </div>
 
               <!-- Item 3: Golden Pressing -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer goldens pressing.png" title="Golden Pressing — Flyer & Identité">
-                <img src="rsc/img/projets/infographie/flyer goldens pressing.png" alt="Flyer Golden Pressing" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer goldens pressing.webp" title="Golden Pressing — Flyer & Identité">
+                <img src="rsc/img/projets/infographie/flyer goldens pressing.webp" alt="Flyer Golden Pressing" loading="lazy" width="1536" height="1920" decoding="async">
                 <div class="showcase-overlay"><span>Golden Pressing · Identité</span></div>
               </div>
 
               <!-- Item 4: Fosa'a Academy -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/fosa'a academy mockup.jpg" title="Fosa'a Academy — Mockup & Branding">
-                <img src="rsc/img/projets/infographie/fosa'a academy mockup.jpg" alt="Fosa'a Academy Mockup" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/fosa'a academy mockup.webp" title="Fosa'a Academy — Mockup & Branding">
+                <img src="rsc/img/projets/infographie/fosa'a academy mockup.webp" alt="Fosa'a Academy Mockup" loading="lazy" width="1920" height="1280" decoding="async">
                 <div class="showcase-overlay"><span>Fosa'a Academy · Éducation</span></div>
               </div>
 
-              <!-- Item 5: Baobab LIMS Architecture -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/baobab-rsd.jpeg" title="Baobab LIMS — Schéma d'Architecture Données">
-                <img src="rsc/img/projets/dev/baobab-rsd.jpeg" alt="Baobab LIMS Architecture" loading="lazy">
-                <div class="showcase-overlay"><span>Baobab LIMS · Schéma Données</span></div>
+              <!-- Item 5: Baobab Biobank Architecture (En cours) -->
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/baobab-rsd.webp" title="Baobab Biobank &amp; RSD — Schéma d'Architecture Données (En cours)">
+                <img src="rsc/img/projets/dev/baobab-rsd.webp" alt="Baobab Biobank Architecture" loading="lazy" width="1536" height="1024" decoding="async">
+                <div class="showcase-overlay"><span>Baobab Biobank (RSD) · En cours</span></div>
               </div>
 
               <!-- Item 6: GMC Café Scientifique -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer GMC café scientifiue3.jpg" title="GMC Café Scientifique — Affiche Colloque">
-                <img src="rsc/img/projets/infographie/flyer GMC café scientifiue3.jpg" alt="Flyer GMC Café Scientifique" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer GMC café scientifiue3.webp" title="GMC Café Scientifique — Affiche Colloque">
+                <img src="rsc/img/projets/infographie/flyer GMC café scientifiue3.webp" alt="Flyer GMC Café Scientifique" loading="lazy" width="1080" height="1080" decoding="async">
                 <div class="showcase-overlay"><span>GMC · Café Scientifique</span></div>
               </div>
 
               <!-- Item 7: Maintenance Arduino & Systèmes Embarqués -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/maintenance/tp arduino.png" title="Maintenance & Systèmes Embarqués IoT Arduino">
-                <img src="rsc/img/projets/maintenance/tp arduino.png" alt="Système Arduino IoT" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/maintenance/tp arduino.webp" title="Maintenance & Systèmes Embarqués IoT Arduino">
+                <img src="rsc/img/projets/maintenance/tp arduino.webp" alt="Système Arduino IoT" loading="lazy" width="1920" height="1080" decoding="async">
                 <div class="showcase-overlay"><span>Arduino IoT · Systèmes Embarqués</span></div>
               </div>
 
               <!-- Item 8: LaboGraphie Roll-Up 3D -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/projet roll-up mockup logo labographie.jpg" title="LaboGraphie — Roll-up & Signalétique 3D">
-                <img src="rsc/img/projets/infographie/projet roll-up mockup logo labographie.jpg" alt="Roll-up LaboGraphie" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/projet roll-up mockup logo labographie.webp" title="LaboGraphie — Roll-up & Signalétique 3D">
+                <img src="rsc/img/projets/infographie/projet roll-up mockup logo labographie.webp" alt="Roll-up LaboGraphie" loading="lazy" width="1920" height="1152" decoding="async">
                 <div class="showcase-overlay"><span>LaboGraphie · Roll-up 3D</span></div>
               </div>
 
               <!-- Item 9: Infrastructure Réseaux Baies -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/Reseau & Sécu/pexels-brett-sayles-4716292.jpg" title="Infrastructures Réseaux & Switchboards">
-                <img src="rsc/img/projets/Reseau & Sécu/pexels-brett-sayles-4716292.jpg" alt="Baie de Brassage Réseau" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/Reseau & Sécu/pexels-brett-sayles-4716292.webp" title="Infrastructures Réseaux & Switchboards">
+                <img src="rsc/img/projets/Reseau & Sécu/pexels-brett-sayles-4716292.webp" alt="Baie de Brassage Réseau" loading="lazy" width="1920" height="1277" decoding="async">
                 <div class="showcase-overlay"><span>Réseau &amp; Baies de Brassage</span></div>
               </div>
 
               <!-- Item 10: AgroFlow Dashboard -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/card_agroflow.png" title="AgroFlow ERP · Tableau de Bord SaaS">
-                <img src="rsc/img/projets/card_agroflow.png" alt="AgroFlow Dashboard" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/card_agroflow.webp" title="AgroFlow ERP · Tableau de Bord SaaS">
+                <img src="rsc/img/projets/card_agroflow.webp" alt="AgroFlow Dashboard" loading="lazy" width="800" height="500" decoding="async">
                 <div class="showcase-overlay"><span>AgroFlow · ERP Dashboard</span></div>
               </div>
 
               <!-- Item 11: Sister Schola ERP Médical -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/SisterSholaErp.png" title="Sister Schola · Système d'Information Hospitalier">
-                <img src="rsc/img/projets/dev/SisterSholaErp.png" alt="Sister Schola ERP" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/SisterSholaErp.webp" title="Sister Schola · Système d'Information Hospitalier">
+                <img src="rsc/img/projets/dev/SisterSholaErp.webp" alt="Sister Schola ERP" loading="lazy" width="1920" height="1200" decoding="async">
                 <div class="showcase-overlay"><span>Sister Schola · ERP Clinique</span></div>
               </div>
 
               <!-- Item 12: Acuvera Clinical Analyses -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/card_acuvera.png" title="Acuvera Clinical · Suivi des Analyses Médicales">
-                <img src="rsc/img/projets/card_acuvera.png" alt="Acuvera Clinical LIMS" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/card_acuvera.webp" title="Acuvera Clinical · Suivi des Analyses Médicales">
+                <img src="rsc/img/projets/card_acuvera.webp" alt="Acuvera Clinical LIMS" loading="lazy" width="800" height="500" decoding="async">
                 <div class="showcase-overlay"><span>Acuvera · Laboratoire LIMS</span></div>
               </div>
 
               <!-- Item 13: LaboGraphie Plateforme Web -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/LaboGraphie-web.png" title="LaboGraphie · Écosystème Web Pro">
-                <img src="rsc/img/projets/dev/LaboGraphie-web.png" alt="LaboGraphie Web" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/LaboGraphie-web.webp" title="LaboGraphie · Écosystème Web Pro">
+                <img src="rsc/img/projets/dev/LaboGraphie-web.webp" alt="LaboGraphie Web" loading="lazy" width="1912" height="1038" decoding="async">
                 <div class="showcase-overlay"><span>LaboGraphie · Plateforme Web</span></div>
               </div>
 
               <!-- Item 14: Candace Lait de Beauté -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer produit Candace Lait de beauté.jpg" title="Candace Lait · Packaging Cosmétique">
-                <img src="rsc/img/projets/infographie/flyer produit Candace Lait de beauté.jpg" alt="Candace Lait de Beauté" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer produit Candace Lait de beauté.webp" title="Candace Lait · Packaging Cosmétique">
+                <img src="rsc/img/projets/infographie/flyer produit Candace Lait de beauté.webp" alt="Candace Lait de Beauté" loading="lazy" width="719" height="946" decoding="async">
                 <div class="showcase-overlay"><span>Candace Lait · Packaging</span></div>
               </div>
 
               <!-- Item 15: Golden Pressing Logo -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/logo golden pressing.jpg" title="Golden Pressing · Logo Vectoriel & Identité">
-                <img src="rsc/img/projets/infographie/logo golden pressing.jpg" alt="Golden Pressing Logo" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/logo golden pressing.webp" title="Golden Pressing · Logo Vectoriel & Identité">
+                <img src="rsc/img/projets/infographie/logo golden pressing.webp" alt="Golden Pressing Logo" loading="lazy" width="1920" height="1920" decoding="async">
                 <div class="showcase-overlay"><span>Golden Pressing · Logo</span></div>
               </div>
 
               <!-- Item 16: AllôKev Flyer Promotionnel -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer allokev kev baby.jpg" title="AllôKev · Campagne Commerciale & Affiche">
-                <img src="rsc/img/projets/infographie/flyer allokev kev baby.jpg" alt="AllôKev Flyer" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer allokev kev baby.webp" title="AllôKev · Campagne Commerciale & Affiche">
+                <img src="rsc/img/projets/infographie/flyer allokev kev baby.webp" alt="AllôKev Flyer" loading="lazy" width="1080" height="1080" decoding="async">
                 <div class="showcase-overlay"><span>AllôKev · Campagne Commerciale</span></div>
               </div>
 
               <!-- Item 17: LaboGraphie Stand & Salon -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/mockup salon projet labographie logo.jpg" title="LaboGraphie · Stand d'Exposition 3D">
-                <img src="rsc/img/projets/infographie/mockup salon projet labographie logo.jpg" alt="Salon LaboGraphie" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/mockup salon projet labographie logo.webp" title="LaboGraphie · Stand d'Exposition 3D">
+                <img src="rsc/img/projets/infographie/mockup salon projet labographie logo.webp" alt="Salon LaboGraphie" loading="lazy" width="1920" height="1680" decoding="async">
                 <div class="showcase-overlay"><span>LaboGraphie · Stand 3D</span></div>
               </div>
 
               <!-- Item 18: Équipe LaboGraphie Terrain -->
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/perso & equipe/WhatsApp Image 2025-12-31 at 22.37.29(1).jpeg" title="LaboGraphie Dev · Synergie & Travail d'Équipe">
-                <img src="rsc/img/projets/perso & equipe/WhatsApp Image 2025-12-31 at 22.37.29(1).jpeg" alt="Équipe LaboGraphie Dev" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/perso & equipe/WhatsApp Image 2025-12-31 at 22.37.29(1).webp" title="LaboGraphie Dev · Synergie & Travail d'Équipe">
+                <img src="rsc/img/projets/perso & equipe/WhatsApp Image 2025-12-31 at 22.37.29(1).webp" alt="Équipe LaboGraphie Dev" loading="lazy" width="963" height="1280" decoding="async">
                 <div class="showcase-overlay"><span>LaboGraphie Dev · Esprit d'Équipe</span></div>
               </div>
             </div>
 
             <!-- Duplication pour boucle infinie sans saccade -->
             <div class="showcase-track" aria-hidden="true">
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer  recruitement petit colis.jpg">
-                <img src="rsc/img/projets/infographie/flyer  recruitement petit colis.jpg" alt="Flyer Recrutement Petit Colis" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer  recruitement petit colis.webp">
+                <img src="rsc/img/projets/infographie/flyer  recruitement petit colis.webp" alt="Flyer Recrutement Petit Colis" loading="lazy" width="1772" height="1920" decoding="async">
                 <div class="showcase-overlay"><span>Petit Colis · Flyer Recrutement</span></div>
               </div>
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.jpg">
-                <img src="rsc/img/projets/infographie/MockupCandace distribution.jpg" alt="Mockup Candace Distribution" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/MockupCandace distribution.webp">
+                <img src="rsc/img/projets/infographie/MockupCandace distribution.webp" alt="Mockup Candace Distribution" loading="lazy" width="1920" height="1344" decoding="async">
                 <div class="showcase-overlay"><span>Candace Distribution · Cosmétique</span></div>
               </div>
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer goldens pressing.png">
-                <img src="rsc/img/projets/infographie/flyer goldens pressing.png" alt="Flyer Golden Pressing" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer goldens pressing.webp">
+                <img src="rsc/img/projets/infographie/flyer goldens pressing.webp" alt="Flyer Golden Pressing" loading="lazy" width="1536" height="1920" decoding="async">
                 <div class="showcase-overlay"><span>Golden Pressing · Identité</span></div>
               </div>
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/fosa'a academy mockup.jpg">
-                <img src="rsc/img/projets/infographie/fosa'a academy mockup.jpg" alt="Fosa'a Academy Mockup" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/fosa'a academy mockup.webp">
+                <img src="rsc/img/projets/infographie/fosa'a academy mockup.webp" alt="Fosa'a Academy Mockup" loading="lazy" width="1920" height="1280" decoding="async">
                 <div class="showcase-overlay"><span>Fosa'a Academy · Éducation</span></div>
               </div>
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/baobab-rsd.jpeg">
-                <img src="rsc/img/projets/dev/baobab-rsd.jpeg" alt="Baobab LIMS Architecture" loading="lazy">
-                <div class="showcase-overlay"><span>Baobab LIMS · Schéma Données</span></div>
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/baobab-rsd.webp">
+                <img src="rsc/img/projets/dev/baobab-rsd.webp" alt="Baobab Biobank Architecture" loading="lazy" width="1536" height="1024" decoding="async">
+                <div class="showcase-overlay"><span>Baobab Biobank (RSD) · En cours</span></div>
               </div>
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer GMC café scientifiue3.jpg">
-                <img src="rsc/img/projets/infographie/flyer GMC café scientifiue3.jpg" alt="Flyer GMC Café Scientifique" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer GMC café scientifiue3.webp">
+                <img src="rsc/img/projets/infographie/flyer GMC café scientifiue3.webp" alt="Flyer GMC Café Scientifique" loading="lazy" width="1080" height="1080" decoding="async">
                 <div class="showcase-overlay"><span>GMC · Café Scientifique</span></div>
               </div>
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/maintenance/tp arduino.png">
-                <img src="rsc/img/projets/maintenance/tp arduino.png" alt="Système Arduino IoT" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/maintenance/tp arduino.webp">
+                <img src="rsc/img/projets/maintenance/tp arduino.webp" alt="Système Arduino IoT" loading="lazy" width="1920" height="1080" decoding="async">
                 <div class="showcase-overlay"><span>Arduino IoT · Systèmes Embarqués</span></div>
               </div>
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/projet roll-up mockup logo labographie.jpg">
-                <img src="rsc/img/projets/infographie/projet roll-up mockup logo labographie.jpg" alt="Roll-up LaboGraphie" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/projet roll-up mockup logo labographie.webp">
+                <img src="rsc/img/projets/infographie/projet roll-up mockup logo labographie.webp" alt="Roll-up LaboGraphie" loading="lazy" width="1920" height="1152" decoding="async">
                 <div class="showcase-overlay"><span>LaboGraphie · Roll-up 3D</span></div>
               </div>
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/Reseau & Sécu/pexels-brett-sayles-4716292.jpg">
-                <img src="rsc/img/projets/Reseau & Sécu/pexels-brett-sayles-4716292.jpg" alt="Baie de Brassage Réseau" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/Reseau & Sécu/pexels-brett-sayles-4716292.webp">
+                <img src="rsc/img/projets/Reseau & Sécu/pexels-brett-sayles-4716292.webp" alt="Baie de Brassage Réseau" loading="lazy" width="1920" height="1277" decoding="async">
                 <div class="showcase-overlay"><span>Réseau &amp; Baies de Brassage</span></div>
               </div>
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/card_agroflow.png">
-                <img src="rsc/img/projets/card_agroflow.png" alt="AgroFlow Dashboard" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/card_agroflow.webp">
+                <img src="rsc/img/projets/card_agroflow.webp" alt="AgroFlow Dashboard" loading="lazy" width="800" height="500" decoding="async">
                 <div class="showcase-overlay"><span>AgroFlow · ERP Dashboard</span></div>
               </div>
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/SisterSholaErp.png">
-                <img src="rsc/img/projets/dev/SisterSholaErp.png" alt="Sister Schola ERP" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/SisterSholaErp.webp">
+                <img src="rsc/img/projets/dev/SisterSholaErp.webp" alt="Sister Schola ERP" loading="lazy" width="1920" height="1200" decoding="async">
                 <div class="showcase-overlay"><span>Sister Schola · ERP Clinique</span></div>
               </div>
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/card_acuvera.png">
-                <img src="rsc/img/projets/card_acuvera.png" alt="Acuvera Clinical LIMS" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/card_acuvera.webp">
+                <img src="rsc/img/projets/card_acuvera.webp" alt="Acuvera Clinical LIMS" loading="lazy" width="800" height="500" decoding="async">
                 <div class="showcase-overlay"><span>Acuvera · Laboratoire LIMS</span></div>
               </div>
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/LaboGraphie-web.png">
-                <img src="rsc/img/projets/dev/LaboGraphie-web.png" alt="LaboGraphie Web" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/dev/LaboGraphie-web.webp">
+                <img src="rsc/img/projets/dev/LaboGraphie-web.webp" alt="LaboGraphie Web" loading="lazy" width="1912" height="1038" decoding="async">
                 <div class="showcase-overlay"><span>LaboGraphie · Plateforme Web</span></div>
               </div>
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer produit Candace Lait de beauté.jpg">
-                <img src="rsc/img/projets/infographie/flyer produit Candace Lait de beauté.jpg" alt="Candace Lait de Beauté" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer produit Candace Lait de beauté.webp">
+                <img src="rsc/img/projets/infographie/flyer produit Candace Lait de beauté.webp" alt="Candace Lait de Beauté" loading="lazy" width="719" height="946" decoding="async">
                 <div class="showcase-overlay"><span>Candace Lait · Packaging</span></div>
               </div>
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/logo golden pressing.jpg">
-                <img src="rsc/img/projets/infographie/logo golden pressing.jpg" alt="Golden Pressing Logo" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/logo golden pressing.webp">
+                <img src="rsc/img/projets/infographie/logo golden pressing.webp" alt="Golden Pressing Logo" loading="lazy" width="1920" height="1920" decoding="async">
                 <div class="showcase-overlay"><span>Golden Pressing · Logo</span></div>
               </div>
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer allokev kev baby.jpg">
-                <img src="rsc/img/projets/infographie/flyer allokev kev baby.jpg" alt="AllôKev Flyer" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/flyer allokev kev baby.webp">
+                <img src="rsc/img/projets/infographie/flyer allokev kev baby.webp" alt="AllôKev Flyer" loading="lazy" width="1080" height="1080" decoding="async">
                 <div class="showcase-overlay"><span>AllôKev · Campagne Commerciale</span></div>
               </div>
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/mockup salon projet labographie logo.jpg">
-                <img src="rsc/img/projets/infographie/mockup salon projet labographie logo.jpg" alt="Salon LaboGraphie" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/infographie/mockup salon projet labographie logo.webp">
+                <img src="rsc/img/projets/infographie/mockup salon projet labographie logo.webp" alt="Salon LaboGraphie" loading="lazy" width="1920" height="1680" decoding="async">
                 <div class="showcase-overlay"><span>LaboGraphie · Stand 3D</span></div>
               </div>
-              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/perso & equipe/WhatsApp Image 2025-12-31 at 22.37.29(1).jpeg">
-                <img src="rsc/img/projets/perso & equipe/WhatsApp Image 2025-12-31 at 22.37.29(1).jpeg" alt="Équipe LaboGraphie Dev" loading="lazy">
+              <div class="showcase-item btn-zoom-img" data-img="rsc/img/projets/perso & equipe/WhatsApp Image 2025-12-31 at 22.37.29(1).webp">
+                <img src="rsc/img/projets/perso & equipe/WhatsApp Image 2025-12-31 at 22.37.29(1).webp" alt="Équipe LaboGraphie Dev" loading="lazy" width="963" height="1280" decoding="async">
                 <div class="showcase-overlay"><span>LaboGraphie Dev · Esprit d'Équipe</span></div>
               </div>
             </div>
           </div>
+
         </div>
 
       </div>
@@ -947,26 +1011,26 @@
         
         <h2 class="discuss-headline">
           <span data-i18n="discuss.headPre">Vous avez une idée de projet ?</span> <br>
-          <span class="text-orange" data-i18n="discuss.headOrange">Discutons-en ensemble</span>
+          <span class="text-orange" data-i18n="discuss.headOrange">Discutons de votre projet</span>
         </h2>
 
         <!-- Pilule de souscription / contact direct Figma 1:1 -->
         <form class="discuss-pill-form" onsubmit="event.preventDefault(); window.location.href='mailto:ndejordanloic@gmail.com?subject=Idée de Projet&body=Bonjour Jordan,';">
           <div class="pill-input-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A0A0A0" stroke-width="2">
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A0A0A0" stroke-width="2">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
               <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
           </div>
-          <input type="email" placeholder="Entrez votre adresse email..." class="discuss-email-input" required data-i18n-placeholder="discuss.placeholder">
+          <input type="email" placeholder="Entrez votre adresse email..." class="discuss-email-input" required data-i18n-placeholder="discuss.placeholder" aria-label="Votre adresse email" data-i18n-aria-label="aria.newsletterEmail">
           <button type="submit" class="discuss-submit-btn" data-i18n="discuss.sendBtn">Envoyer</button>
         </form>
 
         <!-- Métriques de confiance issues du CV -->
         <div class="discuss-trust-badges">
           <div class="trust-badge-item">
-            <span class="trust-icon">⭐</span>
-            <span><strong class="count-up" data-target="4.9">4.9/5</strong> <span data-i18n="discuss.b1">Note Moyenne Clients</span></span>
+            <span class="trust-icon">✨</span>
+            <span><strong>Méthode</strong> <span data-i18n="discuss.b1">Conception &amp; Rigueur Qualité</span></span>
           </div>
           <div class="trust-divider"></div>
           <div class="trust-badge-item">
@@ -976,8 +1040,9 @@
           <div class="trust-divider"></div>
           <div class="trust-badge-item">
             <span class="trust-icon">🛡️</span>
-            <span><strong data-i18n="discuss.b3Cert">Certifié</strong> <span data-i18n="discuss.b3">Ateliers Google</span></span>
+            <span><strong data-i18n="discuss.b3Cert">Certifié</strong> <span data-i18n="discuss.b3">Marketing Digital (Google)</span></span>
           </div>
+
         </div>
 
       </div>
@@ -997,8 +1062,8 @@
           <span>Maintenance &amp; Réseaux</span> <span class="star-sep">✦</span>
           <span>Systèmes Embarqués IoT</span> <span class="star-sep">✦</span>
           <span>Palme d'Or National</span> <span class="star-sep">✦</span>
-          <span>Ateliers Google Certifié</span> <span class="star-sep">✦</span>
-          <span>Bilingue FR / EN</span> <span class="star-sep">✦</span>
+          <span>Certifié Marketing Digital Google</span> <span class="star-sep">✦</span>
+          <span>Français · Anglais · Japonais</span> <span class="star-sep">✦</span>
         </div>
         <div class="marquee-content" aria-hidden="true">
           <span>Génie Logiciel</span> <span class="star-sep">✦</span>
@@ -1009,8 +1074,8 @@
           <span>Maintenance &amp; Réseaux</span> <span class="star-sep">✦</span>
           <span>Systèmes Embarqués IoT</span> <span class="star-sep">✦</span>
           <span>Palme d'Or National</span> <span class="star-sep">✦</span>
-          <span>Ateliers Google Certifié</span> <span class="star-sep">✦</span>
-          <span>Bilingue FR / EN</span> <span class="star-sep">✦</span>
+          <span>Certifié Marketing Digital Google</span> <span class="star-sep">✦</span>
+          <span>Français · Anglais · Japonais</span> <span class="star-sep">✦</span>
         </div>
       </div>
     </section>
@@ -1034,7 +1099,7 @@
           <!-- Article 1 -->
           <article class="blog-card">
             <div class="blog-img-wrap">
-              <img src="rsc/img/blog_architecture.jpg" alt="Architecture & UI/UX" class="blog-img" loading="lazy">
+              <img src="rsc/img/blog_architecture.webp" alt="Architecture & UI/UX" class="blog-img" loading="lazy" width="1000" height="667" decoding="async">
               <span class="blog-tag-pill" data-i18n="blog.a1Tag">Génie Logiciel</span>
             </div>
             <div class="blog-meta-row">
@@ -1046,8 +1111,8 @@
             <h3 class="blog-title" data-i18n="blog.a1Title">
               Dans les coulisses de l'architecture logicielle : concevoir des systèmes modulaires et scalables
             </h3>
-            <a href="blog.html" class="blog-arrow-btn" aria-label="Lire l'article">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <a href="article-detail.html?id=architecture-modulaire" class="blog-arrow-btn" aria-label="Lire l'article">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="7" y1="17" x2="17" y2="7"></line>
                 <polyline points="7 7 17 7 17 17"></polyline>
               </svg>
@@ -1057,7 +1122,7 @@
           <!-- Article 2 : AgroFlow ERP -->
           <article class="blog-card">
             <div class="blog-img-wrap">
-              <img src="rsc/img/projets/card_agroflow.png" alt="AgroFlow ERP" class="blog-img" loading="lazy">
+              <img src="rsc/img/projets/card_agroflow.webp" alt="AgroFlow ERP" class="blog-img" loading="lazy" width="800" height="500" decoding="async">
               <span class="blog-tag-pill" data-i18n="blog.a2Tag">AgriTech &amp; ERP</span>
             </div>
             <div class="blog-meta-row">
@@ -1069,8 +1134,8 @@
             <h3 class="blog-title" data-i18n="blog.a2Title">
               AgroFlow ERP : digitaliser la gestion des parcelles et la traçabilité en Afrique subsaharienne
             </h3>
-            <a href="blog.html" class="blog-arrow-btn" aria-label="Lire l'article">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <a href="article-detail.html?id=agroflow-erp" class="blog-arrow-btn" aria-label="Lire l'article">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="7" y1="17" x2="17" y2="7"></line>
                 <polyline points="7 7 17 7 17 17"></polyline>
               </svg>
@@ -1080,7 +1145,7 @@
           <!-- Article 3 : Sister Schola ERP -->
           <article class="blog-card">
             <div class="blog-img-wrap">
-              <img src="rsc/img/projets/dev/SisterSholaErp.png" alt="Sister Schola ERP Médical" class="blog-img" loading="lazy">
+              <img src="rsc/img/projets/dev/SisterSholaErp.webp" alt="Sister Schola ERP Médical" class="blog-img" loading="lazy" width="1920" height="1200" decoding="async">
               <span class="blog-tag-pill" data-i18n="blog.a3Tag">Systèmes Médicaux</span>
             </div>
             <div class="blog-meta-row">
@@ -1092,8 +1157,8 @@
             <h3 class="blog-title" data-i18n="blog.a3Title">
               Sister Schola : dossier patient informatisé et intégrité des flux cliniques hospitaliers
             </h3>
-            <a href="blog.html" class="blog-arrow-btn" aria-label="Lire l'article">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <a href="article-detail.html?id=sister-schola" class="blog-arrow-btn" aria-label="Lire l'article">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="7" y1="17" x2="17" y2="7"></line>
                 <polyline points="7 7 17 7 17 17"></polyline>
               </svg>
@@ -1115,8 +1180,8 @@
           <div class="footer-top-header">
             <h2 class="connect-title" data-i18n="footer.connectTitle">Connectons-nous ici</h2>
             <a href="https://wa.me/237679279447" target="_blank" rel="noopener noreferrer" class="btn-hire-orange">
-              <span data-i18n="footer.hireBtn">Me recruter</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <span data-i18n="footer.hireBtn">Lancer un projet</span>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="7" y1="17" x2="17" y2="7"></line>
                 <polyline points="7 7 17 7 17 17"></polyline>
               </svg>
@@ -1140,22 +1205,22 @@
                 </span>
               </div>
               <p class="footer-brand-desc" data-i18n="footer.bio">
-                Technologue en Génie Logiciel &amp; Systèmes d'Information, certifié Ateliers Google. Spécialisé dans la conception logicielle, la maintenance d'infrastructures et l'infographie.
+                Développeur logiciel &amp; Infographe, diplômé de l'IUT de Douala et certifié en marketing digital (Google). Fondateur de LaboGraphie, spécialisé dans la conception applicative, l'infrastructure et l'identité visuelle.
               </p>
               <div class="footer-social-icons">
                 <a href="https://github.com/Nadroj-ciol" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="GitHub">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                 </a>
                 <a href="https://www.linkedin.com/in/jordan-lo%C3%AFc-nde-63b041427/" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="LinkedIn">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 </a>
                 <a href="https://wa.me/237679279447?text=Bonjour%20Jordan,%20j'ai%20consult%C3%A9%20votre%20portfolio%20et%20souhaite%20%C3%A9changer%20avec%20vous%20concernant%20un%20projet." target="_blank" rel="noopener noreferrer" class="social-circle social-whatsapp" aria-label="WhatsApp Jordan L.">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                   </svg>
                 </a>
                 <a href="mailto:ndejordanloic@gmail.com?subject=Prise%20de%20contact%20depuis%20le%20portfolio" class="social-circle" aria-label="Email Jordan L.">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
                 </a>
               </div>
             </div>
@@ -1188,9 +1253,9 @@
             <div class="footer-col col-newsletter">
               <h4 class="footer-col-title" data-i18n="footer.stayConnected">Restons connectés</h4>
               <form class="footer-newsletter-form" onsubmit="event.preventDefault(); window.location.href='mailto:ndejordanloic@gmail.com?subject=Prise de contact';">
-                <input type="email" placeholder="Votre adresse email..." class="footer-email-input" required data-i18n-placeholder="footer.placeholder">
+                <input type="email" placeholder="Votre adresse email..." class="footer-email-input" required data-i18n-placeholder="footer.placeholder" aria-label="Votre adresse email" data-i18n-aria-label="aria.newsletterEmail">
                 <button type="submit" class="footer-email-btn" aria-label="Envoyer">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
